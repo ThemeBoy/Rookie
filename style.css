@@ -146,7 +146,7 @@ button,
 input,
 select,
 textarea {
-	color: #2b353e;
+	color: #222;
 	font-family: 'Lato', sans-serif;
 	font-size: 16px;
 	font-size: 1.6rem;
@@ -497,12 +497,11 @@ body {
 .site-title a:hover,
 .site-title a:focus,
 .site-title a:active {
-	text-decoration: none;
-	color: #2b353e;
+	color: #222;
 }
 
 .site-description {
-	color: #2b353e;
+	color: #222;
 	font-size: 20px;
 }
 
@@ -542,12 +541,7 @@ body {
 --------------------------------------------------------------*/
 a {
 	color: #00a69c;
-}
-
-a:hover,
-a:focus,
-a:active {
-	color: #00a69c;
+	text-decoration: none;
 }
 
 /*--------------------------------------------------------------
@@ -574,7 +568,6 @@ a:active {
 
 .main-navigation a {
 	display: block;
-	text-decoration: none;
 	color: rgba(255, 255, 255, 0.7);
 	padding: 0.625em 0.9375em;
 	font-family: 'Oswald', sans-serif;
@@ -598,7 +591,7 @@ a:active {
 }
 
 .main-navigation li.page_item_has_children:hover > a {
-	color: #2b353e;
+	color: #222;
 	background: #fff;
 }
 
@@ -623,12 +616,12 @@ a:active {
 }
 
 .main-navigation ul ul a {
-	color: #2b353e;
+	color: #222;
 	width: 200px;
 }
 
 .main-navigation ul ul a:hover {
-	color: #2b353e;
+	color: #222;
 }
 
 .main-navigation ul ul .current-menu-item > a,
@@ -670,18 +663,6 @@ a:active {
 .menu-toggle {
 	display: none;
 }
-
-@media screen and (max-width: 600px) {
-	.menu-toggle,
-	.main-navigation.toggled .nav-menu {
-		display: block;
-	}
-
-	.main-navigation ul {
-		display: none;
-	}
-}
-
 .site-main .comment-navigation,
 .site-main .paging-navigation,
 .site-main .post-navigation {
@@ -703,6 +684,18 @@ a:active {
 	text-align: right;
 	width: 50%;
 }
+
+@media screen and (max-width: 600px) {
+	.menu-toggle,
+	.main-navigation.toggled .nav-menu {
+		display: block;
+	}
+
+	.main-navigation ul {
+		display: none;
+	}
+}
+
 
 /*--------------------------------------------------------------
 6.0 Accessibility
@@ -814,11 +807,6 @@ a:active {
 	border-bottom: none;
 }
 
-.widget a {
-	text-decoration: none;
-	color: #00a69c;
-}
-
 /* Search widget */
 .widget_search .search-submit {
 	display: none;
@@ -831,6 +819,17 @@ a:active {
 
 .widget_calendar #next {
 	text-align: right;
+}
+
+
+.widget_calendar #prev a,
+.widget_calendar #next a {
+	color: #a3a3a3;
+}
+
+.widget_calendar #prev a:hover,
+.widget_calendar #next a:hover {
+	color: #00a69c;
 }
 
 /* Media queries */
@@ -865,10 +864,8 @@ a:active {
 	display: inline;
 }
 
-.page-content,
-.entry-content,
-.entry-summary {
-	margin: 1.5em 0 0;
+.entry-header {
+	position: relative;
 }
 
 .entry-title {
@@ -878,6 +875,15 @@ a:active {
 .page-links {
 	clear: both;
 	margin: 0 0 1.25em;
+}
+
+@media screen and (min-width: 601px) {
+	.has-post-thumbnail .entry-title {
+		position: absolute;
+		bottom: 60px;
+		background: white;
+		padding: 0 0.5em;
+	}
 }
 
 /*--------------------------------------------------------------
@@ -957,7 +963,7 @@ object {
 12.2 Galleries
 --------------------------------------------------------------*/
 .gallery {
-	margin-bottom: 1.5em;
+	margin-bottom: 1.25em;
 }
 
 .gallery-item {
@@ -965,42 +971,69 @@ object {
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
-}
-
-.gallery-columns-2 .gallery-item {
 	max-width: 50%;
+	position: relative;
 }
 
-.gallery-columns-3 .gallery-item {
-	max-width: 33.33%;
+@media screen and (min-width: 601px) {
+	.gallery-columns-3 .gallery-item {
+		max-width: 33.33%;
+	}
+
+	.gallery-columns-4 .gallery-item {
+		max-width: 25%;
+	}
+
+	.gallery-columns-5 .gallery-item {
+		max-width: 20%;
+	}
+
+	.gallery-columns-6 .gallery-item {
+		max-width: 16.66%;
+	}
+
+	.gallery-columns-7 .gallery-item {
+		max-width: 14.28%;
+	}
+
+	.gallery-columns-8 .gallery-item {
+		max-width: 12.5%;
+	}
+
+	.gallery-columns-9 .gallery-item {
+		max-width: 11.11%;
+	}
 }
 
-.gallery-columns-4 .gallery-item {
-	max-width: 25%;
+.gallery-item img {
+	width: 100%;
 }
 
-.gallery-columns-5 .gallery-item {
-	max-width: 20%;
-}
-
-.gallery-columns-6 .gallery-item {
-	max-width: 16.66%;
-}
-
-.gallery-columns-7 .gallery-item {
-	max-width: 14.28%;
-}
-
-.gallery-columns-8 .gallery-item {
-	max-width: 12.5%;
-}
-
-.gallery-columns-9 .gallery-item {
-	max-width: 11.11%;
+.gallery-item * {
+	display: block;
 }
 
 .gallery-caption {
+	position: absolute;
+	margin: 0;
+	bottom: 0;
+	padding: 0.625em 15px;
+	color: #fff;
+	text-align: center;
+	width: 100%;
+	background: rgba(0,0,0,0.5);
+	font-family: 'Oswald', sans-serif;
+	text-transform: uppercase;
+	display: none;
+	pointer-events: none;
+}
+
+.gallery-item:hover .gallery-caption {
 	display: block;
+}
+
+.gallery-caption a {
+	color: #fff;
 }
 
 /*--------------------------------------------------------------
@@ -1012,6 +1045,28 @@ object {
 --------------------------------------------------------------*/
 .sp-template {
 	margin-bottom: 1.25em;
+}
+
+.sp-template iframe {
+	display: block;
+}
+
+.sp-view-all-link {
+	background: #f9f9f9;
+	color: #a3a3a3;
+	margin-top: -1px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	text-align: right;
+	font-size: 14px;
+	padding: 0.625em;
+}
+
+.sp-view-all-link:hover {
+	color: #00a69c;
+}
+
+.sp-highlight {
+	background: #fff;
 }
 
 .sp-table-caption,
@@ -1063,18 +1118,9 @@ object {
 	margin: 0;
 }
 
-.sp-countdown:before,
-.sp-countdown:after {
-    content: " ";
-    display: table;
-}
-
-.sp-countdown:after {
-    clear: both;
-}
-
 .sp-countdown {
-    *zoom: 1;
+	overflow: auto;
+    zoom: 1;
 }
 
 .sp-countdown time span {
@@ -1101,6 +1147,16 @@ object {
 	clear: both;
 	font-size: 14px;
 	font-family: 'Lato', sans-serif;
+}
+
+.sp-calendar #prev a,
+.sp-calendar #next a {
+	color: #a3a3a3;
+}
+
+.sp-calendar #prev a:hover,
+.sp-calendar #next a:hover {
+	color: #00a69c;
 }
 
 .sp-template-event-video .sp-table-caption {
@@ -1159,7 +1215,7 @@ object {
 }
 
 .sp-template-event-venue .sp-table-caption {
-	color: #2b353e;
+	color: #222;
 	background: initial;
 	border: none;
 	margin: 0;
@@ -1177,4 +1233,116 @@ object {
 .sp-event-venue-map-row td {
 	padding: 0;
 	background: rgba(0, 0, 0, 0.05);
+}
+
+.sp-event-blocks .event-results,
+.sp-event-blocks .event-time {
+	font-size: 24px;
+	text-transform: none;
+}
+
+.sp-event-blocks .event-league,
+.sp-event-blocks .event-season {
+	display: block;
+	font-weight: bold;
+	font-size: 14px;
+	clear: both;
+	margin: 0 -0.5625em;
+	padding: 0 0.625em 15px;
+}
+
+.sp-event-blocks .event-title {
+	clear: both;
+	font-family: 'Oswald', sans-serif;
+	font-weight: normal;
+	text-transform: uppercase;
+	color: #222;
+	background: #fff;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	font-size: 16px;
+	margin: 0 -0.875em -0.625em;
+	padding: 0.625em 15px;
+}
+
+.sp-event-blocks .event-title a {
+	color: #222;
+}
+
+.widget .sp-event-blocks .event-results,
+.widget .sp-event-blocks .event-time {
+	font-size: 24px;
+}
+
+.widget .sp-event-blocks .event-title {
+	margin: 0 -0.875em -0.625em;
+	padding: 0.625em 15px;
+}
+
+.sp-template-player-gallery .gallery-caption {
+	background: #2b353e;
+	height: auto;
+	display: block;
+	pointer-events: auto;
+	position: relative;
+	bottom: auto;
+	padding: 0.625em;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.sp-template-player-gallery .gallery-caption.has-number {
+	padding-left: 47px;
+}
+
+.sp-template-player-gallery .gallery-item strong {
+	font-weight: normal;
+	background: #00a69c;
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 36px;
+	padding: 0.625em 0;
+	text-align: center;
+	white-space: nowrap;
+}
+
+.player-gallery-group-name {
+	clear: both;
+	font-family: 'Oswald', sans-serif;
+	font-weight: normal;
+	text-transform: uppercase;
+	font-size: 24px;
+	margin-top: 1em;
+}
+
+.sp-template-player-gallery .sp-view-all-link {
+	background: transparent;
+	border: none;
+	padding: 0;
+	margin-top: 1em;
+}
+
+@media screen and (min-width: 601px) {
+	.sp-event-blocks .event-results,
+	.sp-event-blocks .event-time {
+		font-size: 36px;
+	}
+
+	.sp-event-calendar tbody td {
+		padding: 1.5em 0.675em;
+	}
+}
+
+@media screen and (min-width: 1025px) {
+	.sp-template-player-gallery .gallery-caption.has-number {
+		padding-left: 55px;
+	}
+
+	.sp-template-player-gallery .gallery-item strong {
+		width: 44px;
+		padding: 5px 0;
+		font-size: 24px;
+	}
 }
