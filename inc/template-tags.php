@@ -118,8 +118,6 @@ function rookie_entry_footer() {
 		comments_popup_link( __( 'Leave a comment', 'rookie' ), __( '1 Comment', 'rookie' ), __( '% Comments', 'rookie' ) );
 		echo '</span>';
 	}
-
-	edit_post_link( __( 'Edit', 'rookie' ), '<span class="edit-link">', '</span>' );
 }
 endif;
 

@@ -1,14 +1,12 @@
 <?php
 /**
+ * The template used for displaying custom post content
+ *
  * @package Rookie
  */
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<div class="entry-meta">
-		<?php rookie_posted_on(); ?>
-	</div><!-- .entry-meta -->
-
 	<?php if ( ! is_single() ) { ?><a href="<?php echo esc_url( get_permalink() ); ?>"><?php } ?>
 		<header class="entry-header">
 			<?php
@@ -30,8 +28,4 @@
 			) );
 		?>
 	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php rookie_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

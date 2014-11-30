@@ -72,6 +72,9 @@ function rookie_header_style() {
 			color: #<?php echo esc_attr( $header_text_color ); ?>;
 		}
 	<?php endif; ?>
+	.sp-table-caption, .sp-template-countdown .event-name, .sp-template-event-venue thead th {
+		<?php echo get_option( 'sportspress_fronten
+	}
 	</style>
 	<?php
 }
