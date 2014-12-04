@@ -4,11 +4,11 @@ Theme URI: http://underscores.me/
 Author: ThemeBoy
 Author URI: http://themeboy.com
 Description: Rookie is a SportsPress starter theme designed and developed by ThemeBoy.
-Version: 1.0-wpcom
+Version: 0.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: rookie
-Tags:
+Tags: blue, gray, white, light, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -432,6 +432,7 @@ input[type="submit"] {
 	padding: 0.625em 1.5em;
 	font-size: 14px;
 	cursor: pointer;
+	border-radius: 3px;
 	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
 }
 
@@ -489,7 +490,8 @@ input[type="email"],
 input[type="url"],
 input[type="password"],
 input[type="search"] {
-	padding: 3px;
+	padding: 0.575em;
+	font-size: 14px;
 }
 
 textarea {
@@ -555,6 +557,31 @@ body {
 	margin: 28px 0 28px 3.125%;
 	float: left;
 	clear: both;
+}
+
+.site-footer {
+	background: #2b353e;
+	color: #fff;
+	font-size: 14px;
+}
+
+.site-footer a {
+	color: #fff;
+	opacity: 0.7;
+}
+
+.site-footer a:hover {
+	color: #fff;
+	opacity: 1;
+}
+
+.site-info {
+	padding: 0.625em 2.8%;
+}
+
+.site-info .sep {
+	opacity: 0.3;
+	margin: 0 0.5em;
 }
 
 @media screen and (min-width: 601px) {
@@ -625,6 +652,11 @@ a:hover {
 	background: #2b353e;
 }
 
+.main-navigation .menu-toggle {
+	width: 100%;
+	border-radius: 0;
+}
+
 .main-navigation ul {
 	list-style: none;
 	margin: 0 0.875em;
@@ -645,16 +677,22 @@ a:hover {
 	text-transform: uppercase;
 }
 
-.main-navigation .nav-menu > .current-menu-item > a,
-.main-navigation .nav-menu > .current-menu-parent > a,
-.main-navigation .nav-menu > .current-menu-ancestor > a,
-.main-navigation .nav-menu > .current_page_item > a,
-.main-navigation .nav-menu > .current_page_parent > a,
-.main-navigation .nav-menu > .current_page_ancestor > a {
-	color: #fff;
+.main-navigation .current-menu-item > a,
+.main-navigation .current-menu-parent > a,
+.main-navigation .current-menu-ancestor > a,
+.main-navigation .current_page_item > a,
+.main-navigation .current_page_parent > a,
+.main-navigation .current_page_ancestor > a {
+	color: #00a69c;
 }
 
-.main-navigation a:hover {
+.main-navigation a:hover,
+.main-navigation .current-menu-item > a:hover,
+.main-navigation .current-menu-parent > a:hover,
+.main-navigation .current-menu-ancestor > a:hover,
+.main-navigation .current_page_item > a:hover,
+.main-navigation .current_page_parent > a:hover,
+.main-navigation .current_page_ancestor > a:hover {
 	color: #fff;
 	background: #00a69c;
 }
@@ -693,28 +731,6 @@ a:hover {
 	color: #222;
 }
 
-.main-navigation ul ul .current-menu-item > a,
-.main-navigation ul ul .current-menu-parent > a,
-.main-navigation ul ul .current-menu-ancestor > a,
-.main-navigation ul ul .current_page_item > a,
-.main-navigation ul ul .current_page_parent > a,
-.main-navigation ul ul .current_page_ancestor > a {
-	color: #00a69c;
-}
-
-.main-navigation ul ul li {
-
-}
-
-.main-navigation li:hover > a {
-}
-
-.main-navigation ul ul :hover > a {
-}
-
-.main-navigation ul ul a:hover {
-}
-
 .main-navigation ul li:hover > ul {
 	left: auto;
 }
@@ -723,9 +739,8 @@ a:hover {
 	left: 100%;
 }
 
-.main-navigation .current_page_item > a,
-.main-navigation .current-menu-item > a,
-.main-navigation .current_page_ancestor > a {
+.main-navigation ul ul li.page_item_has_children:hover > a {
+	background: #f4f4f4;
 }
 
 /* Small menu */
@@ -868,7 +883,7 @@ a:hover {
 .widget select {
 	width: 100%;
 	box-sizing: border-box;
-	padding: 3px 8px;
+	padding: 0.5em 1em;
 }
 
 .widget-title {
@@ -1022,13 +1037,39 @@ a:hover {
 	margin: 0 0 1.5em;
 }
 
-.entry-meta {
+.entry-meta,
+.entry-footer-links {
 	clear: both;
 	background: #f4f4f4;
 	margin: 0 0 1.5em;
 	padding: 0.625em 15px;
 	font-size: 14px;
 	border: 1px solid #e0e0e0;
+}
+
+.entry-footer-links .tags-links {
+	border-left: 1px solid #e0e0e0;
+	padding-left: 0.625em;
+	margin-left: 0.625em;
+}
+
+.nav-links .meta-nav {
+	color: #fff;
+	background: #00a69c;
+	padding: 0.125em 0.375em;
+	display: inline-block;
+}
+
+.nav-links .meta-nav:hover {
+	background: #00958c;
+}
+
+.nav-links .nav-previous .meta-nav {
+	margin-right: 0.25em;
+}
+
+.nav-links .nav-next .meta-nav {
+	margin-left: 0.25em;
 }
 
 .byline,
@@ -1055,7 +1096,11 @@ a:hover {
 .entry-title a,
 a .entry-title,
 .page-title a,
-a .page-title {
+a .page-title,
+.entry-title a:hover,
+a:hover .entry-title,
+.page-title a:hover,
+a:hover .page-title:hover {
 	color: #222;
 }
 
@@ -1065,10 +1110,6 @@ a .page-title {
 }
 
 @media screen and (min-width: 601px) {
-	.single .has-post-thumbnail .entry-header .entry-title {
-		margin: 0.5em 0;
-	}
-
 	.single-post .has-post-thumbnail .entry-header .entry-title,
 	.page .has-post-thumbnail .entry-header .entry-title {
 		position: absolute;
@@ -1098,7 +1139,7 @@ a .page-title {
 }
 
 .comment-list {
-	margin-left: 0;
+	margin: 1.5em 0 3em;
 }
 
 .comment-body {
@@ -1107,13 +1148,13 @@ a .page-title {
 }
 
 .comment-author .avatar {
-	width: 15%;
+	width: 25%;
 	float: left;
 }
 
 .comment-author .fn {
 	float: right;
-	width: 83%;
+	width: 70%;
 	margin-bottom: 0.25em;
 }
 
@@ -1126,6 +1167,7 @@ a .page-title {
 	right: 15px;
 	bottom: 0.625em;
 	font-size: 14px;
+	z-index: 2;
 }
 
 .comment-metadata a {
@@ -1145,10 +1187,10 @@ a .page-title {
 .comment-content {
 	position: relative;
 	float: right;
-	width: 83%;
+	width: 70%;
 	background: #f4f4f4;
 	border: 1px solid #e0e0e0;
-	padding: 0.625em 15px 1.25em;
+	padding: 0.625em 15px 0.625em;
 }
 
 .comment-content a {
@@ -1199,6 +1241,18 @@ a .page-title {
 
 .bypostauthor {
 	display: block;
+}
+
+
+@media screen and (min-width: 401px) {
+	.comment-author .avatar {
+		width: 16.1%;
+	}
+
+	.comment-author .fn,	
+	.comment-content {
+		width: 80%;
+	}
 }
 
 /*--------------------------------------------------------------
@@ -1394,6 +1448,8 @@ object {
 	padding: 0.625em 15px;
 	margin: 0 0 -1px;
 	font-size: 16px;
+	position: relative;
+	z-index: 2;
 }
 
 .sp-table-caption h1,
@@ -1604,6 +1660,43 @@ object {
 	padding: 0.625em 15px;
 }
 
+.sp-template-player-photo {
+	max-width: none;
+	width: 100%;
+	text-align: center;
+	margin: 0 0 1.5em 0;
+}
+
+.sp-template-player-photo img {
+	width: 100%;
+	display: block;
+}
+
+.sp-template-player-details dl {
+	background: #f4f4f4;
+	font-size: 14px;
+	border: 1px solid #e0e0e0;
+	padding: 1em 15px 0;
+	margin-bottom: 1.5em;
+}
+
+.sp-template-player-details dt {
+	width: 40%;
+	margin: 0 0 1em;
+	float: left;
+	clear: left;
+}
+
+.sp-template-player-details dd {
+	overflow: hidden;
+	margin: 0 0 1em 45%;
+}
+
+.sp-template-player-details dd img {
+	vertical-align: middle;
+	margin-right: 0.25em;
+}
+
 .sp-template .player-group-name {
 	margin-top: 1em;
 }
@@ -1634,18 +1727,19 @@ object {
 }
 
 .sp-template-player-gallery .gallery-caption.has-number {
-	padding-left: 47px;
+	padding-left: 49px;
 }
 
 .sp-template-player-gallery .gallery-item strong {
 	font-weight: normal;
+	font-size: 20px;
 	background: #00a69c;
 	position: absolute;
 	left: 0;
 	top: 0;
 	height: 100%;
-	width: 36px;
-	padding: 0.625em 0;
+	width: 39px;
+	padding: 5px 0;
 	text-align: center;
 	white-space: nowrap;
 }
@@ -1684,6 +1778,18 @@ object {
 	border: none;
 }
 
+.single-sp_event .has-post-thumbnail .entry-header .entry-title {
+	margin: 0.25em 0;
+}
+
+.single-sp_player .entry-header .entry-title strong {
+	background: #00a69c;
+	color: #fff;
+	padding: 0 0.475em;
+	margin-right: 0.25em;
+	font-weight: normal;
+}
+
 @media screen and (min-width: 601px) {
 	.sp-template-event-blocks .event-results,
 	.sp-template-event-blocks .event-time {
@@ -1692,6 +1798,10 @@ object {
 
 	.sp-template-event-calendar tbody td {
 		padding: 1.5em 0.675em;
+	}
+
+	.single-sp_event .has-post-thumbnail .entry-header .entry-title {
+		margin: 0.5em 0;
 	}
 }
 
@@ -1707,6 +1817,12 @@ object {
 }
 
 @media screen and (min-width: 1025px) {
+	.sp-template-player-photo {
+		width: auto;
+		max-width: 48%;
+		margin: 0 4% 1.5em 0;
+	}
+
 	.sp-template-player-gallery .gallery-columns-3 .gallery-item {
 		max-width: 33.33%;
 	}
@@ -1733,16 +1849,6 @@ object {
 
 	.sp-template-player-gallery .gallery-columns-9 .gallery-item {
 		max-width: 11.11%;
-	}
-
-	.sp-template-player-gallery .gallery-caption.has-number {
-		padding-left: 55px;
-	}
-
-	.sp-template-player-gallery .gallery-item strong {
-		width: 44px;
-		padding: 5px 0;
-		font-size: 24px;
 	}
 }
 
