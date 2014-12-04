@@ -39,6 +39,9 @@ function rookie_setup() {
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
+	// Add featured image support.
+	add_theme_support( 'post-thumbnails' );
+
 	// Add custom header support.
 	$args = array(
 		'default-image' => get_template_directory_uri() . '/images/header.jpg',
@@ -89,14 +92,6 @@ endif; // rookie_setup
 add_action( 'after_setup_theme', 'rookie_setup' );
 
 /**
- * Disable default frontend SportsPress styles.
- */
-function rookie_disable_sportspress_css() {
-	return 'no';
-}
-add_filter( 'option_sportspress_enable_frontend_css', 'rookie_disable_sportspress_css' );
-
-/**
  * Register widget area.
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
@@ -121,21 +116,6 @@ function rookie_widgets_init() {
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
 	) );
-
-	$footer_widget_regions = apply_filters( 'rookie_footer_widget_regions', 4 );
-
-	for ( $i = 1; $i <= intval( $footer_widget_regions ); $i++ ) {
-		register_sidebar( array(
-			'name' 				=> sprintf( __( 'Footer %d', 'rookie' ), $i ),
-			'id' 				=> sprintf( 'footer-%d', $i ),
-			'description' 		=> sprintf( __( 'Widgetized Footer Region %d.', 'rookie' ), $i ),
-			'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
-			'after_widget' 		=> '</aside>',
-			'before_title' 		=> '<h3>',
-			'after_title' 		=> '</h3>'
-			)
-		);
-	}
 }
 add_action( 'widgets_init', 'rookie_widgets_init' );
 
@@ -199,12 +179,37 @@ function rookie_scripts() {
 
 	wp_enqueue_script( 'rookie-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
+	wp_enqueue_script( 'jquery-timeago', get_template_directory_uri() . '/js/jquery.timeago.js', array( 'jquery' ), '1.4.1', true );
+
+	wp_enqueue_script( 'rookie-scripts', get_template_directory_uri() . '/js/scripts.js', array( 'jquery', 'jquery-timeago' ), '0.9', true );
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	$strings = array(
+		'prefixAgo' => _x( '', 'time ago prefix', 'rookie' ),
+		'prefixFromNow' => _x( '', 'time from now prefix', 'rookie' ),
+		'suffixAgo' => _x( 'ago', 'time ago suffix', 'rookie' ),
+		'suffixFromNow' => _x( '', 'time from now suffix', 'rookie' ),
+		'inPast' => _x( 'any moment now', 'time ago', 'rookie' ),
+		'seconds' => _x( 'less than a minute', 'time ago', 'rookie' ),
+		'minute' => _x( 'about a minute', 'time ago', 'rookie' ),
+		'minutes' => _x( '%d minutes', 'time ago', 'rookie' ),
+		'hour' => _x( 'about an hour', 'time ago', 'rookie' ),
+		'hours' => _x( 'about %d hours', 'time ago', 'rookie' ),
+		'day' => _x( 'a day', 'time ago', 'rookie' ),
+		'days' => _x( '%d days', 'time ago', 'rookie' ),
+		'month' => _x( 'about a month', 'time ago', 'rookie' ),
+		'months' => _x( '%d months', 'time ago', 'rookie' ),
+		'year' => _x( 'about a year', 'time ago', 'rookie' ),
+		'years' => _x( '%d years', 'time ago', 'rookie' ),
+		'wordSeparator' => _x( ' ', 'time ago word separator', 'rookie' ),
+	);
+
+	wp_localize_script( 'rookie-scripts', 'timeago_strings', $strings );
 }
 add_action( 'wp_enqueue_scripts', 'rookie_scripts' );
-
 
 /**
  * Enqueue scripts and styles.
@@ -221,25 +226,31 @@ function rookie_custom_colors() {
 		$offset = ( 'twentyfourteen' == $template ? 48 : 0 );
 	}
 
+	// Get options
 	$colors = (array) get_option( 'sportspress_frontend_css_colors', array() );
+	$colors['content'] = get_option( 'rookie_content_color', '#ffffff' );
+	$colors['sponsors_background'] = get_option( 'sportspress_footer_sponsors_css_background', '#f4f4f4' );
 
 	// Defaults
 	if ( empty( $colors['primary'] ) ) $colors['primary'] = '#2b353e';
-	if ( empty( $colors['accent'] ) ) $colors['accent'] = '#00a69c';
 	if ( empty( $colors['background'] ) ) $colors['background'] = '#f4f4f4';
 	if ( empty( $colors['text'] ) ) $colors['text'] = '#222222';
 	if ( empty( $colors['heading'] ) ) $colors['heading'] = '#ffffff';
 	if ( empty( $colors['link'] ) ) $colors['link'] = '#00a69c';
 
 	// Calculate colors
-	$colors['accent_dark'] = rookie_hex_darker( $colors['accent'], 30, true );
 	$colors['highlight'] = rookie_hex_lighter( $colors['background'], 30, true );
 	$colors['border'] = rookie_hex_darker( $colors['background'], 20, true );
 	$colors['text_lighter'] = rookie_hex_mix( $colors['text'], $colors['background'] );
 	$colors['heading_alpha'] = 'rgba(' . implode( ', ', rookie_rgb_from_hex( $colors['heading'] ) ) . ', 0.7)';
+	$colors['link_dark'] = rookie_hex_darker( $colors['link'], 30, true );
 	$colors['link_hover'] = rookie_hex_darker( $colors['link'], 30, true );
+	$colors['sponsors_border'] = rookie_hex_darker( $colors['sponsors_background'], 20, true );
+
 	?>
-	<style type="text/css"> /* SportsPress Frontend CSS */
+	<style type="text/css"> /* Frontend CSS */
+	.site-content {
+		background: <?php echo $colors['content']; ?>; }
 	caption,
 	.main-navigation,
 	.sp-heading,
@@ -248,35 +259,6 @@ function rookie_custom_colors() {
 	.sp-template-event-venue thead th,
 	.sp-template-player-gallery .gallery-caption {
 		background: <?php echo $colors['primary']; ?>; }
-	blockquote:before,
-	q:before {
-		color: <?php echo $colors['accent']; ?>; }
-	cite:before,
-	button,
-	input[type="button"],
-	input[type="reset"],
-	input[type="submit"],
-	.main-navigation a:hover,
-	.sp-template-player-gallery .gallery-item strong {
-		background: <?php echo $colors['accent']; ?>; }
-	caption,
-	.sp-table-caption,
-	.sp-template-countdown .event-name,
-	.sp-template-event-venue thead th {
-		border-top-color: <?php echo $colors['accent']; ?>; }
-	button:hover,
-	input[type="button"]:hover,
-	input[type="reset"]:hover,
-	input[type="submit"]:hover,
-	button:focus,
-	input[type="button"]:focus,
-	input[type="reset"]:focus,
-	input[type="submit"]:focus,
-	button:active,
-	input[type="button"]:active,
-	input[type="reset"]:active,
-	input[type="submit"]:active {
-		background: <?php echo $colors['accent_dark']; ?>; }
 	pre,
 	code,
 	kbd,
@@ -284,12 +266,14 @@ function rookie_custom_colors() {
 	var,
 	table,
 	.main-navigation li.page_item_has_children:hover a:hover,
+	.main-navigation ul ul li.page_item_has_children:hover > a,
 	.entry-meta,
 	.comment-content,
 	.sp-view-all-link,
 	.sp-template-countdown .event-venue,
 	.sp-template-countdown .event-league,
 	.sp-template-countdown time span,
+	.sp-template-player-details dl,
 	.woocommerce .woocommerce-breadcrumb,
 	.woocommerce-page .woocommerce-breadcrumb {
 		background: <?php echo $colors['background']; ?>; }
@@ -329,7 +313,7 @@ function rookie_custom_colors() {
 	.sp-template-countdown time span,
 	.sp-template-countdown time span:first-child,
 	.sp-template-event-blocks .event-title,
-	.sp-footer-sponsors .sp-sponsors,
+	.sp-template-player-details dl,
 	.sp-template-tournament-bracket table,
 	.sp-template-tournament-bracket thead th,
 	.woocommerce .woocommerce-breadcrumb,
@@ -337,7 +321,6 @@ function rookie_custom_colors() {
 		border-color: <?php echo $colors['border']; ?>; }
 	.comment-content:before {
 		border-right-color: <?php echo $colors['border']; ?>; }
-	}
 	body,
 	button,
 	input,
@@ -363,6 +346,10 @@ function rookie_custom_colors() {
 	a .entry-title,
 	.page-title a,
 	a .page-title,
+	.entry-title a:hover,
+	a:hover .entry-title,
+	.page-title a:hover,
+	a:hover .page-title:hover,
 	.sp-template-event-venue .sp-table-caption,
 	.sp-template-event-blocks .event-title,
 	.sp-template-event-blocks .event-title a,
@@ -384,19 +371,17 @@ function rookie_custom_colors() {
 	.wp-caption-text,
 	.sp-view-all-link,
 	.sp-template-event-calendar #prev a,
-	.sp-template-event-calendar #next a {
+	.sp-template-event-calendar #next a,
+	.woocommerce .woocommerce-breadcrumb,
+	.woocommerce-page .woocommerce-breadcrumb,
+	.woocommerce .woocommerce-breadcrumb a,
+	.woocommerce-page .woocommerce-breadcrumb a {
 		color: <?php echo $colors['text_lighter']; ?>; }
 	caption,
 	button,
 	input[type="button"],
 	input[type="reset"],
 	input[type="submit"],
-	.main-navigation .nav-menu > .current-menu-item > a,
-	.main-navigation .nav-menu > .current-menu-parent > a,
-	.main-navigation .nav-menu > .current-menu-ancestor > a,
-	.main-navigation .nav-menu > .current_page_item > a,
-	.main-navigation .nav-menu > .current_page_parent > a,
-	.main-navigation .nav-menu > .current_page_ancestor > a,
 	.main-navigation a:hover,
 	.sp-template .gallery-caption,
 	.sp-template .gallery-caption a,
@@ -404,17 +389,20 @@ function rookie_custom_colors() {
 	.sp-table-caption,
 	.sp-template-countdown .event-name,
 	.sp-template-event-venue thead th,
-	.sp-template-countdown .event-name a {
+	.sp-template-countdown .event-name a,
+	.single-sp_player .entry-header .entry-title strong {
 		color: <?php echo $colors['heading']; ?>; }
 	.main-navigation a {
 		color: <?php echo $colors['heading_alpha']; ?>; }
 	a,
-	.main-navigation ul ul .current-menu-item > a,
-	.main-navigation ul ul .current-menu-parent > a,
-	.main-navigation ul ul .current-menu-ancestor > a,
-	.main-navigation ul ul .current_page_item > a,
-	.main-navigation ul ul .current_page_parent > a,
-	.main-navigation ul ul .current_page_ancestor > a,
+	blockquote:before,
+	q:before,
+	.main-navigation .current-menu-item > a,
+	.main-navigation .current-menu-parent > a,
+	.main-navigation .current-menu-ancestor > a,
+	.main-navigation .current_page_item > a,
+	.main-navigation .current_page_parent > a,
+	.main-navigation .current_page_ancestor > a,
 	.widget_recent_entries ul li a:hover,
 	.widget_pages ul li a:hover,
 	.widget_categories ul li a:hover,
@@ -431,8 +419,45 @@ function rookie_custom_colors() {
 	.sp-template-event-calendar #prev a:hover,
 	.sp-template-event-calendar #next a:hover {
 		color: <?php echo $colors['link']; ?>; }
+	cite:before,
+	button,
+	input[type="button"],
+	input[type="reset"],
+	input[type="submit"],
+	.main-navigation a:hover,
+	.main-navigation .current-menu-item > a:hover,
+	.main-navigation .current-menu-parent > a:hover,
+	.main-navigation .current-menu-ancestor > a:hover,
+	.main-navigation .current_page_item > a:hover,
+	.main-navigation .current_page_parent > a:hover,
+	.main-navigation .current_page_ancestor > a:hover 
+	.nav-links .meta-nav,
+	.sp-template-player-gallery .gallery-item strong,
+	.single-sp_player .entry-header .entry-title strong {
+		background: <?php echo $colors['link']; ?>; }
+	caption,
+	.sp-table-caption,
+	.sp-template-countdown .event-name,
+	.sp-template-event-venue thead th {
+		border-top-color: <?php echo $colors['link']; ?>; }
+	button:hover,
+	input[type="button"]:hover,
+	input[type="reset"]:hover,
+	input[type="submit"]:hover,
+	button:focus,
+	input[type="button"]:focus,
+	input[type="reset"]:focus,
+	input[type="submit"]:focus,
+	button:active,
+	input[type="button"]:active,
+	input[type="reset"]:active,
+	input[type="submit"]:active,
+	.nav-links a:hover .meta-nav {
+		background: <?php echo $colors['link_dark']; ?>; }
 	a:hover {
 		color: <?php echo $colors['link_hover']; ?>; }
+	.sp-footer-sponsors .sp-sponsors {
+		border-color: <?php echo $colors['sponsors_border']; ?>; }
 
 	<?php do_action( 'sportspress_frontend_css', $colors ); ?>
 	
@@ -548,9 +573,9 @@ if ( ! function_exists( 'rookie_hex_mix' ) ) {
 	function rookie_hex_mix( $x, $y ) {
 		$rgbx = rookie_rgb_from_hex( $x );
 		$rgby = rookie_rgb_from_hex( $y );
-		$r = dechex( ( $rgbx['r'] + $rgby['r'] ) / 2 );
-		$g = dechex( ( $rgbx['g'] + $rgby['g'] ) / 2 );
-		$b = dechex( ( $rgbx['b'] + $rgby['b'] ) / 2 );
+		$r = str_pad( dechex( ( $rgbx['r'] + $rgby['r'] ) / 2 ), 2, '0', STR_PAD_LEFT );
+		$g = str_pad( dechex( ( $rgbx['g'] + $rgby['g'] ) / 2 ), 2, '0', STR_PAD_LEFT );
+		$b = str_pad( dechex( ( $rgbx['b'] + $rgby['b'] ) / 2 ), 2, '0', STR_PAD_LEFT );
 		return '#' . $r . $g . $b;
 	}
 }

@@ -23,12 +23,12 @@ if ( post_password_required() ) {
 	<?php // You can start editing here -- including this comment! ?>
 
 	<?php if ( have_comments() ) : ?>
-		<h2 class="comments-title">
+		<h3 class="comments-title">
 			<?php
-				printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'rookie' ),
-					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
+				printf( _nx( 'One comment', '%1$s comments', get_comments_number(), 'comments title', 'rookie' ),
+					number_format_i18n( get_comments_number() ) );
 			?>
-		</h2>
+		</h3>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-above" class="comment-navigation" role="navigation">
@@ -65,6 +65,14 @@ if ( post_password_required() ) {
 		<p class="no-comments"><?php _e( 'Comments are closed.', 'rookie' ); ?></p>
 	<?php endif; ?>
 
-	<?php comment_form(); ?>
+	<?php
+		$args = array();
+		if ( '0' == get_comments_number() ) {
+			$args['title_reply'] = __( 'Start a Conversation', 'rookie' );
+		} else {
+			$args['title_reply'] = __( 'Join the Conversation', 'rookie' );
+		}
+		comment_form( $args );
+	?>
 
 </div><!-- #comments -->
