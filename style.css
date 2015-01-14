@@ -1,6 +1,5 @@
 /*
 Theme Name: Rookie
-Theme URI: http://underscores.me/
 Author: ThemeBoy
 Author URI: http://themeboy.com
 Description: Rookie is a SportsPress starter theme designed and developed by ThemeBoy.
@@ -149,7 +148,6 @@ textarea {
 	color: #222;
 	font-family: "Lato", sans-serif;
 	font-size: 16px;
-	font-size: 1.6rem;
 	line-height: 1.5;
 }
 
@@ -703,6 +701,7 @@ a:hover {
 }
 
 .main-navigation li.page_item_has_children:hover a:hover {
+	color: #222;
 	background: #f4f4f4;
 }
 
@@ -1624,7 +1623,8 @@ object {
 }
 
 .sp-template-event-blocks .event-league,
-.sp-template-event-blocks .event-season {
+.sp-template-event-blocks .event-season,
+.sp-template-event-blocks .event-venue {
 	display: block;
 	font-weight: bold;
 	font-size: 14px;
