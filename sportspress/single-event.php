@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all SportsPress pages.
+ * The template for displaying all SportsPress event pages.
  *
  * @package Rookie
  */
