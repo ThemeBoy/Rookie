@@ -1,4 +1,10 @@
 == Changelog ==
 
+= 0.9.1 =
+* Feature - Add editor style.
+* Tweak - Style main links as tabs above submenus in navigation.
+* Compatibility - Support WordPress 4.1 title tag with fallback for earlier versions.
+* Localization - Update source language file.
+
 = 0.9 =
 * Initial beta release.
