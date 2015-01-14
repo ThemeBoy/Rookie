@@ -261,8 +261,6 @@ function rookie_custom_colors() {
 
 	?>
 	<style type="text/css"> /* Frontend CSS */
-	.site-content {
-		background: <?php echo $colors['content']; ?>; }
 	caption,
 	.main-navigation,
 	.sp-heading,
@@ -277,7 +275,7 @@ function rookie_custom_colors() {
 	tt,
 	var,
 	table,
-	.main-navigation li.page_item_has_children:hover a:hover,
+	.main-navigation li.menu-item-has-children:hover a:hover,
 	.main-navigation ul ul li.page_item_has_children:hover > a,
 	.entry-meta,
 	.comment-content,
@@ -292,7 +290,8 @@ function rookie_custom_colors() {
 	.comment-content:after {
 		border-right-color: <?php echo $colors['background']; ?>; }
 	.site-content,
-	.main-navigation li.page_item_has_children:hover > a,
+	.main-navigation .nav-menu > .menu-item-has-children:hover > a,
+	.main-navigation li.menu-item-has-children:hover a,
 	.main-navigation ul ul,
 	.widget_calendar #today,
 	.sp-highlight,
@@ -343,10 +342,8 @@ function rookie_custom_colors() {
 	.site-title a:focus,
 	.site-title a:active,
 	.site-description,
-	.main-navigation li.page_item_has_children:hover > a,
+	.main-navigation .nav-menu > .menu-item-has-children:hover > a,
 	.main-navigation ul ul a,
-	.main-navigation ul ul a:hover,
-	.main-navigation li.page_item_has_children:hover a:hover,
 	.widget_recent_entries ul li:before,
 	.widget_pages ul li:before,
 	.widget_categories ul li:before,
@@ -395,7 +392,7 @@ function rookie_custom_colors() {
 	input[type="button"],
 	input[type="reset"],
 	input[type="submit"],
-	.main-navigation a:hover,
+	.main-navigation .nav-menu > li > a:hover
 	.sp-template .gallery-caption,
 	.sp-template .gallery-caption a,
 	.sp-heading,
@@ -437,13 +434,7 @@ function rookie_custom_colors() {
 	input[type="button"],
 	input[type="reset"],
 	input[type="submit"],
-	.main-navigation a:hover,
-	.main-navigation .current-menu-item > a:hover,
-	.main-navigation .current-menu-parent > a:hover,
-	.main-navigation .current-menu-ancestor > a:hover,
-	.main-navigation .current_page_item > a:hover,
-	.main-navigation .current_page_parent > a:hover,
-	.main-navigation .current_page_ancestor > a:hover 
+	.main-navigation .nav-menu > li > a:hover,
 	.nav-links .meta-nav,
 	.sp-template-player-gallery .gallery-item strong,
 	.single-sp_player .entry-header .entry-title strong {
