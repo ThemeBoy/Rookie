@@ -16,6 +16,14 @@ Rookie is a SportsPress starter theme designed and developed by ThemeBoy.
 * SportsPress Support
 * The GPL v2.0 or later license. :) Use it to make something cool.
 
+= Custom Templates =
+
+Rookie provides compatibility with WooCommerce and SportsPress. The included templates are used for displaying content using these plugins:
+
+1. sportspress/single-event.php - A single SportsPress event page.
+2. sportspress/single-player.php - A single SportsPress player profile page.
+3. woocommerce/archive-product.php - An archive of WooCommerce products.
+
 == Installation ==
 
 1. In your admin panel, go to Appearance -> Themes and click the Add New button.
