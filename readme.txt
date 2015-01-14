@@ -12,7 +12,6 @@ Rookie is a SportsPress starter theme designed and developed by ThemeBoy.
 
 * Responsive Layout
 * Custom Colors
-* Custom Header
 * WooCommerce Support
 * SportsPress Support
 * The GPL v2.0 or later license. :) Use it to make something cool.
