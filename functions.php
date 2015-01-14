@@ -42,6 +42,9 @@ function rookie_setup() {
 	// Add featured image support.
 	add_theme_support( 'post-thumbnails' );
 
+	// Add title tag support.
+	add_theme_support( 'title-tag' );
+
 	// Add custom header support.
 	$args = array(
 		'default-image' => get_template_directory_uri() . '/images/header.jpg',
@@ -53,6 +56,8 @@ function rookie_setup() {
 		'default-text-color' 	=> '222222',
 	);
 	add_theme_support( 'custom-header', $args );
+
+	add_editor_style();
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
@@ -90,6 +95,18 @@ function rookie_setup() {
 }
 endif; // rookie_setup
 add_action( 'after_setup_theme', 'rookie_setup' );
+
+/**
+ * Render title in head for backwards compatibility.
+ */
+if ( ! function_exists( '_wp_render_title_tag' ) ):
+function rookie_render_title() {
+	?>
+	<title><?php wp_title( '|', true, 'right' ); ?></title>
+	<?php
+}
+add_action( 'wp_head', 'rookie_render_title' );
+endif;
 
 /**
  * Register widget area.
@@ -334,6 +351,7 @@ function rookie_custom_colors() {
 	.main-navigation li.page_item_has_children:hover > a,
 	.main-navigation ul ul a,
 	.main-navigation ul ul a:hover,
+	.main-navigation li.page_item_has_children:hover a:hover,
 	.widget_recent_entries ul li:before,
 	.widget_pages ul li:before,
 	.widget_categories ul li:before,
