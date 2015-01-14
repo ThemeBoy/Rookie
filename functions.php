@@ -232,18 +232,13 @@ add_action( 'wp_enqueue_scripts', 'rookie_scripts' );
  * Enqueue scripts and styles.
  */
 function rookie_custom_colors() {
+	// Get any custom CSS added via SportsPress plugin.
 	$custom = get_option( 'sportspress_custom_css', null );
 
-	$align = get_option( 'sportspress_table_text_align', 'default' );
-	$padding = get_option( 'sportspress_table_padding', null );
-
-	$offset = get_option( 'sportspress_header_offset', '' );
-	if ( $offset === '' ) {
-		$template = get_option( 'template' );
-		$offset = ( 'twentyfourteen' == $template ? 48 : 0 );
-	}
-
-	// Get options
+	/*
+	 * Get color options set via Customizer.
+	 * @see rookie_customize_register()
+	 */
 	$colors = (array) get_option( 'sportspress_frontend_css_colors', array() );
 	$colors['content'] = get_option( 'rookie_content_color', '#ffffff' );
 	$colors['sponsors_background'] = get_option( 'sportspress_footer_sponsors_css_background', '#f4f4f4' );
