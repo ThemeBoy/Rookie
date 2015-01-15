@@ -46,3 +46,9 @@ You can change the colors of your site easily using Rookie.
 1. The main content width is 620px.
 2. The sidebar width is 300px.
 3. Featured Images are 620px wide by 413px high.
+
+= Additional Licenses =
+
+Rookie is based on Underscores http://underscores.me/ - GPL v2.0
+Timeago jQuery plugin - http://timeago.yarp.com/ - MIT License
+All images by ThemeBoy - http://themeboy.com/ - GPL v2.0
