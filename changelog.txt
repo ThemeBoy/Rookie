@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 0.9.2 =
+* License - Add license.txt file and license information in readme file.
+* Security - Put blank index.php files in assets and other directories.
+* Security - Sanitize values from option tables prior to output.
+
 = 0.9.1 =
 * Feature - Add editor style.
 * Tweak - Style main links as tabs above submenus in navigation.
