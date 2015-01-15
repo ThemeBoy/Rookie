@@ -45,18 +45,6 @@ function rookie_setup() {
 	// Add title tag support.
 	add_theme_support( 'title-tag' );
 
-	// Add custom header support.
-	$args = array(
-		'default-image' => get_template_directory_uri() . '/images/header.jpg',
-		'width'     	    	=> 1000,
-		'height' 				=> 150,
-		'flex-width' 			=> true,
-		'flex-height' 			=> true,
-		'header-text' 			=> true,
-		'default-text-color' 	=> '222222',
-	);
-	add_theme_support( 'custom-header', $args );
-
 	add_editor_style();
 
 	/*
@@ -232,15 +220,11 @@ add_action( 'wp_enqueue_scripts', 'rookie_scripts' );
  * Enqueue scripts and styles.
  */
 function rookie_custom_colors() {
-	// Get any custom CSS added via SportsPress plugin.
-	$custom = get_option( 'sportspress_custom_css', null );
-
 	/*
 	 * Get color options set via Customizer.
 	 * @see rookie_customize_register()
 	 */
 	$colors = (array) get_option( 'sportspress_frontend_css_colors', array() );
-	$colors['content'] = get_option( 'rookie_content_color', '#ffffff' );
 	$colors['sponsors_background'] = get_option( 'sportspress_footer_sponsors_css_background', '#f4f4f4' );
 
 	// Defaults
@@ -268,7 +252,7 @@ function rookie_custom_colors() {
 	.sp-template-countdown .event-name,
 	.sp-template-event-venue thead th,
 	.sp-template-player-gallery .gallery-caption {
-		background: <?php echo $colors['primary']; ?>; }
+		background: <?php echo esc_html( $colors['primary'] ); ?>; }
 	pre,
 	code,
 	kbd,
@@ -286,9 +270,9 @@ function rookie_custom_colors() {
 	.sp-template-player-details dl,
 	.woocommerce .woocommerce-breadcrumb,
 	.woocommerce-page .woocommerce-breadcrumb {
-		background: <?php echo $colors['background']; ?>; }
+		background: <?php echo esc_html( $colors['background'] ); ?>; }
 	.comment-content:after {
-		border-right-color: <?php echo $colors['background']; ?>; }
+		border-right-color: <?php echo esc_html( $colors['background'] ); ?>; }
 	.site-content,
 	.main-navigation .nav-menu > .menu-item-has-children:hover > a,
 	.main-navigation li.menu-item-has-children:hover a,
@@ -297,7 +281,7 @@ function rookie_custom_colors() {
 	.sp-highlight,
 	.sp-template-event-calendar #today,
 	.sp-template-event-blocks .event-title {
-		background: <?php echo $colors['highlight']; ?>; }
+		background: <?php echo esc_html( $colors['highlight'] ); ?>; }
 	pre,
 	code,
 	kbd,
@@ -329,9 +313,9 @@ function rookie_custom_colors() {
 	.sp-template-tournament-bracket thead th,
 	.woocommerce .woocommerce-breadcrumb,
 	.woocommerce-page .woocommerce-breadcrumb {
-		border-color: <?php echo $colors['border']; ?>; }
+		border-color: <?php echo esc_html( $colors['border'] ); ?>; }
 	.comment-content:before {
-		border-right-color: <?php echo $colors['border']; ?>; }
+		border-right-color: <?php echo esc_html( $colors['border'] ); ?>; }
 	body,
 	button,
 	input,
@@ -365,7 +349,7 @@ function rookie_custom_colors() {
 	.sp-template-event-blocks .event-title a,
 	.woocommerce ul.products li.product h3,
 	.woocommerce-page ul.products li.product h3 {
-		color: <?php echo $colors['text']; ?>; }
+		color: <?php echo esc_html( $colors['text'] ); ?>; }
 	.widget_recent_entries ul li a,
 	.widget_pages ul li a,
 	.widget_categories ul li a,
@@ -386,7 +370,7 @@ function rookie_custom_colors() {
 	.woocommerce-page .woocommerce-breadcrumb,
 	.woocommerce .woocommerce-breadcrumb a,
 	.woocommerce-page .woocommerce-breadcrumb a {
-		color: <?php echo $colors['text_lighter']; ?>; }
+		color: <?php echo esc_html( $colors['text_lighter'] ); ?>; }
 	caption,
 	button,
 	input[type="button"],
@@ -401,9 +385,9 @@ function rookie_custom_colors() {
 	.sp-template-event-venue thead th,
 	.sp-template-countdown .event-name a,
 	.single-sp_player .entry-header .entry-title strong {
-		color: <?php echo $colors['heading']; ?>; }
+		color: <?php echo esc_html( $colors['heading'] ); ?>; }
 	.main-navigation a {
-		color: <?php echo $colors['heading_alpha']; ?>; }
+		color: <?php echo esc_html( $colors['heading_alpha'] ); ?>; }
 	a,
 	blockquote:before,
 	q:before,
@@ -428,7 +412,7 @@ function rookie_custom_colors() {
 	.sp-view-all-link:hover,
 	.sp-template-event-calendar #prev a:hover,
 	.sp-template-event-calendar #next a:hover {
-		color: <?php echo $colors['link']; ?>; }
+		color: <?php echo esc_html( $colors['link'] ); ?>; }
 	cite:before,
 	button,
 	input[type="button"],
@@ -438,12 +422,12 @@ function rookie_custom_colors() {
 	.nav-links .meta-nav,
 	.sp-template-player-gallery .gallery-item strong,
 	.single-sp_player .entry-header .entry-title strong {
-		background: <?php echo $colors['link']; ?>; }
+		background: <?php echo esc_html( $colors['link'] ); ?>; }
 	caption,
 	.sp-table-caption,
 	.sp-template-countdown .event-name,
 	.sp-template-event-venue thead th {
-		border-top-color: <?php echo $colors['link']; ?>; }
+		border-top-color: <?php echo esc_html( $colors['link'] ); ?>; }
 	button:hover,
 	input[type="button"]:hover,
 	input[type="reset"]:hover,
@@ -457,18 +441,14 @@ function rookie_custom_colors() {
 	input[type="reset"]:active,
 	input[type="submit"]:active,
 	.nav-links a:hover .meta-nav {
-		background: <?php echo $colors['link_dark']; ?>; }
+		background: <?php echo esc_html( $colors['link_dark'] ); ?>; }
 	a:hover {
-		color: <?php echo $colors['link_hover']; ?>; }
+		color: <?php echo esc_html( $colors['link_hover'] ); ?>; }
 	.sp-footer-sponsors .sp-sponsors {
-		border-color: <?php echo $colors['sponsors_border']; ?>; }
+		border-color: <?php echo esc_html( $colors['sponsors_border'] ); ?>; }
 
 	<?php do_action( 'sportspress_frontend_css', $colors ); ?>
-	
-	<?php if ( ! empty( $custom ) ) { ?>
-	/* SportsPress Custom CSS */
-	<?php echo $custom; ?>
-	<?php } ?>
+
 	</style>
 	<?php
 }
