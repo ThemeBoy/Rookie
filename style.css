@@ -1032,10 +1032,6 @@ a:hover {
 /*--------------------------------------------------------------
 10.1 Posts and pages
 --------------------------------------------------------------*/
-.sticky {
-	display: block;
-}
-
 .hentry {
 	margin: 0 0 1.5em;
 }
@@ -1054,6 +1050,11 @@ a:hover {
 	border-left: 1px solid #e0e0e0;
 	padding-left: 0.625em;
 	margin-left: 0.625em;
+}
+
+.nav-links a {
+	color: #a3a3a3;
+	font-size: 14px;
 }
 
 .nav-links .meta-nav {
@@ -1105,6 +1106,17 @@ a:hover .entry-title,
 .page-title a:hover,
 a:hover .page-title:hover {
 	color: #222;
+}
+
+.sticky .entry-title:before {
+	font-family: "dashicons";
+	font-size: 1.25em;
+	margin-right: 0.3em;
+	line-height: 1;
+	display: inline-block;
+	color: #00a69c;
+	content: "\f109";
+	float: left;
 }
 
 .page-links {
