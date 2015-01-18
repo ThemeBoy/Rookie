@@ -1168,6 +1168,7 @@ a:hover .page-title:hover {
 .comment-author .avatar {
 	width: 25%;
 	float: left;
+	position: absolute;
 }
 
 .comment-author .fn {
