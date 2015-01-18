@@ -220,6 +220,10 @@ add_action( 'wp_enqueue_scripts', 'rookie_scripts' );
  * Enqueue scripts and styles.
  */
 function rookie_custom_colors() {
+
+	// Get content color.
+	$content = get_option( 'rookie_content_color', '#ffffff' );
+
 	/*
 	 * Get color options set via Customizer.
 	 * @see rookie_customize_register()
@@ -245,6 +249,10 @@ function rookie_custom_colors() {
 
 	?>
 	<style type="text/css"> /* Frontend CSS */
+	.site-content,
+	.main-navigation .nav-menu > .menu-item-has-children:hover > a,
+	.main-navigation li.menu-item-has-children:hover a,
+	.main-navigation ul ul { background: <?php echo esc_html( $content ); ?>; }
 	caption,
 	.main-navigation,
 	.sp-heading,
@@ -262,6 +270,7 @@ function rookie_custom_colors() {
 	.main-navigation li.menu-item-has-children:hover a:hover,
 	.main-navigation ul ul li.page_item_has_children:hover > a,
 	.entry-meta,
+	.entry-footer-links,
 	.comment-content,
 	.sp-view-all-link,
 	.sp-template-countdown .event-venue,
@@ -273,10 +282,6 @@ function rookie_custom_colors() {
 		background: <?php echo esc_html( $colors['background'] ); ?>; }
 	.comment-content:after {
 		border-right-color: <?php echo esc_html( $colors['background'] ); ?>; }
-	.site-content,
-	.main-navigation .nav-menu > .menu-item-has-children:hover > a,
-	.main-navigation li.menu-item-has-children:hover a,
-	.main-navigation ul ul,
 	.widget_calendar #today,
 	.sp-highlight,
 	.sp-template-event-calendar #today,
@@ -300,6 +305,7 @@ function rookie_custom_colors() {
 	input[type="search"],
 	textarea,
 	.entry-meta,
+	.entry-footer-links,
 	.comment-metadata .edit-link,
 	.comment-content,
 	.sp-view-all-link,
@@ -360,6 +366,7 @@ function rookie_custom_colors() {
 	.widget_meta ul li a,
 	.widget_calendar #prev a,
 	.widget_calendar #next a,
+	.nav-links a,
 	.comment-metadata a,
 	.comment-body .reply a,
 	.wp-caption-text,
@@ -407,6 +414,8 @@ function rookie_custom_colors() {
 	.widget_meta ul li a:hover,
 	.widget_calendar #prev a:hover,
 	.widget_calendar #next a:hover,
+	.nav-links a:hover,
+	.sticky .entry-title:before,
 	.comment-metadata a:hover,
 	.comment-body .reply a:hover,
 	.sp-view-all-link:hover,

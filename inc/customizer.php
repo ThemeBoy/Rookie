@@ -15,6 +15,22 @@ function rookie_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
+    /**
+     * Content Background Color
+     */
+    $wp_customize->add_setting( 'rookie_content_color', array(
+        'default'           => '#ffffff',
+        'sanitize_callback' => 'sanitize_hex_color',
+        'capability'        => 'edit_theme_options',
+        'type'              => 'option',
+    ) );
+ 
+    $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'content', array(
+        'label'    => __('Content Background Color', 'rookie'),
+        'section'  => 'colors',
+        'settings' => 'rookie_content_color',
+    ) ) );
+
 	/**
 	 * Primary Color
 	 */
