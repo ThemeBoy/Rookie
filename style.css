@@ -724,9 +724,13 @@ a:hover {
 	top: 0;
 }
 
+.main-navigation ul ul li {
+	width: 100%;
+}
+
 .main-navigation ul ul a {
 	color: #222;
-	width: 200px;
+	min-width: 200px;
 }
 
 .main-navigation ul li:hover > ul {
