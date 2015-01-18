@@ -1,5 +1,12 @@
 == Changelog ==
 
+= 0.9.3 =
+* Feature - Stylize sticky posts with icon.
+* Fix - Long words overflowing in menu.
+* License - Add Google Fonts license information in readme file.
+* Documentation - Add explanation of sportspress.php template in readme file.
+* Documentation - Add theme URI line in stylesheet.
+
 = 0.9.2 =
 * License - Add license.txt file and license information in readme file.
 * Security - Put blank index.php files in assets and other directories.
