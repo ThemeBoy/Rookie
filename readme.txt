@@ -50,5 +50,7 @@ You can change the colors of your site easily using Rookie.
 = Additional Licenses =
 
 Rookie is based on Underscores http://underscores.me/ - GPL v2.0
-Timeago jQuery plugin - http://timeago.yarp.com/ - MIT License
-All images by ThemeBoy - http://themeboy.com/ - GPL v2.0
+Timeago jQuery plugin: Copyright (c) 2008-2013, Ryan McGeary (ryan@mcgeary.org) - MIT License
+Lato font: Copyright (c) 2010-2011, tyPoland Lukasz Dziedzic (team@latofonts.com) - SIL Open Font License v1.1
+Oswald font: Copyright (c) 2011-2012, Vernon Adams (vern@newtypography.co.uk) - SIL Open Font License v1.1
+All images: Copyright (c) 2011-2015, ThemeBoy (support@themeboy.com) - GPL v2.0
