@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 0.9.4 =
+* Tweak - Separate content and widget areas with thin line
+
 = 0.9.3 =
 * Feature - Stylize sticky posts with icon.
 * Fix - Long words overflowing in menu.

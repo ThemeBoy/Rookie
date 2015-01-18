@@ -221,15 +221,15 @@ add_action( 'wp_enqueue_scripts', 'rookie_scripts' );
  */
 function rookie_custom_colors() {
 
-	// Get content color.
-	$content = get_option( 'rookie_content_color', '#ffffff' );
-
 	/*
 	 * Get color options set via Customizer.
 	 * @see rookie_customize_register()
 	 */
 	$colors = (array) get_option( 'sportspress_frontend_css_colors', array() );
 	$colors['sponsors_background'] = get_option( 'sportspress_footer_sponsors_css_background', '#f4f4f4' );
+
+	// Get content color.
+	$colors['content'] = get_option( 'rookie_content_color', '#ffffff' );
 
 	// Defaults
 	if ( empty( $colors['primary'] ) ) $colors['primary'] = '#2b353e';
@@ -246,13 +246,14 @@ function rookie_custom_colors() {
 	$colors['link_dark'] = rookie_hex_darker( $colors['link'], 30, true );
 	$colors['link_hover'] = rookie_hex_darker( $colors['link'], 30, true );
 	$colors['sponsors_border'] = rookie_hex_darker( $colors['sponsors_background'], 20, true );
+	$colors['content_border'] = rookie_hex_darker( $colors['content'], 31, true );
 
 	?>
 	<style type="text/css"> /* Frontend CSS */
 	.site-content,
 	.main-navigation .nav-menu > .menu-item-has-children:hover > a,
 	.main-navigation li.menu-item-has-children:hover a,
-	.main-navigation ul ul { background: <?php echo esc_html( $content ); ?>; }
+	.main-navigation ul ul { background: <?php echo esc_html( $colors['content'] ); ?>; }
 	caption,
 	.main-navigation,
 	.sp-heading,
@@ -455,6 +456,11 @@ function rookie_custom_colors() {
 		color: <?php echo esc_html( $colors['link_hover'] ); ?>; }
 	.sp-footer-sponsors .sp-sponsors {
 		border-color: <?php echo esc_html( $colors['sponsors_border'] ); ?>; }
+	@media screen and (min-width: 601px) {
+		.content-area,
+		.widget-area {
+			border-color: <?php echo esc_html( $colors['content_border'] ); ?>; }
+	}
 
 	<?php do_action( 'sportspress_frontend_css', $colors ); ?>
 
