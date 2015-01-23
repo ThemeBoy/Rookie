@@ -228,15 +228,14 @@ function rookie_custom_colors() {
 	$colors = (array) get_option( 'sportspress_frontend_css_colors', array() );
 	$colors['sponsors_background'] = get_option( 'sportspress_footer_sponsors_css_background', '#f4f4f4' );
 
-	// Get content color.
-	$colors['content'] = get_option( 'rookie_content_color', '#ffffff' );
-
 	// Defaults
 	if ( empty( $colors['primary'] ) ) $colors['primary'] = '#2b353e';
 	if ( empty( $colors['background'] ) ) $colors['background'] = '#f4f4f4';
 	if ( empty( $colors['text'] ) ) $colors['text'] = '#222222';
 	if ( empty( $colors['heading'] ) ) $colors['heading'] = '#ffffff';
 	if ( empty( $colors['link'] ) ) $colors['link'] = '#00a69c';
+	if ( empty( $colors['header_text'] ) ) $colors['header_text'] = '#222222';
+	if ( empty( $colors['content_background'] ) ) $colors['content_background'] = '#ffffff';
 
 	// Calculate colors
 	$colors['highlight'] = rookie_hex_lighter( $colors['background'], 30, true );
@@ -246,14 +245,19 @@ function rookie_custom_colors() {
 	$colors['link_dark'] = rookie_hex_darker( $colors['link'], 30, true );
 	$colors['link_hover'] = rookie_hex_darker( $colors['link'], 30, true );
 	$colors['sponsors_border'] = rookie_hex_darker( $colors['sponsors_background'], 20, true );
-	$colors['content_border'] = rookie_hex_darker( $colors['content'], 31, true );
+	$colors['content_border'] = rookie_hex_darker( $colors['content_background'], 31, true );
 
 	?>
 	<style type="text/css"> /* Frontend CSS */
 	.site-content,
 	.main-navigation .nav-menu > .menu-item-has-children:hover > a,
 	.main-navigation li.menu-item-has-children:hover a,
-	.main-navigation ul ul { background: <?php echo esc_html( $colors['content'] ); ?>; }
+	.main-navigation ul ul { background: <?php echo esc_html( $colors['content_background'] ); ?>; }
+	.site-title a,
+	.site-title a:hover,
+	.site-title a:focus,
+	.site-title a:active,
+	.site-description { color: <?php echo esc_html( $colors['header_text'] ); ?>; }
 	caption,
 	.main-navigation,
 	.sp-heading,
@@ -328,11 +332,6 @@ function rookie_custom_colors() {
 	input,
 	select,
 	textarea,
-	.site-title a,
-	.site-title a:hover,
-	.site-title a:focus,
-	.site-title a:active,
-	.site-description,
 	.main-navigation .nav-menu > .menu-item-has-children:hover > a,
 	.main-navigation ul ul a,
 	.widget_recent_entries ul li:before,
@@ -421,7 +420,8 @@ function rookie_custom_colors() {
 	.comment-body .reply a:hover,
 	.sp-view-all-link:hover,
 	.sp-template-event-calendar #prev a:hover,
-	.sp-template-event-calendar #next a:hover {
+	.sp-template-event-calendar #next a:hover,
+	.single-sp_staff .entry-header .entry-title strong {
 		color: <?php echo esc_html( $colors['link'] ); ?>; }
 	cite:before,
 	button,
@@ -472,11 +472,6 @@ function rookie_custom_colors() {
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Custom functions that act independently of the theme templates.
- */
-require get_template_directory() . '/inc/extras.php';
 
 /**
  * Customizer additions.
