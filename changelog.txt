@@ -1,7 +1,14 @@
 == Changelog ==
 
+= 0.9.5 =
+* Feature - Add ability to insert logo into header.
+* Feature - Add single team and staff templates.
+* Refactor - Merge customizer settings into single option.
+* Fix - Comment author avatar pushing down other elements.
+* Localization - Add RTL stylesheet.
+
 = 0.9.4 =
-* Tweak - Separate content and widget areas with thin line
+* Tweak - Separate content and widget areas with thin line.
 
 = 0.9.3 =
 * Feature - Stylize sticky posts with icon.
