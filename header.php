@@ -30,8 +30,21 @@
 		<?php else : ?>
 			<div class="site-branding">
 		<?php endif; ?>
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" style="color: #<?php echo get_header_textcolor(); ?>;" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description" style="color: #<?php echo get_header_textcolor(); ?>;"><?php bloginfo( 'description' ); ?></h2>
+			<?php
+			$options = get_option( 'sportspress_frontend_css_colors', array() );
+			if ( array_key_exists( 'logo_url', $options ) ) {
+				$logo = $options['logo_url'];
+			} else {
+				$logo =  get_stylesheet_directory_uri() . '/images/logo.png';
+			}
+			if ( ! empty( $logo ) ) {
+				?>
+				<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>"></a>
+			<?php } ?>
+			<hgroup>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+			</hgroup>
 		</div><!-- .site-branding -->
 	</header><!-- #masthead -->
 
