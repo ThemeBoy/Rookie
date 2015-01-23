@@ -23,7 +23,9 @@ Rookie provides compatibility with [WooCommerce](https://wordpress.org/plugins/w
 1. sportspress.php - The default template for displaying SportsPress pages.
 2. sportspress/single-event.php - A single SportsPress event page.
 3. sportspress/single-player.php - A single SportsPress player profile page.
-4. woocommerce/archive-product.php - An archive of WooCommerce products.
+4. sportspress/single-staff.php - A single SportsPress staff profile page.
+5. sportspress/single-team.php - A single SportsPress team page.
+6. woocommerce/archive-product.php - An archive of WooCommerce products.
 
 == Installation ==
 
