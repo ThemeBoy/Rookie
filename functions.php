@@ -494,6 +494,28 @@ add_filter( 'sportspress_header_sponsors_selector', 'rookie_header_sponsors' );
 /**
  * Helper functions
  */
+
+/**
+ * Sanitizes a hex color. Identical to core's sanitize_hex_color(), which is not available on the wp_head hook.
+ *
+ * Returns either '', a 3 or 6 digit hex color (with #), or null.
+ * For sanitizing values without a #, see sanitize_hex_color_no_hash().
+ *
+ * @since 1.0.0
+ */
+if ( ! function_exists( 'rookie_sanitize_hex_color' ) ) {
+    function rookie_sanitize_hex_color( $color ) {
+        if ( '' === $color )
+            return '';
+
+        // 3 or 6 hex digits, or the empty string.
+        if ( preg_match( '|^#([A-Fa-f0-9]{3}){1,2}$|', $color ) )
+            return $color;
+
+        return null;
+    }
+}
+
 if ( ! function_exists( 'rookie_rgb_from_hex' ) ) {
 	function rookie_rgb_from_hex( $color ) {
 		$color = str_replace( '#', '', $color );

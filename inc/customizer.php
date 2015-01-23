@@ -20,6 +20,7 @@ function rookie_customize_register( $wp_customize ) {
      */
     $wp_customize->add_setting('sportspress_frontend_css_colors[logo_url]', array(
         'default'       => get_stylesheet_directory_uri() . '/images/logo.png',
+        'sanitize_callback' => 'esc_url_raw',
         'capability'    => 'edit_theme_options',
         'type'          => 'option',
  
@@ -36,7 +37,7 @@ function rookie_customize_register( $wp_customize ) {
      */
     $wp_customize->add_setting( 'sportspress_frontend_css_colors[header_text]', array(
         'default'           => '#222222',
-        'sanitize_callback' => 'sanitize_hex_color',
+        'sanitize_callback' => 'rookie_sanitize_hex_color',
         'capability'        => 'edit_theme_options',
         'type'              => 'option',
     ) );
@@ -52,7 +53,7 @@ function rookie_customize_register( $wp_customize ) {
      */
     $wp_customize->add_setting( 'sportspress_frontend_css_colors[content_background]', array(
         'default'           => '#ffffff',
-        'sanitize_callback' => 'sanitize_hex_color',
+        'sanitize_callback' => 'rookie_sanitize_hex_color',
         'capability'        => 'edit_theme_options',
         'type'              => 'option',
     ) );
@@ -68,7 +69,7 @@ function rookie_customize_register( $wp_customize ) {
 	 */
     $wp_customize->add_setting( 'sportspress_frontend_css_colors[primary]', array(
         'default'           => '#2b353e',
-        'sanitize_callback' => 'sanitize_hex_color',
+        'sanitize_callback' => 'rookie_sanitize_hex_color',
         'capability'        => 'edit_theme_options',
         'type'              => 'option',
     ) );
@@ -84,7 +85,7 @@ function rookie_customize_register( $wp_customize ) {
 	 */
     $wp_customize->add_setting( 'sportspress_frontend_css_colors[background]', array(
         'default'           => '#f4f4f4',
-        'sanitize_callback' => 'sanitize_hex_color',
+        'sanitize_callback' => 'rookie_sanitize_hex_color',
         'capability'        => 'edit_theme_options',
         'type'              => 'option',
     ) );
@@ -100,7 +101,7 @@ function rookie_customize_register( $wp_customize ) {
 	 */
     $wp_customize->add_setting( 'sportspress_frontend_css_colors[text]', array(
         'default'           => '#222222',
-        'sanitize_callback' => 'sanitize_hex_color',
+        'sanitize_callback' => 'rookie_sanitize_hex_color',
         'capability'        => 'edit_theme_options',
         'type'              => 'option',
     ) );
@@ -116,7 +117,7 @@ function rookie_customize_register( $wp_customize ) {
 	 */
     $wp_customize->add_setting( 'sportspress_frontend_css_colors[heading]', array(
         'default'           => '#ffffff',
-        'sanitize_callback' => 'sanitize_hex_color',
+        'sanitize_callback' => 'rookie_sanitize_hex_color',
         'capability'        => 'edit_theme_options',
         'type'              => 'option',
     ) );
@@ -132,7 +133,7 @@ function rookie_customize_register( $wp_customize ) {
 	 */
     $wp_customize->add_setting( 'sportspress_frontend_css_colors[link]', array(
         'default'           => '#00a69c',
-        'sanitize_callback' => 'sanitize_hex_color',
+        'sanitize_callback' => 'rookie_sanitize_hex_color',
         'capability'        => 'edit_theme_options',
         'type'              => 'option',
     ) );
