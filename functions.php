@@ -9,7 +9,7 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 640; /* pixels */
+	$content_width = 620; /* pixels */
 }
 
 if ( ! function_exists( 'rookie_setup' ) ) :
@@ -227,6 +227,7 @@ function rookie_custom_colors() {
 	 */
 	$colors = (array) get_option( 'sportspress_frontend_css_colors', array() );
 	$colors['sponsors_background'] = get_option( 'sportspress_footer_sponsors_css_background', '#f4f4f4' );
+	$colors = array_map( 'esc_attr', $colors );
 
 	// Defaults
 	if ( empty( $colors['primary'] ) ) $colors['primary'] = '#2b353e';
@@ -252,12 +253,12 @@ function rookie_custom_colors() {
 	.site-content,
 	.main-navigation .nav-menu > .menu-item-has-children:hover > a,
 	.main-navigation li.menu-item-has-children:hover a,
-	.main-navigation ul ul { background: <?php echo esc_html( $colors['content_background'] ); ?>; }
+	.main-navigation ul ul { background: <?php echo $colors['content_background']; ?>; }
 	.site-title a,
 	.site-title a:hover,
 	.site-title a:focus,
 	.site-title a:active,
-	.site-description { color: <?php echo esc_html( $colors['header_text'] ); ?>; }
+	.site-description { color: <?php echo $colors['header_text']; ?>; }
 	caption,
 	.main-navigation,
 	.sp-heading,
@@ -265,7 +266,7 @@ function rookie_custom_colors() {
 	.sp-template-countdown .event-name,
 	.sp-template-event-venue thead th,
 	.sp-template-player-gallery .gallery-caption {
-		background: <?php echo esc_html( $colors['primary'] ); ?>; }
+		background: <?php echo $colors['primary']; ?>; }
 	pre,
 	code,
 	kbd,
@@ -277,21 +278,21 @@ function rookie_custom_colors() {
 	.entry-meta,
 	.entry-footer-links,
 	.comment-content,
-	.sp-view-all-link,
+	.sp-table-wrapper .dataTables_paginate,
 	.sp-template-countdown .event-venue,
 	.sp-template-countdown .event-league,
 	.sp-template-countdown time span,
 	.sp-template-player-details dl,
 	.woocommerce .woocommerce-breadcrumb,
 	.woocommerce-page .woocommerce-breadcrumb {
-		background: <?php echo esc_html( $colors['background'] ); ?>; }
+		background: <?php echo $colors['background']; ?>; }
 	.comment-content:after {
-		border-right-color: <?php echo esc_html( $colors['background'] ); ?>; }
+		border-right-color: <?php echo $colors['background']; ?>; }
 	.widget_calendar #today,
 	.sp-highlight,
 	.sp-template-event-calendar #today,
 	.sp-template-event-blocks .event-title {
-		background: <?php echo esc_html( $colors['highlight'] ); ?>; }
+		background: <?php echo $colors['highlight']; ?>; }
 	pre,
 	code,
 	kbd,
@@ -313,7 +314,7 @@ function rookie_custom_colors() {
 	.entry-footer-links,
 	.comment-metadata .edit-link,
 	.comment-content,
-	.sp-view-all-link,
+	.sp-table-wrapper .dataTables_paginate,
 	.sp-template-countdown .event-venue,
 	.sp-template-countdown .event-league,
 	.sp-template-countdown time span,
@@ -324,9 +325,9 @@ function rookie_custom_colors() {
 	.sp-template-tournament-bracket thead th,
 	.woocommerce .woocommerce-breadcrumb,
 	.woocommerce-page .woocommerce-breadcrumb {
-		border-color: <?php echo esc_html( $colors['border'] ); ?>; }
+		border-color: <?php echo $colors['border']; ?>; }
 	.comment-content:before {
-		border-right-color: <?php echo esc_html( $colors['border'] ); ?>; }
+		border-right-color: <?php echo $colors['border']; ?>; }
 	body,
 	button,
 	input,
@@ -355,7 +356,7 @@ function rookie_custom_colors() {
 	.sp-template-event-blocks .event-title a,
 	.woocommerce ul.products li.product h3,
 	.woocommerce-page ul.products li.product h3 {
-		color: <?php echo esc_html( $colors['text'] ); ?>; }
+		color: <?php echo $colors['text']; ?>; }
 	.widget_recent_entries ul li a,
 	.widget_pages ul li a,
 	.widget_categories ul li a,
@@ -373,11 +374,12 @@ function rookie_custom_colors() {
 	.sp-view-all-link,
 	.sp-template-event-calendar #prev a,
 	.sp-template-event-calendar #next a,
+	.sp-template-tournament-bracket .sp-event-venue,
 	.woocommerce .woocommerce-breadcrumb,
 	.woocommerce-page .woocommerce-breadcrumb,
 	.woocommerce .woocommerce-breadcrumb a,
 	.woocommerce-page .woocommerce-breadcrumb a {
-		color: <?php echo esc_html( $colors['text_lighter'] ); ?>; }
+		color: <?php echo $colors['text_lighter']; ?>; }
 	caption,
 	button,
 	input[type="button"],
@@ -390,11 +392,13 @@ function rookie_custom_colors() {
 	.sp-table-caption,
 	.sp-template-countdown .event-name,
 	.sp-template-event-venue thead th,
+	.sp-template-event-venue thead th a,
 	.sp-template-countdown .event-name a,
+	.sp-template-tournament-bracket .sp-result,
 	.single-sp_player .entry-header .entry-title strong {
-		color: <?php echo esc_html( $colors['heading'] ); ?>; }
+		color: <?php echo $colors['heading']; ?>; }
 	.main-navigation a {
-		color: <?php echo esc_html( $colors['heading_alpha'] ); ?>; }
+		color: <?php echo $colors['heading_alpha']; ?>; }
 	a,
 	blockquote:before,
 	q:before,
@@ -422,7 +426,7 @@ function rookie_custom_colors() {
 	.sp-template-event-calendar #prev a:hover,
 	.sp-template-event-calendar #next a:hover,
 	.single-sp_staff .entry-header .entry-title strong {
-		color: <?php echo esc_html( $colors['link'] ); ?>; }
+		color: <?php echo $colors['link']; ?>; }
 	cite:before,
 	button,
 	input[type="button"],
@@ -431,13 +435,14 @@ function rookie_custom_colors() {
 	.main-navigation .nav-menu > li > a:hover,
 	.nav-links .meta-nav,
 	.sp-template-player-gallery .gallery-item strong,
+	.sp-template-tournament-bracket .sp-result,
 	.single-sp_player .entry-header .entry-title strong {
-		background: <?php echo esc_html( $colors['link'] ); ?>; }
+		background: <?php echo $colors['link']; ?>; }
 	caption,
 	.sp-table-caption,
 	.sp-template-countdown .event-name,
 	.sp-template-event-venue thead th {
-		border-top-color: <?php echo esc_html( $colors['link'] ); ?>; }
+		border-top-color: <?php echo $colors['link']; ?>; }
 	button:hover,
 	input[type="button"]:hover,
 	input[type="reset"]:hover,
@@ -450,16 +455,21 @@ function rookie_custom_colors() {
 	input[type="button"]:active,
 	input[type="reset"]:active,
 	input[type="submit"]:active,
-	.nav-links a:hover .meta-nav {
-		background: <?php echo esc_html( $colors['link_dark'] ); ?>; }
+	.nav-links a:hover .meta-nav,
+	.sp-template-tournament-bracket .sp-event-title:hover .sp-result {
+		background: <?php echo $colors['link_dark']; ?>; }
 	a:hover {
-		color: <?php echo esc_html( $colors['link_hover'] ); ?>; }
+		color: <?php echo $colors['link_hover']; ?>; }
 	.sp-footer-sponsors .sp-sponsors {
-		border-color: <?php echo esc_html( $colors['sponsors_border'] ); ?>; }
+		border-color: <?php echo $colors['sponsors_border']; ?>; }
+	.site-footer,
+	.site-footer a,
+	.site-footer a:hover {
+		color: <?php echo rookie_hex_mix( $colors['header_text'], get_background_color() ); ?>; }
 	@media screen and (min-width: 601px) {
 		.content-area,
 		.widget-area {
-			border-color: <?php echo esc_html( $colors['content_border'] ); ?>; }
+			border-color: <?php echo $colors['content_border']; ?>; }
 	}
 
 	<?php do_action( 'sportspress_frontend_css', $colors ); ?>
@@ -490,6 +500,36 @@ function rookie_header_sponsors() {
 	return '.site-branding';
 }
 add_filter( 'sportspress_header_sponsors_selector', 'rookie_header_sponsors' );
+
+/**
+ * Display footer elements
+ */
+function rookie_footer() {
+	rookie_footer_info();
+	rookie_footer_credit();
+}
+
+/**
+ * Display footer copyright notice
+ */
+function rookie_footer_info() {
+	?>
+	<div class="site-info">
+		<?php printf( _x( '&copy; %1$s %2$s', 'copyright info', 'sportspress' ), date( 'Y' ), get_bloginfo( 'name' ) ); ?>
+	</div><!-- .site-info -->
+	<?php
+}
+
+/**
+ * Display footer credit
+ */
+function rookie_footer_credit() {
+	?>
+	<div class="site-credit">
+		<a href="http://themeboy.com/"><?php printf( __( 'Designed by %s', 'rookie' ), 'ThemeBoy' ); ?></a>
+	</div><!-- .site-info -->
+	<?php
+}
 
 /**
  * Helper functions
@@ -588,5 +628,18 @@ if ( ! function_exists( 'rookie_hex_mix' ) ) {
 		$g = str_pad( dechex( ( $rgbx['g'] + $rgby['g'] ) / 2 ), 2, '0', STR_PAD_LEFT );
 		$b = str_pad( dechex( ( $rgbx['b'] + $rgby['b'] ) / 2 ), 2, '0', STR_PAD_LEFT );
 		return '#' . $r . $g . $b;
+	}
+}
+
+/**
+ * Detect the brightness of a hex color
+ * Adapted from http://www.webmasterworld.com/forum88/9769.htm
+ */
+if ( ! function_exists( 'rookie_hex_brightness' ) ) {
+	function rookie_hex_brightness( $color = 'ffffff' ) {
+		$color = str_replace( '#', '', $color );
+		$rgb = rookie_rgb_from_hex( $color );
+
+		return ( ( $rgb['r'] * 0.299 ) + ( $rgb['g'] * 0.587 ) + ( $rgb['b'] * 0.114 ) );
 	}
 }

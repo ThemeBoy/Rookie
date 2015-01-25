@@ -34,17 +34,16 @@
 			$options = get_option( 'sportspress_frontend_css_colors', array() );
 			if ( array_key_exists( 'logo_url', $options ) ) {
 				$logo = $options['logo_url'];
-			} else {
-				$logo =  get_stylesheet_directory_uri() . '/images/logo.png';
-			}
-			if ( ! empty( $logo ) ) {
+				$logo = esc_url( $logo );
 				?>
 				<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>"></a>
 			<?php } ?>
+			<?php if ( ! array_key_exists( 'show_header_text', $options ) || 'yes' == $options['show_header_text'] ) { ?>
 			<hgroup>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 			</hgroup>
+			<?php } ?>
 		</div><!-- .site-branding -->
 	</header><!-- #masthead -->
 

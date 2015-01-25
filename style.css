@@ -570,28 +570,21 @@ body {
 }
 
 .site-footer {
-	background: #2b353e;
-	color: #fff;
-	font-size: 14px;
+	font-size: 11px;
+	text-transform: uppercase;
+	padding: 15px 0 30px;
+	margin: 0 2%;
+	color: #8b8b8b;
 }
 
-.site-footer a {
-	color: #fff;
-	opacity: 0.7;
-}
-
+.site-footer a,
 .site-footer a:hover {
-	color: #fff;
-	opacity: 1;
+	color: #8b8b8b;
 }
 
-.site-info {
-	padding: 0.625em 2%;
-}
-
-.site-info .sep {
-	opacity: 0.3;
-	margin: 0 0.5em;
+.site-info,
+.site-credit {
+	margin-bottom: 10px;
 }
 
 @media screen and (min-width: 601px) {
@@ -634,6 +627,14 @@ body {
 		padding: 20px 2% 20px 1.9%;
 		margin-left: -1px;
 		border-left: 1px solid #e0e0e0;
+		float: right;
+	}
+
+	.site-info {
+		float: left;
+	}
+
+	.site-credit {
 		float: right;
 	}
 }
@@ -1469,13 +1470,12 @@ object {
 }
 
 .sp-view-all-link {
-	background: #f4f4f4;
 	color: #a3a3a3;
-	margin-top: -1px;
-	border: 1px solid #e0e0e0;
+	margin-top: 1em;
 	text-align: right;
+	float: right;
+	margin-bottom: 1.25em;
 	font-size: 14px;
-	padding: 0.625em;
 }
 
 .sp-view-all-link:hover {
@@ -1510,6 +1510,10 @@ object {
 	z-index: 2;
 }
 
+.sp-template-event-venue thead th a {
+	color: #fff;
+}
+
 .sp-table-caption h1,
 .sp-table-caption h2,
 .sp-table-caption h3,
@@ -1522,6 +1526,15 @@ object {
 
 .sp-data-table tbody tr.odd {
 	background: initial;
+}
+
+.sp-table-wrapper .dataTables_paginate {
+	background: #f4f4f4;
+	color: #a3a3a3;
+	margin-top: -1px;
+	border: 1px solid #e0e0e0;
+	font-size: 14px;
+	padding: 0.125em 0.625em;
 }
 
 .sp-template-countdown .event-name a {
@@ -1808,14 +1821,6 @@ object {
 	white-space: nowrap;
 }
 
-.sp-template-player-list .sp-view-all-link,
-.sp-template-player-gallery .sp-view-all-link {
-	background: transparent;
-	border: none;
-	padding: 0;
-	margin-top: 1em;
-}
-
 .sp-header-sponsors {
 	margin-bottom: 10px;
 }
@@ -1840,6 +1845,22 @@ object {
 
 .sp-template-tournament-bracket td {
 	border: none;
+}
+
+.sp-template-tournament-bracket .sp-result {
+	color: #fff;
+	background: #00a69c;
+	padding: 2px 5px;
+	margin: 0 3px;
+}
+
+.sp-template-tournament-bracket .sp-event-title:hover .sp-result {
+	background: #00958c;
+}
+
+.sp-template-tournament-bracket .sp-event-venue {
+	font-weight: normal;
+	color: #a3a3a3;
 }
 
 .single-sp_event .has-post-thumbnail .entry-header .entry-title {
