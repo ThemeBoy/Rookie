@@ -540,8 +540,6 @@ function rookie_footer_credit() {
  *
  * Returns either '', a 3 or 6 digit hex color (with #), or null.
  * For sanitizing values without a #, see sanitize_hex_color_no_hash().
- *
- * @since 1.0.0
  */
 if ( ! function_exists( 'rookie_sanitize_hex_color' ) ) {
     function rookie_sanitize_hex_color( $color ) {
@@ -553,6 +551,18 @@ if ( ! function_exists( 'rookie_sanitize_hex_color' ) ) {
             return $color;
 
         return null;
+    }
+}
+
+/**
+ * Sanitizes a checkbox option. Defaults to 'no'.
+ */
+if ( ! function_exists( 'rookie_sanitize_checkbox' ) ) {
+    function rookie_sanitize_checkbox( $value ) {
+    	if ( 'yes' == $value ) {
+    		return $value;
+    	}
+    	return 'no';
     }
 }
 
