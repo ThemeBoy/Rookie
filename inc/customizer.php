@@ -19,8 +19,7 @@ function rookie_customize_register( $wp_customize ) {
      * Logo Image
      */
     $wp_customize->add_setting('sportspress_frontend_css_colors[logo_url]', array(
-        'default'       => get_stylesheet_directory_uri() . '/images/logo.png',
-        'sanitize_callback' => 'esc_url_raw',
+        'sanitize_callback' => 'esc_url',
         'capability'    => 'edit_theme_options',
         'type'          => 'option',
  
@@ -31,6 +30,24 @@ function rookie_customize_register( $wp_customize ) {
         'section'   => 'title_tagline',
         'settings' => 'sportspress_frontend_css_colors[logo_url]',
     )));
+
+    /**
+     * Header Text Display
+     */
+    $wp_customize->add_setting('sportspress_frontend_css_colors[show_header_text]', array(
+        'default'       => 'yes',
+        'capability'    => 'edit_theme_options',
+        'type'          => 'option',
+ 
+    ));
+ 
+    $wp_customize->add_control( 'show_header_text', array(
+        'label'     => __('Display Title & Tagline', 'rookie'),
+        'section'   => 'title_tagline',
+        'settings' => 'sportspress_frontend_css_colors[show_header_text]',
+        'type'       => 'checkbox',
+        'std'         => 'yes'
+    ));
 
     /**
      * Header Text Color
