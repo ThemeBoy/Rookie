@@ -1,5 +1,14 @@
 == Changelog ==
 
+= 0.9.6 =
+* Feature - Option to add logo in header, defaulting to none.
+* Feature - Option to show or hide site name and tagline, defaulting to show.
+* Tweak - Footer styling to be below content box.
+* Tweak - Remove link from single page title.
+* Fix - Inconsistent content width in functions.
+* Compatibility - Add styling to support tournament brackets extension.
+* Security - Sanitize logo option as url.
+
 = 0.9.5 =
 * Feature - Add ability to insert logo into header.
 * Feature - Add single team and staff templates.
