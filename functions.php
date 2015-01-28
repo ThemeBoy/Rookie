@@ -515,7 +515,7 @@ function rookie_footer() {
 function rookie_footer_info() {
 	?>
 	<div class="site-info">
-		<?php printf( _x( '&copy; %1$s %2$s', 'copyright info', 'sportspress' ), date( 'Y' ), get_bloginfo( 'name' ) ); ?>
+		<?php printf( _x( '&copy; %1$s %2$s', 'copyright info', 'rookie' ), date( 'Y' ), get_bloginfo( 'name' ) ); ?>
 	</div><!-- .site-info -->
 	<?php
 }
