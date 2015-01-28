@@ -32,7 +32,7 @@
 		<?php endif; ?>
 			<?php
 			$options = get_option( 'sportspress_frontend_css_colors', array() );
-			if ( array_key_exists( 'logo_url', $options ) ) {
+			if ( array_key_exists( 'logo_url', $options ) && ! empty( $options['logo_url'] ) ) {
 				$logo = $options['logo_url'];
 				$logo = esc_url( $logo );
 				?>
