@@ -1,5 +1,11 @@
 == Changelog ==
 
+= 0.9.7 =
+* Fix - Check if logo url is empty before adding to header.
+* Fix - Text domain not set to rookie.
+* Tweak - Adjust margins below tables.
+* Security - Sanitize checkbox and default to false.
+
 = 0.9.6 =
 * Feature - Option to add logo in header, defaulting to none.
 * Feature - Option to show or hide site name and tagline, defaulting to show.
