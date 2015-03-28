@@ -1,5 +1,11 @@
 == Changelog ==
 
+= 0.9.8 =
+* Feature - Add custom header support.
+* Tweak - Update screenshot to show theme without SportsPress plugin installed.
+* Refactor - Change name of serialized option to themeboy.
+* Refactor - Enqueue theme skin separately to simplify child theme development.
+
 = 0.9.7 =
 * Fix - Check if logo url is empty before adding to header.
 * Fix - Text domain not set to rookie.

@@ -9,9 +9,7 @@
 		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 
 		<?php if ( 'post' == get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php rookie_posted_on(); ?>
-		</div><!-- .entry-meta -->
+			<?php rookie_entry_date(); ?>
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
@@ -32,7 +30,5 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php rookie_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	<?php rookie_entry_footer(); ?>
 </article><!-- #post-## -->

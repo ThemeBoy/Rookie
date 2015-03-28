@@ -4,11 +4,11 @@ Theme URI:
 Author: ThemeBoy
 Author URI: http://themeboy.com
 Description: Rookie is a SportsPress starter theme designed and developed by ThemeBoy.
-Version: 0.9.7
+Version: 0.9.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: rookie
-Tags: blue, gray, white, light, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, full-width-template, rtl-language-support, sticky-post, threaded-comments, translation-ready
+Tags: black, blue, brown, gray, green, orange, pink, purple, red, silver, tan, white, yellow, dark, light, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, full-width-template, rtl-language-support, sticky-post, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -146,8 +146,6 @@ button,
 input,
 select,
 textarea {
-	color: #222;
-	font-family: "Lato", sans-serif;
 	font-size: 16px;
 	line-height: 1.5;
 }
@@ -159,8 +157,6 @@ h4,
 h5,
 h6 {
 	clear: both;
-	font-family: "Oswald", sans-serif;
-	text-transform: uppercase;
 	margin-bottom: 0.5em;
 }
 
@@ -210,13 +206,10 @@ blockquote,
 q {
 	margin: 0 1.25em 1.25em 3em;
 	position: relative;
-	font-weight: bold;
-	font-size: 18px;
 }
 
 blockquote:before,
 q:before {
-	color: #00a69c;
 	content: "\f205";
 	font-family: "dashicons";
 	font-style: normal;
@@ -226,37 +219,11 @@ q:before {
 	top: -0.5em;
 }
 
-blockquote p {
-	display: inline;
-}
-
-cite {
-	display: block;
-	font-weight: normal;
-	font-size: 14px;
-	position: relative;
-	text-indent: 2.5em;
-	margin-top: 0.5em;
-}
-
-cite:before {
-	content: "";
-	display: block;
-	position: absolute;
-	left: 0;
-	top: 0.75em;
-	width: 2em;
-	height: 1px;
-	background: #00a69c;
-}
-
 address {
 	margin: 0 0 1.25em;
 }
 
 pre {
-	background: #f4f4f4;
-	border: 1px solid #e0e0e0;
 	font-family: "Courier 10 Pitch", Courier, monospace;
 	font-size: 14px;
 	line-height: 1.6;
@@ -272,8 +239,6 @@ tt,
 var {
 	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 	font-size: 14px;
-	background: #f4f4f4;
-	border: 1px solid #e0e0e0;
 	padding: 1px 3px;
 }
 
@@ -318,7 +283,6 @@ big {
 3.0 Elements
 --------------------------------------------------------------*/
 hr {
-	background-color: #ccc;
 	border: 0;
 	height: 1px;
 	margin-bottom: 1.25em;
@@ -368,45 +332,21 @@ figure {
 table {
 	margin: 0 0 1.25em;
 	width: 100%;
-	background: #f4f4f4;
-	border-top: 1px solid #e0e0e0;
 }
 
 caption {
 	font-size: 16px;
-	font-family: "Oswald", sans-serif;
-	text-transform: uppercase;
-	color: #fff;
-	background: #2b353e;
-	border-top: 8px solid #00a69c;
 	padding: 0.625em 15px;
 	margin: 0 0 -1px;
 }
 
 th,
 td {
-	font-size: 14px;
 	padding: 0.625em;
-	border-bottom: 1px solid #e0e0e0;
-	text-align: center;
 }
 
 thead th {
 	font-weight: bold;
-}
-
-tbody td {
-	border-right: 1px solid #e0e0e0;
-}
-
-th:first-child,
-td:first-child {
-	border-left: 1px solid #e0e0e0;
-}
-
-th:last-child,
-td:last-child {
-	border-right: 1px solid #e0e0e0;
 }
 
 /*--------------------------------------------------------------
@@ -425,29 +365,11 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	background: #00a69c;
 	border: none;
-	color: #fff;
 	padding: 0.625em 1.25em;
 	font-size: 14px;
 	cursor: pointer;
-	border-radius: 3px;
 	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
-}
-
-button:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover,
-button:focus,
-input[type="button"]:focus,
-input[type="reset"]:focus,
-input[type="submit"]:focus,
-button:active,
-input[type="button"]:active,
-input[type="reset"]:active,
-input[type="submit"]:active {
-	background: #00958c;
 }
 
 input[type="checkbox"],
@@ -470,18 +392,9 @@ input[type="url"],
 input[type="password"],
 input[type="search"],
 textarea {
+	border-radius: 3px;
 	color: #666;
 	border: 1px solid #ccc;
-	border-radius: 3px;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-textarea:focus {
-	color: #111;
 }
 
 input[type="text"],
@@ -491,6 +404,15 @@ input[type="password"],
 input[type="search"] {
 	padding: 0.575em;
 	font-size: 14px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+	color: #111;
 }
 
 textarea {
@@ -503,12 +425,11 @@ textarea {
 /*--------------------------------------------------------------
 5.0 General layout
 --------------------------------------------------------------*/
-body {
-	background: #e8e8e8;
-}
-
 .site-widgets {
 	width: 93.75%;
+}
+
+.site-widgets .widget {
 	margin: 1.75em auto 0;
 }
 
@@ -524,12 +445,6 @@ body {
 
 .site-logo {
 	display: inline-block;
-	margin: -1.75em 0 0.875em;
-}
-
-.site-logo img {
-	max-width: 300px;
-	max-height: 120px;
 }
 
 .site-title {
@@ -542,23 +457,15 @@ body {
 }
 
 .site-title a,
-.site-title a:hover,
-.site-title a:focus,
-.site-title a:active {
-	color: #222;
+.site-title a:hover {
+	color: inherit;
 }
 
 .site-description {
-	color: #222;
 	font-size: 20px;
 	margin: 0;
 	float: none;
 	clear: none;
-}
-
-.site-content {
-	background: #fff;
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 }
 
 .content-area,
@@ -571,15 +478,8 @@ body {
 
 .site-footer {
 	font-size: 11px;
-	text-transform: uppercase;
 	padding: 15px 0 30px;
 	margin: 0 2%;
-	color: #8b8b8b;
-}
-
-.site-footer a,
-.site-footer a:hover {
-	color: #8b8b8b;
 }
 
 .site-info,
@@ -603,19 +503,16 @@ body {
 
 	.site-logo {
 		float: left;
-		max-width: 300px;
-		margin: -1em 10px -1em 0;
 	}
 
 	.content-area,
 	.widget-area {
 		clear: none;
+		padding: 0;
 	}
 
 	.content-area {
-		width: 66.1%;
-		padding: 20px 2%;
-		border-right: 1px solid #e0e0e0;
+		width: 62%;
 	}
 
 	.page-template-template-fullwidth-php .content-area {
@@ -623,10 +520,7 @@ body {
 	}
 
 	.widget-area {
-		width: 34%;
-		padding: 20px 2% 20px 1.9%;
-		margin-left: -1px;
-		border-left: 1px solid #e0e0e0;
+		width: 30%;
 		float: right;
 	}
 
@@ -666,12 +560,7 @@ body {
 5.1 Links
 --------------------------------------------------------------*/
 a {
-	color: #00a69c;
 	text-decoration: none;
-}
-
-a:hover {
-	color: #00958c;
 }
 
 /*--------------------------------------------------------------
@@ -682,7 +571,6 @@ a:hover {
 	display: block;
 	float: left;
 	width: 100%;
-	background: #2b353e;
 }
 
 .main-navigation .menu-toggle {
@@ -703,48 +591,12 @@ a:hover {
 
 .main-navigation a {
 	display: block;
-	color: rgba(255, 255, 255, 0.7);
 	padding: 0.625em 10px;
-	font-family: "Oswald", sans-serif;
 	font-size: 14px;
-	text-transform: uppercase;
-}
-
-/* Active */
-.main-navigation .current-menu-item > a,
-.main-navigation .current-menu-parent > a,
-.main-navigation .current-menu-ancestor > a,
-.main-navigation .current_page_item > a,
-.main-navigation .current_page_parent > a,
-.main-navigation .current_page_ancestor > a {
-	color: #00a69c;
-}
-
-/* Hover */
-.main-navigation .nav-menu > li > a:hover {
-	color: #fff;
-	background: #00a69c;
-}
-
-/* Hover with submenu */
-.main-navigation .nav-menu > .menu-item-has-children:hover > a {
-	color: #222;
-	background: #fff;
-}
-
-/* Submenu hover */
-.main-navigation li.menu-item-has-children:hover a {
-	background: #fff;
-}
-
-.main-navigation li.menu-item-has-children:hover a:hover {
-	background: #f4f4f4;
 }
 
 /* Nested menu */
 .main-navigation ul ul {
-	background: #fff;
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	float: left;
 	position: absolute;
 	margin: 0;
@@ -763,7 +615,6 @@ a:hover {
 }
 
 .main-navigation ul ul a {
-	color: #222;
 	min-width: 200px;
 }
 
@@ -773,10 +624,6 @@ a:hover {
 
 .main-navigation ul ul li:hover > ul {
 	left: 100%;
-}
-
-.main-navigation ul ul li.page_item_has_children:hover > a {
-	background: #f4f4f4;
 }
 
 /* Small menu */
@@ -912,7 +759,6 @@ a:hover {
 --------------------------------------------------------------*/
 .widget {
 	margin: 0 0 1.25em;
-	font-size: 14px;
 }
 
 /* Make sure input and select elements fit in widgets */
@@ -935,101 +781,8 @@ a:hover {
 	border-bottom: none;
 }
 
-/* Custom lists */
-.widget_recent_entries ul,
-.widget_pages ul,
-.widget_categories ul,
-.widget_archive ul,
-.widget_recent_comments ul,
-.widget_nav_menu ul,
-.widget_links ul,
-.widget_meta ul {
-	margin-left: 0;
-}
-
-.widget_recent_entries ul li,
-.widget_pages ul li,
-.widget_categories ul li,
-.widget_archive ul li,
-.widget_recent_comments ul li,
-.widget_nav_menu ul li,
-.widget_links ul li,
-.widget_meta ul li {
-	list-style: none;
-	margin-bottom: 0.6em;
-}
-
-.widget_recent_entries ul li:before,
-.widget_pages ul li:before,
-.widget_categories ul li:before,
-.widget_archive ul li:before,
-.widget_recent_comments ul li:before,
-.widget_nav_menu ul li:before,
-.widget_links ul li:before,
-.widget_meta ul li:before {
-	font-family: "dashicons";
-	font-size: 1.25em;
-	margin-right: 0.3em;
-	margin-left: -0.5px;
-	line-height: 1;
-	display: inline-block;
-	color: #222;
-	opacity: 0.25;
-	content: "\f345";
-	float: left;
-}
-
-.widget_recent_entries ul li:before,
-.widget_pages ul li:before {
-	content: "\f105";
-}
-
-.widget_categories ul li:before {
-	content: "\f318";
-}
-
-.widget_archive ul li:before {
-	content: "\f480";
-}
-
-.widget_recent_comments ul li:before {
-	content: "\f101";
-}
-
-.widget_links ul li:before {
-	content: "\f504";
-}
-
-.widget_recent_entries ul li a,
-.widget_pages ul li a,
-.widget_categories ul li a,
-.widget_archive ul li a,
-.widget_recent_comments ul li a,
-.widget_nav_menu ul li a,
-.widget_links ul li a,
-.widget_meta ul li a {
-	color: #a3a3a3;
-}
-
-.widget_recent_entries ul li a:hover,
-.widget_pages ul li a:hover,
-.widget_categories ul li a:hover,
-.widget_archive ul li a:hover,
-.widget_recent_comments ul li a:hover,
-.widget_nav_menu ul li a:hover,
-.widget_links ul li a:hover,
-.widget_meta ul li a:hover {
-	color: #00a69c;
-}
-
-/* Search widget */
-.widget_search .search-submit {
-	display: none;
-}
-
 /* Calendar widget */
 .widget_calendar #today {
-	background: #fff;
 	font-weight: bold;
 }
 
@@ -1039,17 +792,6 @@ a:hover {
 
 .widget_calendar #next {
 	text-align: right;
-}
-
-
-.widget_calendar #prev a,
-.widget_calendar #next a {
-	color: #a3a3a3;
-}
-
-.widget_calendar #prev a:hover,
-.widget_calendar #next a:hover {
-	color: #00a69c;
 }
 
 /* Media queries */
@@ -1073,33 +815,20 @@ a:hover {
 .entry-meta,
 .entry-footer-links {
 	clear: both;
-	background: #f4f4f4;
-	margin: 0 0 1.25em;
-	padding: 0.625em 15px;
-	font-size: 14px;
-	border: 1px solid #e0e0e0;
 }
 
 .entry-footer-links .tags-links {
-	border-left: 1px solid #e0e0e0;
 	padding-left: 0.625em;
 	margin-left: 0.625em;
 }
 
 .nav-links a {
-	color: #a3a3a3;
 	font-size: 14px;
 }
 
 .nav-links .meta-nav {
-	color: #fff;
-	background: #00a69c;
 	padding: 0.125em 0.375em;
 	display: inline-block;
-}
-
-.nav-links .meta-nav:hover {
-	background: #00958c;
 }
 
 .nav-links .nav-previous .meta-nav {
@@ -1131,29 +860,12 @@ a:hover {
 	display: block;
 }
 
-.entry-title,
-.page-title {
-	text-transform: none;
-}
-
-.entry-title a,
-a .entry-title,
-.page-title a,
-a .page-title,
-.entry-title a:hover,
-a:hover .entry-title,
-.page-title a:hover,
-a:hover .page-title:hover {
-	color: #222;
-}
-
 .sticky .entry-title:before {
 	font-family: "dashicons";
 	font-size: 1.25em;
 	margin-right: 0.3em;
 	line-height: 1;
 	display: inline-block;
-	color: #00a69c;
 	content: "\f109";
 	float: left;
 }
@@ -1164,18 +876,6 @@ a:hover .page-title:hover {
 }
 
 @media screen and (min-width: 601px) {
-	.single-post .has-post-thumbnail .entry-header .entry-title,
-	.page .has-post-thumbnail .entry-header .entry-title {
-		position: absolute;
-		bottom: 12px;
-		background: white;
-		padding: 0 0.5em;
-	}
-
-	.entry-header img {
-		margin-bottom: 0;
-	}
-
 	.archive .entry-title {
 		margin: 0.5em 0 0.25em;
 	}
@@ -1229,27 +929,23 @@ a:hover .page-title:hover {
 	z-index: 2;
 }
 
-.comment-metadata a {
-	color: #a3a3a3;
-}
-
-.comment-metadata a:hover {
-	color: #00a69c;
+.comment-metadata .edit-link {
+	padding-left: 0.625em;
+	margin-left: 0.625em;
+	border-left: 1px solid transparent;
 }
 
 .comment-metadata .edit-link {
 	border-left: 1px solid #e0e0e0;
-	padding-left: 0.625em;
-	margin-left: 0.625em;
 }
 
 .comment-content {
 	position: relative;
 	float: right;
 	width: 70%;
+	padding: 0.625em 15px 0.625em;
 	background: #f4f4f4;
 	border: 1px solid #e0e0e0;
-	padding: 0.625em 15px 0.625em;
 }
 
 .comment-content a {
@@ -1265,8 +961,8 @@ a:hover .page-title:hover {
 	left: -10px;
 	top: 12px;
 	border: 10px solid transparent;
-	border-right: 10px solid #e0e0e0;
 	border-left: none;
+	border-right-color: #e0e0e0;
 }
 
 .comment-content:after {
@@ -1278,8 +974,8 @@ a:hover .page-title:hover {
 	left: -9px;
 	top: 12px;
 	border: 10px solid transparent;
-	border-right: 10px solid #f4f4f4;
 	border-left: none;
+	border-right-color: #f4f4f4;
 }
 
 .comment-body .reply {
@@ -1289,13 +985,8 @@ a:hover .page-title:hover {
 }
 
 .comment-body .reply a {
-	color: #a3a3a3;
 	font-size: 14px;
 	margin-bottom: 0.25em;
-}
-
-.comment-body .reply a:hover {
-	color: #00a69c;
 }
 
 .bypostauthor {
@@ -1362,7 +1053,6 @@ object {
 
 .wp-caption-text {
 	text-align: center;
-	color: #a3a3a3;
 	font-size: 14px;
 }
 
@@ -1431,23 +1121,14 @@ object {
 	margin: 0;
 	bottom: 0;
 	padding: 0.625em 15px;
-	color: #fff;
 	text-align: center;
 	width: 100%;
-	background: rgba(0,0,0,0.5);
-	font-family: "Oswald", sans-serif;
-	text-transform: uppercase;
 	display: none;
 	pointer-events: none;
 }
 
 .gallery-item:hover .gallery-caption {
 	display: block;
-}
-
-.gallery-caption a,
-.wp-caption-text.gallery-caption {
-	color: #fff;
 }
 
 /*--------------------------------------------------------------
@@ -1474,7 +1155,6 @@ object {
 }
 
 .sp-view-all-link {
-	color: #a3a3a3;
 	margin-top: 1em;
 	text-align: right;
 	float: right;
@@ -1482,40 +1162,16 @@ object {
 	font-size: 14px;
 }
 
-.sp-view-all-link:hover {
-	color: #00a69c;
-}
-
-.sp-highlight {
-	background: #fff;
-}
-
-.sp-heading {
-	background: #2b353e;
-	color: #fff;
-}
-
 .sp-table-caption,
-.sp-template-countdown .event-name,
-.sp-template-event-venue thead th {
+.sp-template-countdown .event-name {
 	font-size: 16px;
-	font-family: "Oswald", sans-serif;
 	font-weight: normal;
 	text-align: left;
-	text-transform: uppercase;
-	color: #fff;
-	background: #2b353e;
 	border: none;
-	border-top: 8px solid #00a69c;
-	padding: 0.625em 15px;
 	margin: 0 0 -1px;
 	font-size: 16px;
 	position: relative;
 	z-index: 2;
-}
-
-.sp-template-event-venue thead th a {
-	color: #fff;
 }
 
 .sp-table-caption h1,
@@ -1533,33 +1189,23 @@ object {
 }
 
 .sp-table-wrapper .dataTables_paginate {
-	background: #f4f4f4;
-	color: #a3a3a3;
 	margin-top: -1px;
-	border: 1px solid #e0e0e0;
 	font-size: 14px;
 	padding: 0.125em 0.625em;
 }
 
-.sp-template-countdown .event-name a {
-	color: #fff;
-}
-
-.sp-template-countdown .event-venue,
-.sp-template-countdown .event-league {
+.sp-template-countdown h5 {
 	font-weight: bold;
 	text-align: left;
 	font-size: 14px;
 	padding: 0.635em 15px;
-	font-family: "Lato", sans-serif;
-	text-transform: none;
-	background: #f4f4f4;
-	border: 1px solid #e0e0e0;
+	border: 1px solid transparent;
 	border-top: none;
 	margin: 0;
 }
 
 .sp-template-countdown {
+	width: 100%;
 	overflow: auto;
     zoom: 1;
 }
@@ -1573,46 +1219,25 @@ object {
 	display: block;
 	float: left;
 	width: 25%;
-	background: #f4f4f4;
-	border-right: 1px solid #e0e0e0;
-	border-bottom: 1px solid #e0e0e0;
 	text-align: center;
 	padding: 14px 0;
 	line-height: 1.25;
 	font-size: 24px;
-	font-family: "Oswald", sans-serif;
-}
-
-.sp-template-countdown time span:first-child {
-	border-left: 1px solid #e0e0e0;
 }
 
 .sp-template-countdown time span small {
 	display: block;
 	clear: both;
 	font-size: 14px;
-	font-family: "Lato", sans-serif;
 }
 
 .sp-template-event-calendar #today {
-	background: #fff;
 	font-weight: bold;
-}
-
-.sp-template-event-calendar #prev a,
-.sp-template-event-calendar #next a {
-	color: #a3a3a3;
-}
-
-.sp-template-event-calendar #prev a:hover,
-.sp-template-event-calendar #next a:hover {
-	color: #00a69c;
 }
 
 .sp-template-event-logos {
 	margin-top: 0.5em;
 	font-size: 36px;
-	font-family: "Oswald", sans-serif;
 }
 
 .sp-template-event-logos img {
@@ -1621,6 +1246,11 @@ object {
 
 .sp-template-event-video .sp-table-caption {
 	display: none;
+}
+
+.sp-event-staff {
+	font-size: 14px;
+	padding: 0.625em 15px;
 }
 
 .sp-template-event-performance-icons thead {
@@ -1671,22 +1301,6 @@ object {
 	border-bottom-width: 1px;
 }
 
-.sp-template-event-venue .sp-table-caption {
-	color: #222;
-	background: initial;
-	border: none;
-	margin: 0;
-	padding: 0;
-	font-size: 24px;
-	margin-bottom: 0.5em;
-}
-
-.sp-template-event-venue .sp-event-venue-address-row td {
-	font-weight: bold;
-	text-align: left;
-	padding: 0.625em 15px;
-}
-
 .sp-template-event-venue .sp-event-venue-map-row td {
 	padding: 0;
 	background: rgba(0, 0, 0, 0.05);
@@ -1695,7 +1309,6 @@ object {
 .sp-template-event-blocks .event-results,
 .sp-template-event-blocks .event-time {
 	font-size: 24px;
-	text-transform: none;
 }
 
 .sp-template-event-blocks .event-league,
@@ -1711,19 +1324,10 @@ object {
 
 .sp-template-event-blocks .event-title {
 	clear: both;
-	text-transform: none;
-	font-family: "Lato", sans-serif;
 	font-weight: bold;
-	color: #222;
-	background: #fff;
-	border: 1px solid #e0e0e0;
 	font-size: 16px;
 	margin: 0 -0.9375em -0.625em;
 	padding: 0.625em 15px;
-}
-
-.sp-template-event-blocks .event-title a {
-	color: #222;
 }
 
 .widget .sp-template-event-blocks .event-results,
@@ -1754,9 +1358,7 @@ object {
 }
 
 .sp-template-details dl {
-	background: #f4f4f4;
 	font-size: 14px;
-	border: 1px solid #e0e0e0;
 	padding: 1em 15px 0;
 	margin-bottom: 1.25em;
 }
@@ -1784,9 +1386,6 @@ object {
 
 .sp-template .player-gallery-group-name {
 	clear: both;
-	font-family: "Oswald", sans-serif;
-	font-weight: normal;
-	text-transform: uppercase;
 	font-size: 24px;
 }
 
@@ -1795,7 +1394,6 @@ object {
 }
 
 .sp-template-player-gallery .gallery-caption {
-	background: #2b353e;
 	height: auto;
 	display: block;
 	pointer-events: auto;
@@ -1814,7 +1412,6 @@ object {
 .sp-template-player-gallery .gallery-item strong {
 	font-weight: normal;
 	font-size: 20px;
-	background: #00a69c;
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -1835,36 +1432,29 @@ object {
 
 .sp-footer-sponsors .sp-sponsors {
 	padding: 3em 0;
-	border-top: 1px solid #e0e0e0;
 }
 
-.sp-template-tournament-bracket table {
-	border: 1px solid #e0e0e0;
+.sp-template.sp-template-tournament-winner {
+	color: inherit;
 }
 
 .sp-template-tournament-bracket thead th {
 	border: none;
-	border-bottom: 1px solid #e0e0e0;
 }
 
-.sp-template-tournament-bracket td {
+.sp-template-tournament-bracket td,
+.sp-template-tournament-bracket td:first-child,
+.sp-template-tournament-bracket td:last-child {
 	border: none;
 }
 
 .sp-template-tournament-bracket .sp-result {
-	color: #fff;
-	background: #00a69c;
 	padding: 2px 5px;
 	margin: 0 3px;
 }
 
-.sp-template-tournament-bracket .sp-event-title:hover .sp-result {
-	background: #00958c;
-}
-
 .sp-template-tournament-bracket .sp-event-venue {
 	font-weight: normal;
-	color: #a3a3a3;
 }
 
 .single-sp_event .has-post-thumbnail .entry-header .entry-title {
@@ -1876,16 +1466,9 @@ object {
 }
 
 .single-sp_player .entry-header .entry-title strong {
-	background: #00a69c;
-	color: #fff;
 	padding: 0 0.475em;
 	margin-right: 0.25em;
 	font-weight: normal;
-}
-
-.single-sp_staff .entry-header .entry-title strong {
-	color: #00a69c;
-	text-transform: uppercase;
 }
 
 @media screen and (min-width: 601px) {
@@ -1898,6 +1481,11 @@ object {
 		padding: 1.25em 0.675em;
 	}
 
+
+	.widget .sp-template-event-calendar tbody td {
+		padding: 0.625em;
+	}
+
 	.single-sp_event .has-post-thumbnail .entry-header .entry-title {
 		margin: 0.5em 0;
 	}
@@ -1907,10 +1495,12 @@ object {
 	.sp-template-event-performance-icons {
 		width: 48%;
 		float: left;
+		clear: left;
 	}
 
 	.sp-template-event-performance-icons:nth-child(2n) {
 		float: right;
+		clear: right;
 	}
 }
 
@@ -2020,11 +1610,9 @@ object {
 .woocommerce .woocommerce-breadcrumb,
 .woocommerce-page .woocommerce-breadcrumb {
 	clear: both;
-	background: #f4f4f4;
 	margin: 0;
 	padding: 0.625em 3.125%;
 	font-size: 14px;
-	border-bottom: 1px solid #e0e0e0;
 }
 
 .woocommerce #content div.product div.thumbnails a,
@@ -2042,11 +1630,6 @@ object {
 	margin: 20px 0 20px 3.125%;
 	float: left;
 	clear: both;
-}
-
-.woocommerce ul.products li.product h3,
-.woocommerce-page ul.products li.product h3 {
-	color: #222;
 }
 
 @media screen and (min-width: 601px) {

@@ -61,11 +61,11 @@ function rookie_post_nav() {
 }
 endif;
 
-if ( ! function_exists( 'rookie_posted_on' ) ) :
+if ( ! function_exists( 'rookie_entry_date' ) ) :
 /**
- * Prints HTML with meta information for the current post-date/time and author.
+ * Prints HTML with meta information for the current post-date/time.
  */
-function rookie_posted_on() {
+function rookie_entry_date() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
@@ -78,41 +78,63 @@ function rookie_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-	$posted_on = sprintf(
-		_x( 'Posted on %s', 'post date', 'rookie' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-	);
+	$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
 
 	$byline = sprintf(
 		_x( 'by %s', 'post author', 'rookie' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>';
+	echo '<span class="posted-on">' . $posted_on . '</span>';
+	'<span class="byline"> ' . $byline . '</span>';
 
+}
+endif;
+
+if ( ! function_exists( 'rookie_entry_meta' ) ) :
+/**
+ * Prints HTML with meta information for the categories and comments.
+ */
+function rookie_entry_meta() {
+	// Hide category and tag text for pages.
+	if ( 'post' == get_post_type() ) {
+		$categories_list = get_the_category_list( ' ' );
+
+		if ( $categories_list && rookie_categorized_blog() ) {
+			?>
+			<div class="entry-meta">
+				<div class="entry-category-links">
+					<?php
+					if ( $categories_list && rookie_categorized_blog() ) {
+						echo $categories_list;
+					}
+					?>
+				</div><!-- .entry-category-links -->
+			</div><!-- .entry-meta -->
+			<?php
+		}
+	}
 }
 endif;
 
 if ( ! function_exists( 'rookie_entry_footer' ) ) :
 /**
- * Prints HTML with meta information for the categories, tags and comments.
+ * Prints HTML with meta information for the tags.
  */
 function rookie_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' == get_post_type() ) {
-		echo '<div class="entry-footer-links">';
-		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( __( ', ', 'rookie' ) );
-		if ( $categories_list && rookie_categorized_blog() ) {
-			printf( '<span class="cat-links">' . __( 'Posted in %1$s', 'rookie' ) . '</span>', $categories_list );
-		}
+		$tags_list = get_the_tag_list( '', ' ' );
 
-		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', __( ', ', 'rookie' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . __( 'Tagged %1$s', 'rookie' ) . '</span>', $tags_list );
+			?>
+			<footer class="entry-footer">
+				<div class="entry-tag-links">
+					<?php echo $tags_list; ?>
+				</div><!-- .entry-tag-links -->
+			</footer><!-- .entry-footer -->
+			<?php
 		}
-		echo '</div><!-- .entry-footer-links -->';
 	}
 }
 endif;

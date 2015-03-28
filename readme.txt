@@ -1,6 +1,6 @@
 === Rookie ===
 Contributors: ThemeBoy, brianmiyaji, aylaview
-Tags: blue, gray, white, light, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, threaded-comments, translation-ready
+Tags: black, blue, brown, gray, green, orange, pink, purple, red, silver, tan, white, yellow, dark, light, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, full-width-template, rtl-language-support, sticky-post, threaded-comments, translation-ready
 Requires at least: 3.8
 Tested up to: 4.1
 Stable tag: 4.1
@@ -49,6 +49,7 @@ You can change the colors of your site easily using Rookie.
 1. The main content width is 620px.
 2. The sidebar width is 300px.
 3. Featured Images are 620px wide by 413px high.
+3. Header Images are 1000px wide by 150px high.
 
 = Additional Licenses =
 

@@ -18,7 +18,7 @@ function rookie_customize_register( $wp_customize ) {
     /**
      * Logo Image
      */
-    $wp_customize->add_setting('sportspress_frontend_css_colors[logo_url]', array(
+    $wp_customize->add_setting('themeboy[logo_url]', array(
         'sanitize_callback' => 'esc_url',
         'capability'    => 'edit_theme_options',
         'type'          => 'option',
@@ -28,64 +28,13 @@ function rookie_customize_register( $wp_customize ) {
     $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'logo_url', array(
         'label'     => __('Logo', 'rookie'),
         'section'   => 'title_tagline',
-        'settings' => 'sportspress_frontend_css_colors[logo_url]',
+        'settings' => 'themeboy[logo_url]',
     )));
 
     /**
-     * Header Text Display
+     * Primary Color
      */
-    $wp_customize->add_setting('sportspress_frontend_css_colors[show_header_text]', array(
-        'default'       => 'yes',
-        'sanitize_callback' => 'rookie_sanitize_checkbox',
-        'capability'    => 'edit_theme_options',
-        'type'          => 'option',
- 
-    ));
- 
-    $wp_customize->add_control( 'show_header_text', array(
-        'label'     => __('Display Title & Tagline', 'rookie'),
-        'section'   => 'title_tagline',
-        'settings' => 'sportspress_frontend_css_colors[show_header_text]',
-        'type'       => 'checkbox',
-        'std'         => 'yes'
-    ));
-
-    /**
-     * Header Text Color
-     */
-    $wp_customize->add_setting( 'sportspress_frontend_css_colors[header_text]', array(
-        'default'           => '#222222',
-        'sanitize_callback' => 'rookie_sanitize_hex_color',
-        'capability'        => 'edit_theme_options',
-        'type'              => 'option',
-    ) );
- 
-    $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'header_text', array(
-        'label'    => __('Header Text Color', 'rookie'),
-        'section'  => 'colors',
-        'settings' => 'sportspress_frontend_css_colors[header_text]',
-    ) ) );
-
-    /**
-     * Content Background Color
-     */
-    $wp_customize->add_setting( 'sportspress_frontend_css_colors[content_background]', array(
-        'default'           => '#ffffff',
-        'sanitize_callback' => 'rookie_sanitize_hex_color',
-        'capability'        => 'edit_theme_options',
-        'type'              => 'option',
-    ) );
- 
-    $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'content_background', array(
-        'label'    => __('Content Background Color', 'rookie'),
-        'section'  => 'colors',
-        'settings' => 'sportspress_frontend_css_colors[content_background]',
-    ) ) );
-
-	/**
-	 * Primary Color
-	 */
-    $wp_customize->add_setting( 'sportspress_frontend_css_colors[primary]', array(
+    $wp_customize->add_setting( 'themeboy[primary]', array(
         'default'           => '#2b353e',
         'sanitize_callback' => 'rookie_sanitize_hex_color',
         'capability'        => 'edit_theme_options',
@@ -95,61 +44,13 @@ function rookie_customize_register( $wp_customize ) {
     $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'primary', array(
         'label'    => __('Primary Color', 'rookie'),
         'section'  => 'colors',
-        'settings' => 'sportspress_frontend_css_colors[primary]',
+        'settings' => 'themeboy[primary]',
     ) ) );
 
-	/**
-	 * Widget Background Color
-	 */
-    $wp_customize->add_setting( 'sportspress_frontend_css_colors[background]', array(
-        'default'           => '#f4f4f4',
-        'sanitize_callback' => 'rookie_sanitize_hex_color',
-        'capability'        => 'edit_theme_options',
-        'type'              => 'option',
-    ) );
- 
-    $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'background', array(
-        'label'    => __('Widget Background Color', 'rookie'),
-        'section'  => 'colors',
-        'settings' => 'sportspress_frontend_css_colors[background]',
-    ) ) );
-
-	/**
-	 * Text Color
-	 */
-    $wp_customize->add_setting( 'sportspress_frontend_css_colors[text]', array(
-        'default'           => '#222222',
-        'sanitize_callback' => 'rookie_sanitize_hex_color',
-        'capability'        => 'edit_theme_options',
-        'type'              => 'option',
-    ) );
- 
-    $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'text', array(
-        'label'    => __('Text Color', 'rookie'),
-        'section'  => 'colors',
-        'settings' => 'sportspress_frontend_css_colors[text]',
-    ) ) );
-
-	/**
-	 * Widget Heading Color
-	 */
-    $wp_customize->add_setting( 'sportspress_frontend_css_colors[heading]', array(
-        'default'           => '#ffffff',
-        'sanitize_callback' => 'rookie_sanitize_hex_color',
-        'capability'        => 'edit_theme_options',
-        'type'              => 'option',
-    ) );
- 
-    $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'heading', array(
-        'label'    => __('Widget Heading Color', 'rookie'),
-        'section'  => 'colors',
-        'settings' => 'sportspress_frontend_css_colors[heading]',
-    ) ) );
-
-	/**
-	 * Link Color
-	 */
-    $wp_customize->add_setting( 'sportspress_frontend_css_colors[link]', array(
+    /**
+     * Link Color
+     */
+    $wp_customize->add_setting( 'themeboy[link]', array(
         'default'           => '#00a69c',
         'sanitize_callback' => 'rookie_sanitize_hex_color',
         'capability'        => 'edit_theme_options',
@@ -159,7 +60,87 @@ function rookie_customize_register( $wp_customize ) {
     $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'link', array(
         'label'    => __('Link Color', 'rookie'),
         'section'  => 'colors',
-        'settings' => 'sportspress_frontend_css_colors[link]',
+        'settings' => 'themeboy[link]',
+    ) ) );
+
+    /**
+     * Context Text Color
+     */
+    $wp_customize->add_setting( 'themeboy[content]', array(
+        'default'           => '#222222',
+        'sanitize_callback' => 'rookie_sanitize_hex_color',
+        'capability'        => 'edit_theme_options',
+        'type'              => 'option',
+    ) );
+ 
+    $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'content', array(
+        'label'    => __('Text Color', 'rookie'),
+        'section'  => 'colors',
+        'settings' => 'themeboy[content]',
+    ) ) );
+
+    /**
+     * Content Background Color
+     */
+    $wp_customize->add_setting( 'themeboy[content_background]', array(
+        'default'           => '#ffffff',
+        'sanitize_callback' => 'rookie_sanitize_hex_color',
+        'capability'        => 'edit_theme_options',
+        'type'              => 'option',
+    ) );
+ 
+    $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'content_background', array(
+        'label'    => __('Content Background Color', 'rookie'),
+        'section'  => 'colors',
+        'settings' => 'themeboy[content_background]',
+    ) ) );
+
+	/**
+	 * Widget Background Color
+	 */
+    $wp_customize->add_setting( 'themeboy[background]', array(
+        'default'           => '#f4f4f4',
+        'sanitize_callback' => 'rookie_sanitize_hex_color',
+        'capability'        => 'edit_theme_options',
+        'type'              => 'option',
+    ) );
+ 
+    $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'background', array(
+        'label'    => __('Widget Background Color', 'rookie'),
+        'section'  => 'colors',
+        'settings' => 'themeboy[background]',
+    ) ) );
+
+	/**
+	 * Text Color
+	 */
+    $wp_customize->add_setting( 'themeboy[text]', array(
+        'default'           => '#222222',
+        'sanitize_callback' => 'rookie_sanitize_hex_color',
+        'capability'        => 'edit_theme_options',
+        'type'              => 'option',
+    ) );
+ 
+    $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'text', array(
+        'label'    => __('Widget Text Color', 'rookie'),
+        'section'  => 'colors',
+        'settings' => 'themeboy[text]',
+    ) ) );
+
+	/**
+	 * Widget Heading Color
+	 */
+    $wp_customize->add_setting( 'themeboy[heading]', array(
+        'default'           => '#ffffff',
+        'sanitize_callback' => 'rookie_sanitize_hex_color',
+        'capability'        => 'edit_theme_options',
+        'type'              => 'option',
+    ) );
+ 
+    $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'heading', array(
+        'label'    => __('Widget Heading Color', 'rookie'),
+        'section'  => 'colors',
+        'settings' => 'themeboy[heading]',
     ) ) );
 }
 add_action( 'customize_register', 'rookie_customize_register' );

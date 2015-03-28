@@ -21,34 +21,37 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'rookie' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
-		<div id="tertiary" class="site-widgets" role="complementary">
-			<?php dynamic_sidebar( 'header-1' ); ?>
-		</div>
+		<div class="header-area">
+			<div id="tertiary" class="site-widgets" role="complementary">
+				<?php dynamic_sidebar( 'header-1' ); ?>
+			</div>
 
-		<?php if ( get_header_image() ) : ?>
+			<?php if ( get_header_image() ) { ?>
 			<div class="site-branding site-branding-custom-header" style="background-image: url(<?php header_image(); ?>);">
-		<?php else : ?>
+			<?php } else { ?>
 			<div class="site-branding">
-		<?php endif; ?>
-			<?php
-			$options = get_option( 'sportspress_frontend_css_colors', array() );
-			if ( array_key_exists( 'logo_url', $options ) && ! empty( $options['logo_url'] ) ) {
-				$logo = $options['logo_url'];
-				$logo = esc_url( $logo );
-				?>
-				<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>"></a>
 			<?php } ?>
-			<?php if ( ! array_key_exists( 'show_header_text', $options ) || 'yes' == $options['show_header_text'] ) { ?>
-			<hgroup>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-			</hgroup>
-			<?php } ?>
-		</div><!-- .site-branding -->
+				<?php
+				$options = get_option( 'themeboy', array() );
+				if ( array_key_exists( 'logo_url', $options ) && ! empty( $options['logo_url'] ) ) {
+					$logo = $options['logo_url'];
+					$logo = esc_url( $logo );
+					?>
+					<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>"></a>
+				<?php } ?>
+				<?php if ( display_header_text() ) { ?>
+				<hgroup>
+					<h1 class="site-title" style="color: #<?php header_textcolor(); ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<h2 class="site-description" style="color: #<?php header_textcolor(); ?>"><?php bloginfo( 'description' ); ?></h2>
+				</hgroup>
+				<?php } ?>
+			</div><!-- .site-branding -->
+
+			<nav id="site-navigation" class="main-navigation" role="navigation">
+				<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><?php _e( 'Primary Menu', 'rookie' ); ?></button>
+				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+			</nav><!-- #site-navigation -->
+		</div>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><?php _e( 'Primary Menu', 'rookie' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-		</nav><!-- #site-navigation -->
