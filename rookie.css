@@ -423,26 +423,53 @@ a:hover {
 }
 
 .entry-meta,
-.entry-footer-links {
+.posted-on {
 	font-size: 14px;
+	padding: 0.125em 0.375em;
+	color: #fff;
+	background: rgba(0, 0, 0, 0.4);
 }
 
 .entry-meta {
-	position: absolute;
-	right: 10px;
-	bottom: 7px;
+	float: right;
 }
 
-.entry-footer {
-	position: absolute;
-	top: 7px;
-	right: 10px;
-	z-index: 10;
+.posted-on {
+	float: left;
 }
 
-.has-post-thumbnail .entry-footer a,
-.has-post-thumbnail .entry-meta a {
+.entry-meta a,
+.posted-on a,
+.entry-meta a:hover,
+.posted-on a:hover {
 	color: #fff;
+}
+
+.has-post-thumbnail .entry-meta,
+.has-post-thumbnail .posted-on {
+	float: none;
+	position: absolute;
+	top: 0;
+}
+
+.has-post-thumbnail .entry-meta {
+	right: 0;
+}
+
+.has-post-thumbnail .posted-on {
+	left: 0;
+}
+
+.entry-footer a {
+	color: #fff;
+	background: #00a69c;
+	padding: 0.125em 0.375em;
+	opacity: 1;
+}
+
+.entry-footer a:hover {
+	color: #fff;
+	background: #00887e;
 }
 
 .nav-links a {

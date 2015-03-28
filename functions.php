@@ -289,7 +289,6 @@ function rookie_custom_colors() {
 	table,
 	.main-navigation li.menu-item-has-children:hover a:hover,
 	.main-navigation ul ul li.page_item_has_children:hover > a,
-	.entry-meta,
 	.entry-footer-links,
 	.comment-content,
 	.sp-table-wrapper .dataTables_paginate,
@@ -325,7 +324,6 @@ function rookie_custom_colors() {
 	input[type="password"],
 	input[type="search"],
 	textarea,
-	.entry-meta,
 	.entry-footer-links,
 	.comment-metadata .edit-link,
 	.comment-content,
@@ -468,6 +466,7 @@ function rookie_custom_colors() {
 	input[type="submit"],
 	.main-navigation .nav-menu > li > a:hover,
 	.nav-links .meta-nav,
+	.entry-footer a,
 	.sp-template-player-gallery .gallery-item strong,
 	.sp-template-tournament-bracket .sp-result,
 	.single-sp_player .entry-header .entry-title strong {
@@ -488,6 +487,7 @@ function rookie_custom_colors() {
 	input[type="button"]:active,
 	input[type="reset"]:active,
 	input[type="submit"]:active,
+	.entry-footer a:hover,
 	.nav-links a:hover .meta-nav,
 	.sp-template-tournament-bracket .sp-event-title:hover .sp-result {
 		background: <?php echo $colors['link_dark']; ?>; }
