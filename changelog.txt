@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.0 =
+* Tweak - Default to dark grey header text color.
+* Fix - RTL stylesheet not loading.
+
 = 0.9.8 =
 * Feature - Add custom header support.
 * Tweak - Update screenshot to show theme without SportsPress plugin installed.

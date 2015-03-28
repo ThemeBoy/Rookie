@@ -201,7 +201,7 @@ body {
 }
 
 /* Tagline Color */
-.site-description {
+.site-branding hgroup {
 	color: #222;
 }
 

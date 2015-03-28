@@ -40,9 +40,9 @@
 					<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>"></a>
 				<?php } ?>
 				<?php if ( display_header_text() ) { ?>
-				<hgroup>
-					<h1 class="site-title" style="color: #<?php header_textcolor(); ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-					<h2 class="site-description" style="color: #<?php header_textcolor(); ?>"><?php bloginfo( 'description' ); ?></h2>
+				<hgroup style="color: #<?php header_textcolor(); ?>">
+					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 				</hgroup>
 				<?php } ?>
 			</div><!-- .site-branding -->

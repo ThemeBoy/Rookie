@@ -55,7 +55,7 @@ function rookie_setup() {
 		'uploads'                => true,
 		'random-default'         => false,
 		'header-text'            => true,
-		'default-text-color'     => 'ffffff',
+		'default-text-color'     => '222222',
 	) );
 
 	add_editor_style();
@@ -193,10 +193,10 @@ function rookie_scripts() {
 	// Load our skin stylesheet.
 	wp_enqueue_style( 'rookie-skin', get_template_directory_uri() . '/rookie.css' );
 	if ( is_rtl() )
-		wp_enqueue_style( $theme . 'rookie-rtl-skin', get_template_directory_uri() . '/rookie-rtl.css' );
+		wp_enqueue_style( 'rookie-rtl-skin', get_template_directory_uri() . '/rookie-rtl.css' );
 
 	// Custom colors
-	if ( 'yes' == get_option( 'sportspress_enable_frontend_css', 'yes' ) )
+	if ( ! class_exists( 'SportsPress' ) || 'yes' == get_option( 'sportspress_enable_frontend_css', 'yes' ) )
 		add_action( 'wp_print_scripts', 'rookie_custom_colors', 30 );
 
 	wp_enqueue_script( 'rookie-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
