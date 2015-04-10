@@ -8,7 +8,7 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
-Rookie is a SportsPress starter theme designed and developed by ThemeBoy.
+Rookie is a fully responsive theme made for sports organisations looking to use the SportsPress plugin. Once you’ve installed the theme and SportsPress, you'll be able to select a preset for your sport and demo content to help you get started on building your sports website.
 
 * Responsive Layout
 * Custom Colors
@@ -54,6 +54,7 @@ You can change the colors of your site easily using Rookie.
 = Additional Licenses =
 
 Rookie is based on Underscores http://underscores.me/ - GPL v2.0
+TGM Plugin Activation: Copyright (c) 2012, Thomas Griffin (thomasgriffinmedia.com) - GPL v2.0 or later
 Timeago jQuery plugin: Copyright (c) 2008-2013, Ryan McGeary (ryan@mcgeary.org) - MIT License
 Lato font: Copyright (c) 2010-2011, tyPoland Lukasz Dziedzic (team@latofonts.com) - SIL Open Font License v1.1
 Oswald font: Copyright (c) 2011-2012, Vernon Adams (vern@newtypography.co.uk) - SIL Open Font License v1.1

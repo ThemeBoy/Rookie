@@ -205,35 +205,38 @@ function rookie_scripts() {
 
 	wp_enqueue_script( 'jquery-timeago', get_template_directory_uri() . '/js/jquery.timeago.js', array( 'jquery' ), '1.4.1', true );
 
+	rookie_timeago_locale();
+
 	wp_enqueue_script( 'rookie-scripts', get_template_directory_uri() . '/js/scripts.js', array( 'jquery', 'jquery-timeago' ), '0.9', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-
-	$strings = array(
-		'prefixAgo' => _x( '', 'time ago prefix', 'rookie' ),
-		'prefixFromNow' => _x( '', 'time from now prefix', 'rookie' ),
-		'suffixAgo' => _x( 'ago', 'time ago suffix', 'rookie' ),
-		'suffixFromNow' => _x( '', 'time from now suffix', 'rookie' ),
-		'inPast' => _x( 'any moment now', 'time ago', 'rookie' ),
-		'seconds' => _x( 'less than a minute', 'time ago', 'rookie' ),
-		'minute' => _x( 'about a minute', 'time ago', 'rookie' ),
-		'minutes' => _x( '%d minutes', 'time ago', 'rookie' ),
-		'hour' => _x( 'about an hour', 'time ago', 'rookie' ),
-		'hours' => _x( 'about %d hours', 'time ago', 'rookie' ),
-		'day' => _x( 'a day', 'time ago', 'rookie' ),
-		'days' => _x( '%d days', 'time ago', 'rookie' ),
-		'month' => _x( 'about a month', 'time ago', 'rookie' ),
-		'months' => _x( '%d months', 'time ago', 'rookie' ),
-		'year' => _x( 'about a year', 'time ago', 'rookie' ),
-		'years' => _x( '%d years', 'time ago', 'rookie' ),
-		'wordSeparator' => _x( ' ', 'time ago word separator', 'rookie' ),
-	);
-
-	wp_localize_script( 'rookie-scripts', 'timeago_strings', $strings );
 }
 add_action( 'wp_enqueue_scripts', 'rookie_scripts' );
+
+/**
+ * Enqueue jQuery timeago locale.
+ */
+function rookie_timeago_locale() {
+	$locale = get_locale();
+	$locale = str_replace( '_', '-', $locale );
+	$file = '/js/locales/jquery.timeago.' . $locale . '.js';
+
+	// Check if locale exists with country code
+	if ( ! is_readable( get_template_directory() . $file ) ) {
+		$locale = substr( $locale, 0, 2 );
+		$file = '/js/locales/jquery.timeago.' . $locale . '.js';
+
+		// Check if locale exists without country code
+		if ( ! is_readable( get_template_directory() . $file ) ) {
+			return;
+		}
+	}
+
+	// Enqueue locale
+	wp_enqueue_script( 'jquery-timeago-' . $locale, get_template_directory_uri() . $file, array( 'jquery', 'jquery-timeago' ), '1.4.1', true );
+}
 
 /**
  * Enqueue scripts and styles.
@@ -247,7 +250,6 @@ function rookie_custom_colors() {
 	$colors = (array) get_option( 'themeboy', array() );
 	$colors = array_map( 'esc_attr', $colors );
 	$colors['sponsors_background'] = get_option( 'sportspress_footer_sponsors_css_background', '#f4f4f4' );
-	$colors['header_text'] = '#' . get_header_textcolor();
 
 	// Defaults
 	if ( empty( $colors['primary'] ) ) $colors['primary'] = '#2b353e';
@@ -495,10 +497,6 @@ function rookie_custom_colors() {
 		color: <?php echo $colors['link_hover']; ?>; }
 	.sp-footer-sponsors .sp-sponsors {
 		border-color: <?php echo $colors['sponsors_border']; ?>; }
-	.site-footer,
-	.site-footer a,
-	.site-footer a:hover {
-		color: <?php echo rookie_hex_mix( $colors['header_text'], get_background_color() ); ?>; }
 	@media screen and (min-width: 601px) {
 		.content-area,
 		.widget-area {
@@ -562,6 +560,52 @@ function rookie_footer_credit() {
 		<a href="http://themeboy.com/"><?php printf( __( 'Designed by %s', 'rookie' ), 'ThemeBoy' ); ?></a>
 	</div><!-- .site-info -->
 	<?php
+}
+
+/**
+ * Display TGMPA to network admins.
+ */
+if ( is_super_admin() ) {
+	/**
+	 * Include the TGM_Plugin_Activation class.
+	 */
+	require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+
+	/**
+	 * Register the required plugins for this theme.
+	 */
+	function rookie_register_required_plugins() {
+		$plugins = array(
+			array(
+				'name'      => 'SportsPress TV',
+				'slug'      => 'sportspress-tv',
+				'required'  => false,
+			),
+		);
+
+		if ( ! class_exists( 'SportsPress' ) ) {
+			array_unshift( $plugins, array(
+				'name'      => 'SportsPress',
+				'slug'      => 'sportspress',
+				'required'  => true,
+			) );
+		}
+
+		$config = array(
+			'default_path' => '',
+			'menu'         => 'tgmpa-install-plugins',
+			'has_notices'  => true,
+			'dismissable'  => true,
+			'is_automatic' => true,
+			'message'      => '',
+			'strings'      => array(
+				'nag_type' => 'updated'
+			)
+		);
+
+		tgmpa( $plugins, $config );
+	}
+	add_action( 'tgmpa_register', 'rookie_register_required_plugins' );
 }
 
 /**

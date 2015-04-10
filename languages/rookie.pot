@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Rookie\n"
-"POT-Creation-Date: 2015-03-28 17:49+1000\n"
-"PO-Revision-Date: 2015-03-28 17:49+1000\n"
+"POT-Creation-Date: 2015-04-10 15:35+1000\n"
+"PO-Revision-Date: 2015-04-10 15:35+1000\n"
 "Last-Translator: Brian Miyaji <brian@themeboy.com>\n"
 "Language-Team: ThemeBoy <support@themeboy.com>\n"
 "Language: en_US\n"
@@ -47,18 +47,8 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: comments.php:35 comments.php:53
-#, fuzzy
 msgid "Comment navigation"
 msgstr ""
-"#-#-#-#-#  1extracted.pot (PACKAGE VERSION)  #-#-#-#-#\n"
-"#-#-#-#-#  2extracted.pot (PACKAGE VERSION)  #-#-#-#-#\n"
-"#-#-#-#-#  3extracted.pot (PACKAGE VERSION)  #-#-#-#-#\n"
-"#-#-#-#-#  4extracted.pot (PACKAGE VERSION)  #-#-#-#-#\n"
-"#-#-#-#-#  5extracted.pot (PACKAGE VERSION)  #-#-#-#-#\n"
-"#-#-#-#-#  7extracted.pot (PACKAGE VERSION)  #-#-#-#-#\n"
-"#-#-#-#-#  8extracted.pot (PACKAGE VERSION)  #-#-#-#-#\n"
-"#-#-#-#-#  9extracted.pot (PACKAGE VERSION)  #-#-#-#-#\n"
-"#-#-#-#-#  10extracted.pot (PACKAGE VERSION)  #-#-#-#-#\n"
 
 #: comments.php:36 comments.php:54
 msgid "&larr; Older Comments"
@@ -102,11 +92,11 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: content-page.php:24 content-single.php:29 content.php:27
+#: content-page.php:24 content-single.php:29 content.php:33
 msgid "Pages:"
 msgstr ""
 
-#: content.php:20
+#: content.php:26
 #, php-format
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
@@ -133,163 +123,310 @@ msgctxt "Oswald font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:215
-#, fuzzy
-msgctxt "time ago prefix"
-msgid ""
-msgstr ""
-"Project-Id-Version: Rookie\n"
-"POT-Creation-Date: 2014-12-10 10:14+1000\n"
-"PO-Revision-Date: 2014-12-10 10:14+1000\n"
-"Last-Translator: ThemeBoy <support@themeboy.com>\n"
-"Language-Team: ThemeBoy <support@themeboy.com>\n"
-"Language: en_US\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.9\n"
-"X-Poedit-Basepath: ..\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-SearchPath-0: .\n"
-
-#: functions.php:216
-#, fuzzy
-msgctxt "time from now prefix"
-msgid ""
-msgstr ""
-"Project-Id-Version: Rookie\n"
-"POT-Creation-Date: 2014-12-10 10:14+1000\n"
-"PO-Revision-Date: 2014-12-10 10:14+1000\n"
-"Last-Translator: ThemeBoy <support@themeboy.com>\n"
-"Language-Team: ThemeBoy <support@themeboy.com>\n"
-"Language: en_US\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.9\n"
-"X-Poedit-Basepath: ..\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-SearchPath-0: .\n"
-
-#: functions.php:217
-msgctxt "time ago suffix"
-msgid "ago"
-msgstr ""
-
-#: functions.php:218
-#, fuzzy
-msgctxt "time from now suffix"
-msgid ""
-msgstr ""
-"Project-Id-Version: Rookie\n"
-"POT-Creation-Date: 2014-12-10 10:14+1000\n"
-"PO-Revision-Date: 2014-12-10 10:14+1000\n"
-"Last-Translator: ThemeBoy <support@themeboy.com>\n"
-"Language-Team: ThemeBoy <support@themeboy.com>\n"
-"Language: en_US\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.9\n"
-"X-Poedit-Basepath: ..\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-SearchPath-0: .\n"
-
-#: functions.php:219
-msgctxt "time ago"
-msgid "any moment now"
-msgstr ""
-
-#: functions.php:220
-msgctxt "time ago"
-msgid "less than a minute"
-msgstr ""
-
-#: functions.php:221
-msgctxt "time ago"
-msgid "about a minute"
-msgstr ""
-
-#: functions.php:222
-#, php-format
-msgctxt "time ago"
-msgid "%d minutes"
-msgstr ""
-
-#: functions.php:223
-msgctxt "time ago"
-msgid "about an hour"
-msgstr ""
-
-#: functions.php:224
-#, php-format
-msgctxt "time ago"
-msgid "about %d hours"
-msgstr ""
-
-#: functions.php:225
-msgctxt "time ago"
-msgid "a day"
-msgstr ""
-
-#: functions.php:226
-#, php-format
-msgctxt "time ago"
-msgid "%d days"
-msgstr ""
-
-#: functions.php:227
-msgctxt "time ago"
-msgid "about a month"
-msgstr ""
-
-#: functions.php:228
-#, php-format
-msgctxt "time ago"
-msgid "%d months"
-msgstr ""
-
-#: functions.php:229
-msgctxt "time ago"
-msgid "about a year"
-msgstr ""
-
-#: functions.php:230
-#, php-format
-msgctxt "time ago"
-msgid "%d years"
-msgstr ""
-
-#: functions.php:231
-msgctxt "time ago word separator"
-msgid " "
-msgstr ""
-
-#: functions.php:551
+#: functions.php:549
 #, php-format
 msgctxt "copyright info"
 msgid "&copy; %1$s %2$s"
 msgstr ""
 
-#: functions.php:562
+#: functions.php:560
 #, php-format
 msgid "Designed by %s"
 msgstr ""
 
 #: header.php:21
 msgid "Skip to content"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:161
+msgid "Install Required Plugins"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:162
+msgid "Install Plugins"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:163
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:164
+msgid "Something went wrong."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:165
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:166
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:167
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to install the %s plugin. "
+"Contact the administrator of this site for help on getting the plugin "
+"installed."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to install the %s "
+"plugins. Contact the administrator of this site for help on getting the "
+"plugins installed."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:168
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:169
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:170
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to activate the %s "
+"plugin. Contact the administrator of this site for help on getting the "
+"plugin activated."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to activate the %s "
+"plugins. Contact the administrator of this site for help on getting the "
+"plugins activated."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:171
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:172
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to update the %s plugin. "
+"Contact the administrator of this site for help on getting the plugin "
+"updated."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to update the %s plugins. "
+"Contact the administrator of this site for help on getting the plugins "
+"updated."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:173
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:174
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:175
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:176
+msgid "Return to the dashboard"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:177
+#: inc/class-tgm-plugin-activation.php:1939
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:178
+#: inc/class-tgm-plugin-activation.php:1630
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:179
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:180
+msgid "Dismiss this notice"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:531
+#: inc/class-tgm-plugin-activation.php:2156
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1166
+msgid "Private Repository"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1169
+msgid "Pre-Packaged"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1174
+msgid "WordPress Repository"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1177
+msgid "Required"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1177
+msgid "Recommended"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1180
+msgid "Not Installed"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1182
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1287
+#: inc/class-tgm-plugin-activation.php:1395
+msgid "Install"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1309
+#: inc/class-tgm-plugin-activation.php:1396
+msgid "Activate"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1358
+#, php-format
+msgid ""
+"No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
+"Dashboard\">Return to the Dashboard</a>"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1374
+msgid "Plugin"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1375
+msgid "Source"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1376
+msgid "Type"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1377
+msgid "Status"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1922
+msgid "Install package not available."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1923
+#, php-format
+msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1924
+msgid "Unpacking the package&#8230;"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1925
+msgid "Installing the plugin&#8230;"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1926
+msgid "Plugin install failed."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1927
+msgid "Plugin installed successfully."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1938
+msgid "Plugin activation failed."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2052
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2053
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2053
+#: inc/class-tgm-plugin-activation.php:2062
+msgid "Show Details"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2053
+#: inc/class-tgm-plugin-activation.php:2062
+msgid "Hide Details"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2054
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2055
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2059
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2060
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2061
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2062
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2063
+msgid "All installations have been completed."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2064
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
 #: inc/customizer.php:29
