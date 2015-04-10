@@ -203,9 +203,7 @@ function rookie_scripts() {
 
 	wp_enqueue_script( 'rookie-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
-	wp_enqueue_script( 'jquery-timeago', get_template_directory_uri() . '/js/jquery.timeago.js', array( 'jquery' ), '1.4.1', true );
-
-	rookie_timeago_locale();
+	rookie_enqueue_timeago();
 
 	wp_enqueue_script( 'rookie-scripts', get_template_directory_uri() . '/js/scripts.js', array( 'jquery', 'jquery-timeago' ), '0.9', true );
 
@@ -216,9 +214,9 @@ function rookie_scripts() {
 add_action( 'wp_enqueue_scripts', 'rookie_scripts' );
 
 /**
- * Enqueue jQuery timeago locale.
+ * Enqueue jQuery timeago if locale available.
  */
-function rookie_timeago_locale() {
+function rookie_enqueue_timeago() {
 	$locale = get_locale();
 	$locale = str_replace( '_', '-', $locale );
 	$file = '/js/locales/jquery.timeago.' . $locale . '.js';
@@ -233,6 +231,9 @@ function rookie_timeago_locale() {
 			return;
 		}
 	}
+
+	// Enqueue script
+	wp_enqueue_script( 'jquery-timeago', get_template_directory_uri() . '/js/jquery.timeago.js', array( 'jquery' ), '1.4.1', true );
 
 	// Enqueue locale
 	wp_enqueue_script( 'jquery-timeago-' . $locale, get_template_directory_uri() . $file, array( 'jquery', 'jquery-timeago' ), '1.4.1', true );
