@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 1.0.1 =
+* Feature - Add TGM plugin activation for SportsPress functionality.
+* Fix - Full width template styling.
+* Localization - Add jQuery Timeago locales and only load when localized.
+
 = 1.0 =
 * Tweak - Default to dark grey header text color.
 * Fix - RTL stylesheet not loading.
