@@ -3,7 +3,7 @@ Theme Name: Rookie
 Theme URI: 
 Author: ThemeBoy
 Author URI: http://themeboy.com
-Description: Rookie is a SportsPress starter theme designed and developed by ThemeBoy.
+Description: Rookie is a fully responsive theme made for sports organisations looking to use the SportsPress plugin. Once you’ve installed the theme and SportsPress, you'll be able to select a preset for your sport and demo content to help you get started on building your sports website.
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -516,7 +516,7 @@ textarea {
 	}
 
 	.page-template-template-fullwidth-php .content-area {
-		width: 94.4%;
+		width: 100%;
 	}
 
 	.widget-area {

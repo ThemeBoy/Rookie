@@ -701,6 +701,10 @@ a:hover .page-title:hover {
 		border-right: 1px solid #e0e0e0;
 	}
 
+	.page-template-template-fullwidth-php .content-area {
+		border-right: 0;
+	}
+
 	.widget-area {
 		width: 34%;
 		padding: 20px 2% 20px 1.9%;
