@@ -5,13 +5,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-			the_post_thumbnail( 'large' );
-		} 
-		?>
-		
+	<header class="entry-header">		
 		<?php if ( 'post' == get_post_type() ) : ?>
 			<?php rookie_entry_date(); ?>
 		<?php endif; ?>
