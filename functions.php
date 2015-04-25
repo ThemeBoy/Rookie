@@ -134,6 +134,16 @@ function rookie_widgets_init() {
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
 	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Homepage', 'rookie' ),
+		'id'            => 'homepage-1',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	) );
 }
 add_action( 'widgets_init', 'rookie_widgets_init' );
 
@@ -187,13 +197,15 @@ function rookie_scripts() {
 
 	wp_enqueue_style( 'dashicons' );
 
+	// Load our framework stylesheet.
+	wp_enqueue_style( 'rookie-framework-style', get_template_directory_uri() . '/framework.css' );
+
+	// Load RTL framework stylesheet if needed.
+	if ( is_rtl() )
+		wp_enqueue_style( 'rookie-framework-rtl-style', get_template_directory_uri() . '/framework-rtl.css' );
+
 	// Load our main stylesheet.
 	wp_enqueue_style( 'rookie-style', get_stylesheet_uri() );
-
-	// Load our skin stylesheet.
-	wp_enqueue_style( 'rookie-skin', get_template_directory_uri() . '/rookie.css' );
-	if ( is_rtl() )
-		wp_enqueue_style( 'rookie-rtl-skin', get_template_directory_uri() . '/rookie-rtl.css' );
 
 	// Custom colors
 	if ( ! class_exists( 'SportsPress' ) || 'yes' == get_option( 'sportspress_enable_frontend_css', 'yes' ) )
@@ -496,6 +508,8 @@ function rookie_custom_colors() {
 		background: <?php echo $colors['link_dark']; ?>; }
 	a:hover {
 		color: <?php echo $colors['link_hover']; ?>; }
+	.sp-template-event-logos {
+		color: inherit; }
 	.sp-footer-sponsors .sp-sponsors {
 		border-color: <?php echo $colors['sponsors_border']; ?>; }
 	@media screen and (min-width: 601px) {

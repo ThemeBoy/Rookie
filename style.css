@@ -4,7 +4,7 @@ Theme URI:
 Author: ThemeBoy
 Author URI: http://themeboy.com
 Description: Rookie is a fully responsive theme made for sports organisations looking to use the SportsPress plugin. Once you’ve installed the theme and SportsPress, you'll be able to select a preset for your sport and demo content to help you get started on building your sports website.
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: rookie
@@ -21,391 +21,184 @@ along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normali
 and Blueprint http://www.blueprintcss.org/
 */
 
-/*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-1.0 Reset
-2.0 Typography
-3.0 Elements
-4.0 Forms
-5.0 General layout
-	5.1 Links
-	5.2 Menus
-6.0 Accessibility
-7.0 Alignments
-8.0 Clearings
-9.0 Widgets
-10.0 Content
-	10.1 Posts and pages
-	10.2 Asides
-	10.3 Comments
-11.0 Infinite scroll
-12.0 Media
-	12.1 Captions
-	12.2 Galleries
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
-1.0 Reset
---------------------------------------------------------------*/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
-	border: 0;
-	font-family: inherit;
-	font-size: 100%;
-	font-style: inherit;
-	font-weight: inherit;
-	margin: 0;
-	outline: 0;
-	padding: 0;
-	vertical-align: baseline;
-}
-
-html {
-	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
-	overflow-y: scroll; /* Keeps page centered in all browsers regardless of content height */
-	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
-	-ms-text-size-adjust:     100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
-	box-sizing: border-box; /* Apply a natural box layout model to the document; see http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
-}
-*,
-*:before,
-*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-	box-sizing: inherit;
-}
-
-body {
-	background: #fff; /* Fallback for when there is no custom background color defined. */
-}
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-main,
-nav,
-section {
-	display: block;
-}
-
-ol,
-ul {
-	list-style: none;
-}
-
-table { /* tables still need 'cellspacing="0"' in the markup */
-	border-collapse: separate;
-	border-spacing: 0;
-}
-
-caption,
-th,
-td {
-	font-weight: normal;
-	text-align: left;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-	content: "";
-}
-
-blockquote,
-q {
-	quotes: "" "";
-}
-
-a:focus {
-	outline: thin dotted;
-}
-
-a:hover,
-a:active {
-	outline: 0;
-}
-
-a img {
-	border: 0;
-}
-
-/*--------------------------------------------------------------
-2.0 Typography
---------------------------------------------------------------*/
-body,
-button,
-input,
-select,
-textarea {
-	font-size: 16px;
-	line-height: 1.5;
-}
-
+/* Heading Font */
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
-	clear: both;
-	margin-bottom: 0.5em;
+h6,
+caption,
+.main-navigation a,
+.gallery-caption,
+.wp-caption-text.gallery-caption,
+.sp-table-caption,
+.sp-template-countdown .event-name,
+.sp-template-countdown time span,
+.sp-template-event-logos,
+.sp-template .player-gallery-group-name,
+.single-sp_staff .entry-header .entry-title strong {
+	font-family: "Oswald", sans-serif;
+	font-weight: normal;
+	text-transform: uppercase;
 }
 
-h1 {
-	font-size: 36px;
+/* Body Font */
+body,
+button,
+input,
+select,
+textarea,
+.sp-template-countdown .event-venue,
+.sp-template-countdown .event-league,
+.sp-template-countdown time span small,
+.sp-template-event-blocks .event-title {
+	font-family: "Lato", sans-serif;
+	text-transform: none;
 }
 
-h2 {
-	font-size: 28px;
+/* Site Footer Font */
+.site-footer {
+	text-transform: uppercase;
 }
 
-h3 {
-	font-size: 24px;
-}
-
-h4 {
-	font-size: 20px;
-}
-
-h5 {
-	font-size: 18px;
-}
-
-h6 {
-	font-size: 16px;
-}
-
-p {
-	margin-bottom: 1.25em;
-}
-
-b,
-strong {
-	font-weight: bold;
-}
-
-dfn,
-cite,
-em,
-i,
-blockquote,
-q {
-	font-style: italic;
-}
-
-blockquote,
-q {
-	margin: 0 1.25em 1.25em 3em;
-	position: relative;
-}
-
-blockquote:before,
-q:before {
-	content: "\f205";
-	font-family: "dashicons";
-	font-style: normal;
-	position: absolute;
-	left: -1.25em;
-	font-size: 2em;
-	top: -0.5em;
-}
-
-address {
-	margin: 0 0 1.25em;
-}
-
-pre {
-	font-family: "Courier 10 Pitch", Courier, monospace;
-	font-size: 14px;
-	line-height: 1.6;
-	margin-bottom: 1.6em;
-	max-width: 100%;
-	overflow: auto;
-	padding: 15px;
-}
-
-code,
-kbd,
-tt,
-var {
-	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-	font-size: 14px;
-	padding: 1px 3px;
-}
-
-abbr,
-acronym {
-	border-bottom: 1px dotted #666;
-	cursor: help;
-}
-
-mark,
-ins {
-	background: #fff9c0;
-	text-decoration: none;
-}
-
-sup,
-sub {
-	font-size: 75%;
-	height: 0;
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
-}
-
-sup {
-	bottom: 1ex;
-}
-
-sub {
-	top: .5ex;
-}
-
-small {
-	font-size: 75%;
-}
-
-big {
-	font-size: 125%;
-}
-
-/*--------------------------------------------------------------
-3.0 Elements
---------------------------------------------------------------*/
-hr {
-	border: 0;
-	height: 1px;
-	margin-bottom: 1.25em;
-}
-
-ul,
-ol {
-	margin: 0 0 1.25em 3em;
-}
-
-ul {
-	list-style: disc;
-}
-
-ol {
-	list-style: decimal;
-}
-
-li {
-	margin-bottom: 0.5em;
-}
-
-li > ul,
-li > ol {
-	margin-top: 0.5em;
-	margin-bottom: 0;
-	margin-left: 1.25em;
-}
-
-dt {
-	font-weight: bold;
-}
-
-dd {
-	margin: 0 1.25em 1.25em;
-}
-
-img {
-	height: auto; /* Make sure images are scaled correctly. */
-	max-width: 100%; /* Adhere to container width. */
-}
-
-figure {
-	margin: 0;
-}
-
-table {
-	margin: 0 0 1.25em;
-	width: 100%;
-}
-
-caption {
-	font-size: 16px;
-	padding: 0.625em 15px;
-	margin: 0 0 -1px;
-}
-
+/* Table Cell Font */
 th,
 td {
-	padding: 0.625em;
+	font-size: 14px;
+	text-align: center;
 }
 
-thead th {
-	font-weight: bold;
-}
-
-/*--------------------------------------------------------------
-4.0 Forms
---------------------------------------------------------------*/
+/* Body Text Color */
+body,
 button,
 input,
 select,
 textarea {
-	font-size: 100%; /* Corrects font size not being inherited in all browsers */
-	margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
-	vertical-align: baseline; /* Improves appearance and consistency in all browsers */
+	color: #222;
 }
 
+blockquote,
+q {
+	font-weight: bold;
+	font-size: 18px;
+}
+
+blockquote p {
+	display: inline;
+}
+
+cite {
+	display: block;
+	font-weight: normal;
+	font-size: 14px;
+	position: relative;
+	text-indent: 2.5em;
+	margin-top: 0.5em;
+}
+
+cite:before {
+	content: "";
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0.75em;
+	width: 2em;
+	height: 1px;
+}
+
+/* Quote Icon Color */
+blockquote:before,
+q:before,
+cite:before {
+	color: #00a69c;
+}
+
+/* Code Color */
+pre,
+code,
+kbd,
+tt,
+var {
+	background: #f4f4f4;
+	border: 1px solid #e0e0e0;
+}
+
+table {
+	background: #f4f4f4;
+	border-top: 1px solid #e0e0e0;
+}
+
+/* Horizontal Rule Color */
+hr {
+	background: #ccc;
+}
+
+/* Caption Color */
+caption {
+	color: #fff;
+	background: #2b353e;
+	border-top: 8px solid #00a69c;
+}
+
+/* Table Cell Color */
+th,
+td {
+	border-bottom: 1px solid #e0e0e0;
+}
+
+tbody td {
+	border-right: 1px solid #e0e0e0;
+}
+
+th:first-child,
+td:first-child {
+	border-left: 1px solid #e0e0e0;
+}
+
+th:last-child,
+td:last-child {
+	border-right: 1px solid #e0e0e0;
+}
+
+/* Button Color */
 button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: none;
-	padding: 0.625em 1.25em;
-	font-size: 14px;
-	cursor: pointer;
-	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
+	color: #fff;
+	background: #00a69c;
+	border-radius: 3px;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
-	padding: 0; /* Addresses excess padding in IE8/9 */
+/* Button Hover Color */
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover,
+button:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+button:active,
+input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+	background: #00958c;
 }
 
-input[type="search"] {
-	-webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
-	box-sizing: content-box;
-}
-
-input[type="search"]::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
-	-webkit-appearance: none;
-}
-
+/* Input Color */
 input[type="text"],
 input[type="email"],
 input[type="url"],
 input[type="password"],
 input[type="search"],
 textarea {
-	border-radius: 3px;
 	color: #666;
 	border: 1px solid #ccc;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"] {
-	padding: 0.575em;
-	font-size: 14px;
-}
-
+/* Input Focus Color */
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="url"]:focus,
@@ -415,1229 +208,541 @@ textarea:focus {
 	color: #111;
 }
 
-textarea {
-	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
-	padding-left: 3px;
-	vertical-align: top; /* Improves readability and alignment in all browsers */
-	width: 100%;
+/* Background Color */
+body {
+	background: #e8e8e8;
 }
 
-/*--------------------------------------------------------------
-5.0 General layout
---------------------------------------------------------------*/
-.site-widgets {
-	width: 93.75%;
-}
-
-.site-widgets .widget {
-	margin: 1.75em auto 0;
-}
-
-.site-branding {
-	padding: 1.75em 3.125%;
-	background-size: cover;
-	text-align: center;
-}
-
-.site-branding-custom-header {
-	padding: 1.75em;
-}
-
+/* Site Logo */
 .site-logo {
-	display: inline-block;
+	margin: -1.75em 0 0.875em;
 }
 
-.site-title {
-	margin: 0;
-	font-size: 48px;
-	font-weight: bold;
-	line-height: 1.25;
-	float: none;
-	clear: none;
+.site-logo img {
+	max-width: 300px;
+	max-height: 120px;
 }
 
-.site-title a,
-.site-title a:hover {
-	color: inherit;
+/* Tagline Color */
+.site-branding hgroup {
+	color: #222;
 }
 
-.site-description {
-	font-size: 20px;
-	margin: 0;
-	float: none;
-	clear: none;
+/* Content Color */
+.site-content {
+	background: #fff;
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 }
 
-.content-area,
-.widget-area {
-	width: 100%;
-	padding: 10px 3.125%;
-	float: left;
-	clear: both;
-}
-
+/* Footer Color */
 .site-footer {
-	font-size: 11px;
-	padding: 15px 0 30px;
-	margin: 0 2%;
+	color: #8b8b8b;
 }
 
-.site-info,
-.site-credit {
-	margin-bottom: 10px;
+/* Footer Link Color */
+.site-footer a,
+.site-footer a:hover {
+	color: #8b8b8b;
 }
 
-@media screen and (min-width: 601px) {
-	.site-widgets {
-		width: 96%;
-	}
-
-	.site-branding {
-		padding: 1.75em 2%;
-		text-align: left;
-	}
-
-	.site-branding hgroup {
-		overflow: hidden;
-	}
-
-	.site-logo {
-		float: left;
-	}
-
-	.content-area,
-	.widget-area {
-		clear: none;
-		padding: 0;
-	}
-
-	.content-area {
-		width: 62%;
-	}
-
-	.page-template-template-fullwidth-php .content-area {
-		width: 100%;
-	}
-
-	.widget-area {
-		width: 30%;
-		float: right;
-	}
-
-	.site-info {
-		float: left;
-	}
-
-	.site-credit {
-		float: right;
-	}
-}
-
-@media screen and (min-width: 1025px) {
-	.site-header,
-	.site-content,
-	.site-footer {
-		margin: 0 auto;
-		width: 1000px;
-	}
-
-	.site-branding,
-	.site-widgets {
-		width: auto;
-	}
-
-	.site-branding {
-		margin: 1.75em auto 0;
-		padding: 1.75em 0;
-	}
-
-	.site-branding-custom-header {
-		padding: 1.75em;
-	}
-}
-
-/*--------------------------------------------------------------
-5.1 Links
---------------------------------------------------------------*/
+/* Link Color */
 a {
-	text-decoration: none;
+	color: #00a69c;
 }
 
-/*--------------------------------------------------------------
-5.2 Menus
---------------------------------------------------------------*/
+/* Link Hover Color */
+a:hover {
+	color: #00958c;
+}
+
+/* Menu Color */
 .main-navigation {
-	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
+	background: #2b353e;
 }
 
-.main-navigation .menu-toggle {
-	width: 100%;
-	border-radius: 0;
-}
-
-.main-navigation ul {
-	list-style: none;
-	margin: 0 0.625em;
-}
-
-.main-navigation li {
-	float: left;
-	position: relative;
-	margin: 0;
-}
-
+/* Menu Link Color */
 .main-navigation a {
-	display: block;
-	padding: 0.625em 10px;
-	font-size: 14px;
+	color: rgba(255, 255, 255, 0.7);
 }
 
-/* Nested menu */
+/* Menu Active Link Color */
+.main-navigation .nav-menu > .current-menu-item > a,
+.main-navigation .nav-menu > .current-menu-parent > a,
+.main-navigation .nav-menu > .current-menu-ancestor > a,
+.main-navigation .nav-menu > .current_page_item > a,
+.main-navigation .nav-menu > .current_page_parent > a,
+.main-navigation .nav-menu > .current_page_ancestor > a {
+	color: #fff;
+}
+
+/* Menu Hover Link Color */
+.main-navigation .nav-menu > li > a:hover {
+	color: #fff;
+	background: #00a69c;
+}
+
+/* Menu Hover With Submenu Link Color */
+.main-navigation .nav-menu > .menu-item-has-children:hover > a {
+	color: #222;
+	background: #fff;
+}
+
+/* Menu Submenu Link Color */
+.main-navigation li.menu-item-has-children:hover a {
+	background: #fff;
+}
+
+/* Nested Menu Color */
 .main-navigation ul ul {
-	float: left;
-	position: absolute;
-	margin: 0;
-	top: 2.4375em;
-	left: -999em;
-	z-index: 99999;
+	background: #fff;
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 }
 
-.main-navigation ul ul ul {
-	left: -999em;
-	top: 0;
-}
-
-.main-navigation ul ul li {
-	width: 100%;
-}
-
+/* Nested Menu Link Color */
 .main-navigation ul ul a {
-	min-width: 200px;
+	color: #222;
 }
 
-.main-navigation ul li:hover > ul {
-	left: auto;
+/* Nested Menu Active Link Color */
+.main-navigation ul ul .current-menu-item > a,
+.main-navigation ul ul .current-menu-parent > a,
+.main-navigation ul ul .current-menu-ancestor > a,
+.main-navigation ul ul .current_page_item > a,
+.main-navigation ul ul .current_page_parent > a,
+.main-navigation ul ul .current_page_ancestor > a {
+	color: #00a69c;
 }
 
-.main-navigation ul ul li:hover > ul {
-	left: 100%;
+/* Nester Menu Hover With Submenu Link Color */
+.main-navigation ul ul li:hover > a {
+	background: rgba(0, 0, 0, 0.05);
 }
 
-/* Small menu */
-.menu-toggle {
-	display: none;
-}
-
-.site-main .comment-navigation,
-.site-main .paging-navigation,
-.site-main .post-navigation {
-	margin: 0 0 1.25em;
-	overflow: hidden;
-}
-
-.comment-navigation .nav-previous,
-.paging-navigation .nav-previous,
-.post-navigation .nav-previous {
-	float: left;
-	width: 50%;
-}
-
-.comment-navigation .nav-next,
-.paging-navigation .nav-next,
-.post-navigation .nav-next {
-	float: right;
-	text-align: right;
-	width: 50%;
-}
-
-@media screen and (max-width: 600px) {
-	.menu-toggle,
-	.main-navigation.toggled .nav-menu {
-		display: block;
-	}
-
-	.main-navigation ul {
-		display: none;
-	}
-}
-
-
-/*--------------------------------------------------------------
-6.0 Accessibility
---------------------------------------------------------------*/
-/* Text meant only for screen readers */
-.screen-reader-text {
-	clip: rect(1px, 1px, 1px, 1px);
-	position: absolute !important;
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
-}
-
-.screen-reader-text:hover,
-.screen-reader-text:active,
-.screen-reader-text:focus {
-	background-color: #f1f1f1;
-	border-radius: 3px;
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-	clip: auto !important;
-	color: #21759b;
-	display: block;
-	font-size: 14px;
-	font-size: 1.4rem;
-	font-weight: bold;
-	height: auto;
-	left: 5px;
-	line-height: normal;
-	padding: 15px 23px 14px;
-	text-decoration: none;
-	top: 5px;
-	width: auto;
-	z-index: 100000; /* Above WP toolbar */
-}
-
-/*--------------------------------------------------------------
-7.0 Alignments
---------------------------------------------------------------*/
-.alignleft {
-	display: inline;
-	float: left;
-	margin-right: 1.25em;
-}
-
-.alignright {
-	display: inline;
-	float: right;
-	margin-left: 1.25em;
-}
-
-.aligncenter {
-	clear: both;
-	display: block;
-	margin: 0 auto;
-}
-
-/*--------------------------------------------------------------
-8.0 Clearings
---------------------------------------------------------------*/
-.clear:before,
-.clear:after,
-.entry-content:before,
-.entry-content:after,
-.comment-body:before,
-.comment-body:after,
-.comment-content:before,
-.comment-content:after,
-.site-header:before,
-.site-header:after,
-.site-branding:before,
-.site-branding:after,
-.site-content:before,
-.site-content:after,
-.site-footer:before,
-.site-footer:after {
-	content: "";
-	display: table;
-}
-
-.clear:after,
-.entry-content:after,
-.comment-body:after,
-.comment-content:after,
-.site-header:after,
-.site-branding:after,
-.site-content:after,
-.site-footer:after {
-	clear: both;
-}
-
-/*--------------------------------------------------------------
-9.0 Widgets
---------------------------------------------------------------*/
+/* Widgets */
 .widget {
-	margin: 0 0 1.25em;
-}
-
-/* Make sure input and select elements fit in widgets */
-.widget input,
-.widget select {
-	width: 100%;
-	box-sizing: border-box;
-	padding: 0.5em 1em;
-}
-
-.widget-title {
-	font-size: 24px;
-}
-
-.widget ul {
-	margin-left: 1.25em;
-}
-
-.widget li:last-child {
-	border-bottom: none;
-}
-
-/* Calendar widget */
-.widget_calendar #today {
-	font-weight: bold;
-}
-
-.widget_calendar #prev {
-	text-align: left;
-}
-
-.widget_calendar #next {
-	text-align: right;
-}
-
-/* Media queries */
-@media screen and (min-width: 601px) and (max-width: 1024px) {
-	.widget_calendar th,
-	.widget_calendar td {
-		padding: 0.3125em;
-	}
-}
-
-/*--------------------------------------------------------------
-10.0 Content
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-10.1 Posts and pages
---------------------------------------------------------------*/
-.hentry {
-	margin: 0 0 1.25em;
-}
-
-.entry-meta,
-.entry-footer-links {
-	clear: both;
-}
-
-.entry-footer-links .tags-links {
-	padding-left: 0.625em;
-	margin-left: 0.625em;
-}
-
-.nav-links a {
 	font-size: 14px;
 }
 
-.nav-links .meta-nav {
-	padding: 0.125em 0.375em;
-	display: inline-block;
+/* Custom lists */
+.widget_recent_entries ul,
+.widget_pages ul,
+.widget_categories ul,
+.widget_archive ul,
+.widget_recent_comments ul,
+.widget_nav_menu ul,
+.widget_links ul,
+.widget_meta ul {
+	margin-left: 0;
 }
 
-.nav-links .nav-previous .meta-nav {
-	margin-right: 0.25em;
+.widget_recent_entries ul li,
+.widget_pages ul li,
+.widget_categories ul li,
+.widget_archive ul li,
+.widget_recent_comments ul li,
+.widget_nav_menu ul li,
+.widget_links ul li,
+.widget_meta ul li {
+	list-style: none;
+	margin-bottom: 0.6em;
 }
 
-.nav-links .nav-next .meta-nav {
-	margin-left: 0.25em;
-}
-
-.byline,
-.updated:not(.published) {
-	display: none;
-}
-
-.single .byline,
-.group-blog .byline {
-	display: inline;
-}
-
-.entry-header {
-	position: relative;
-	margin-bottom: 1.25em;
-}
-
-.entry-header img {
-	margin-bottom: 0.625em;
-	display: block;
-}
-
-.sticky .entry-title:before {
+.widget_recent_entries ul li:before,
+.widget_pages ul li:before,
+.widget_categories ul li:before,
+.widget_archive ul li:before,
+.widget_recent_comments ul li:before,
+.widget_nav_menu ul li:before,
+.widget_links ul li:before,
+.widget_meta ul li:before {
 	font-family: "dashicons";
 	font-size: 1.25em;
 	margin-right: 0.3em;
+	margin-left: -0.5px;
 	line-height: 1;
 	display: inline-block;
-	content: "\f109";
+	opacity: 0.25;
+	content: "\f345";
 	float: left;
 }
 
-.page-links {
-	clear: both;
-	margin: 0 0 1.25em;
+.widget_recent_entries ul li:before,
+.widget_pages ul li:before {
+	content: "\f105";
 }
 
-/*--------------------------------------------------------------
-10.2 Asides
---------------------------------------------------------------*/
-.blog .format-aside .entry-title,
-.archive .format-aside .entry-title {
+.widget_categories ul li:before {
+	content: "\f318";
+}
+
+.widget_archive ul li:before {
+	content: "\f480";
+}
+
+.widget_recent_comments ul li:before {
+	content: "\f101";
+}
+
+.widget_links ul li:before {
+	content: "\f504";
+}
+
+/* Search widget */
+.widget_search .search-submit {
 	display: none;
 }
 
-/*--------------------------------------------------------------
-10.3 Comments
---------------------------------------------------------------*/
-.comments-area ol {
-	list-style: none;
+/* Widget List Icon Color */
+.widget_recent_entries ul li:before,
+.widget_pages ul li:before,
+.widget_categories ul li:before,
+.widget_archive ul li:before,
+.widget_recent_comments ul li:before,
+.widget_nav_menu ul li:before,
+.widget_links ul li:before,
+.widget_meta ul li:before {
+	color: #222;
 }
 
-.comment-list {
-	margin: 1.25em 0 3em;
+/* Widget List Link Color */
+.widget_recent_entries ul li a,
+.widget_pages ul li a,
+.widget_categories ul li a,
+.widget_archive ul li a,
+.widget_recent_comments ul li a,
+.widget_nav_menu ul li a,
+.widget_links ul li a,
+.widget_meta ul li a {
+	color: #a3a3a3;
 }
 
-.comment-body {
-	position: relative;
-	margin-bottom: 1.25em;
+/* Widget List Link Hover Color */
+.widget_recent_entries ul li a:hover,
+.widget_pages ul li a:hover,
+.widget_categories ul li a:hover,
+.widget_archive ul li a:hover,
+.widget_recent_comments ul li a:hover,
+.widget_nav_menu ul li a:hover,
+.widget_links ul li a:hover,
+.widget_meta ul li a:hover {
+	color: #00a69c;
 }
 
-.comment-author .avatar {
-	width: 25%;
-	float: left;
-	position: absolute;
+/* Calendar Widget Today Color */
+.widget_calendar #today {
+	background: #fff;
 }
 
-.comment-author .fn {
-	float: right;
-	width: 70%;
-	margin-bottom: 0.25em;
+/* Calendar Widget Pagination Color */
+.widget_calendar #prev a,
+.widget_calendar #next a {
+	color: #a3a3a3;
 }
 
-.comment-author .says {
-	display: none;
+/* Calendar Widget Pagination Hover Color */
+.widget_calendar #prev a:hover,
+.widget_calendar #next a:hover {
+	color: #00a69c;
 }
 
-.comment-metadata {
-	position: absolute;
-	right: 15px;
-	bottom: 0.625em;
+.entry-meta,
+.posted-on {
 	font-size: 14px;
-	z-index: 2;
+	padding: 0.125em 0.375em;
+	color: #fff;
+	background: rgba(0, 0, 0, 0.4);
 }
 
-.comment-metadata .edit-link {
-	padding-left: 0.625em;
-	margin-left: 0.625em;
-	border-left: 1px solid transparent;
-}
-
-.comment-metadata .edit-link {
-	border-left: 1px solid #e0e0e0;
-}
-
-.comment-content {
-	position: relative;
+.entry-meta {
 	float: right;
-	width: 70%;
-	padding: 0.625em 15px 0.625em;
-	background: #f4f4f4;
-	border: 1px solid #e0e0e0;
 }
 
-.comment-content a {
-	word-wrap: break-word;
+.posted-on {
+	float: left;
 }
 
-.comment-content:before {
-	content: "";
-	display: block;
-	width: 10px;
-	height: 20px;
-	position: absolute;
-	left: -10px;
-	top: 12px;
-	border: 10px solid transparent;
-	border-left: none;
-	border-right-color: #e0e0e0;
+.entry-meta a,
+.posted-on a,
+.entry-meta a:hover,
+.posted-on a:hover {
+	color: #fff;
 }
 
-.comment-content:after {
-	content: "";
-	display: block;
-	width: 10px;
-	height: 20px;
-	position: absolute;
-	left: -9px;
-	top: 12px;
-	border: 10px solid transparent;
-	border-left: none;
-	border-right-color: #f4f4f4;
-}
-
-.comment-body .reply {
+.has-post-thumbnail .entry-meta,
+.has-post-thumbnail .posted-on {
+	float: none;
 	position: absolute;
 	top: 0;
+}
+
+.has-post-thumbnail .entry-meta {
 	right: 0;
 }
 
+.has-post-thumbnail .posted-on {
+	left: 0;
+}
+
+.entry-footer a {
+	color: #fff;
+	background: #00a69c;
+	padding: 0.125em 0.375em;
+	opacity: 1;
+}
+
+.entry-footer a:hover {
+	color: #fff;
+	background: #00887e;
+}
+
+.nav-links a {
+	color: #a3a3a3;
+}
+
+.nav-links .meta-nav {
+	color: #fff;
+	background: #00a69c;
+}
+
+.nav-links .meta-nav:hover {
+	background: #00958c;
+}
+
+/* Title Font */
+.entry-title,
+.page-title {
+	text-transform: none;
+}
+
+.entry-title a,
+a .entry-title,
+.page-title a,
+a .page-title,
+.entry-title a:hover,
+a:hover .entry-title,
+.page-title a:hover,
+a:hover .page-title:hover {
+	color: #222;
+}
+
+.sticky .entry-title:before {
+	color: #00a69c;
+}
+
+/* Comments */
+.comment-metadata a {
+	color: #a3a3a3;
+}
+
+.comment-metadata a:hover {
+	color: #00a69c;
+}
+
 .comment-body .reply a {
-	font-size: 14px;
-	margin-bottom: 0.25em;
+	color: #a3a3a3;
 }
 
-.bypostauthor {
-	display: block;
+.comment-body .reply a:hover {
+	color: #00a69c;
 }
 
-
-@media screen and (min-width: 401px) {
-	.comment-author .avatar {
-		width: 16.1%;
-	}
-
-	.comment-author .fn,	
-	.comment-content {
-		width: 80%;
-	}
-}
-
-/*--------------------------------------------------------------
-11.0 Infinite scroll
---------------------------------------------------------------*/
-/* Globally hidden elements when Infinite Scroll is supported and in use. */
-.infinite-scroll .paging-navigation, /* Older / Newer Posts Navigation (always hidden) */
-.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
-	display: none;
-}
-
-/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
-.infinity-end.neverending .site-footer {
-	display: block;
-}
-
-/*--------------------------------------------------------------
-12.0 Media
---------------------------------------------------------------*/
-.page-content img.wp-smiley,
-.entry-content img.wp-smiley,
-.comment-content img.wp-smiley {
-	border: none;
-	margin-bottom: 0;
-	margin-top: 0;
-	padding: 0;
-}
-
-/* Make sure embeds and iframes fit their containers */
-embed,
-iframe,
-object {
-	max-width: 100%;
-}
-
-/*--------------------------------------------------------------
-12.1 Captions
---------------------------------------------------------------*/
-.wp-caption {
-	margin-bottom: 1.25em;
-	max-width: 100%;
-}
-
-.wp-caption img[class*="wp-image-"] {
-	display: block;
-	margin: 0 auto;
-}
-
+/* Galleries */
 .wp-caption-text {
-	text-align: center;
-	font-size: 14px;
-}
-
-.wp-caption .wp-caption-text {
-	margin: 0.8075em 0;
-}
-
-/*--------------------------------------------------------------
-12.2 Galleries
---------------------------------------------------------------*/
-.gallery {
-	margin-bottom: 1.25em;
-}
-
-.gallery-item {
-	display: inline-block;
-	text-align: center;
-	vertical-align: top;
-	width: 100%;
-	position: relative;
-}
-
-.gallery-columns-2 .gallery-item {
-	max-width: 50%;
-}
-
-.gallery-columns-3 .gallery-item {
-	max-width: 33.33%;
-}
-
-.gallery-columns-4 .gallery-item {
-	max-width: 25%;
-}
-
-.gallery-columns-5 .gallery-item {
-	max-width: 20%;
-}
-
-.gallery-columns-6 .gallery-item {
-	max-width: 16.66%;
-}
-
-.gallery-columns-7 .gallery-item {
-	max-width: 14.28%;
-}
-
-.gallery-columns-8 .gallery-item {
-	max-width: 12.5%;
-}
-
-.gallery-columns-9 .gallery-item {
-	max-width: 11.11%;
-}
-
-.gallery-item img {
-	width: 100%;
-}
-
-.gallery-item * {
-	display: block;
+	color: #a3a3a3;
 }
 
 .gallery-caption,
 .wp-caption-text.gallery-caption {
-	position: absolute;
-	margin: 0;
-	bottom: 0;
-	padding: 0.625em 15px;
-	text-align: center;
-	width: 100%;
-	display: none;
-	pointer-events: none;
+	color: #fff;
+	background: rgba(0,0,0,0.5);
 }
 
-.gallery-item:hover .gallery-caption {
-	display: block;
+.gallery-caption a,
+.wp-caption-text.gallery-caption {
+	color: #fff;
 }
 
-/*--------------------------------------------------------------
-13.0 Integrations
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
-13.1 SportsPress
---------------------------------------------------------------*/
-.sp-template {
-	margin-bottom: 1.25em;
-}
-
-.sp-template table:last-child {
-	margin-bottom: 0;
-}
-
-.sp-template iframe {
-	display: block;
-}
-
-.sp-post-content {
-	clear: both;
-}
-
+/* SportsPress */
 .sp-view-all-link {
-	margin-top: 1em;
-	text-align: right;
-	float: right;
-	margin-bottom: 2em;
-	font-size: 14px;
+	color: #a3a3a3;
+}
+
+.sp-view-all-link:hover {
+	color: #00a69c;
+}
+
+.sp-highlight {
+	background: #fff;
+}
+
+.sp-heading {
+	background: #2b353e;
+	color: #fff;
 }
 
 .sp-table-caption,
 .sp-template-countdown .event-name {
-	font-size: 16px;
-	font-weight: normal;
-	text-align: left;
-	border: none;
-	margin: 0 0 -1px;
-	font-size: 16px;
-	position: relative;
-	z-index: 2;
-}
-
-.sp-table-caption h1,
-.sp-table-caption h2,
-.sp-table-caption h3,
-.sp-table-caption h4,
-.sp-table-caption h5,
-.sp-table-caption h6 {
-	margin: 0;
-	font-size: 16px;
-}
-
-.sp-data-table tbody tr.odd {
-	background: initial;
-}
-
-.sp-table-wrapper .dataTables_paginate {
-	margin-top: -1px;
-	font-size: 14px;
-	padding: 0.125em 0.625em;
-}
-
-.sp-template-countdown h5 {
-	font-weight: bold;
-	text-align: left;
-	font-size: 14px;
-	padding: 0.635em 15px;
-	border: 1px solid transparent;
-	border-top: none;
-	margin: 0;
-}
-
-.sp-template-countdown {
-	width: 100%;
-	overflow: auto;
-    zoom: 1;
-}
-
-.sp-template-countdown .sp-countdown {
-	margin: 0;
-}
-
-.sp-template-countdown time span {
-	box-sizing: border-box;
-	display: block;
-	float: left;
-	width: 25%;
-	text-align: center;
-	padding: 14px 0;
-	line-height: 1.25;
-	font-size: 24px;
-}
-
-.sp-template-countdown time span small {
-	display: block;
-	clear: both;
-	font-size: 14px;
-}
-
-.sp-template-event-calendar #today {
-	font-weight: bold;
-}
-
-.sp-template-event-logos {
-	margin-top: 0.5em;
-	font-size: 36px;
-}
-
-.sp-template-event-logos img {
-	vertical-align: middle;
-}
-
-.sp-template-event-video .sp-table-caption {
-	display: none;
-}
-
-.sp-event-staff {
-	font-size: 14px;
+	color: #fff;
+	background: #2b353e;
+	border-top: 8px solid #00a69c;
 	padding: 0.625em 15px;
 }
 
-.sp-template-event-performance-icons thead {
-	display: none;
+.sp-event-staff {
+	background: #f4f4f4;
+	border: 1px solid #e0e0e0;
 }
 
-.sp-template-event-performance-icons td {
-	border-width: 0;
+.sp-table-wrapper .dataTables_paginate {
+	background: #f4f4f4;
+	color: #a3a3a3;
+	border: 1px solid #e0e0e0;
 }
 
-.sp-template-event-performance-icons .sp-performance-icons {
-	width: 40%;
-	text-align: left;
-	vertical-align: middle;
+.sp-template-countdown .event-name a {
+	color: #fff;
 }
 
-.sp-template-event-performance-icons tbody td {
-	padding: 0.3125em 0.625em;
+.sp-template-countdown .event-venue,
+.sp-template-countdown .event-league {
+	background: #f4f4f4;
+	border: 1px solid #e0e0e0;
 }
 
-.sp-template-event-performance-icons tbody tr:first-child td {
-	padding-top: 0.625em;
+.sp-template-countdown time span {
+	border-right: 1px solid #e0e0e0;
+	border-bottom: 1px solid #e0e0e0;
+	background: #f4f4f4;
 }
 
-.sp-template-event-performance-icons tbody tr:last-child td {
-	padding-bottom: 0.625em;
+.sp-template-countdown time span:first-child {
+	border-left: 1px solid #e0e0e0;
 }
 
-.sp-template-event-performance-icons .data-number {
-	text-align: right;
-	padding-left: 15px;
+.sp-template-event-venue .sp-google-map {
+	margin: 0 -1px;
 }
 
-.sp-template-event-performance-icons .data-name {
-	text-align: left;
-	padding-right: 15px;
+.sp-template-event-calendar #today {
+	background: #fff;
 }
 
-.sp-template-event-performance-icons td:first-child {
-	border-left-width: 1px;
+.sp-template-event-calendar #prev a,
+.sp-template-event-calendar #next a {
+	color: #a3a3a3;
 }
 
-.sp-template-event-performance-icons td:last-child {
-	border-right-width: 1px;
+.sp-template-event-calendar #prev a:hover,
+.sp-template-event-calendar #next a:hover {
+	color: #00a69c;
 }
 
-.sp-template-event-performance-icons tr:last-child td {
-	border-bottom-width: 1px;
+.sp-template-event-blocks .event-title {
+	color: #222;
+	background: #fff;
+	border: 1px solid #e0e0e0;
 }
 
-.sp-template-event-venue .sp-event-venue-map-row td {
-	padding: 0;
-	background: rgba(0, 0, 0, 0.05);
+.sp-template-event-blocks .event-title a {
+	color: #222;
 }
 
 .sp-template-event-blocks .event-results,
 .sp-template-event-blocks .event-time {
-	font-size: 24px;
-}
-
-.sp-template-event-blocks .event-league,
-.sp-template-event-blocks .event-season,
-.sp-template-event-blocks .event-venue {
-	display: block;
-	font-weight: bold;
-	font-size: 14px;
-	clear: both;
-	margin: 0 -0.5625em;
-	padding: 0 0.625em 15px;
-}
-
-.sp-template-event-blocks .event-title {
-	clear: both;
-	font-weight: bold;
-	font-size: 16px;
-	margin: 0 -0.9375em -0.625em;
-	padding: 0.625em 15px;
-}
-
-.widget .sp-template-event-blocks .event-results,
-.widget .sp-template-event-blocks .event-time {
-	font-size: 24px;
-}
-
-.widget .sp-template-event-blocks .event-title {
-	margin: 0 -0.9375em -0.625em;
-	padding: 0.625em 15px;
-}
-
-.sp-template-logo {
-	margin: -10px 0 1.25em 10px;
-	float: right;
-}
-
-.sp-template-photo {
-	max-width: none;
-	width: 100%;
-	text-align: center;
-	margin: 0 0 1.25em 0;
-}
-
-.sp-template-photo img {
-	width: 100%;
-	display: block;
+	text-transform: none;
 }
 
 .sp-template-details dl {
-	font-size: 14px;
-	padding: 1em 15px 0;
-	margin-bottom: 1.25em;
-}
-
-.sp-template-details dt {
-	width: 40%;
-	margin: 0 0 1em;
-	float: left;
-	clear: left;
-}
-
-.sp-template-details dd {
-	overflow: hidden;
-	margin: 0 0 1em 45%;
-}
-
-.sp-template-details dd img {
-	vertical-align: middle;
-	margin-right: 0.25em;
-}
-
-.sp-template .player-group-name {
-	margin-top: 1.25em;
-}
-
-.sp-template .player-gallery-group-name {
-	clear: both;
-	font-size: 24px;
-}
-
-.sp-template-player-gallery .gallery-item {
-	max-width: 50%;
+	background: #f4f4f4;
+	border: 1px solid #e0e0e0;
 }
 
 .sp-template-player-gallery .gallery-caption {
-	height: auto;
-	display: block;
-	pointer-events: auto;
-	position: relative;
-	bottom: auto;
-	padding: 0.625em;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
-
-.sp-template-player-gallery .gallery-caption.has-number {
-	padding-left: 49px;
+	background: #2b353e;
 }
 
 .sp-template-player-gallery .gallery-item strong {
-	font-weight: normal;
-	font-size: 20px;
-	position: absolute;
-	left: 0;
-	top: 0;
-	height: 100%;
-	width: 39px;
-	padding: 5px 0;
-	text-align: center;
-	white-space: nowrap;
-}
-
-.sp-header-sponsors {
-	margin-bottom: 10px;
-}
-
-.sp-header-sponsors .sp-sponsors .sponsor {
-	margin: 0 5px 10px;
+	background: #00a69c;
 }
 
 .sp-footer-sponsors .sp-sponsors {
-	padding: 3em 0;
+	border-top: 1px solid #e0e0e0;
 }
 
-.sp-template.sp-template-tournament-winner {
-	color: inherit;
+.sp-template-tournament-bracket table {
+	border: 1px solid #e0e0e0;
 }
 
 .sp-template-tournament-bracket thead th {
-	border: none;
-}
-
-.sp-template-tournament-bracket td,
-.sp-template-tournament-bracket td:first-child,
-.sp-template-tournament-bracket td:last-child {
-	border: none;
+	border-bottom: 1px solid #e0e0e0;
 }
 
 .sp-template-tournament-bracket .sp-result {
-	padding: 2px 5px;
-	margin: 0 3px;
+	color: #fff;
+	background: #00a69c;
+}
+
+.sp-template-tournament-bracket .sp-event-title:hover .sp-result {
+	background: #00958c;
 }
 
 .sp-template-tournament-bracket .sp-event-venue {
-	font-weight: normal;
-}
-
-.single-sp_event .has-post-thumbnail .entry-header .entry-title {
-	margin: 0.25em 0;
-}
-
-.single-sp_team .has-post-thumbnail .entry-header .entry-title {
-	float: left;
+	color: #a3a3a3;
 }
 
 .single-sp_player .entry-header .entry-title strong {
-	padding: 0 0.475em;
-	margin-right: 0.25em;
-	font-weight: normal;
+	background: #00a69c;
+	color: #fff;
 }
 
-@media screen and (min-width: 601px) {
-	.sp-template-event-blocks .event-results,
-	.sp-template-event-blocks .event-time {
-		font-size: 36px;
-	}
-
-	.sp-template-event-calendar tbody td {
-		padding: 1.25em 0.675em;
-	}
-
-
-	.widget .sp-template-event-calendar tbody td {
-		padding: 0.625em;
-	}
-
-	.single-sp_event .has-post-thumbnail .entry-header .entry-title {
-		margin: 0.5em 0;
-	}
+.single-sp_staff .entry-header .entry-title strong {
+	color: #00a69c;
 }
 
-@media screen and (min-width: 801px) {
-	.sp-template-event-performance-icons {
-		width: 48%;
-		float: left;
-		clear: left;
-	}
-
-	.sp-template-event-performance-icons:nth-child(2n) {
-		float: right;
-		clear: right;
-	}
-}
-
-@media screen and (min-width: 1025px) {
-	.sp-template-photo {
-		width: auto;
-		max-width: 48%;
-		margin: 0 4% 1.25em 0;
-	}
-
-	.sp-template-player-gallery .gallery-columns-3 .gallery-item {
-		max-width: 33.33%;
-	}
-
-	.sp-template-player-gallery .gallery-columns-4 .gallery-item {
-		max-width: 25%;
-	}
-
-	.sp-template-player-gallery .gallery-columns-5 .gallery-item {
-		max-width: 20%;
-	}
-
-	.sp-template-player-gallery .gallery-columns-6 .gallery-item {
-		max-width: 16.66%;
-	}
-
-	.sp-template-player-gallery .gallery-columns-7 .gallery-item {
-		max-width: 14.28%;
-	}
-
-	.sp-template-player-gallery .gallery-columns-8 .gallery-item {
-		max-width: 12.5%;
-	}
-
-	.sp-template-player-gallery .gallery-columns-9 .gallery-item {
-		max-width: 11.11%;
-	}
-}
-
-/*--------------------------------------------------------------
-13.2 WooCommerce
---------------------------------------------------------------*/
-.woocommerce #content input.button,
-.woocommerce #respond input#submit,
-.woocommerce a.button,
-.woocommerce button.button,
-.woocommerce input.button,
-.woocommerce-page #content input.button,
-.woocommerce-page #respond input#submit,
-.woocommerce-page a.button,
-.woocommerce-page button.button,
-.woocommerce-page input.button,
-.woocommerce #content input.button.alt,
-.woocommerce #respond input#submit.alt,
-.woocommerce a.button.alt,
-.woocommerce button.button.alt,
-.woocommerce input.button.alt,
-.woocommerce-page #content input.button.alt,
-.woocommerce-page #respond input#submit.alt,
-.woocommerce-page a.button.alt,
-.woocommerce-page button.button.alt,
-.woocommerce-page input.button.alt {
-	padding: 0.625em 1.25em;
-	font-size: 14px;
-	font-weight: normal;
-	line-height: 1.5;
-}
-
-.woocommerce #content .quantity input.qty,
-.woocommerce .quantity input.qty,
-.woocommerce-page #content .quantity input.qty,
-.woocommerce-page .quantity input.qty {
-	height: 39px;
-}
-
-.woocommerce #content .quantity .minus,
-.woocommerce #content .quantity .plus,
-.woocommerce .quantity .minus,
-.woocommerce .quantity .plus,
-.woocommerce-page #content .quantity .minus,
-.woocommerce-page #content .quantity .plus,
-.woocommerce-page .quantity .minus,
-.woocommerce-page .quantity .plus {
-	height: 50%;
-}
-
-.woocommerce #content .quantity .minus,
-.woocommerce .quantity .minus,
-.woocommerce-page #content .quantity .minus,
-.woocommerce-page .quantity .minus {
-	border-bottom-left-radius: 0;
-	-webkit-border-bottom-left-radius: 0;
-}
-
-.woocommerce #content .quantity .plus,
-.woocommerce .quantity .plus,
-.woocommerce-page #content .quantity .plus,
-.woocommerce-page .quantity .plus {
-	border-top-left-radius: 0;
-	-webkit-border-top-left-radius: 0;
-}
-
-.post-type-archive-product .product {
-	margin-bottom: 1.25em;
-}
-
+/* WooCommerce */
 .woocommerce .woocommerce-breadcrumb,
 .woocommerce-page .woocommerce-breadcrumb {
-	clear: both;
-	margin: 0;
-	padding: 0.625em 3.125%;
-	font-size: 14px;
+	background: #f4f4f4;
+	border-bottom: 1px solid #e0e0e0;
 }
 
-.woocommerce #content div.product div.thumbnails a,
-.woocommerce div.product div.thumbnails a,
-.woocommerce-page #content div.product div.thumbnails a,
-.woocommerce-page div.product div.thumbnails a {
-	margin-bottom: 1.25em;
+.woocommerce ul.products li.product h3,
+.woocommerce-page ul.products li.product h3 {
+	color: #222;
 }
 
-.woocommerce #content div.product,
-.woocommerce div.product,
-.woocommerce-page #content div.product,
-.woocommerce-page div.product {
-	width: 93.75%;
-	margin: 20px 0 20px 3.125%;
-	float: left;
-	clear: both;
-}
-
+/* Media Queries */
 @media screen and (min-width: 601px) {
-	.woocommerce .woocommerce-breadcrumb,
-	.woocommerce-page .woocommerce-breadcrumb {
-		padding: 0.625em 2%;
+	.site-logo {
+		margin: -1em 10px -1em 0;
 	}
 
-	.woocommerce #content div.product,
-	.woocommerce div.product,
-	.woocommerce-page #content div.product,
-	.woocommerce-page div.product {
-		width: 62%;
-		margin: 20px 0 20px 2%;
-		float: left;
-		clear: left;
+	/* Vertical Widget Divider Color */
+	.content-area {
+		width: 66.1%;
+		padding: 20px 2%;
+		border-right: 1px solid #e0e0e0;
+	}
+
+	.content-area-full-width {
+		border-right: 0;
+	}
+
+	.widget-area {
+		width: 34%;
+		padding: 20px 2% 20px 1.9%;
+		margin-left: -1px;
+		border-left: 1px solid #e0e0e0;
+	}
+	.single-post .has-post-thumbnail .entry-header .entry-title,
+	.page .has-post-thumbnail .entry-header .entry-title {
+		position: absolute;
+		bottom: 22px;
+		padding: 0 0.5em;
+		background: #fff;
+	}
+
+	.entry-header img {
+		margin-bottom: 0;
 	}
 }

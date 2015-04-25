@@ -2,425 +2,51 @@
 Theme Name: Rookie
 */
 
-/*--------------------------------------------------------------
-1.0 Reset
---------------------------------------------------------------*/
-body {
-	direction: rtl;
-	unicode-bidi: embed;
+tbody td {
+	border-right: 0;
+	border-left: 1px solid #e0e0e0;
 }
 
-caption,
-th,
-td {
-	text-align: right;
-}
-
-/*--------------------------------------------------------------
-2.0 Typography
---------------------------------------------------------------*/
-blockquote,
-q {
-	margin: 0 3em 1.25em 1.25em;
-}
-
-blockquote:before,
-q:before {
-	left: auto;
-	right: -1.25em;
-}
-
-cite:before {
-	left: auto;
-	right: 0;
-}
-
-/*--------------------------------------------------------------
-3.0 Elements
---------------------------------------------------------------*/
-li > ul,
-li > ol {
-	margin-left: 0;
-	margin-right: 1.25em;
-}
-
-/*--------------------------------------------------------------
-4.0 Forms
---------------------------------------------------------------*/
-textarea {
-	padding-left: 2px;
-	padding-right: 3px;
-}
-
-/*--------------------------------------------------------------
-5.0 General layout
---------------------------------------------------------------*/
-.content-area,
-.widget-area {
-	float: right;
-}
-
-@media screen and (min-width: 601px) {
-	.site-branding {
-		text-align: right;
-	}
-
-	.site-logo {
-		float: right;
-	}
-
-	.widget-area {
-		float: left;
-	}
-
-	.site-info {
-		float: right;
-	}
-
-	.site-credit {
-		float: left;
-	}
-}
-
-/*--------------------------------------------------------------
-5.1 Links
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
-5.2 Menus
---------------------------------------------------------------*/
-.main-navigation {
-	float: right;
-}
-
-.main-navigation li {
-	float: right;
-}
-
-.main-navigation ul ul {
-	float: right;
-	left: auto;
-	right: -999em;
-}
-
-.main-navigation ul ul ul {
-	left: auto;
-	right: -999em;
-}
-
-.main-navigation ul li:hover > ul {
-	right: auto;
-}
-
-.main-navigation ul ul li:hover > ul {
-	right: 100%;
-}
-
-.comment-navigation .nav-previous,
-.paging-navigation .nav-previous,
-.post-navigation .nav-previous {
-	float: right;
-}
-
-.comment-navigation .nav-next,
-.paging-navigation .nav-next,
-.post-navigation .nav-next {
-	float: left;
-	text-align: left;
-}
-
-/*--------------------------------------------------------------
-6.0 Accessibility
---------------------------------------------------------------*/
-.screen-reader-text:hover,
-.screen-reader-text:active,
-.screen-reader-text:focus {
-	left: auto;
-	right: 5px;
-}
-
-/*--------------------------------------------------------------
-7.0 Alignments
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
-8.0 Clearings
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
-9.0 Widgets
---------------------------------------------------------------*/
-.widget ul {
-	margin-left: 0;
-	margin-right: 1.25em;
-}
-
-/* Custom lists */
-.widget_recent_entries ul,
-.widget_pages ul,
-.widget_categories ul,
-.widget_archive ul,
-.widget_recent_comments ul,
-.widget_nav_menu ul,
-.widget_links ul,
-.widget_meta ul {
-	margin-right: 0;
-}
-
-.widget_recent_entries ul li:before,
-.widget_pages ul li:before,
-.widget_categories ul li:before,
-.widget_archive ul li:before,
-.widget_recent_comments ul li:before,
-.widget_nav_menu ul li:before,
-.widget_links ul li:before,
-.widget_meta ul li:before {
-	margin-right: -0.5px;
-	margin-left: 0.3em;
-	float: right;
-    -moz-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    transform: scaleX(-1);
-    -ms-filter: fliph; /*IE*/
-    filter: fliph; /*IE*/
-}
-
-.widget_calendar #prev {
-	text-align: right;
-}
-
-.widget_calendar #next {
-	text-align: left;
-}
-
-/*--------------------------------------------------------------
-10.0 Content
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-10.1 Posts and pages
---------------------------------------------------------------*/
-.nav-links .nav-previous .meta-nav {
-	margin-right: 0;
-	margin-left: 0.25em;
-    -moz-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    transform: scaleX(-1);
-    -ms-filter: fliph; /*IE*/
-    filter: fliph; /*IE*/
-}
-
-.nav-links .nav-next .meta-nav {
-	margin-left: 0;
-	margin-right: 0.25em;
-    -moz-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    transform: scaleX(-1);
-    -ms-filter: fliph; /*IE*/
-    filter: fliph; /*IE*/
-}
-
-.sticky .entry-title:before {
-	margin-right: 0;
-	margin-left: 0.3em;
-	float: right;
-}
-
-/*--------------------------------------------------------------
-10.2 Asides
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
-10.3 Comments
---------------------------------------------------------------*/
-.comment-author .avatar {
-	float: right;
-}
-
-.comment-author .fn {
-	float: left;
-}
-
-.comment-metadata {
-	right: auto;
-	left: 15px;
-}
-
-.comment-metadata .edit-link {
+th:first-child,
+td:first-child {
 	border-left: 0;
 	border-right: 1px solid #e0e0e0;
-	padding-left: 0;
-	padding-right: 0.625em;
-	margin-left: 0;
-	margin-right: 0.625em;
 }
 
-.comment-content {
-	float: left;
-}
-
-.comment-content:before {
-	left: auto;
-	right: -10px;
-	border-right: none;
-	border-left: 10px solid #e0e0e0;
-}
-
-.comment-content:after {
-	left: auto;
-	right: -9px;
-	border-right: none;
-	border-left: 10px solid #f4f4f4;
-}
-
-.comment-body .reply {
-	right: auto;
-	left: 0;
-}
-
-/*--------------------------------------------------------------
-13.1 SportsPress
---------------------------------------------------------------*/
-.sp-view-all-link {
-	text-align: left;
-	float: left;
-}
-
-.sp-table-caption,
-.sp-template-countdown .event-name,
-.sp-template-event-venue thead th {
-	text-align: right;
-}
-
-.sp-template-countdown .event-venue,
-.sp-template-countdown .event-league {
-	text-align: right;
+th:last-child,
+td:last-child {
+	border-right: 0;
+	border-left: 1px solid #e0e0e0;
 }
 
 .sp-template-countdown time span {
-	float: right;
+	border-right: 0;
+	border-left: 1px solid #e0e0e0;
 }
 
-.sp-template-event-performance-icons .sp-performance-icons {
-	text-align: right;
-}
-
-.sp-template-event-performance-icons .data-number {
-	text-align: left;
-	padding-left: 0;
-	padding-right: 15px;
-}
-
-.sp-template-event-performance-icons .data-name {
-	text-align: right;
-	padding-right: 0;
-	padding-left: 15px;
-}
-
-.sp-template-event-performance-icons td:first-child {
-	border-left-width: 0;
-	border-right-width: 1px;
-}
-
-.sp-template-event-performance-icons td:last-child {
-	border-right-width: 0;
-	border-left-width: 1px;
-}
-
-.sp-template-event-venue .sp-event-venue-address-row td {
-	text-align: right;
-}
-
-.sp-template-logo {
-	margin: -10px 10px 1.25em 0;
-	float: left;
-}
-
-.sp-template-details dt {
-	float: right;
-	clear: right;
-}
-
-.sp-template-details dd img {
-	margin-right: 0;
-	margin-left: 0.25em;
-}
-
-.sp-template-player-gallery .gallery-caption.has-number {
-	padding-left: 0;
-	padding-right: 49px;
-}
-
-.sp-template-player-gallery .gallery-item strong {
-	left: auto;
-	right: 0;
-}
-
-.single-sp_team .has-post-thumbnail .entry-header .entry-title {
-	float: right;
-}
-
-.single-sp_player .entry-header .entry-title strong {
-	margin-right: 0;
-	margin-left: 0.25em;
-}
-
-@media screen and (min-width: 801px) {
-	.sp-template-event-performance-icons {
-		float: right;
-	}
-
-	.sp-template-event-performance-icons:nth-child(2n) {
-		float: left;
-	}
-}
-
-@media screen and (min-width: 1025px) {
-	.sp-template-photo {
-		margin: 0 0 1.25em 4%;
-	}
-}
-
-/*--------------------------------------------------------------
-13.2 WooCommerce
---------------------------------------------------------------*/
-.woocommerce #content .quantity .minus,
-.woocommerce .quantity .minus,
-.woocommerce-page #content .quantity .minus,
-.woocommerce-page .quantity .minus {
-	border-bottom-left-radius: 2px;
-	border-bottom-right-radius: 0;
-	-webkit-border-bottom-left-radius: 2px;
-	-webkit-border-bottom-right-radius: 0;
-}
-
-.woocommerce #content .quantity .plus,
-.woocommerce .quantity .plus,
-.woocommerce-page #content .quantity .plus,
-.woocommerce-page .quantity .plus {
-	border-top-left-radius: 2px;
-	border-top-right-radius: 0;
-	-webkit-border-top-left-radius: 2px;
-	-webkit-border-top-right-radius: 0;
-}
-
-.woocommerce #content div.product,
-.woocommerce div.product,
-.woocommerce-page #content div.product,
-.woocommerce-page div.product {
-	margin: 20px 3.125% 20px 0;
-	float: right;
+.sp-template-countdown time span:first-child {
+	border-right: 1px solid #e0e0e0;
 }
 
 @media screen and (min-width: 601px) {
-	.woocommerce #content div.product,
-	.woocommerce div.product,
-	.woocommerce-page #content div.product,
-	.woocommerce-page div.product {
-		margin: 20px 2% 20px 0;
-		float: right;
-		clear: right;
+	.site-logo {
+		margin: -1em 0 -1em 10px;
+	}
+
+	.content-area {
+		border-right: 0;
+		border-left: 1px solid #e0e0e0;
+	}
+
+	.content-area-full-width {
+		border-left: 0;
+	}
+
+	.widget-area {
+		padding: 20px 1.9% 20px 2%;
+		margin-left: 0;
+		margin-right: -1px;
+		border-left: 0;
+		border-right: 1px solid #e0e0e0;
 	}
 }
