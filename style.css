@@ -468,8 +468,8 @@ a:hover {
 	color: #fff;
 }
 
-.has-post-thumbnail .entry-meta,
-.has-post-thumbnail .posted-on {
+.single .has-post-thumbnail .entry-meta,
+.single .has-post-thumbnail .posted-on {
 	float: none;
 	position: absolute;
 	top: 0;
