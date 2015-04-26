@@ -857,7 +857,8 @@ a {
 .sticky .entry-title:before {
 	font-family: "dashicons";
 	font-size: 1.25em;
-	margin-right: 0.3em;
+	margin-top: 0.1em;
+	margin-right: 0.2em;
 	line-height: 1;
 	display: inline-block;
 	content: "\f109";
