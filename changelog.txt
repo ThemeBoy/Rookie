@@ -1,5 +1,15 @@
 == Changelog ==
 
+= 1.1 =
+* Feature - New widgetized homepage template.
+* Feature - Enable multilevel navigation on mobile.
+* Tweak - Add full-width selector to content.
+* Tweak - Add minimum height and box shadow to custom header image.
+* Tweak - Nudge sticky post icon.
+* Refactor - Load framework separately before main stylesheet.
+* Fix - Post thumbnail appearing twice in generic content template.
+* Fix - Date and category elements overlapping title on archive pages.
+
 = 1.0.1 =
 * Feature - Add TGM plugin activation for SportsPress functionality.
 * Fix - Full width template styling.
