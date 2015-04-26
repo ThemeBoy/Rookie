@@ -29,6 +29,7 @@ h4,
 h5,
 h6,
 caption,
+.menu-toggle,
 .main-navigation a,
 .gallery-caption,
 .wp-caption-text.gallery-caption,
@@ -265,6 +266,12 @@ a:hover {
 	color: rgba(255, 255, 255, 0.7);
 }
 
+/* Menu Toggle */
+.main-navigation.toggled .menu-toggle {
+	color: #222;
+	background: #f4f4f4;
+}
+
 /* Menu Active Link Color */
 .main-navigation .nav-menu > .current-menu-item > a,
 .main-navigation .nav-menu > .current-menu-parent > a,
@@ -276,7 +283,7 @@ a:hover {
 }
 
 /* Menu Hover Link Color */
-.main-navigation .nav-menu > li > a:hover {
+.main-navigation .nav-menu > li:hover > a {
 	color: #fff;
 	background: #00a69c;
 }
