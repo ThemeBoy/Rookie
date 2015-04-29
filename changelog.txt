@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.1.1 =
+* Fix - Full width template styling.
+* Localization - Add language files.
+
 = 1.1 =
 * Feature - New widgetized homepage template.
 * Feature - Enable multilevel navigation on mobile.
