@@ -738,6 +738,7 @@ a:hover .page-title:hover {
 
 	.content-area-full-width {
 		border-right: 0;
+		width: 100%;
 	}
 
 	.widget-area {
