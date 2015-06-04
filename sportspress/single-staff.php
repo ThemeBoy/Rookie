@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all SportsPress player pages.
+ * The template for displaying all SportsPress staff pages.
  *
  * @package Rookie
  */

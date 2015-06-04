@@ -55,3 +55,4 @@
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
+		<?php do_action( 'rookie_before_template' ); ?>

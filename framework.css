@@ -125,6 +125,7 @@ select,
 textarea {
 	font-size: 16px;
 	line-height: 1.5;
+	font-family: "Lato", sans-serif;
 }
 
 h1,
@@ -135,6 +136,7 @@ h5,
 h6 {
 	clear: both;
 	margin-bottom: 0.5em;
+	font-family: "Oswald", sans-serif;
 }
 
 h1 {
@@ -425,6 +427,11 @@ textarea {
 	display: inline-block;
 }
 
+.site-logo img {
+	max-width: 300px;
+	max-height: 120px;
+}
+
 .site-title {
 	margin: 0;
 	font-size: 48px;
@@ -449,20 +456,32 @@ textarea {
 .content-area,
 .widget-area {
 	width: 100%;
-	padding: 10px 3.125%;
+	padding: 10px;
 	float: left;
 	clear: both;
 }
 
-.site-footer {
-	font-size: 11px;
-	padding: 15px 0 50px;
-	margin: 0 2%;
+.site-footer .footer-logo {
+	text-align: center;
 }
 
-.site-info,
-.site-credit {
-	margin-bottom: 10px;
+.site-footer .footer-logo img {
+	-webkit-filter: grayscale(1); -webkit-filter: grayscale(100%);
+	filter: gray; filter: grayscale(100%);
+	filter: url(desaturate.svg#greyscale);
+	opacity: 0.3;
+	width: auto;
+	height: auto;
+}
+
+.site-footer .footer-widget-region {
+	word-wrap: break-word;
+}
+
+.site-info {
+	font-size: 11px;
+	padding: 5px 2% 50px;
+	position: relative;
 }
 
 @media screen and (min-width: 601px) {
@@ -502,7 +521,17 @@ textarea {
 		float: right;
 	}
 
-	.site-info {
+	.site-footer .footer-logo {
+		width: 25%;
+		float: left;
+	}
+
+	.site-footer .footer-widget-region {
+		width: 25%;
+		float: left;
+	}
+
+	.site-copyright {
 		float: left;
 	}
 
@@ -514,9 +543,15 @@ textarea {
 @media screen and (min-width: 1025px) {
 	.site-header,
 	.site-content,
-	.site-footer {
+	.site-footer,
+	.site-info {
 		margin: 0 auto;
 		width: 1000px;
+		max-width: 100%;
+	}
+
+	.site-info {
+		padding: 5px 0 50px;
 	}
 
 	.site-branding,
@@ -754,6 +789,7 @@ a {
 --------------------------------------------------------------*/
 .widget {
 	margin: 0 0 20px;
+	clear: both;
 }
 
 /* Make sure input and select elements fit in widgets */

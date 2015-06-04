@@ -33,6 +33,9 @@ function rookie_setup() {
 	// Declare SportsPress support.
 	add_theme_support( 'sportspress' );
 
+	// Declare MegaSlider support.
+	add_theme_support( 'megaslider' );
+
 	// Declare WooCommerce support.
 	add_theme_support( 'woocommerce' );
 
@@ -103,7 +106,7 @@ add_action( 'after_setup_theme', 'rookie_setup' );
 if ( ! function_exists( '_wp_render_title_tag' ) ):
 function rookie_render_title() {
 	?>
-	<title><?php wp_title( '|', true, 'right' ); ?></title>
+	<title><?php wp_title( '-', true, 'right' ); ?></title>
 	<?php
 }
 add_action( 'wp_head', 'rookie_render_title' );
@@ -144,8 +147,33 @@ function rookie_widgets_init() {
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
 	) );
+
+	for ( $i = 1; $i <= 3; $i++ ) {
+		register_sidebar( array(
+			'name' 				=> sprintf( __( 'Footer %d', 'rookie' ), $i ),
+			'id' 				=> sprintf( 'footer-%d', $i ),
+			'description' 		=> sprintf( __( 'Widgetized Footer Region %d.', 'rookie' ), $i ),
+			'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' 		=> '</aside>',
+			'before_title' 		=> '<h3 class="widget-title">',
+			'after_title' 		=> '</h3>',
+		) );
+	}
 }
 add_action( 'widgets_init', 'rookie_widgets_init' );
+
+/**
+ * Display MegaSlider before content.
+ */
+function rookie_megaslider() {
+	if ( class_exists( 'MegaSlider' ) && ( is_page() || is_single() ) ) {
+		$slider = get_post_meta( get_the_ID(), '_megaslider', true );
+		if ( $slider ) {
+			echo do_shortcode( '[megaslider ' . $slider . ']' );
+		}
+	}
+}
+add_action( 'rookie_before_template', 'rookie_megaslider' );
 
 /**
  * Register Lato Google font for Rookie.
@@ -289,13 +317,6 @@ function rookie_custom_colors() {
 	.main-navigation .nav-menu > .menu-item-has-children:hover > a,
 	.main-navigation li.menu-item-has-children:hover a,
 	.main-navigation ul ul { background: <?php echo $colors['content_background']; ?>; }
-	caption,
-	.main-navigation,
-	.sp-heading,
-	.sp-table-caption,
-	.sp-template-countdown .event-name,
-	.sp-template-player-gallery .gallery-caption {
-		background: <?php echo $colors['primary']; ?>; }
 	pre,
 	code,
 	kbd,
@@ -313,6 +334,7 @@ function rookie_custom_colors() {
 	.sp-template-countdown .event-league,
 	.sp-template-countdown time span,
 	.sp-template-details dl,
+	.megaslider__row,
 	.woocommerce .woocommerce-breadcrumb,
 	.woocommerce-page .woocommerce-breadcrumb {
 		background: <?php echo $colors['background']; ?>; }
@@ -321,8 +343,16 @@ function rookie_custom_colors() {
 	.widget_calendar #today,
 	.sp-highlight,
 	.sp-template-event-calendar #today,
-	.sp-template-event-blocks .event-title {
+	.sp-template-event-blocks .event-title,
+	.megaslider__row:hover {
 		background: <?php echo $colors['highlight']; ?>; }
+	caption,
+	.main-navigation,
+	.sp-heading,
+	.sp-table-caption,
+	.sp-template-countdown .event-name,
+	.sp-template-player-gallery .gallery-caption {
+		background: <?php echo $colors['primary']; ?>; }
 	pre,
 	code,
 	kbd,
@@ -353,6 +383,7 @@ function rookie_custom_colors() {
 	.sp-template-details dl,
 	.sp-template-tournament-bracket table,
 	.sp-template-tournament-bracket thead th,
+	.megaslider_row,
 	.woocommerce .woocommerce-breadcrumb,
 	.woocommerce-page .woocommerce-breadcrumb {
 		border-color: <?php echo $colors['border']; ?>; }
@@ -405,6 +436,7 @@ function rookie_custom_colors() {
 	.sp-template-details dl,
 	.sp-template-event-blocks .event-title,
 	.sp-template-event-blocks .event-title a,
+	.megaslider,
 	.woocommerce .woocommerce-breadcrumb,
 	.woocommerce-page .woocommerce-breadcrumb {
 		color: <?php echo $colors['text']; ?>; }
@@ -444,7 +476,8 @@ function rookie_custom_colors() {
 	.sp-template-countdown .event-name,
 	.sp-template-countdown .event-name a,
 	.sp-template-tournament-bracket .sp-result,
-	.single-sp_player .entry-header .entry-title strong {
+	.single-sp_player .entry-header .entry-title strong,
+	.megaslider__slide__label {
 		color: <?php echo $colors['heading']; ?>; }
 	.main-navigation a {
 		color: <?php echo $colors['heading_alpha']; ?>; }
@@ -486,7 +519,8 @@ function rookie_custom_colors() {
 	.entry-footer a,
 	.sp-template-player-gallery .gallery-item strong,
 	.sp-template-tournament-bracket .sp-result,
-	.single-sp_player .entry-header .entry-title strong {
+	.single-sp_player .entry-header .entry-title strong,
+	.megaslider__row--active {
 		background: <?php echo $colors['link']; ?>; }
 	caption,
 	.sp-table-caption,
@@ -553,18 +587,18 @@ add_filter( 'sportspress_header_sponsors_selector', 'rookie_header_sponsors' );
  * Display footer elements
  */
 function rookie_footer() {
-	rookie_footer_info();
+	rookie_footer_copyright();
 	rookie_footer_credit();
 }
 
 /**
  * Display footer copyright notice
  */
-function rookie_footer_info() {
+function rookie_footer_copyright() {
 	?>
-	<div class="site-info">
+	<div class="site-copyright">
 		<?php printf( _x( '&copy; %1$s %2$s', 'copyright info', 'rookie' ), date( 'Y' ), get_bloginfo( 'name' ) ); ?>
-	</div><!-- .site-info -->
+	</div><!-- .site-copyright -->
 	<?php
 }
 
@@ -619,6 +653,8 @@ if ( is_super_admin() ) {
 				'nag_type' => 'updated'
 			)
 		);
+
+		$plugins = apply_filters( 'rookie_required_plugins', $plugins );
 
 		tgmpa( $plugins, $config );
 	}
