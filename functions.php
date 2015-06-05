@@ -53,8 +53,8 @@ function rookie_setup() {
 		'default-image'          => '',
 		'width'                  => 1000,
 		'height'                 => 150,
-		'flex-height'            => false,
-		'flex-width'             => false,
+		'flex-height'            => true,
+		'flex-width'             => true,
 		'uploads'                => true,
 		'random-default'         => false,
 		'header-text'            => true,
@@ -520,7 +520,8 @@ function rookie_custom_colors() {
 	.sp-template-player-gallery .gallery-item strong,
 	.sp-template-tournament-bracket .sp-result,
 	.single-sp_player .entry-header .entry-title strong,
-	.megaslider__row--active {
+	.megaslider__row--active,
+	.megaslider__row--active:hover {
 		background: <?php echo $colors['link']; ?>; }
 	caption,
 	.sp-table-caption,
