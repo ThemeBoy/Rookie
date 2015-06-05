@@ -5,13 +5,19 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">		
+	<?php if ( get_the_post_thumbnail() ) { ?>
+		<a class="article-thumbnail" href="<?php echo esc_url( get_permalink() ); ?>">
+			<?php the_post_thumbnail( 'thumbnail' ); ?>
+		</a>
+	<?php } ?>
+
+	<header class="article-header">
+		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+
 		<?php if ( 'post' == get_post_type() ) : ?>
 			<?php rookie_entry_date(); ?>
 		<?php endif; ?>
-
-		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
-	</header><!-- .entry-header -->
+	</header><!-- .article-header -->
 
 	<div class="entry-content">
 		<?php
