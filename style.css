@@ -220,8 +220,10 @@ body {
 }
 
 /* Custom Header */
-.site-branding-custom-header {
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+.header-area-custom .site-branding {
+	padding: 1.75em;
+	min-height: 150px;
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 }
 
 /* Tagline Color */
@@ -554,6 +556,11 @@ a:hover .page-title:hover {
 	color: #00a69c;
 }
 
+/* Entry Thumbnail */
+.entry-header .entry-thumbnail {
+	background: #111;
+}
+
 /* Comments */
 .comment-metadata a {
 	color: #a3a3a3;
@@ -774,5 +781,12 @@ a:hover .page-title:hover {
 
 	.site-footer .footer-widget-region {
 		padding-left: 0;
+	}
+}
+
+
+@media screen and (min-width: 1025px) {
+	.header-area-custom .site-branding {
+		padding: 1.75em;
 	}
 }

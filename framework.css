@@ -418,11 +418,6 @@ textarea {
 	text-align: center;
 }
 
-.site-branding-custom-header {
-	padding: 1.75em;
-	min-height: 150px;
-}
-
 .site-logo {
 	display: inline-block;
 }
@@ -562,10 +557,6 @@ textarea {
 	.site-branding {
 		margin: 1.75em auto 0;
 		padding: 1.75em 0;
-	}
-
-	.site-branding-custom-header {
-		padding: 1.75em;
 	}
 }
 
@@ -880,13 +871,26 @@ a {
 	display: inline;
 }
 
+.article-header {
+	margin-bottom: 20px;
+}
+
+.article-thumbnail {
+	display: block;
+	margin: 0 auto 20px;
+	width: 150px;
+}
+
 .entry-header {
 	position: relative;
 	margin-bottom: 1.25em;
 }
 
-.entry-header img {
-	margin-bottom: 0.625em;
+.entry-header .entry-thumbnail img {
+	width: auto;
+	height: auto;
+	max-width: 100%;
+	margin: 0 auto 0.625em;
 	display: block;
 }
 
@@ -1509,6 +1513,16 @@ object {
 		margin: 0 0.625em;
 	}
 
+	.article-thumbnail {
+		margin-right: 20px;
+		float: left;
+	}
+
+	.article-header,
+	.entry-content {
+		overflow: hidden;
+	}
+
 	.sp-template-event-blocks .event-results,
 	.sp-template-event-blocks .event-time {
 		font-size: 36px;
@@ -1517,7 +1531,6 @@ object {
 	.sp-template-event-calendar tbody td {
 		padding: 1.25em 0.675em;
 	}
-
 
 	.widget .sp-template-event-calendar tbody td {
 		padding: 0.625em;

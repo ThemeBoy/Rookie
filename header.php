@@ -21,16 +21,16 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'rookie' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
+		<?php if ( get_header_image() ) { ?>
+		<div class="header-area header-area-custom" style="background-image: url(<?php header_image(); ?>);">
+		<?php } else { ?>
 		<div class="header-area">
+		<?php } ?>
 			<div id="tertiary" class="site-widgets" role="complementary">
 				<?php dynamic_sidebar( 'header-1' ); ?>
 			</div>
 
-			<?php if ( get_header_image() ) { ?>
-			<div class="site-branding site-branding-custom-header" style="background-image: url(<?php header_image(); ?>);">
-			<?php } else { ?>
 			<div class="site-branding">
-			<?php } ?>
 				<?php
 				$options = get_option( 'themeboy', array() );
 				if ( array_key_exists( 'logo_url', $options ) && ! empty( $options['logo_url'] ) ) {
