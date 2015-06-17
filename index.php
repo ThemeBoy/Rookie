@@ -15,10 +15,6 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-			<header class="entry-header">
-				<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
-			</header><!-- .entry-header -->
-
 			<?php if ( have_posts() ) : ?>
 
 				<?php /* Start the Loop */ ?>

@@ -9,14 +9,14 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+	<header class="article-header">
 		<?php if ( 'post' == get_post_type() ) : ?>
 			<?php rookie_entry_meta(); ?>
 			<?php rookie_entry_date(); ?>
 		<?php endif; ?>
 		
-		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
-	</header><!-- .entry-header -->
+		<?php the_title( sprintf( '<h1 class="article-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+	</header><!-- .article-header -->
 
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>

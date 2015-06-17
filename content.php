@@ -19,7 +19,7 @@
 		<?php endif; ?>
 	</header><!-- .article-header -->
 
-	<div class="entry-content">
+	<div class="entry-content article-content">
 		<?php
 			/* translators: %s: Name of current post */
 			the_content( sprintf(
