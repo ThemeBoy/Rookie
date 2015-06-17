@@ -22,10 +22,8 @@ Rookie provides compatibility with [WooCommerce](https://wordpress.org/plugins/w
 
 1. sportspress.php - The default template for displaying SportsPress pages.
 2. sportspress/single-event.php - A single SportsPress event page.
-3. sportspress/single-player.php - A single SportsPress player profile page.
-4. sportspress/single-staff.php - A single SportsPress staff profile page.
-5. sportspress/single-team.php - A single SportsPress team page.
-6. woocommerce/archive-product.php - An archive of WooCommerce products.
+3. sportspress/single-tournament.php - A single SportsPress tournament page.
+4. woocommerce/archive-product.php - An archive of WooCommerce products.
 
 == Installation ==
 
@@ -40,16 +38,16 @@ Rookie provides compatibility with [WooCommerce](https://wordpress.org/plugins/w
 You can change the colors of your site easily using Rookie.
 
 1. In your admin panel, go to Appearance -> Customize.
-4. Now you will see the Customizer and a tab called 'Colors'. Click this tab.
-5. You can now select the colors for each area listed.
-7. Once you are happy with your color changes you can click save and your changes will be reflected on your live site.
+2. Now you will see the Customizer and a tab called 'Colors'. Click this tab.
+3. You can now select the colors for each area listed.
+4. Once you are happy with your color changes you can click save and your changes will be reflected on your live site.
 
 = Quick Specs =
 
 1. The main content width is 620px.
 2. The sidebar width is 300px.
 3. Featured Images are 620px wide by 413px high.
-3. Header Images are 1000px wide by 150px high.
+4. Header Images are 1000px wide by 150px high.
 
 = Additional Licenses =
 

@@ -1,5 +1,16 @@
 == Changelog ==
 
+= 1.2 =
+* Feature - New footer widget area.
+* Feature - Display layered submenu items in responsive menu.
+* Tweak - Add wrapper to header widgets and post thumbnails.
+* Refactor - Use a single template for standard SportsPress post types.
+* Refactor - Use full-width template for SportsPress events and tournaments.
+* Fix - RTL styling for lists and table cells.
+* Fix - Inconsisten header styling.
+* Compatibility - Add MegaSlider support.
+* Documentation - Add Theme URI to stylesheet.
+
 = 1.1.1 =
 * Fix - Full width template styling.
 * Localization - Add language files.
