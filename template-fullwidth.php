@@ -7,6 +7,7 @@
  * @package Rookie
  */
 
+if ( isset( $full_content_width ) ) $content_width = $full_content_width;
 get_header(); ?>
 
 	<div id="primary" class="content-area content-area-full-width">
