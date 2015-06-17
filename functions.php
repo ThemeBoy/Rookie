@@ -11,6 +11,9 @@
 if ( ! isset( $content_width ) ) {
 	$content_width = 620; /* pixels */
 }
+if ( ! isset( $full_content_width ) ) {
+	$full_content_width = 960; /* pixels */
+}
 
 if ( ! function_exists( 'rookie_setup' ) ) :
 /**
@@ -323,7 +326,6 @@ function rookie_custom_colors() {
 	tt,
 	var,
 	table,
-	.main-navigation.toggled .menu-toggle,
 	.main-navigation li.menu-item-has-children:hover a:hover,
 	.main-navigation ul ul li.page_item_has_children:hover > a,
 	.entry-footer-links,
@@ -421,7 +423,6 @@ function rookie_custom_colors() {
 	tt,
 	var,
 	table,
-	.main-navigation.toggled .menu-toggle,
 	.main-navigation li.menu-item-has-children:hover a:hover,
 	.main-navigation ul ul li.page_item_has_children:hover > a,
 	.entry-meta,
@@ -469,9 +470,12 @@ function rookie_custom_colors() {
 	input[type="reset"],
 	input[type="submit"],
 	.main-navigation .nav-menu > li:hover > a,
+	.main-navigation.toggled .menu-toggle,
 	.sp-template .gallery-caption,
 	.sp-template .gallery-caption a,
 	.sp-heading,
+	.sp-heading:hover,
+	.sp-heading a:hover,
 	.sp-table-caption,
 	.sp-template-countdown .event-name,
 	.sp-template-countdown .event-name a,
@@ -479,7 +483,8 @@ function rookie_custom_colors() {
 	.single-sp_player .entry-header .entry-title strong,
 	.megaslider__slide__label {
 		color: <?php echo $colors['heading']; ?>; }
-	.main-navigation a {
+	.main-navigation a,
+	.main-navigation .menu-toggle {
 		color: <?php echo $colors['heading_alpha']; ?>; }
 	a,
 	blockquote:before,
@@ -549,6 +554,19 @@ function rookie_custom_colors() {
 		color: inherit; }
 	.sp-footer-sponsors .sp-sponsors {
 		border-color: <?php echo $colors['sponsors_border']; ?>; }
+	@media screen and (max-width: 600px) {
+		.main-navigation .nav-menu > li:hover > a,
+		.main-navigation ul ul li.page_item_has_children:hover > a {
+			color: <?php echo $colors['heading']; ?>;
+			background: transparent; }
+		.main-navigation .nav-menu li a:hover {
+			color: <?php echo $colors['heading']; ?>;
+			background: <?php echo $colors['link']; ?>; }
+		.main-navigation ul ul {
+			background: rgba(0, 0, 0, 0.1); }
+		.main-navigation ul ul a {
+			color: <?php echo $colors['heading_alpha']; ?>; }
+	}
 	@media screen and (min-width: 601px) {
 		.content-area,
 		.widget-area {

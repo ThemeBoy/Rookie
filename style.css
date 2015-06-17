@@ -287,9 +287,15 @@ a:hover {
 }
 
 /* Menu Toggle */
+.main-navigation .menu-toggle {
+	color: rgba(255, 255, 255, 0.7);
+	background: transparent;
+	outline: none;
+}
 .main-navigation.toggled .menu-toggle {
-	color: #222;
-	background: #f4f4f4;
+	color: #fff;
+	background: rgba(255, 255, 255, 0.1);
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
 }
 
 /* Menu Active Link Color */
@@ -612,6 +618,11 @@ a:hover .page-title:hover {
 	color: #fff;
 }
 
+.sp-heading:hover,
+.sp-heading a:hover {
+	color: #fff;
+}
+
 .sp-table-caption,
 .sp-template-countdown .event-name {
 	color: #fff;
@@ -744,19 +755,44 @@ a:hover .page-title:hover {
 }
 
 /* Media Queries */
+@media screen and (max-width: 600px) {
+	.main-navigation .nav-menu > li:hover > a,
+	.main-navigation ul ul li.page_item_has_children:hover > a {
+		color: #fff;
+		background: transparent;
+	}
+
+	.main-navigation .nav-menu li a:hover {
+		color: #fff;
+		background: #00a69c;
+	}
+
+	.main-navigation ul ul {
+		background: rgba(0, 0, 0, 0.1);
+		box-shadow: inset 0 3px 3px rgba(0, 0, 0, 0.1);
+	}
+
+	.main-navigation ul ul a {
+		color: #fff;
+		color: rgba(255, 255, 255, 0.7);
+	}
+}
+
 @media screen and (min-width: 601px) {
 	.site-logo {
 		margin: -1em 10px -1em 0;
 	}
 
 	/* Vertical Widget Divider Color */
-	.content-area {
+	.content-area,
+	.widecolumn {
 		width: 66.1%;
 		padding: 20px;
 		border-right: 1px solid #e0e0e0;
 	}
 
-	.content-area-full-width {
+	.content-area-full-width,
+	.widecolumn {
 		border-right: 0;
 		width: 100%;
 	}
@@ -779,11 +815,10 @@ a:hover .page-title:hover {
 		margin-bottom: 0;
 	}
 
-	.site-footer .footer-widget-region {
+	.site-footer-has-logo .footer-widget-region {
 		padding-left: 0;
 	}
 }
-
 
 @media screen and (min-width: 1025px) {
 	.header-area-custom .site-branding {
