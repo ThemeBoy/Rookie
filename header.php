@@ -26,9 +26,13 @@
 		<?php } else { ?>
 		<div class="header-area">
 		<?php } ?>
+			<?php if ( is_active_sidebar( 'header-1' ) ) { ?>
 			<div id="tertiary" class="site-widgets" role="complementary">
-				<?php dynamic_sidebar( 'header-1' ); ?>
+				<div class="site-widget-region">
+					<?php dynamic_sidebar( 'header-1' ); ?>
+				</div>
 			</div>
+			<?php } ?>
 
 			<div class="site-branding">
 				<?php
