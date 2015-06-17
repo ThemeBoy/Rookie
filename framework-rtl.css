@@ -38,8 +38,8 @@ cite:before {
 /*--------------------------------------------------------------
 3.0 Elements
 --------------------------------------------------------------*/
-li > ul,
-li > ol {
+ul,
+ol {
 	margin-left: 0;
 	margin-right: 1.25em;
 }
@@ -71,6 +71,14 @@ textarea {
 
 	.widget-area {
 		float: left;
+	}
+
+	.site-footer .footer-logo {
+		float: right;
+	}
+
+	.site-footer .footer-widget-region {
+		float: right;
 	}
 
 	.site-info {
@@ -379,6 +387,7 @@ textarea {
 @media screen and (min-width: 1025px) {
 	.sp-template-photo {
 		margin: 0 0 1.25em 4%;
+		float: right;
 	}
 }
 
