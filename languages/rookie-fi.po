@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SportsPress\n"
 "POT-Creation-Date: 2015-04-03 16:07+1000\n"
-"PO-Revision-Date: 2015-04-24 16:23+0000\n"
+"PO-Revision-Date: 2015-05-22 12:37+0000\n"
 "Last-Translator: Taurus <wiikate@windowslive.com>\n"
 "Language-Team: Finnish (http://www.transifex.com/projects/p/sportspress/language/fi/)\n"
 "MIME-Version: 1.0\n"
@@ -29,11 +29,11 @@ msgstr "Hups! Sivua ei löydy."
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links"
 " below or a search?"
-msgstr "Näyttää siltä että mitään ei löytynyt tästä sijainnista. Kokeiletko alapuolella olevia linkkejä tai hakua?"
+msgstr "Ei hakutuloksia tästä sijainnista. Kokeiletko alapuolella olevia linkkejä tai hakua?"
 
 #: 404.php:27
 msgid "Most Used Categories"
-msgstr "Käytetyimmät osastot"
+msgstr "Eniten käytetyt kategoriat"
 
 #. translators: %1$s: smiley
 #: 404.php:44
@@ -86,13 +86,13 @@ msgstr "Oletko valmis julkaisemaan ensimmäisen artikkelisi? <a href=\"%1$s\">Al
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
-msgstr "Antamillasi hakusanoilla ei löytynyt yhtään tulosta. Kokeilisitko joillain toisilla hakusanoilla?"
+msgstr "Antamillasi hakusanoilla ei löytynyt yhtään tulosta. Kokeilisitko joillain toisilla hakusanoilla."
 
 #: content-none.php:28
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
-msgstr "Näyttää siltä että emme löydä mitä olet etsimässä. Ehkä Haku auttaa."
+msgstr "Emme löytäneet etsimääsi. Ehkä haku auttaa."
 
 #: content-page.php:24 content-single.php:29 content.php:33
 msgid "Pages:"
@@ -142,7 +142,7 @@ msgstr "Siirry sisältöön"
 
 #: inc/class-tgm-plugin-activation.php:161
 msgid "Install Required Plugins"
-msgstr ""
+msgstr "Asenna vaaditut lisäosat"
 
 #: inc/class-tgm-plugin-activation.php:162
 msgid "Install Plugins"
@@ -307,7 +307,7 @@ msgstr ""
 
 #: inc/class-tgm-plugin-activation.php:1182
 msgid "Installed But Not Activated"
-msgstr ""
+msgstr "Asennettu, mutta aktivoimatta"
 
 #: inc/class-tgm-plugin-activation.php:1287
 #: inc/class-tgm-plugin-activation.php:1395

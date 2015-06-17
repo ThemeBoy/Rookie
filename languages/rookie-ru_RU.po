@@ -6,20 +6,21 @@
 # diasasx <diasasx@mail.ru>, 2014
 # Ruslan <tomaevruslan@yandex.ru>, 2015
 # Spencer Finnell <spencerfinnell@gmail.com>, 2015
+# SmilyCarrot <twisted-transistor@yandex.ru>, 2015
 # Yaroslav <yabarabadaba@gmail.com>, 2014
 # Константин Нечепуренко <kot@promarket.ru>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: SportsPress\n"
 "POT-Creation-Date: 2015-04-03 16:07+1000\n"
-"PO-Revision-Date: 2015-04-03 05:42+0000\n"
-"Last-Translator: ThemeBoy <support@themeboy.com>\n"
+"PO-Revision-Date: 2015-06-09 06:58+0000\n"
+"Last-Translator: SmilyCarrot <twisted-transistor@yandex.ru>\n"
 "Language-Team: Russian (Russia) (http://www.transifex.com/projects/p/sportspress/language/ru_RU/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ru_RU\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 "X-Generator: Poedit 1.6.9\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
@@ -44,16 +45,17 @@ msgstr "Часто используемые категории"
 #: 404.php:44
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
-msgstr ""
+msgstr "Попробуйте поиск в архиве за месяц. %1$s"
 
 #: comments.php:28
 #, php-format
 msgctxt "comments title"
 msgid "One comment"
 msgid_plural "%1$s comments"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "один комментарий"
+msgstr[1] "%1$s комментариев"
+msgstr[2] "%1$s комментариев"
+msgstr[3] "%1$s комментариев"
 
 #: comments.php:35 comments.php:53
 msgid "Comment navigation"
@@ -73,11 +75,11 @@ msgstr "Комментарии закрыты"
 
 #: comments.php:71
 msgid "Start a Conversation"
-msgstr ""
+msgstr "Начать обсуждение"
 
 #: comments.php:73
 msgid "Join the Conversation"
-msgstr ""
+msgstr "Присоединиться к обсуждению"
 
 #: content-none.php:13
 msgid "Nothing Found"
@@ -107,7 +109,7 @@ msgstr "Страницы:"
 #: content.php:26
 #, php-format
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "Продолжить чтение %s <span class=\"meta-nav\">&rarr;</span>"
 
 #: functions.php:72 header.php:51
 msgid "Primary Menu"
@@ -124,23 +126,23 @@ msgstr "Заголовок"
 #: functions.php:153
 msgctxt "Lato font: on or off"
 msgid "on"
-msgstr ""
+msgstr "вкл"
 
 #: functions.php:173
 msgctxt "Oswald font: on or off"
 msgid "on"
-msgstr ""
+msgstr "вкл"
 
 #: functions.php:524
 #, php-format
 msgctxt "copyright info"
 msgid "&copy; %1$s %2$s"
-msgstr ""
+msgstr "&copy; %1$s %2$s"
 
 #: functions.php:535
 #, php-format
 msgid "Designed by %s"
-msgstr ""
+msgstr "Дизайн %s"
 
 #: header.php:21
 msgid "Skip to content"
@@ -169,7 +171,8 @@ msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] "Нужна установка плагина: %1$s."
 msgstr[1] "Нужна установка плагинов: %1$s."
-msgstr[2] "Нужна установка плагинов: %1$s."
+msgstr[2] ""
+msgstr[3] "Нужна установка плагинов: %1$s."
 
 #: inc/class-tgm-plugin-activation.php:166
 #, php-format
@@ -177,7 +180,8 @@ msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
 msgstr[0] "Рекомендуется установка плагина: %1$s."
 msgstr[1] "Рекомендуется установка плагинов: %1$s."
-msgstr[2] "Рекомендуется установка плагинов: %1$s."
+msgstr[2] ""
+msgstr[3] "Рекомендуется установка плагинов: %1$s."
 
 #: inc/class-tgm-plugin-activation.php:167
 #, php-format
@@ -191,7 +195,8 @@ msgid_plural ""
 "plugins installed."
 msgstr[0] "Просим прощения, но у вас нет прав для установки %s плагина.\nСвяжитесь с администратором для помощи в установке."
 msgstr[1] "Просим прощения, но у вас нет прав для установки %s плагинов.\nСвяжитесь с администратором для помощи в установке."
-msgstr[2] "Просим прощения, но у вас нет прав для установки %s плагинов.\nСвяжитесь с администратором для помощи в установке."
+msgstr[2] ""
+msgstr[3] "Просим прощения, но у вас нет прав для установки %s плагинов.\nСвяжитесь с администратором для помощи в установке."
 
 #: inc/class-tgm-plugin-activation.php:168
 #, php-format
@@ -199,7 +204,8 @@ msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] "Необходимый плагин не активен: %1$s."
 msgstr[1] "Необходимые плагины не активны: %1$s."
-msgstr[2] "Необходимые плагины не активны: %1$s."
+msgstr[2] ""
+msgstr[3] "Необходимые плагины не активны: %1$s."
 
 #: inc/class-tgm-plugin-activation.php:169
 #, php-format
@@ -207,7 +213,8 @@ msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] "Рекомендуемый плагин не активен: %1$s."
 msgstr[1] "Рекомендуемые плагины не активны: %1$s."
-msgstr[2] "Рекомендуемые плагины не активны: %1$s."
+msgstr[2] ""
+msgstr[3] "Рекомендуемые плагины не активны: %1$s."
 
 #: inc/class-tgm-plugin-activation.php:170
 #, php-format
@@ -221,7 +228,8 @@ msgid_plural ""
 "plugins activated."
 msgstr[0] "Просим прощения, но у вас нет прав для активации %s плагина.\nСвяжитесь с администратором для помощи в установке."
 msgstr[1] "Просим прощения, но у вас нет прав для активации %s плагинов.\nСвяжитесь с администратором для помощи в установке."
-msgstr[2] "Просим прощения, но у вас нет прав для активации %s плагинов.\nСвяжитесь с администратором для помощи в установке."
+msgstr[2] ""
+msgstr[3] "Просим прощения, но у вас нет прав для активации %s плагинов.\nСвяжитесь с администратором для помощи в установке."
 
 #: inc/class-tgm-plugin-activation.php:171
 #, php-format
@@ -233,7 +241,8 @@ msgid_plural ""
 "maximum compatibility with this theme: %1$s."
 msgstr[0] "Плагин должен быть обновлен до последней версии, что бы обеспечить максимальную совместимость с этим шабоном: %1$s."
 msgstr[1] "Плагины должны быть обновлены до последних версий, что бы обеспечить максимальную совместимость с этим шабоном: %1$s."
-msgstr[2] "Плагины должны быть обновлены до последних версий, что бы обеспечить максимальную совместимость с этим шабоном: %1$s."
+msgstr[2] ""
+msgstr[3] "Плагины должны быть обновлены до последних версий, что бы обеспечить максимальную совместимость с этим шабоном: %1$s."
 
 #: inc/class-tgm-plugin-activation.php:172
 #, php-format
@@ -247,21 +256,24 @@ msgid_plural ""
 "updated."
 msgstr[0] "Просим прощения, но у вас нет прав для обновления %s плагина.\nСвяжитесь с администратором для помощи в установке."
 msgstr[1] "Просим прощения, но у вас нет прав для обновления %s плагинов.\nСвяжитесь с администратором для помощи в установке."
-msgstr[2] "Просим прощения, но у вас нет прав для обновления %s плагинов.\nСвяжитесь с администратором для помощи в установке."
+msgstr[2] ""
+msgstr[3] "Просим прощения, но у вас нет прав для обновления %s плагинов.\nСвяжитесь с администратором для помощи в установке."
 
 #: inc/class-tgm-plugin-activation.php:173
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] "Начать установку плагина"
 msgstr[1] "Начать установку плагинов"
-msgstr[2] "Начать установку плагинов"
+msgstr[2] ""
+msgstr[3] "Начать установку плагинов"
 
 #: inc/class-tgm-plugin-activation.php:174
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] "Активировать плагин."
 msgstr[1] "Активировать плагины."
-msgstr[2] "Активировать плагины."
+msgstr[2] ""
+msgstr[3] "Активировать плагины."
 
 #: inc/class-tgm-plugin-activation.php:175
 msgid "Return to Required Plugins Installer"
@@ -280,9 +292,10 @@ msgstr "Плагин успешно активирован"
 #: inc/class-tgm-plugin-activation.php:1630
 msgid "The following plugin was activated successfully:"
 msgid_plural "The following plugins were activated successfully:"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Плагин успешно активирован:"
+msgstr[1] "Следующие плагины успешно активированы:"
+msgstr[2] "Следующие плагины успешно активированы:"
+msgstr[3] "Следующие плагины успешно активированы:"
 
 #: inc/class-tgm-plugin-activation.php:179
 #, php-format
@@ -486,11 +499,11 @@ msgstr ""
 
 #: inc/template-tags.php:25
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr ""
+msgstr "<span class=\"meta-nav\">&larr;</span> Старые сообщения"
 
 #: inc/template-tags.php:29
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "Новые сообщения <span class=\"meta-nav\">&rarr;</span>"
 
 #: inc/template-tags.php:52
 msgid "Post navigation"
@@ -499,12 +512,12 @@ msgstr "Навигация"
 #: inc/template-tags.php:55
 msgctxt "Previous post link"
 msgid "<span class=\"meta-nav\">&larr;</span>&nbsp;%title"
-msgstr ""
+msgstr "<span class=\"meta-nav\">&larr;</span>&nbsp;%title"
 
 #: inc/template-tags.php:56
 msgctxt "Next post link"
 msgid "%title&nbsp;<span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "%title&nbsp;<span class=\"meta-nav\">&rarr;</span>"
 
 #: inc/template-tags.php:84
 #, php-format
@@ -515,12 +528,12 @@ msgstr "в %s"
 #: inc/template-tags.php:155
 #, php-format
 msgid "Category: %s"
-msgstr ""
+msgstr "Категория: %s"
 
 #: inc/template-tags.php:157
 #, php-format
 msgid "Tag: %s"
-msgstr ""
+msgstr "Ключевое слово: %s"
 
 #: inc/template-tags.php:159
 #, php-format
@@ -565,12 +578,12 @@ msgstr ""
 #: inc/template-tags.php:169
 msgctxt "post format archive title"
 msgid "Galleries"
-msgstr ""
+msgstr "Галереи"
 
 #: inc/template-tags.php:171
 msgctxt "post format archive title"
 msgid "Images"
-msgstr ""
+msgstr "Изображения"
 
 #: inc/template-tags.php:173
 msgctxt "post format archive title"
@@ -580,32 +593,32 @@ msgstr "Видео"
 #: inc/template-tags.php:175
 msgctxt "post format archive title"
 msgid "Quotes"
-msgstr ""
+msgstr "Цитаты"
 
 #: inc/template-tags.php:177
 msgctxt "post format archive title"
 msgid "Links"
-msgstr ""
+msgstr "Ссылки"
 
 #: inc/template-tags.php:179
 msgctxt "post format archive title"
 msgid "Statuses"
-msgstr ""
+msgstr "Статусы"
 
 #: inc/template-tags.php:181
 msgctxt "post format archive title"
 msgid "Audio"
-msgstr ""
+msgstr "Аудио"
 
 #: inc/template-tags.php:183
 msgctxt "post format archive title"
 msgid "Chats"
-msgstr ""
+msgstr "Диалоги"
 
 #: inc/template-tags.php:185
 #, php-format
 msgid "Archives: %s"
-msgstr ""
+msgstr "Архивные сообщения: %s"
 
 #. translators: 1: Taxonomy singular name, 2: Current taxonomy term
 #: inc/template-tags.php:189

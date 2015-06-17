@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SportsPress\n"
 "POT-Creation-Date: 2015-04-03 16:07+1000\n"
-"PO-Revision-Date: 2015-04-03 07:31+0000\n"
+"PO-Revision-Date: 2015-05-20 03:52+0000\n"
 "Last-Translator: Krzysztof <kris.o.poranq@gmail.com>\n"
 "Language-Team: Polish (Poland) (http://www.transifex.com/projects/p/sportspress/language/pl_PL/)\n"
 "MIME-Version: 1.0\n"
@@ -515,7 +515,7 @@ msgstr "przez %s"
 #: inc/template-tags.php:155
 #, php-format
 msgid "Category: %s"
-msgstr ""
+msgstr "Kategoria: %s"
 
 #: inc/template-tags.php:157
 #, php-format

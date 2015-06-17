@@ -8,8 +8,10 @@
 * Refactor - Use full-width template for SportsPress events and tournaments.
 * Fix - RTL styling for lists and table cells.
 * Fix - Inconsisten header styling.
+* Localization - Update Armenian, Czech, Dutch, Finnish, German, Korean, Polish, Russian, and Spanish translations.
 * Compatibility - Add MegaSlider support.
 * Documentation - Add Theme URI to stylesheet.
+* Documentation - Add credits.txt for translation credits.
 
 = 1.1.1 =
 * Fix - Full width template styling.

@@ -1,0 +1,12 @@
+== Credits ==
+
+= Translations =
+Armenian by ArtakEVN (https://www.transifex.com/accounts/profile/ArtakEVN/)
+Czech by thegreat (https://www.transifex.com/accounts/profile/thegreat/)
+Dutch by paulcoppen (https://www.transifex.com/accounts/profile/paulcoppen/) and SilverXP (https://www.transifex.com/accounts/profile/SilverXp/)
+Finnish by Taurus (https://www.transifex.com/accounts/profile/Taurus/)
+German by King3R (https://www.transifex.com/accounts/profile/King3R/), chr86 (https://www.transifex.com/accounts/profile/chr86/), and FollowCandyPanda (https://www.transifex.com/accounts/profile/FollowCandyPanda/)
+Korean by jikji96 (https://www.transifex.com/accounts/profile/jikji96/)
+Polish by krisop (https://www.transifex.com/accounts/profile/krisop/)
+Russian by SmilyCarrot (https://www.transifex.com/accounts/profile/SmilyCarrot/)
+Spanish by fernandori (https://www.transifex.com/accounts/profile/fernandori/)

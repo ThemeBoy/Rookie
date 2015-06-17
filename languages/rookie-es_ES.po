@@ -5,6 +5,7 @@
 # Busca Pin <admin@buscapin.com>, 2014
 # Carlos Arellano <cubicamentegrafica@gmail.com>, 2015
 # Diego <inactive+Patashnik1@transifex.com>, 2014
+# fernandori <fernando_orihuela@hotmail.com>, 2015
 # Gulf Coast Company <admin@gulfcoast.company>, 2014
 # hjbarraza <hjbarraza@gmail.com>, 2015
 # Jose Cruz <jcruzpr89@gmail.com>, 2015
@@ -16,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SportsPress\n"
 "POT-Creation-Date: 2015-04-03 16:07+1000\n"
-"PO-Revision-Date: 2015-04-03 05:42+0000\n"
-"Last-Translator: ThemeBoy <support@themeboy.com>\n"
+"PO-Revision-Date: 2015-05-22 08:55+0000\n"
+"Last-Translator: fernandori <fernando_orihuela@hotmail.com>\n"
 "Language-Team: Spanish (Spain) (http://www.transifex.com/projects/p/sportspress/language/es_ES/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -38,17 +39,17 @@ msgstr "¡Vaya! No encontramos esta página."
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links"
 " below or a search?"
-msgstr ""
+msgstr "Parece que no se encontró nada en este sitio.Puede intentar uno de los enlaces de abajo o realizar una búsqueda? "
 
 #: 404.php:27
 msgid "Most Used Categories"
-msgstr ""
+msgstr "Categorías más usadas"
 
 #. translators: %1$s: smiley
 #: 404.php:44
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
-msgstr ""
+msgstr "Intente buscar en los archivos mensuales. %1$s"
 
 #: comments.php:28
 #, php-format
@@ -76,15 +77,15 @@ msgstr "Los comentarios están cerrados."
 
 #: comments.php:71
 msgid "Start a Conversation"
-msgstr ""
+msgstr "Comenzar una Conversación"
 
 #: comments.php:73
 msgid "Join the Conversation"
-msgstr ""
+msgstr "Unirse a la conversación"
 
 #: content-none.php:13
 msgid "Nothing Found"
-msgstr ""
+msgstr "Nada encontrado"
 
 #: content-none.php:19
 #, php-format
@@ -105,16 +106,16 @@ msgstr "Parece que no encontramos lo que estás buscando. Quizá buscar te ayude
 
 #: content-page.php:24 content-single.php:29 content.php:33
 msgid "Pages:"
-msgstr ""
+msgstr "Paginas:"
 
 #: content.php:26
 #, php-format
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "Continuar leyendo %s "
 
 #: functions.php:72 header.php:51
 msgid "Primary Menu"
-msgstr ""
+msgstr "Menu primario"
 
 #: functions.php:119
 msgid "Sidebar"
@@ -127,27 +128,27 @@ msgstr "Cabecera"
 #: functions.php:153
 msgctxt "Lato font: on or off"
 msgid "on"
-msgstr ""
+msgstr "activo"
 
 #: functions.php:173
 msgctxt "Oswald font: on or off"
 msgid "on"
-msgstr ""
+msgstr "activo"
 
 #: functions.php:524
 #, php-format
 msgctxt "copyright info"
 msgid "&copy; %1$s %2$s"
-msgstr ""
+msgstr "&copy; %1$s %2$s"
 
 #: functions.php:535
 #, php-format
 msgid "Designed by %s"
-msgstr ""
+msgstr "Diseñado por %s"
 
 #: header.php:21
 msgid "Skip to content"
-msgstr ""
+msgstr "Saltar al contenido"
 
 #: inc/class-tgm-plugin-activation.php:161
 msgid "Install Required Plugins"
@@ -450,39 +451,39 @@ msgstr "Color Primario"
 
 #: inc/customizer.php:61
 msgid "Link Color"
-msgstr ""
+msgstr "Color de enlace"
 
 #: inc/customizer.php:77
 msgid "Text Color"
-msgstr ""
+msgstr "Color del texto"
 
 #: inc/customizer.php:93
 msgid "Content Background Color"
-msgstr ""
+msgstr "Color del fondo"
 
 #: inc/customizer.php:109
 msgid "Widget Background Color"
-msgstr ""
+msgstr "Color del fondo del widget"
 
 #: inc/customizer.php:125
 msgid "Widget Text Color"
-msgstr ""
+msgstr "Color del texto del widget"
 
 #: inc/customizer.php:141
 msgid "Widget Heading Color"
-msgstr ""
+msgstr "Color del texto de la cabecera"
 
 #: inc/template-tags.php:21
 msgid "Posts navigation"
-msgstr ""
+msgstr "Navegación de Entradas"
 
 #: inc/template-tags.php:25
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr ""
+msgstr "<span class=\"meta-nav\">&larr;</span> Entradas antiguas"
 
 #: inc/template-tags.php:29
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "Nuevas entradas <span class=\"meta-nav\">&rarr;</span>"
 
 #: inc/template-tags.php:52
 msgid "Post navigation"
@@ -491,28 +492,28 @@ msgstr "Navegación de Entradas"
 #: inc/template-tags.php:55
 msgctxt "Previous post link"
 msgid "<span class=\"meta-nav\">&larr;</span>&nbsp;%title"
-msgstr ""
+msgstr "<span class=\"meta-nav\">&larr;</span>&nbsp;%title"
 
 #: inc/template-tags.php:56
 msgctxt "Next post link"
 msgid "%title&nbsp;<span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "%title&nbsp;<span class=\"meta-nav\">&rarr;</span>"
 
 #: inc/template-tags.php:84
 #, php-format
 msgctxt "post author"
 msgid "by %s"
-msgstr ""
+msgstr "por %s"
 
 #: inc/template-tags.php:155
 #, php-format
 msgid "Category: %s"
-msgstr ""
+msgstr "Categoría: %s"
 
 #: inc/template-tags.php:157
 #, php-format
 msgid "Tag: %s"
-msgstr ""
+msgstr "Etiqueta: %s"
 
 #: inc/template-tags.php:159
 #, php-format
@@ -547,63 +548,63 @@ msgstr "Día: %s"
 #: inc/template-tags.php:165
 msgctxt "daily archives date format"
 msgid "F j, Y"
-msgstr ""
+msgstr "M d, A"
 
 #: inc/template-tags.php:167
 msgctxt "post format archive title"
 msgid "Asides"
-msgstr ""
+msgstr "Terrenos"
 
 #: inc/template-tags.php:169
 msgctxt "post format archive title"
 msgid "Galleries"
-msgstr ""
+msgstr "Galerías"
 
 #: inc/template-tags.php:171
 msgctxt "post format archive title"
 msgid "Images"
-msgstr ""
+msgstr "Imágenes"
 
 #: inc/template-tags.php:173
 msgctxt "post format archive title"
 msgid "Videos"
-msgstr ""
+msgstr "Videos"
 
 #: inc/template-tags.php:175
 msgctxt "post format archive title"
 msgid "Quotes"
-msgstr ""
+msgstr "Cuotas"
 
 #: inc/template-tags.php:177
 msgctxt "post format archive title"
 msgid "Links"
-msgstr ""
+msgstr "Enlaces"
 
 #: inc/template-tags.php:179
 msgctxt "post format archive title"
 msgid "Statuses"
-msgstr ""
+msgstr "Estados"
 
 #: inc/template-tags.php:181
 msgctxt "post format archive title"
 msgid "Audio"
-msgstr ""
+msgstr "Audio"
 
 #: inc/template-tags.php:183
 msgctxt "post format archive title"
 msgid "Chats"
-msgstr ""
+msgstr "Chats"
 
 #: inc/template-tags.php:185
 #, php-format
 msgid "Archives: %s"
-msgstr ""
+msgstr "Archivos: %s"
 
 #. translators: 1: Taxonomy singular name, 2: Current taxonomy term
 #: inc/template-tags.php:189
 #, php-format
 msgid "%1$s: %2$s"
-msgstr ""
+msgstr "%1$s: %2$s"
 
 #: inc/template-tags.php:191
 msgid "Archives"
@@ -612,7 +613,7 @@ msgstr "Archivos"
 #: search.php:16
 #, php-format
 msgid "Search Results for: %s"
-msgstr ""
+msgstr "Buscar Resultados para: %s"
 
 #~ msgid "Show all competitions"
 #~ msgstr ""
