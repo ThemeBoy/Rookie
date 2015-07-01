@@ -18,7 +18,7 @@ get_header( 'shop' ); ?>
 ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<div id="main" class="site-main" role="main">
 
 				<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 
@@ -71,7 +71,7 @@ get_header( 'shop' ); ?>
 
 				<?php endif; ?>
 
-		</main><!-- #main -->
+		</div><!-- #main -->
 	</div><!-- #primary -->
 
 <?php

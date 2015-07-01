@@ -11,7 +11,7 @@ if ( isset( $full_content_width ) ) $content_width = $full_content_width;
 get_header(); ?>
 
 	<div id="primary" class="content-area content-area-full-width">
-		<main id="main" class="site-main" role="main">
+		<div id="main" class="site-main" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
@@ -19,7 +19,7 @@ get_header(); ?>
 
 			<?php endwhile; // end of the loop. ?>
 
-		</main><!-- #main -->
+		</div><!-- #main -->
 	</div><!-- #primary -->
 
 <?php get_footer(); ?>

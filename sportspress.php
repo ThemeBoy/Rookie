@@ -8,7 +8,7 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<div id="main" class="site-main" role="main">
 
 			<?php if ( is_archive() && have_posts() ) : ?>
 				<header class="page-header">
@@ -30,7 +30,7 @@ get_header(); ?>
 
 			<?php endwhile; // end of the loop. ?>
 
-		</main><!-- #main -->
+		</div><!-- #main -->
 	</div><!-- #primary -->
 
 <?php get_sidebar(); ?>
