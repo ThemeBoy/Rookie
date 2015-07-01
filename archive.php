@@ -10,7 +10,7 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<div id="main" class="site-main" role="main">
+		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -42,7 +42,7 @@ get_header(); ?>
 
 		<?php endif; ?>
 
-		</div><!-- #main -->
+		</main><!-- #main -->
 	</div><!-- #primary -->
 
 <?php get_sidebar(); ?>
