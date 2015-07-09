@@ -624,7 +624,8 @@ a:hover .page-title:hover {
 }
 
 .sp-table-caption,
-.sp-template-countdown .event-name {
+.sp-template-countdown .event-name,
+.opta-widget-container h2 {
 	color: #fff;
 	background: #2b353e;
 	border-top: 8px solid #00a69c;
