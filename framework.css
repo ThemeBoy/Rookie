@@ -125,7 +125,6 @@ select,
 textarea {
 	font-size: 16px;
 	line-height: 1.5;
-	font-family: "Lato", sans-serif;
 }
 
 h1,
@@ -136,7 +135,6 @@ h5,
 h6 {
 	clear: both;
 	margin-bottom: 0.5em;
-	font-family: "Oswald", sans-serif;
 }
 
 h1 {
@@ -1138,7 +1136,7 @@ object {
 	margin-bottom: 1.25em;
 }
 
-.gallery-item {
+dl {
 	display: inline-block;
 	text-align: center;
 	vertical-align: top;
@@ -1146,48 +1144,47 @@ object {
 	position: relative;
 }
 
-.gallery-columns-2 .gallery-item {
+.gallery-columns-2 dl {
 	max-width: 50%;
 }
 
-.gallery-columns-3 .gallery-item {
+.gallery-columns-3 dl {
 	max-width: 33.33%;
 }
 
-.gallery-columns-4 .gallery-item {
+.gallery-columns-4 dl {
 	max-width: 25%;
 }
 
-.gallery-columns-5 .gallery-item {
+.gallery-columns-5 dl {
 	max-width: 20%;
 }
 
-.gallery-columns-6 .gallery-item {
+.gallery-columns-6 dl {
 	max-width: 16.66%;
 }
 
-.gallery-columns-7 .gallery-item {
+.gallery-columns-7 dl {
 	max-width: 14.28%;
 }
 
-.gallery-columns-8 .gallery-item {
+.gallery-columns-8 dl {
 	max-width: 12.5%;
 }
 
-.gallery-columns-9 .gallery-item {
+.gallery-columns-9 dl {
 	max-width: 11.11%;
 }
 
-.gallery-item img {
+.gallery dl img {
 	width: 100%;
 }
 
-.gallery-item * {
+.gallery dl * {
 	display: block;
 }
 
-.gallery-caption,
-.wp-caption-text.gallery-caption {
+.gallery dd {
 	position: absolute;
 	margin: 0;
 	bottom: 0;
@@ -1198,7 +1195,7 @@ object {
 	pointer-events: none;
 }
 
-.gallery-item:hover .gallery-caption {
+.gallery dl:hover dd {
 	display: block;
 }
 
@@ -1226,15 +1223,13 @@ object {
 }
 
 .sp-view-all-link {
-	margin-top: 1em;
 	text-align: right;
-	margin-bottom: 2em;
 	font-size: 14px;
 }
 
 .sp-table-caption,
-.sp-template-countdown .event-name {
-	font-size: 16px;
+.sp-template-countdown .event-name,
+.opta-widget-container h2 {
 	font-weight: normal;
 	text-align: left;
 	border: none;
@@ -1335,10 +1330,6 @@ object {
 	width: 40%;
 	text-align: left;
 	vertical-align: middle;
-}
-
-.sp-template-event-performance-icons tbody td {
-	padding: 0.3125em 0.625em;
 }
 
 .sp-template-event-performance-icons tbody tr:first-child td {
@@ -1465,11 +1456,11 @@ object {
 	font-size: 24px;
 }
 
-.sp-template-player-gallery .gallery-item {
+.gallery dl {
 	max-width: 50%;
 }
 
-.sp-template-player-gallery .gallery-caption {
+.gallery dd {
 	height: auto;
 	display: block;
 	pointer-events: auto;
@@ -1481,11 +1472,11 @@ object {
 	text-overflow: ellipsis;
 }
 
-.sp-template-player-gallery .gallery-caption.has-number {
+.gallery dd.has-number {
 	padding-left: 49px;
 }
 
-.sp-template-player-gallery .gallery-item strong {
+.gallery dd strong {
 	font-weight: normal;
 	font-size: 20px;
 	position: absolute;
@@ -1607,32 +1598,38 @@ object {
 		float: left;
 	}
 
-	.sp-template-player-gallery .gallery-columns-3 .gallery-item {
+	.gallery-columns-3 dl {
 		max-width: 33.33%;
 	}
 
-	.sp-template-player-gallery .gallery-columns-4 .gallery-item {
+	.gallery-columns-4 dl {
 		max-width: 25%;
 	}
 
-	.sp-template-player-gallery .gallery-columns-5 .gallery-item {
+	.gallery-columns-5 dl {
 		max-width: 20%;
 	}
 
-	.sp-template-player-gallery .gallery-columns-6 .gallery-item {
+	.gallery-columns-6 dl {
 		max-width: 16.66%;
 	}
 
-	.sp-template-player-gallery .gallery-columns-7 .gallery-item {
+	.gallery-columns-7 dl {
 		max-width: 14.28%;
 	}
 
-	.sp-template-player-gallery .gallery-columns-8 .gallery-item {
+	.gallery-columns-8 dl {
 		max-width: 12.5%;
 	}
 
-	.sp-template-player-gallery .gallery-columns-9 .gallery-item {
+	.gallery-columns-9 dl {
 		max-width: 11.11%;
+	}
+
+	.widget .sp-template-photo {
+		max-width: none;
+		margin: 0;
+		float: none;
 	}
 }
 

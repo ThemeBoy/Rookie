@@ -353,7 +353,8 @@ function rookie_custom_colors() {
 	.sp-heading,
 	.sp-table-caption,
 	.sp-template-countdown .event-name,
-	.sp-template-player-gallery .gallery-caption {
+	.sp-template-player-gallery .gallery-caption,
+	.opta-widget-container h2 {
 		background: <?php echo $colors['primary']; ?>; }
 	pre,
 	code,
@@ -530,7 +531,8 @@ function rookie_custom_colors() {
 		background: <?php echo $colors['link']; ?>; }
 	caption,
 	.sp-table-caption,
-	.sp-template-countdown .event-name {
+	.sp-template-countdown .event-name,
+	.opta-widget-container h2 {
 		border-top-color: <?php echo $colors['link']; ?>; }
 	button:hover,
 	input[type="button"]:hover,

@@ -34,7 +34,6 @@ caption,
 .gallery-caption,
 .wp-caption-text.gallery-caption,
 .sp-table-caption,
-.sp-template-countdown .event-name,
 .sp-template-countdown time span,
 .sp-template-event-logos,
 .sp-template .player-gallery-group-name,
@@ -50,6 +49,7 @@ button,
 input,
 select,
 textarea,
+.sp-template-countdown .event-name,
 .sp-template-countdown .event-venue,
 .sp-template-countdown .event-league,
 .sp-template-countdown time span small,
@@ -624,12 +624,15 @@ a:hover .page-title:hover {
 }
 
 .sp-table-caption,
-.sp-template-countdown .event-name,
 .opta-widget-container h2 {
 	color: #fff;
 	background: #2b353e;
 	border-top: 8px solid #00a69c;
 	padding: 0.625em 15px;
+}
+
+.sp-template-event-performance-icons tbody td {
+	padding: 0.3125em 0.625em;
 }
 
 .sp-event-staff {
@@ -643,14 +646,29 @@ a:hover .page-title:hover {
 	border: 1px solid #e0e0e0;
 }
 
-.sp-template-countdown .event-name a {
-	color: #fff;
+.sp-template-countdown .event-name {
+	font-weight: bold;
+	text-align: left;
+	font-size: 14px;
+	padding: 0.635em 15px;
+	color: #222;
 }
 
+.sp-template-countdown .event-name a {
+	color: #222;
+}
+
+.sp-template-countdown .event-name,
 .sp-template-countdown .event-venue,
 .sp-template-countdown .event-league {
 	background: #f4f4f4;
 	border: 1px solid #e0e0e0;
+	border-top: none;
+}
+
+.sp-template-countdown .event-venue,
+.sp-template-countdown .event-league {
+	font-weight: normal;
 }
 
 .sp-template-countdown time span {
@@ -743,6 +761,20 @@ a:hover .page-title:hover {
 	color: #00a69c;
 }
 
+/* SportsPress Live */
+.opta-widget-container .fixtures-plus .grouping td {
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.opta-widget-container .fixtures-plus tbody tr td {
+	border-right-width: 0;
+}
+
+.opta-widget-container .fixtures-plus tbody tr td:last-child {
+	border-right-width: 1px;
+}
+
 /* WooCommerce */
 .woocommerce .woocommerce-breadcrumb,
 .woocommerce-page .woocommerce-breadcrumb {
@@ -753,6 +785,12 @@ a:hover .page-title:hover {
 .woocommerce ul.products li.product h3,
 .woocommerce-page ul.products li.product h3 {
 	color: #222;
+}
+
+/* MegaSlider */
+.megaslider__row--active,
+.megaslider__row--active:hover {
+	background: #00a69c;
 }
 
 /* Media Queries */
@@ -795,7 +833,6 @@ a:hover .page-title:hover {
 	.content-area-full-width,
 	.widecolumn {
 		border-right: 0;
-		width: 100%;
 	}
 
 	.widget-area {
