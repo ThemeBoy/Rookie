@@ -20,11 +20,18 @@
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'rookie' ); ?></a>
 
+	<?php
+	$options = get_option( 'themeboy', array() );
+	if ( array_key_exists( 'logo_url', $options ) && ! empty( $options['logo_url'] ) ) {
+		$logo = $options['logo_url'];
+		$logo = esc_url( $logo );
+	}
+	?>
 	<header id="masthead" class="site-header" role="banner">
 		<?php if ( get_header_image() ) { ?>
-		<div class="header-area header-area-custom" style="background-image: url(<?php header_image(); ?>);">
+		<div class="header-area header-area-custom<?php if ( isset( $logo ) ) { ?> header-area-has-logo<?php } ?>" style="background-image: url(<?php header_image(); ?>);">
 		<?php } else { ?>
-		<div class="header-area">
+		<div class="header-area<?php if ( isset( $logo ) ) { ?> header-area-has-logo<?php } ?>">
 		<?php } ?>
 			<?php if ( is_active_sidebar( 'header-1' ) ) { ?>
 			<div id="tertiary" class="site-widgets" role="complementary">
@@ -35,13 +42,8 @@
 			<?php } ?>
 
 			<div class="site-branding">
-				<?php
-				$options = get_option( 'themeboy', array() );
-				if ( array_key_exists( 'logo_url', $options ) && ! empty( $options['logo_url'] ) ) {
-					$logo = $options['logo_url'];
-					$logo = esc_url( $logo );
-					?>
-					<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>"></a>
+				<?php if ( isset( $logo ) ) { ?>
+				<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>"></a>
 				<?php } ?>
 				<?php if ( display_header_text() ) { ?>
 				<hgroup style="color: #<?php header_textcolor(); ?>">
