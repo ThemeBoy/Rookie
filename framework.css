@@ -1136,7 +1136,7 @@ object {
 	margin-bottom: 1.25em;
 }
 
-dl {
+.gallery dl {
 	display: inline-block;
 	text-align: center;
 	vertical-align: top;
@@ -1575,14 +1575,14 @@ dl {
 }
 
 @media screen and (min-width: 801px) {
-	.sp-template-event-performance-icons {
+	.sp-event-performance-teams .sp-template-event-performance-icons {
 		width: 50%;
 		float: left;
 		clear: left;
 		padding-right: 10px;
 	}
 
-	.sp-template-event-performance-icons:nth-child(2n) {
+	.sp-event-performance-teams .sp-template-event-performance-icons:nth-child(2n) {
 		float: right;
 		clear: right;
 		padding-right: 0;
@@ -1591,13 +1591,6 @@ dl {
 }
 
 @media screen and (min-width: 1025px) {
-	.sp-template-photo {
-		width: auto;
-		max-width: 50%;
-		margin: 0 20px 1.25em 0;
-		float: left;
-	}
-
 	.gallery-columns-3 dl {
 		max-width: 33.33%;
 	}
