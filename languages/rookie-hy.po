@@ -5,9 +5,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SportsPress\n"
 "POT-Creation-Date: 2015-04-03 16:07+1000\n"
-"PO-Revision-Date: 2015-06-05 16:44+0000\n"
+"PO-Revision-Date: 2015-06-18 19:26+0000\n"
 "Last-Translator: Artak Arzumanyan <aarzumanyan@gmail.com>\n"
-"Language-Team: Armenian (http://www.transifex.com/projects/p/sportspress/language/hy/)\n"
+"Language-Team: Armenian (http://www.transifex.com/p/sportspress/language/hy/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -140,16 +140,16 @@ msgstr "Անցնել բովանդակությանը"
 
 #: inc/class-tgm-plugin-activation.php:161
 msgid "Install Required Plugins"
-msgstr "Տեղադրել անհրաժեշտ ընդլայնիչները"
+msgstr "Տեղադրել անհրաժեշտ փլագինները"
 
 #: inc/class-tgm-plugin-activation.php:162
 msgid "Install Plugins"
-msgstr "Տեղադրել ընդլայնիչներ"
+msgstr "Տեղադրել փլագիններ"
 
 #: inc/class-tgm-plugin-activation.php:163
 #, php-format
 msgid "Installing Plugin: %s"
-msgstr "Ընդլայնիչի տեղադրում՝ %s"
+msgstr "Փլագինի տեղադրում՝ %s"
 
 #: inc/class-tgm-plugin-activation.php:164
 msgid "Something went wrong."
@@ -159,15 +159,15 @@ msgstr "Ինչ-որ բան սխալ գնաց:"
 #, php-format
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
-msgstr[0] "Այս թեմայի հետ պահանջվում է տեղադրել հետևյալ ընդլայնիչը՝ %1$s:"
-msgstr[1] "Այս թեմայի հետ պահանջվում է տեղադրել հետևյալ ընդլայնիչները՝ %1$s:"
+msgstr[0] "Այս թեմայի հետ պահանջվում է տեղադրել հետևյալ փլագինը՝ %1$s:"
+msgstr[1] "Այս թեմայի հետ պահանջվում է տեղադրել հետևյալ փլագինները՝ %1$s:"
 
 #: inc/class-tgm-plugin-activation.php:166
 #, php-format
 msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
-msgstr[0] "Այս թեմայի հետ խորհուրդ է տրվում տեղադրել հետևյալ ընդլայնիչը՝ %1$s:"
-msgstr[1] "Այս թեմայի հետ խորհուրդ է տրվում տեղադրել հետևյալ ընդլայնիչները՝ %1$s:"
+msgstr[0] "Այս թեմայի հետ խորհուրդ է տրվում տեղադրել հետևյալ փլագինը՝ %1$s:"
+msgstr[1] "Այս թեմայի հետ խորհուրդ է տրվում տեղադրել հետևյալ փլագինները՝ %1$s:"
 
 #: inc/class-tgm-plugin-activation.php:167
 #, php-format
@@ -179,22 +179,22 @@ msgid_plural ""
 "Sorry, but you do not have the correct permissions to install the %s "
 "plugins. Contact the administrator of this site for help on getting the "
 "plugins installed."
-msgstr[0] "Ներողություն, բայց դուք չունեք բավարար իրավասություններ  %s ընդլայնիչը տեղադրելու համար: Փորձեք կապվել ձեր կայքի ադմինիստրատորի հետ. Նա կարող է օգնել ձեզ այս հարցում."
-msgstr[1] "Ներողություն, բայց դուք չունեք բավարար իրավասություններ  %s ընդլայնիչները տեղադրելու համար: Փորձեք կապվել ձեր կայքի ադմինիստրատորի հետ. Նա կարող է օգնել ձեզ այս հարցում:"
+msgstr[0] "Ներողություն, բայց դուք չունեք բավարար իրավասություններ  %s փլագինը տեղադրելու համար: Փորձեք կապվել ձեր կայքի ադմինիստրատորի հետ. Նա կարող է օգնել ձեզ այս հարցում:"
+msgstr[1] "Ներողություն, բայց դուք չունեք բավարար իրավասություններ  %s փլագինները տեղադրելու համար: Փորձեք կապվել ձեր կայքի ադմինիստրատորի հետ. Նա կարող է օգնել ձեզ այս հարցում:"
 
 #: inc/class-tgm-plugin-activation.php:168
 #, php-format
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
-msgstr[0] "Հետևյալ անհրաժեշտ ընդլայնիչն այս պահին ակտիվ չէ՝ %1$s:"
-msgstr[1] "Հետևյալ անհրաժեշտ ընդլայնիչներն այս պահին ակտիվ չեն՝ %1$s:"
+msgstr[0] "Հետևյալ անհրաժեշտ փլագինն այս պահին ակտիվ չէ՝ %1$s:"
+msgstr[1] "Հետևյալ անհրաժեշտ փլագիններն այս պահին ակտիվ չեն՝ %1$s:"
 
 #: inc/class-tgm-plugin-activation.php:169
 #, php-format
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
-msgstr[0] "Հետևյալ ցանկալի ընդլայնիչն այս պահին ակտիվ չէ՝ %1$s:"
-msgstr[1] "Հետևյալ ցանկալի ընդլայնիչներն այս պահին ակտիվ չեն %1$s:"
+msgstr[0] "Հետևյալ ցանկալի փլագինն այս պահին ակտիվ չէ՝ %1$s:"
+msgstr[1] "Հետևյալ ցանկալի փլագիններն այս պահին ակտիվ չեն %1$s:"
 
 #: inc/class-tgm-plugin-activation.php:170
 #, php-format
@@ -206,8 +206,8 @@ msgid_plural ""
 "Sorry, but you do not have the correct permissions to activate the %s "
 "plugins. Contact the administrator of this site for help on getting the "
 "plugins activated."
-msgstr[0] "Ներողություն, բայց դուք չունեք բավարար իրավասություններ %s ընդլայնիչն ակտիվացնելու համար: Փորձեք կապվել ձեր կայքի ադմինիստրատորի հետ. Նա կարող է օգնել ձեզ այս հարցում:"
-msgstr[1] "Ներողություն, բայց դուք չունեք բավարար իրավասություններ %s ընդլայնիչներն ակտիվացնելու համար: Փորձեք կապվել ձեր կայքի ադմինիստրատորի հետ. Նա կարող է օգնել ձեզ այս հարցում:"
+msgstr[0] "Ներողություն, բայց դուք չունեք բավարար իրավասություններ %s փլագինն ակտիվացնելու համար: Փորձեք կապվել ձեր կայքի ադմինիստրատորի հետ. Նա կարող է օգնել ձեզ այս հարցում:"
+msgstr[1] "Ներողություն, բայց դուք չունեք բավարար իրավասություններ %s փլագիններն ակտիվացնելու համար: Փորձեք կապվել ձեր կայքի ադմինիստրատորի հետ. Նա կարող է օգնել ձեզ այս հարցում:"
 
 #: inc/class-tgm-plugin-activation.php:171
 #, php-format
@@ -217,8 +217,8 @@ msgid ""
 msgid_plural ""
 "The following plugins need to be updated to their latest version to ensure "
 "maximum compatibility with this theme: %1$s."
-msgstr[0] "Թեմայի հետ առավելագույն համատեղելիությունն ապահովելու համար դուք պետք է թարմացնեք %1$s ընդլայնիչը:"
-msgstr[1] "Թեմայի հետ առավելագույն համատեղելիությունն ապահովելու համար դուք պետք է թարմացնեք %1$s ընդլայնիչները:"
+msgstr[0] "Թեմայի հետ առավելագույն համատեղելիությունն ապահովելու համար դուք պետք է թարմացնեք %1$s փլագինը:"
+msgstr[1] "Թեմայի հետ առավելագույն համատեղելիությունն ապահովելու համար դուք պետք է թարմացնեք %1$s փլագինները:"
 
 #: inc/class-tgm-plugin-activation.php:172
 #, php-format
@@ -230,24 +230,24 @@ msgid_plural ""
 "Sorry, but you do not have the correct permissions to update the %s plugins."
 " Contact the administrator of this site for help on getting the plugins "
 "updated."
-msgstr[0] "Ներողություն, բայց դուք չունեք բավարար իրավասություններ %s ընդլայնիչը թարմացնելու համար: Փորձեք կապվել ձեր կայքի ադմինիստրատորի հետ. Նա կարող է օգնել ձեզ այս հարցում:"
-msgstr[1] "Ներողություն, բայց դուք չունեք բավարար իրավասություններ %s ընդլայնիչները թարմացնելու համար: Փորձեք կապվել ձեր կայքի ադմինիստրատորի հետ. Նա կարող է օգնել ձեզ այս հարցում:"
+msgstr[0] "Ներողություն, բայց դուք չունեք բավարար իրավասություններ %s փլագինը թարմացնելու համար: Փորձեք կապվել ձեր կայքի ադմինիստրատորի հետ. Նա կարող է օգնել ձեզ այս հարցում:"
+msgstr[1] "Ներողություն, բայց դուք չունեք բավարար իրավասություններ %s փլագինները թարմացնելու համար: Փորձեք կապվել ձեր կայքի ադմինիստրատորի հետ. Նա կարող է օգնել ձեզ այս հարցում:"
 
 #: inc/class-tgm-plugin-activation.php:173
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
-msgstr[0] "Սկսում ենք ընդլայնիչի տեղադրումը"
-msgstr[1] "Սկսում ենք ընդլայնիչների տեղադրումը"
+msgstr[0] "Սկսում ենք փլագինի տեղադրումը"
+msgstr[1] "Սկսում ենք փլագինների տեղադրումը"
 
 #: inc/class-tgm-plugin-activation.php:174
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
-msgstr[0] "Սկսում ենք ընդլայնիչի ակտիվացումը"
-msgstr[1] "Սկսում ենք ընդլայնիչների ակտիվացումը"
+msgstr[0] "Սկսում ենք փլագինի ակտիվացումը"
+msgstr[1] "Սկսում ենք փլագինների ակտիվացումը"
 
 #: inc/class-tgm-plugin-activation.php:175
 msgid "Return to Required Plugins Installer"
-msgstr "Վերադառնալ անհրաժեշտ ընդլայնիչների տեղադրմանը"
+msgstr "Վերադառնալ անհրաժեշտ փլագինների տեղադրմանը"
 
 #: inc/class-tgm-plugin-activation.php:176
 msgid "Return to the dashboard"
@@ -256,19 +256,19 @@ msgstr "Վերադառնալ կառավահանակ"
 #: inc/class-tgm-plugin-activation.php:177
 #: inc/class-tgm-plugin-activation.php:1939
 msgid "Plugin activated successfully."
-msgstr "Ընդլայնիչը բարեհաջող թարմացվեց:"
+msgstr "Փլագինը բարեհաջող թարմացվեց:"
 
 #: inc/class-tgm-plugin-activation.php:178
 #: inc/class-tgm-plugin-activation.php:1630
 msgid "The following plugin was activated successfully:"
 msgid_plural "The following plugins were activated successfully:"
-msgstr[0] "Հետևյալ ընդլայնիչը բարեհաջող ակտիվացվեց՝"
-msgstr[1] "Հետևյալ ընդլայնիչները բարեհաջող ակտիվացվեցին՝"
+msgstr[0] "Հետևյալ փլագինը բարեհաջող ակտիվացվեց՝"
+msgstr[1] "Հետևյալ փլագինները բարեհաջող ակտիվացվեցին՝"
 
 #: inc/class-tgm-plugin-activation.php:179
 #, php-format
 msgid "All plugins installed and activated successfully. %1$s"
-msgstr "Բոլոր ընդլայնիչները բարեհաջող տեղադրվեցին և ակտիվացվեցին: %1$s"
+msgstr "Բոլոր փլագինները բարեհաջող տեղադրվեցին և ակտիվացվեցին: %1$s"
 
 #: inc/class-tgm-plugin-activation.php:180
 msgid "Dismiss this notice"
@@ -322,11 +322,11 @@ msgstr "Ակտիվացում"
 msgid ""
 "No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
 "Dashboard\">Return to the Dashboard</a>"
-msgstr "Տեղադրելու կամ ակտիվացնելու համար ընդլայնիչ չկա: <a href=\"%1$s\" title=\"Վերադարձ Կառավահանակ\">Վերադառնալ Կառավահանակ</a>"
+msgstr "Տեղադրելու կամ ակտիվացնելու պատրաստ փլագին չկա: <a href=\"%1$s\" title=\"Վերադարձ Կառավահանակ\">Վերադառնալ Կառավահանակ</a>"
 
 #: inc/class-tgm-plugin-activation.php:1374
 msgid "Plugin"
-msgstr "Ընդլայնիչ"
+msgstr "Փլագին"
 
 #: inc/class-tgm-plugin-activation.php:1375
 msgid "Source"
@@ -359,15 +359,15 @@ msgstr "Փաթեթը տեղադրվում է&#8230;"
 
 #: inc/class-tgm-plugin-activation.php:1926
 msgid "Plugin install failed."
-msgstr "Ընդլայնիչի տեղադրումը խափանվեց:"
+msgstr "Փլագինի տեղադրումը խափանվեց:"
 
 #: inc/class-tgm-plugin-activation.php:1927
 msgid "Plugin installed successfully."
-msgstr "Ընդլայնիչը բարեհաջող տեղադրվեց:"
+msgstr "Փլագինը բարեհաջող տեղադրվեց:"
 
 #: inc/class-tgm-plugin-activation.php:1938
 msgid "Plugin activation failed."
-msgstr "Ընդլայնիչի ակտիվացումը խափանվեց:"
+msgstr "Փլագինի ակտիվացումը խափանվեց:"
 
 #: inc/class-tgm-plugin-activation.php:2052
 msgid ""
@@ -397,7 +397,7 @@ msgstr "Բոլոր տեղադրումներն ու ակտիվացումները 
 #: inc/class-tgm-plugin-activation.php:2055
 #, php-format
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
-msgstr "%1$s (%2$d/%3$d) ընդլայնիչը տեղադրվում և ակտիվացվում է "
+msgstr "%1$s (%2$d/%3$d) փլագինը տեղադրվում և ակտիվացվում է "
 
 #: inc/class-tgm-plugin-activation.php:2059
 msgid ""
@@ -427,7 +427,7 @@ msgstr "Բոլոր տեղադրումներն ավարտվեցին:"
 #: inc/class-tgm-plugin-activation.php:2064
 #, php-format
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
-msgstr "%1$s (%2$d/%3$d) ընդլայնիչը տեղադրվում է "
+msgstr "%1$s (%2$d/%3$d) փլագինը տեղադրվում է "
 
 #: inc/customizer.php:29
 msgid "Logo"
@@ -541,7 +541,7 @@ msgstr "F j, Y"
 #: inc/template-tags.php:167
 msgctxt "post format archive title"
 msgid "Asides"
-msgstr ""
+msgstr "Նշում"
 
 #: inc/template-tags.php:169
 msgctxt "post format archive title"
