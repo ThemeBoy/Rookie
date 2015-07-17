@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SportsPress\n"
 "POT-Creation-Date: 2015-04-03 16:07+1000\n"
-"PO-Revision-Date: 2015-05-22 12:37+0000\n"
+"PO-Revision-Date: 2015-07-07 18:23+0000\n"
 "Last-Translator: Taurus <wiikate@windowslive.com>\n"
-"Language-Team: Finnish (http://www.transifex.com/projects/p/sportspress/language/fi/)\n"
+"Language-Team: Finnish (http://www.transifex.com/p/sportspress/language/fi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -385,12 +385,12 @@ msgstr ""
 #: inc/class-tgm-plugin-activation.php:2053
 #: inc/class-tgm-plugin-activation.php:2062
 msgid "Show Details"
-msgstr ""
+msgstr "Näytä yksityiskohdat"
 
 #: inc/class-tgm-plugin-activation.php:2053
 #: inc/class-tgm-plugin-activation.php:2062
 msgid "Hide Details"
-msgstr ""
+msgstr "Piilota yksityiskohdat"
 
 #: inc/class-tgm-plugin-activation.php:2054
 msgid "All installations and activations have been completed."
