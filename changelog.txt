@@ -5,6 +5,7 @@
 * Tweak - Select gallery items by element in stylesheet.
 * Tweak - Simplify 404 page.
 * Fix - White space in event template.
+* Compatibility - Update TGM Plugin Activation.
 * Localization - Update Armenian, Finnish, and Czech translations.
 
 = 1.2 =
