@@ -1,5 +1,12 @@
 == Changelog ==
 
+= 1.2.1 =
+* Tweak - Add classes to header area indicating presence of a logo.
+* Tweak - Select gallery items by element in stylesheet.
+* Tweak - Simplify 404 page.
+* Fix - White space in event template.
+* Localization - Update Armenian, Finnish, and Czech translations.
+
 = 1.2 =
 * Feature - New footer widget area.
 * Feature - Display layered submenu items in responsive menu.
