@@ -4,7 +4,7 @@ Theme URI: https://www.themeboy.com/rookie/
 Author: ThemeBoy
 Author URI: https://www.themeboy.com
 Description: Rookie is a fully responsive theme made for sports organisations looking to use the SportsPress plugin. Once you’ve installed the theme and SportsPress, you'll be able to select a preset for your sport and demo content to help you get started on building your sports website.
-Version: 1.2.1
+Version: 1.2.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: rookie
@@ -60,6 +60,7 @@ textarea,
 
 /* Site Footer Font */
 .site-info {
+	font-size: 11px;
 	text-transform: uppercase;
 }
 
@@ -126,8 +127,8 @@ var {
 }
 
 table {
+	border-collapse: collapse;
 	background: #f4f4f4;
-	border-top: 1px solid #e0e0e0;
 }
 
 /* Horizontal Rule Color */
@@ -143,23 +144,10 @@ caption {
 }
 
 /* Table Cell Color */
+table,
 th,
 td {
-	border-bottom: 1px solid #e0e0e0;
-}
-
-tbody td {
-	border-right: 1px solid #e0e0e0;
-}
-
-th:first-child,
-td:first-child {
-	border-left: 1px solid #e0e0e0;
-}
-
-th:last-child,
-td:last-child {
-	border-right: 1px solid #e0e0e0;
+	border: 1px solid #e0e0e0;
 }
 
 /* Button Color */
@@ -346,9 +334,32 @@ a:hover {
 	color: #00a69c;
 }
 
-/* Nester Menu Hover With Submenu Link Color */
+/* Nested Menu Hover With Submenu Link Color */
 .main-navigation ul ul li:hover > a {
 	background: rgba(0, 0, 0, 0.05);
+}
+
+/* Menu Search */
+.main-navigation .search-form .search-field {
+	padding: 9px 10px;
+	border: none;
+	border-radius: 0;
+	background-color: rgba(255, 255, 255, 0.1);
+	color: #fff;
+}
+
+.main-navigation .search-form .search-submit {
+	padding: 0.625em 20px;
+	border-radius: 0;
+	background: transparent;
+	color: rgba(255, 255, 255, 0.7);
+	font-family: Oswald, sans-serif;
+	text-transform: uppercase;
+}
+
+.main-navigation .search-form .search-submit:hover {
+	color: #fff;
+	background: #00a69c;
 }
 
 /* Widgets */
@@ -421,8 +432,16 @@ a:hover {
 }
 
 /* Search widget */
+.widget_search .search-field {
+	border-right: none;
+}
+
 .widget_search .search-submit {
-	display: none;
+	border: 1px solid #00a69c;
+}
+
+.widget_search .search-submit:hover {
+	border-color: #00958c;
 }
 
 /* Widget List Icon Color */
@@ -732,14 +751,6 @@ a:hover .page-title:hover {
 	border-top: 1px solid #e0e0e0;
 }
 
-.sp-template-tournament-bracket table {
-	border: 1px solid #e0e0e0;
-}
-
-.sp-template-tournament-bracket thead th {
-	border-bottom: 1px solid #e0e0e0;
-}
-
 .sp-template-tournament-bracket .sp-result {
 	color: #fff;
 	background: #00a69c;
@@ -753,6 +764,10 @@ a:hover .page-title:hover {
 	color: #a3a3a3;
 }
 
+.single-sp_team .has-post-thumbnail .entry-header .entry-title {
+	float: left;
+}
+
 .single-sp_player .entry-header .entry-title strong {
 	background: #00a69c;
 	color: #fff;
@@ -763,17 +778,15 @@ a:hover .page-title:hover {
 }
 
 /* SportsPress Live */
+.opta-widget-container form {
+	background: #f4f4f4;
+	border-left: 1px solid #e0e0e0;
+	border-right: 1px solid #e0e0e0;
+}
+
 .opta-widget-container .fixtures-plus .grouping td {
 	font-weight: bold;
 	font-size: 14px;
-}
-
-.opta-widget-container .fixtures-plus tbody tr td {
-	border-right-width: 0;
-}
-
-.opta-widget-container .fixtures-plus tbody tr td:last-child {
-	border-right-width: 1px;
 }
 
 /* WooCommerce */
@@ -816,6 +829,11 @@ a:hover .page-title:hover {
 		color: #fff;
 		color: rgba(255, 255, 255, 0.7);
 	}
+
+	.main-navigation .search-form .search-submit {
+		color: #fff;
+		background: #00a69c;
+	}
 }
 
 @media screen and (min-width: 601px) {
@@ -856,15 +874,17 @@ a:hover .page-title:hover {
 	}
 
 	.site-footer .footer-widget-region {
-		padding-left: 0;
+		padding-left: 10px;
 	}
 
 	.site-footer .footer-widget-region:first-child {
 		padding-left: 20px;
+		padding-right: 10px;
 	}
 
-	.site-footer-has-logo .footer-widget-region:first-child {
+	.site-footer .footer-widget-region:last-child {
 		padding-left: 0;
+		padding-right: 20px;
 	}
 }
 

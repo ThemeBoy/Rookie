@@ -80,7 +80,7 @@ ul {
 }
 
 table { /* tables still need 'cellspacing="0"' in the markup */
-	border-collapse: separate;
+	border-collapse: collapse;
 	border-spacing: 0;
 }
 
@@ -90,6 +90,7 @@ td {
 	font-weight: normal;
 	text-align: left;
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
@@ -343,7 +344,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	border: none;
-	padding: 0.625em 1.25em;
+	padding: 8px 16px;
 	font-size: 14px;
 	cursor: pointer;
 	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
@@ -372,6 +373,7 @@ textarea {
 	border-radius: 3px;
 	color: #666;
 	border: 1px solid #ccc;
+	outline: none;
 }
 
 input[type="text"],
@@ -474,7 +476,6 @@ textarea {
 }
 
 .site-info {
-	font-size: 11px;
 	padding: 5px 2% 50px;
 	position: relative;
 }
@@ -517,21 +518,23 @@ textarea {
 		float: right;
 	}
 
-	.site-footer .footer-logo {
-		width: 25%;
-		float: left;
-	}
-
-	.site-footer .footer-widget-region {
-		width: 25%;
-		float: left;
-	}
-
 	.site-copyright {
 		float: left;
 	}
 
 	.site-credit {
+		float: right;
+	}
+}
+
+@media screen and (min-width: 801px) {
+	.site-footer .footer-widget-region {
+		width: 33%;
+		float: left;
+	}
+
+	.site-footer .footer-widget-region:last-child {
+		width: 34%;
 		float: right;
 	}
 }
@@ -635,6 +638,11 @@ a {
 	left: 100%;
 }
 
+.main-navigation .search-form {
+	margin: 0;
+	display: none;
+}
+
 /* Small menu */
 .menu-toggle {
 	display: none;
@@ -680,6 +688,22 @@ a {
 		display: block;
 		position: static;
 		width: 100%;
+	}
+
+	.main-navigation.toggled .search-form {
+		display: block;
+	}
+}
+
+@media screen and (min-width: 601px) {
+	.main-navigation .search-form {
+		float: right;
+		display: block;
+	}
+
+	.main-navigation .search-form .search-field,
+	.main-navigation .search-form .search-submit {
+		width: auto;
 	}
 }
 
@@ -789,7 +813,7 @@ a {
 .widget select {
 	width: 100%;
 	box-sizing: border-box;
-	padding: 0.5em 1em;
+	padding: 8px 16px;
 }
 
 .widget-title {
@@ -1510,12 +1534,12 @@ object {
 }
 
 .sp-template-tournament-bracket thead th {
-	border: none;
+	border-top: none;
+	border-left: none;
+	border-right: none;
 }
 
-.sp-template-tournament-bracket td,
-.sp-template-tournament-bracket td:first-child,
-.sp-template-tournament-bracket td:last-child {
+.sp-template-tournament-bracket td {
 	border: none;
 }
 
@@ -1532,14 +1556,22 @@ object {
 	margin: 0.25em 0;
 }
 
-.single-sp_team .has-post-thumbnail .entry-header .entry-title {
-	float: left;
-}
-
 .single-sp_player .entry-header .entry-title strong {
 	padding: 0 0.475em;
 	margin-right: 0.25em;
 	font-weight: normal;
+}
+
+/* SportsPress Live */
+
+.opta-widget-container .fixtures-plus tbody tr td {
+	border-right: none;
+	border-left: none;
+}
+
+.opta-widget-container .formation tbody tr td,
+.opta-widget-container .formation tbody tr th {
+	border: none;
 }
 
 @media screen and (min-width: 601px) {
