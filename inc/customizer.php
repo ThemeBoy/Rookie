@@ -18,7 +18,7 @@ function rookie_customize_register( $wp_customize ) {
     /**
      * Logo Image
      */
-    $wp_customize->add_setting('themeboy[logo_url]', array(
+    $wp_customize->add_setting( 'themeboy[logo_url]', array(
         'sanitize_callback' => 'esc_url',
         'capability'    => 'edit_theme_options',
         'type'          => 'option',
@@ -142,6 +142,23 @@ function rookie_customize_register( $wp_customize ) {
         'section'  => 'colors',
         'settings' => 'themeboy[heading]',
     ) ) );
+
+    /**
+     * Navigation Menu Search
+     */
+    $wp_customize->add_setting( 'themeboy[nav_menu_search]', array(
+        'default'       => 'yes',
+        'capability'    => 'edit_theme_options',
+        'type'          => 'option',
+    ) );
+
+    $wp_customize->add_control( 'nav_menu_search', array(
+        'label'     => __('Display Search Form', 'rookie'),
+        'section'   => 'nav',
+        'settings'  => 'themeboy[nav_menu_search]',
+        'type'      => 'checkbox',
+        'std'       => 'yes'
+    ) );
 }
 add_action( 'customize_register', 'rookie_customize_register' );
 
