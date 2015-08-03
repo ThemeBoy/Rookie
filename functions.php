@@ -332,13 +332,15 @@ function rookie_custom_colors() {
 	.comment-content,
 	.sp-table-wrapper .dataTables_paginate,
 	.sp-event-staff,
+	.sp-template-countdown .event-name,
 	.sp-template-countdown .event-venue,
 	.sp-template-countdown .event-league,
 	.sp-template-countdown time span,
 	.sp-template-details dl,
 	.megaslider__row,
 	.woocommerce .woocommerce-breadcrumb,
-	.woocommerce-page .woocommerce-breadcrumb {
+	.woocommerce-page .woocommerce-breadcrumb,
+	.opta-widget-container form {
 		background: <?php echo $colors['background']; ?>; }
 	.comment-content:after {
 		border-right-color: <?php echo $colors['background']; ?>; }
@@ -352,7 +354,6 @@ function rookie_custom_colors() {
 	.main-navigation,
 	.sp-heading,
 	.sp-table-caption,
-	.sp-template-countdown .event-name,
 	.sp-template-player-gallery .gallery-caption,
 	.opta-widget-container h2 {
 		background: <?php echo $colors['primary']; ?>; }
@@ -378,6 +379,7 @@ function rookie_custom_colors() {
 	.comment-content,
 	.sp-table-wrapper .dataTables_paginate,
 	.sp-event-staff,
+	.sp-template-countdown .event-name,
 	.sp-template-countdown .event-venue,
 	.sp-template-countdown .event-league,
 	.sp-template-countdown time span,
@@ -388,7 +390,8 @@ function rookie_custom_colors() {
 	.sp-template-tournament-bracket thead th,
 	.megaslider_row,
 	.woocommerce .woocommerce-breadcrumb,
-	.woocommerce-page .woocommerce-breadcrumb {
+	.woocommerce-page .woocommerce-breadcrumb,
+	.opta-widget-container form {
 		border-color: <?php echo $colors['border']; ?>; }
 	.comment-content:before {
 		border-right-color: <?php echo $colors['border']; ?>; }
@@ -478,8 +481,6 @@ function rookie_custom_colors() {
 	.sp-heading:hover,
 	.sp-heading a:hover,
 	.sp-table-caption,
-	.sp-template-countdown .event-name,
-	.sp-template-countdown .event-name a,
 	.sp-template-tournament-bracket .sp-result,
 	.single-sp_player .entry-header .entry-title strong,
 	.megaslider__slide__label {
@@ -496,6 +497,12 @@ function rookie_custom_colors() {
 	.main-navigation ul ul .current_page_item > a,
 	.main-navigation ul ul .current_page_parent > a,
 	.main-navigation ul ul .current_page_ancestor > a,
+	.main-navigation li.menu-item-has-children:hover ul .current-menu-item > a:hover,
+	.main-navigation li.menu-item-has-children:hover ul .current-menu-parent > a:hover,
+	.main-navigation li.menu-item-has-children:hover ul .current-menu-ancestor > a:hover,
+	.main-navigation li.menu-item-has-children:hover ul .current_page_item > a:hover,
+	.main-navigation li.menu-item-has-children:hover ul .current_page_parent > a:hover,
+	.main-navigation li.menu-item-has-children:hover ul .current_page_ancestor > a:hover,
 	.widget_recent_entries ul li a:hover,
 	.widget_pages ul li a:hover,
 	.widget_categories ul li a:hover,
@@ -521,6 +528,7 @@ function rookie_custom_colors() {
 	input[type="reset"],
 	input[type="submit"],
 	.main-navigation .nav-menu > li:hover > a,
+	.main-navigation .search-form .search-submit:hover,
 	.nav-links .meta-nav,
 	.entry-footer a,
 	.sp-template-player-gallery .gallery-item strong,
@@ -531,7 +539,6 @@ function rookie_custom_colors() {
 		background: <?php echo $colors['link']; ?>; }
 	caption,
 	.sp-table-caption,
-	.sp-template-countdown .event-name,
 	.opta-widget-container h2 {
 		border-top-color: <?php echo $colors['link']; ?>; }
 	button:hover,
@@ -550,6 +557,8 @@ function rookie_custom_colors() {
 	.nav-links a:hover .meta-nav,
 	.sp-template-tournament-bracket .sp-event-title:hover .sp-result {
 		background: <?php echo $colors['link_dark']; ?>; }
+	.widget_search .search-submit {
+		border-color: <?php echo $colors['link_dark']; ?>; }
 	a:hover {
 		color: <?php echo $colors['link_hover']; ?>; }
 	.sp-template-event-logos {
@@ -561,13 +570,47 @@ function rookie_custom_colors() {
 		.main-navigation ul ul li.page_item_has_children:hover > a {
 			color: <?php echo $colors['heading']; ?>;
 			background: transparent; }
-		.main-navigation .nav-menu li a:hover {
+		.main-navigation .nav-menu li a:hover,
+		.main-navigation .search-form .search-submit {
 			color: <?php echo $colors['heading']; ?>;
 			background: <?php echo $colors['link']; ?>; }
+		.main-navigation .nav-menu > .menu-item-has-children:hover > a,
+		.main-navigation li.menu-item-has-children:hover a {
+			background: transparent; }
 		.main-navigation ul ul {
 			background: rgba(0, 0, 0, 0.1); }
-		.main-navigation ul ul a {
+		.main-navigation .nav-menu > .menu-item-has-children:hover > a:hover,
+		.main-navigation li.menu-item-has-children:hover a:hover {
+			background: <?php echo $colors['link']; ?>;
+			color: #fff;
+		}
+		.main-navigation ul ul a,
+		.main-navigation .nav-menu > .menu-item-has-children:hover > a {
 			color: <?php echo $colors['heading_alpha']; ?>; }
+		.main-navigation .nav-menu > .current-menu-item > a,
+		.main-navigation .nav-menu > .current-menu-parent > a,
+		.main-navigation .nav-menu > .current-menu-ancestor > a,
+		.main-navigation .nav-menu > .current_page_item > a,
+		.main-navigation .nav-menu > .current_page_parent > a,
+		.main-navigation .nav-menu > .current_page_ancestor > a,
+		.main-navigation .nav-menu > .current-menu-item:hover > a,
+		.main-navigation .nav-menu > .current-menu-parent:hover > a,
+		.main-navigation .nav-menu > .current-menu-ancestor:hover > a,
+		.main-navigation .nav-menu > .current_page_item:hover > a,
+		.main-navigation .nav-menu > .current_page_parent:hover > a,
+		.main-navigation .nav-menu > .current_page_ancestor:hover > a,
+		.main-navigation ul ul .current-menu-parent > a,
+		.main-navigation ul ul .current-menu-ancestor > a,
+		.main-navigation ul ul .current_page_parent > a,
+		.main-navigation ul ul .current_page_ancestor > a,
+		.main-navigation li.menu-item-has-children:hover ul .current-menu-item > a:hover,
+		.main-navigation li.menu-item-has-children:hover ul .current-menu-parent > a:hover,
+		.main-navigation li.menu-item-has-children:hover ul .current-menu-ancestor > a:hover,
+		.main-navigation li.menu-item-has-children:hover ul .current_page_item > a:hover,
+		.main-navigation li.menu-item-has-children:hover ul .current_page_parent > a:hover,
+		.main-navigation li.menu-item-has-children:hover ul .current_page_ancestor > a:hover {
+			color: #fff;
+		}
 	}
 	@media screen and (min-width: 601px) {
 		.content-area,
@@ -649,19 +692,17 @@ if ( is_super_admin() ) {
 	function rookie_register_required_plugins() {
 		$plugins = array(
 			array(
+				'name'      => 'SportsPress',
+				'slug'      => 'sportspress',
+				'required'  => true,
+				'is_callable' => array( 'SportsPress', 'instance' ),
+			),
+			array(
 				'name'      => 'SportsPress TV',
 				'slug'      => 'sportspress-tv',
 				'required'  => false,
 			),
 		);
-
-		if ( ! class_exists( 'SportsPress' ) ) {
-			array_unshift( $plugins, array(
-				'name'      => 'SportsPress',
-				'slug'      => 'sportspress',
-				'required'  => true,
-			) );
-		}
 
 		$config = array(
 			'default_path' => '',
