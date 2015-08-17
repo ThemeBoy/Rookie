@@ -1,5 +1,16 @@
 == Changelog ==
 
+= 1.3 =
+* Feature - Add option to display search form in navigation menu.
+* Tweak - Remove footer logo and style 3 widget regions to match main content area.
+* Tweak - Display magnifying glass icon in search widget.
+* Tweak - Wrap header area with functions to enable rearranging via child themes.
+* Tweak - Add support for SportsPress Pro templates.
+* Tweak - Style entry meta to match archive pages.
+* Fix - Footer and sidebar syntax on 404 page.
+* Localization - Make color labels more specific.
+* Localization - Update Czech, Italian, and Polish translations.
+
 = 1.2.1 =
 * Tweak - Add classes to header area indicating presence of a logo.
 * Tweak - Select gallery items by element in stylesheet.
