@@ -35,7 +35,7 @@ function rookie_customize_register( $wp_customize ) {
      * Primary Color
      */
     $wp_customize->add_setting( 'themeboy[primary]', array(
-        'default'           => '#2b353e',
+        'default'           => apply_filters( 'rookie_default_primary_color', '#2b353e' ),
         'sanitize_callback' => 'rookie_sanitize_hex_color',
         'capability'        => 'edit_theme_options',
         'type'              => 'option',
@@ -51,7 +51,7 @@ function rookie_customize_register( $wp_customize ) {
      * Link Color
      */
     $wp_customize->add_setting( 'themeboy[link]', array(
-        'default'           => '#00a69c',
+        'default'           => apply_filters( 'rookie_default_link_color', '#00a69c' ),
         'sanitize_callback' => 'rookie_sanitize_hex_color',
         'capability'        => 'edit_theme_options',
         'type'              => 'option',
@@ -64,17 +64,33 @@ function rookie_customize_register( $wp_customize ) {
     ) ) );
 
     /**
+     * Text Color
+     */
+    $wp_customize->add_setting( 'themeboy[text]', array(
+        'default'           => apply_filters( 'rookie_default_text_color', '#222222' ),
+        'sanitize_callback' => 'rookie_sanitize_hex_color',
+        'capability'        => 'edit_theme_options',
+        'type'              => 'option',
+    ) );
+ 
+    $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'text', array(
+        'label'    => __('Text Color', 'rookie'),
+        'section'  => 'colors',
+        'settings' => 'themeboy[text]',
+    ) ) );
+
+    /**
      * Context Text Color
      */
     $wp_customize->add_setting( 'themeboy[content]', array(
-        'default'           => '#222222',
+        'default'           => apply_filters( 'rookie_default_content_color', '#222222' ),
         'sanitize_callback' => 'rookie_sanitize_hex_color',
         'capability'        => 'edit_theme_options',
         'type'              => 'option',
     ) );
  
     $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'content', array(
-        'label'    => __('Text Color', 'rookie'),
+        'label'    => __('Content Text Color', 'rookie'),
         'section'  => 'colors',
         'settings' => 'themeboy[content]',
     ) ) );
@@ -83,7 +99,7 @@ function rookie_customize_register( $wp_customize ) {
      * Content Background Color
      */
     $wp_customize->add_setting( 'themeboy[content_background]', array(
-        'default'           => '#ffffff',
+        'default'           => apply_filters( 'rookie_default_content_background_color', '#ffffff' ),
         'sanitize_callback' => 'rookie_sanitize_hex_color',
         'capability'        => 'edit_theme_options',
         'type'              => 'option',
@@ -99,7 +115,7 @@ function rookie_customize_register( $wp_customize ) {
 	 * Widget Background Color
 	 */
     $wp_customize->add_setting( 'themeboy[background]', array(
-        'default'           => '#f4f4f4',
+        'default'           => apply_filters( 'rookie_default_background_color', '#f4f4f4' ),
         'sanitize_callback' => 'rookie_sanitize_hex_color',
         'capability'        => 'edit_theme_options',
         'type'              => 'option',
@@ -112,26 +128,10 @@ function rookie_customize_register( $wp_customize ) {
     ) ) );
 
 	/**
-	 * Text Color
-	 */
-    $wp_customize->add_setting( 'themeboy[text]', array(
-        'default'           => '#222222',
-        'sanitize_callback' => 'rookie_sanitize_hex_color',
-        'capability'        => 'edit_theme_options',
-        'type'              => 'option',
-    ) );
- 
-    $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'text', array(
-        'label'    => __('Widget Text Color', 'rookie'),
-        'section'  => 'colors',
-        'settings' => 'themeboy[text]',
-    ) ) );
-
-	/**
 	 * Widget Heading Color
 	 */
     $wp_customize->add_setting( 'themeboy[heading]', array(
-        'default'           => '#ffffff',
+        'default'           => apply_filters( 'rookie_default_heading_color', '#ffffff' ),
         'sanitize_callback' => 'rookie_sanitize_hex_color',
         'capability'        => 'edit_theme_options',
         'type'              => 'option',
