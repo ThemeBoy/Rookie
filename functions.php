@@ -61,7 +61,7 @@ function rookie_setup() {
 		'uploads'                => true,
 		'random-default'         => false,
 		'header-text'            => true,
-		'default-text-color'     => '222222',
+		'default-text-color'     => apply_filters( 'rookie_default_header_text_color', '222222' ),
 	) );
 
 	add_editor_style();
@@ -102,6 +102,13 @@ function rookie_setup() {
 }
 endif; // rookie_setup
 add_action( 'after_setup_theme', 'rookie_setup' );
+
+function rookie_get_search_form( $form ) {
+	//return $untranslated_text;
+	$form = str_replace( 'value="' . esc_attr_x( 'Search', 'submit button' ) . '"', 'value="" title="' . esc_attr_x( 'Search', 'submit button' ) . '"', $form );
+	return $form;
+}
+add_filter( 'get_search_form', 'rookie_get_search_form' );
 
 /**
  * Render title in head for backwards compatibility.
@@ -179,54 +186,15 @@ function rookie_megaslider() {
 add_action( 'rookie_before_template', 'rookie_megaslider' );
 
 /**
- * Register Lato Google font for Rookie.
- *
- * @since Rookie 1.0
- *
- * @return string
- */
-function rookie_lato_font_url() {
-	$font_url = '';
-	/*
-	 * Translators: If there are characters in your language that are not supported
-	 * by Lato, translate this to 'off'. Do not translate into your own language.
-	 */
-	if ( 'off' !== _x( 'on', 'Lato font: on or off', 'rookie' ) ) {
-		$font_url = add_query_arg( 'family', urlencode( 'Lato:400,700,400italic,700italic' ), "//fonts.googleapis.com/css" );
-	}
-
-	return $font_url;
-}
-
-/**
- * Register Oswald Google font for Rookie.
- *
- * @since Rookie 1.0
- *
- * @return string
- */
-function rookie_oswald_font_url() {
-	$font_url = '';
-	/*
-	 * Translators: If there are characters in your language that are not supported
-	 * by Oswald, translate this to 'off'. Do not translate into your own language.
-	 */
-	if ( 'off' !== _x( 'on', 'Oswald font: on or off', 'rookie' ) ) {
-		$font_url = add_query_arg( 'family', urlencode( 'Oswald:400,700' ), "//fonts.googleapis.com/css" );
-	}
-
-	return $font_url;
-}
-
-/**
  * Enqueue scripts and styles.
  */
 function rookie_scripts() {
-	// Add fonts used in the main stylesheet.
-	wp_enqueue_style( 'rookie-oswald', rookie_oswald_font_url(), array(), null );
-	wp_enqueue_style( 'rookie-lato', rookie_lato_font_url(), array(), null );
-
+	// Load icon font.
 	wp_enqueue_style( 'dashicons' );
+
+	// Load web fonts.
+	wp_enqueue_style( 'rookie-lato', add_query_arg( 'family', 'Lato:400,700,400italic,700italic', "//fonts.googleapis.com/css", array(), null ) );
+	wp_enqueue_style( 'rookie-oswald', add_query_arg( 'family', 'Oswald:400,700', "//fonts.googleapis.com/css", array(), null ) );
 
 	// Load our framework stylesheet.
 	wp_enqueue_style( 'rookie-framework-style', get_template_directory_uri() . '/framework.css' );
@@ -350,8 +318,14 @@ function rookie_custom_colors() {
 	.sp-template-event-blocks .event-title,
 	.megaslider__row:hover {
 		background: <?php echo $colors['highlight']; ?>; }
+	.sp-tournament-bracket .sp-team .sp-team-name:before {
+		border-left-color: <?php echo $colors['highlight']; ?>;
+		border-right-color: <?php echo $colors['highlight']; ?>; }
+	.sp-tournament-bracket .sp-event {
+		border-color: <?php echo $colors['highlight']; ?> !important; }
 	caption,
 	.main-navigation,
+	.site-footer,
 	.sp-heading,
 	.sp-table-caption,
 	.sp-template-player-gallery .gallery-caption,
@@ -437,10 +411,12 @@ function rookie_custom_colors() {
 	.sp-template,
 	.sp-template-countdown .event-venue,
 	.sp-template-countdown .event-league,
+	.sp-template-countdown .event-name a,
 	.sp-template-countdown time span,
 	.sp-template-details dl,
 	.sp-template-event-blocks .event-title,
 	.sp-template-event-blocks .event-title a,
+	.sp-tournament-bracket .sp-event .sp-event-date,
 	.megaslider,
 	.woocommerce .woocommerce-breadcrumb,
 	.woocommerce-page .woocommerce-breadcrumb {
@@ -482,8 +458,7 @@ function rookie_custom_colors() {
 	.sp-heading a:hover,
 	.sp-table-caption,
 	.sp-template-tournament-bracket .sp-result,
-	.single-sp_player .entry-header .entry-title strong,
-	.megaslider__slide__label {
+	.single-sp_player .entry-header .entry-title strong {
 		color: <?php echo $colors['heading']; ?>; }
 	.main-navigation a,
 	.main-navigation .menu-toggle {
@@ -722,6 +697,11 @@ if ( is_super_admin() ) {
 	}
 	add_action( 'tgmpa_register', 'rookie_register_required_plugins' );
 }
+
+/**
+ * Disable default gallery style
+ */
+add_filter( 'use_default_gallery_style', '__return_false' );
 
 /**
  * Helper functions
