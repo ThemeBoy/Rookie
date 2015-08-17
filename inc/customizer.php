@@ -148,6 +148,7 @@ function rookie_customize_register( $wp_customize ) {
      */
     $wp_customize->add_setting( 'themeboy[nav_menu_search]', array(
         'default'       => 'yes',
+        'sanitize_callback' => 'rookie_sanitize_checkbox',
         'capability'    => 'edit_theme_options',
         'type'          => 'option',
     ) );

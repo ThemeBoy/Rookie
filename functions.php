@@ -731,10 +731,7 @@ if ( ! function_exists( 'rookie_sanitize_hex_color' ) ) {
  */
 if ( ! function_exists( 'rookie_sanitize_checkbox' ) ) {
     function rookie_sanitize_checkbox( $value ) {
-    	if ( 'yes' == $value ) {
-    		return $value;
-    	}
-    	return 'no';
+    	return true == $value;
     }
 }
 
