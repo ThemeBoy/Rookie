@@ -12,9 +12,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SportsPress\n"
 "POT-Creation-Date: 2015-04-03 16:07+1000\n"
-"PO-Revision-Date: 2015-05-20 03:52+0000\n"
+"PO-Revision-Date: 2015-07-17 05:42+0000\n"
 "Last-Translator: Krzysztof <kris.o.poranq@gmail.com>\n"
-"Language-Team: Polish (Poland) (http://www.transifex.com/projects/p/sportspress/language/pl_PL/)\n"
+"Language-Team: Polish (Poland) (http://www.transifex.com/themeboy/sportspress/language/pl_PL/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -470,15 +470,15 @@ msgstr "Kolor tła okna z treścią"
 
 #: inc/customizer.php:109
 msgid "Widget Background Color"
-msgstr ""
+msgstr "Kolor Tła Wtyczki"
 
 #: inc/customizer.php:125
 msgid "Widget Text Color"
-msgstr ""
+msgstr "Kolor Tekstu Wtyczki"
 
 #: inc/customizer.php:141
 msgid "Widget Heading Color"
-msgstr ""
+msgstr "Kolor Nagłówka Wtyczki"
 
 #: inc/template-tags.php:21
 msgid "Posts navigation"
@@ -565,12 +565,12 @@ msgstr ""
 #: inc/template-tags.php:169
 msgctxt "post format archive title"
 msgid "Galleries"
-msgstr ""
+msgstr "Galerie"
 
 #: inc/template-tags.php:171
 msgctxt "post format archive title"
 msgid "Images"
-msgstr ""
+msgstr "Obrazy"
 
 #: inc/template-tags.php:173
 msgctxt "post format archive title"
@@ -585,12 +585,12 @@ msgstr ""
 #: inc/template-tags.php:177
 msgctxt "post format archive title"
 msgid "Links"
-msgstr ""
+msgstr "Linki"
 
 #: inc/template-tags.php:179
 msgctxt "post format archive title"
 msgid "Statuses"
-msgstr ""
+msgstr "Statusy"
 
 #: inc/template-tags.php:181
 msgctxt "post format archive title"

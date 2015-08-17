@@ -4,15 +4,17 @@
 # Alan <info@studioediting.it>, 2015
 # Alex <ilbaboomba@gmail.com>, 2015
 # Giorgio Tomassetti <giorgiotomassetti@gmail.com>, 2015
+# Massimo, 2015
+# Massimo, 2015
 # Salvatore <scriptmafiacom@hotmail.com>, 2015
 # tod <tod.axon@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: SportsPress\n"
 "POT-Creation-Date: 2015-04-03 16:07+1000\n"
-"PO-Revision-Date: 2015-05-20 03:52+0000\n"
-"Last-Translator: ThemeBoy <support@themeboy.com>\n"
-"Language-Team: Italian (Italy) (http://www.transifex.com/projects/p/sportspress/language/it_IT/)\n"
+"PO-Revision-Date: 2015-08-05 15:37+0000\n"
+"Last-Translator: Massimo\n"
+"Language-Team: Italian (Italy) (http://www.transifex.com/themeboy/sportspress/language/it_IT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -42,15 +44,15 @@ msgstr "Categorie Pi&ugrave; Utilizzate"
 #: 404.php:44
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
-msgstr ""
+msgstr "Prova a guardare negli archivi mensili. %1$s"
 
 #: comments.php:28
 #, php-format
 msgctxt "comments title"
 msgid "One comment"
 msgid_plural "%1$s comments"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Un commento"
+msgstr[1] "%1$s commenti"
 
 #: comments.php:35 comments.php:53
 msgid "Comment navigation"
@@ -70,11 +72,11 @@ msgstr "I commenti sono chiusi."
 
 #: comments.php:71
 msgid "Start a Conversation"
-msgstr ""
+msgstr "Inizia una Conversazione"
 
 #: comments.php:73
 msgid "Join the Conversation"
-msgstr ""
+msgstr "Unisciti alla Conversazione"
 
 #: content-none.php:13
 msgid "Nothing Found"
@@ -104,7 +106,7 @@ msgstr "Pagine:"
 #: content.php:26
 #, php-format
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "Contianua a leggere %s <span class=\"meta-nav\">&rarr;</span>"
 
 #: functions.php:72 header.php:51
 msgid "Primary Menu"
@@ -121,23 +123,23 @@ msgstr "Intestazione"
 #: functions.php:153
 msgctxt "Lato font: on or off"
 msgid "on"
-msgstr ""
+msgstr "on"
 
 #: functions.php:173
 msgctxt "Oswald font: on or off"
 msgid "on"
-msgstr ""
+msgstr "on"
 
 #: functions.php:524
 #, php-format
 msgctxt "copyright info"
 msgid "&copy; %1$s %2$s"
-msgstr ""
+msgstr "&copy; %1$s %2$s"
 
 #: functions.php:535
 #, php-format
 msgid "Designed by %s"
-msgstr ""
+msgstr "Progettato da %s"
 
 #: header.php:21
 msgid "Skip to content"
@@ -184,8 +186,8 @@ msgid_plural ""
 "Sorry, but you do not have the correct permissions to install the %s "
 "plugins. Contact the administrator of this site for help on getting the "
 "plugins installed."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Ci dispiace, ma non disponi delle autorizzazioni corrette per installare il plugin %s. Contattare l'amministratore di questo sito per aiutarti ad installare il plugin."
+msgstr[1] "Ci dispiace, ma non disponi delle autorizzazioni corrette per installare i plugin %s. Contattare l'amministratore di questo sito per aiutarti ad installare i plugin."
 
 #: inc/class-tgm-plugin-activation.php:168
 #, php-format
@@ -211,8 +213,8 @@ msgid_plural ""
 "Sorry, but you do not have the correct permissions to activate the %s "
 "plugins. Contact the administrator of this site for help on getting the "
 "plugins activated."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Ci dispiace, ma non disponi delle autorizzazioni corrette per attivare il plugin %s. Contattare l'amministratore di questo sito per aiutarti ad attivare il plugin."
+msgstr[1] "Ci dispiace, ma non disponi delle autorizzazioni corrette per attivare i plugin %s. Contattare l'amministratore di questo sito per aiutarti ad attivare i plugin."
 
 #: inc/class-tgm-plugin-activation.php:171
 #, php-format
@@ -222,8 +224,8 @@ msgid ""
 msgid_plural ""
 "The following plugins need to be updated to their latest version to ensure "
 "maximum compatibility with this theme: %1$s."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Il seguente plug-in deve essere aggiornato alla versione più recente per garantire la massima compatibilità con questo tema: %1$s."
+msgstr[1] "I seguenti plug-in devono essere aggiornati alla versione più recente per garantire la massima compatibilità con questo tema: %1$s."
 
 #: inc/class-tgm-plugin-activation.php:172
 #, php-format
@@ -235,8 +237,8 @@ msgid_plural ""
 "Sorry, but you do not have the correct permissions to update the %s plugins."
 " Contact the administrator of this site for help on getting the plugins "
 "updated."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Ci dispiace, ma non disponi delle autorizzazioni corrette per aggiornare il plugin %s. Contattare l'amministratore di questo sito per aiutarti ad aggiornare il plugin."
+msgstr[1] "Ci dispiace, ma non disponi delle autorizzazioni corrette per aggiornare i plugin %s. Contattare l'amministratore di questo sito per aiutarti ad aggiornare i plugin."
 
 #: inc/class-tgm-plugin-activation.php:173
 msgid "Begin installing plugin"
@@ -267,8 +269,8 @@ msgstr "Plugin attivato con successo."
 #: inc/class-tgm-plugin-activation.php:1630
 msgid "The following plugin was activated successfully:"
 msgid_plural "The following plugins were activated successfully:"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Il seguente plugin è stato attivato con successo:"
+msgstr[1] "I seguenti plugin sono stati attivati con successo:"
 
 #: inc/class-tgm-plugin-activation.php:179
 #, php-format
@@ -352,11 +354,11 @@ msgstr "Pacchetto di installazione non disponibile."
 #: inc/class-tgm-plugin-activation.php:1923
 #, php-format
 msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
-msgstr ""
+msgstr "Dowload e installazione del pacchetto da <span class=“code”>%s</span>&#8230;"
 
 #: inc/class-tgm-plugin-activation.php:1924
 msgid "Unpacking the package&#8230;"
-msgstr ""
+msgstr "Apertura del pacchetto&#8230;"
 
 #: inc/class-tgm-plugin-activation.php:1925
 msgid "Installing the plugin&#8230;"
@@ -378,7 +380,7 @@ msgstr "Attivazione del plugin fallita."
 msgid ""
 "The installation and activation process is starting. This process may take a"
 " while on some hosts, so please be patient."
-msgstr ""
+msgstr "I processi di installazione e attivazione sono in avvio. Questo processo può richiedere un po’ di tempo su alcuni host, quindi per favore sii paziente."
 
 #: inc/class-tgm-plugin-activation.php:2053
 #, php-format
@@ -444,39 +446,39 @@ msgstr "Colore Primario"
 
 #: inc/customizer.php:61
 msgid "Link Color"
-msgstr ""
+msgstr "Colore Link"
 
 #: inc/customizer.php:77
 msgid "Text Color"
-msgstr ""
+msgstr "Colore Testo"
 
 #: inc/customizer.php:93
 msgid "Content Background Color"
-msgstr ""
+msgstr "Colore Di Sfondo"
 
 #: inc/customizer.php:109
 msgid "Widget Background Color"
-msgstr ""
+msgstr "Colore di sfondo del widget"
 
 #: inc/customizer.php:125
 msgid "Widget Text Color"
-msgstr ""
+msgstr "Colore testo del widget"
 
 #: inc/customizer.php:141
 msgid "Widget Heading Color"
-msgstr ""
+msgstr "Colore Intestazione Widget"
 
 #: inc/template-tags.php:21
 msgid "Posts navigation"
-msgstr ""
+msgstr "Navigazione articoli"
 
 #: inc/template-tags.php:25
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr ""
+msgstr "<span class=\"meta-nav\">&larr;</span> Articoli più vecchi"
 
 #: inc/template-tags.php:29
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "Articoli più recenti<span class=\"meta-nav\">&rarr;</span>"
 
 #: inc/template-tags.php:52
 msgid "Post navigation"
@@ -485,12 +487,12 @@ msgstr "Navigazione articoli"
 #: inc/template-tags.php:55
 msgctxt "Previous post link"
 msgid "<span class=\"meta-nav\">&larr;</span>&nbsp;%title"
-msgstr ""
+msgstr "<span class=\"meta-nav\">&larr;</span>&nbsp;%title"
 
 #: inc/template-tags.php:56
 msgctxt "Next post link"
 msgid "%title&nbsp;<span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "%title&nbsp;<span class=\"meta-nav\">&rarr;</span>"
 
 #: inc/template-tags.php:84
 #, php-format
@@ -501,12 +503,12 @@ msgstr "da %s"
 #: inc/template-tags.php:155
 #, php-format
 msgid "Category: %s"
-msgstr ""
+msgstr "Categoria: %s"
 
 #: inc/template-tags.php:157
 #, php-format
 msgid "Tag: %s"
-msgstr ""
+msgstr "Tag: %s"
 
 #: inc/template-tags.php:159
 #, php-format
@@ -541,22 +543,22 @@ msgstr "Giorno: %s"
 #: inc/template-tags.php:165
 msgctxt "daily archives date format"
 msgid "F j, Y"
-msgstr ""
+msgstr "F j, Y"
 
 #: inc/template-tags.php:167
 msgctxt "post format archive title"
 msgid "Asides"
-msgstr ""
+msgstr "Asides"
 
 #: inc/template-tags.php:169
 msgctxt "post format archive title"
 msgid "Galleries"
-msgstr ""
+msgstr "Gallerie"
 
 #: inc/template-tags.php:171
 msgctxt "post format archive title"
 msgid "Images"
-msgstr ""
+msgstr "Immagini"
 
 #: inc/template-tags.php:173
 msgctxt "post format archive title"
@@ -566,38 +568,38 @@ msgstr "Video"
 #: inc/template-tags.php:175
 msgctxt "post format archive title"
 msgid "Quotes"
-msgstr ""
+msgstr "Quota"
 
 #: inc/template-tags.php:177
 msgctxt "post format archive title"
 msgid "Links"
-msgstr ""
+msgstr "Link"
 
 #: inc/template-tags.php:179
 msgctxt "post format archive title"
 msgid "Statuses"
-msgstr ""
+msgstr "Stati"
 
 #: inc/template-tags.php:181
 msgctxt "post format archive title"
 msgid "Audio"
-msgstr ""
+msgstr "Audio"
 
 #: inc/template-tags.php:183
 msgctxt "post format archive title"
 msgid "Chats"
-msgstr ""
+msgstr "Chat"
 
 #: inc/template-tags.php:185
 #, php-format
 msgid "Archives: %s"
-msgstr ""
+msgstr "Archivi: %s"
 
 #. translators: 1: Taxonomy singular name, 2: Current taxonomy term
 #: inc/template-tags.php:189
 #, php-format
 msgid "%1$s: %2$s"
-msgstr ""
+msgstr "%1$s: %2$s"
 
 #: inc/template-tags.php:191
 msgid "Archives"

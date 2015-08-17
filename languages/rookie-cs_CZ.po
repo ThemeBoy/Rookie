@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SportsPress\n"
 "POT-Creation-Date: 2015-04-03 16:07+1000\n"
-"PO-Revision-Date: 2015-07-10 06:52+0000\n"
+"PO-Revision-Date: 2015-08-05 08:22+0000\n"
 "Last-Translator: thegreat <jiri.the.great@gmail.com>\n"
-"Language-Team: Czech (Czech Republic) (http://www.transifex.com/p/sportspress/language/cs_CZ/)\n"
+"Language-Team: Czech (Czech Republic) (http://www.transifex.com/themeboy/sportspress/language/cs_CZ/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -146,16 +146,16 @@ msgstr ""
 
 #: inc/class-tgm-plugin-activation.php:162
 msgid "Install Plugins"
-msgstr ""
+msgstr "Instalovat pluginy"
 
 #: inc/class-tgm-plugin-activation.php:163
 #, php-format
 msgid "Installing Plugin: %s"
-msgstr ""
+msgstr "Instalování pluginů: %s"
 
 #: inc/class-tgm-plugin-activation.php:164
 msgid "Something went wrong."
-msgstr ""
+msgstr "Něco se pokazilo."
 
 #: inc/class-tgm-plugin-activation.php:165
 #, php-format
@@ -306,24 +306,24 @@ msgstr ""
 
 #: inc/class-tgm-plugin-activation.php:1177
 msgid "Required"
-msgstr ""
+msgstr "Vyžadováno"
 
 #: inc/class-tgm-plugin-activation.php:1177
 msgid "Recommended"
-msgstr ""
+msgstr "Doporučeno"
 
 #: inc/class-tgm-plugin-activation.php:1180
 msgid "Not Installed"
-msgstr ""
+msgstr "Nenainstalováno"
 
 #: inc/class-tgm-plugin-activation.php:1182
 msgid "Installed But Not Activated"
-msgstr ""
+msgstr "Instalováno ale neaktivováno"
 
 #: inc/class-tgm-plugin-activation.php:1287
 #: inc/class-tgm-plugin-activation.php:1395
 msgid "Install"
-msgstr ""
+msgstr "Instalovat"
 
 #: inc/class-tgm-plugin-activation.php:1309
 #: inc/class-tgm-plugin-activation.php:1396
@@ -339,15 +339,15 @@ msgstr ""
 
 #: inc/class-tgm-plugin-activation.php:1374
 msgid "Plugin"
-msgstr ""
+msgstr "Plugin"
 
 #: inc/class-tgm-plugin-activation.php:1375
 msgid "Source"
-msgstr ""
+msgstr "Zdroj"
 
 #: inc/class-tgm-plugin-activation.php:1376
 msgid "Type"
-msgstr ""
+msgstr "Typ"
 
 #: inc/class-tgm-plugin-activation.php:1377
 msgid "Status"
@@ -355,7 +355,7 @@ msgstr "Stav"
 
 #: inc/class-tgm-plugin-activation.php:1922
 msgid "Install package not available."
-msgstr ""
+msgstr "Instalace balíčku není dostupná."
 
 #: inc/class-tgm-plugin-activation.php:1923
 #, php-format
@@ -448,7 +448,7 @@ msgstr "Logo"
 
 #: inc/customizer.php:45
 msgid "Primary Color"
-msgstr ""
+msgstr "Hlavní barva"
 
 #: inc/customizer.php:61
 msgid "Link Color"
@@ -504,12 +504,12 @@ msgstr ""
 #, php-format
 msgctxt "post author"
 msgid "by %s"
-msgstr ""
+msgstr "od %s"
 
 #: inc/template-tags.php:155
 #, php-format
 msgid "Category: %s"
-msgstr ""
+msgstr "Kategorie: %s"
 
 #: inc/template-tags.php:157
 #, php-format
@@ -519,37 +519,37 @@ msgstr "Štítek: %s"
 #: inc/template-tags.php:159
 #, php-format
 msgid "Author: %s"
-msgstr ""
+msgstr "Autor: %s"
 
 #: inc/template-tags.php:161
 #, php-format
 msgid "Year: %s"
-msgstr ""
+msgstr "Rok: %s"
 
 #: inc/template-tags.php:161
 msgctxt "yearly archives date format"
 msgid "Y"
-msgstr ""
+msgstr "Y"
 
 #: inc/template-tags.php:163
 #, php-format
 msgid "Month: %s"
-msgstr ""
+msgstr "Měsíc: %s"
 
 #: inc/template-tags.php:163
 msgctxt "monthly archives date format"
 msgid "F Y"
-msgstr ""
+msgstr "F Y"
 
 #: inc/template-tags.php:165
 #, php-format
 msgid "Day: %s"
-msgstr ""
+msgstr "Den: %s"
 
 #: inc/template-tags.php:165
 msgctxt "daily archives date format"
 msgid "F j, Y"
-msgstr ""
+msgstr "F j, Y"
 
 #: inc/template-tags.php:167
 msgctxt "post format archive title"
@@ -559,12 +559,12 @@ msgstr ""
 #: inc/template-tags.php:169
 msgctxt "post format archive title"
 msgid "Galleries"
-msgstr ""
+msgstr "Galerie"
 
 #: inc/template-tags.php:171
 msgctxt "post format archive title"
 msgid "Images"
-msgstr ""
+msgstr "Fotky"
 
 #: inc/template-tags.php:173
 msgctxt "post format archive title"
