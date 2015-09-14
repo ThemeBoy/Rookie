@@ -17,6 +17,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+<div class="sp-header"><?php do_action( 'sportspress_header' ); ?></div>
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'rookie' ); ?></a>
 
