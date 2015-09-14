@@ -459,6 +459,10 @@ textarea {
 	clear: both;
 }
 
+.homepage-widgets {
+	overflow: hidden;
+}
+
 .site-footer {
 	overflow: hidden;
 	position: relative;
@@ -654,6 +658,7 @@ a {
 .site-main .post-navigation {
 	margin: 0 0 1.25em;
 	overflow: hidden;
+    clear: both;
 }
 
 .comment-navigation .nav-previous,
@@ -992,7 +997,7 @@ a {
 .entry-header,
 .article-header {
 	position: relative;
-	margin-bottom: 1.25em;
+	margin: 0;
 }
 
 .entry-thumbnail img {
@@ -1418,6 +1423,16 @@ object {
 	vertical-align: middle;
 }
 
+.sp-template-event-logos .sp-team-result {
+	height: 1.5em;
+	min-width: 1.5em;
+	padding: 0 0.25em;
+	box-sizing: border-box;
+	text-align: center;
+	line-height: 1.5em;
+	font-weight: normal;
+}
+
 .sp-template-event-video .sp-table-caption {
 	display: none;
 }
@@ -1511,7 +1526,7 @@ object {
 }
 
 .sp-template-logo {
-	margin: -10px 0 1.25em 10px;
+	margin: 0 0 1.25em 20px;
 	float: right;
 }
 
@@ -1637,6 +1652,14 @@ object {
 	font-weight: normal;
 }
 
+.sp-template-birthdays .gallery dl {
+	max-width: 100%;
+}
+
+.single-sp_event .entry-header .entry-title {
+	text-align: center;
+}
+
 .single-sp_event .has-post-thumbnail .entry-header .entry-title {
 	margin: 0.25em 0;
 }
@@ -1647,16 +1670,10 @@ object {
 	font-weight: normal;
 }
 
-/* SportsPress Live */
+/* SportsPress TV */
 
-.opta-widget-container .fixtures-plus tbody tr td {
-	border-right: none;
-	border-left: none;
-}
-
-.opta-widget-container .formation tbody tr td,
-.opta-widget-container .formation tbody tr th {
-	border: none;
+.sportspress-tv-iframe {
+	display: block;
 }
 
 @media screen and (min-width: 601px) {
@@ -1692,6 +1709,23 @@ object {
 }
 
 @media screen and (min-width: 801px) {
+	.sp-has-venue.sp-has-results .sp-template-event-details,
+	.sp-has-venue.sp-has-results .sp-template-event-results {
+		float: left;
+		width: 70%;
+		padding-right: 10px;
+	}
+
+	.sp-has-venue.sp-has-results .sp-template-event-venue {
+		float: right;
+		width: 30%;
+		padding-left: 10px;
+	}
+
+	.sp-has-venue.sp-has-results .sp-template-event-venue .sp-google-map {
+		height: 200px;
+	}
+
 	.sp-event-performance-teams .sp-template-event-performance-icons {
 		width: 50%;
 		float: left;
