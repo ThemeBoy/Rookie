@@ -69,6 +69,14 @@ textarea {
 		float: right;
 	}
 
+	.main-navigation .search-form {
+		float: left;
+	}
+
+	.search-form .search-field {
+		float: right;
+	}
+
 	.widget-area {
 		float: left;
 	}
