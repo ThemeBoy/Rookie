@@ -105,7 +105,7 @@ add_action( 'after_setup_theme', 'rookie_setup' );
 
 function rookie_get_search_form( $form ) {
 	//return $untranslated_text;
-	$form = str_replace( 'value="' . esc_attr_x( 'Search', 'submit button' ) . '"', 'value="" title="' . esc_attr_x( 'Search', 'submit button' ) . '"', $form );
+	$form = str_replace( 'value="' . esc_attr_x( 'Search', 'submit button' ) . '"', 'value="&#61817;" title="' . esc_attr_x( 'Search', 'submit button' ) . '"', $form );
 	return $form;
 }
 add_filter( 'get_search_form', 'rookie_get_search_form' );
@@ -589,8 +589,18 @@ function rookie_custom_colors() {
 	}
 	@media screen and (min-width: 601px) {
 		.content-area,
+		.widecolumn {
+			box-shadow: 1px 0 0 <?php echo $colors['content_border']; ?>;
+		}
 		.widget-area {
-			border-color: <?php echo $colors['content_border']; ?>; }
+			box-shadow: inset 1px 0 0 <?php echo $colors['content_border']; ?>; }
+		.rtl .content-area,
+		.rtl .widecolumn {
+			box-shadow: -1px 0 0 <?php echo $colors['content_border']; ?>;
+		}
+
+		.rtl .widget-area {
+			box-shadow: inset -1px 0 0 <?php echo $colors['content_border']; ?>; }
 	}
 
 	<?php do_action( 'sportspress_frontend_css', $colors ); ?>
