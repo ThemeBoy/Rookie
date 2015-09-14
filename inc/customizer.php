@@ -155,7 +155,7 @@ function rookie_customize_register( $wp_customize ) {
 
     $wp_customize->add_control( 'nav_menu_search', array(
         'label'     => __('Display Search Form', 'rookie'),
-        'section'   => 'nav',
+        'section'   => 'title_tagline',
         'settings'  => 'themeboy[nav_menu_search]',
         'type'      => 'checkbox',
         'std'       => 'yes'
