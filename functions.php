@@ -451,6 +451,7 @@ function rookie_custom_colors() {
 	input[type="submit"],
 	.main-navigation .nav-menu > li:hover > a,
 	.main-navigation.toggled .menu-toggle,
+	.site-footer,
 	.sp-template .gallery-caption,
 	.sp-template .gallery-caption a,
 	.sp-heading,

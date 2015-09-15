@@ -233,14 +233,22 @@ body {
 /* Footer Color */
 .site-footer {
 	background: #2b353e;
+	color: #fff;
 }
 
 .site-footer .footer-widget-region {
 	padding: 20px;
 }
 
-.site-footer .widget-title {
-	color: #e8e8e8;
+.site-footer .widget_recent_entries ul li:before,
+.site-footer .widget_pages ul li:before,
+.site-footer .widget_categories ul li:before,
+.site-footer .widget_archive ul li:before,
+.site-footer .widget_recent_comments ul li:before,
+.site-footer .widget_nav_menu ul li:before,
+.site-footer .widget_links ul li:before,
+.site-footer .widget_meta ul li:before {
+	color: inherit;
 }
 
 /* Footer Logo */
