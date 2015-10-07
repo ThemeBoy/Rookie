@@ -1423,6 +1423,10 @@ object {
 	vertical-align: middle;
 }
 
+.sp-template-event-logos .sp-team-name {
+	font-weight: inherit;
+}
+
 .sp-template-event-logos .sp-team-result {
 	height: 1.5em;
 	min-width: 1.5em;
