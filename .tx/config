@@ -1,0 +1,7 @@
+[main]
+host = https://www.transifex.com
+
+[sportspress.rookie]
+file_filter = languages/rookie-<lang>.po
+source_file = languages/rookie.pot
+source_lang = en_US
