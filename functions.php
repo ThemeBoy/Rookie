@@ -329,6 +329,7 @@ function rookie_custom_colors() {
 	.sp-heading,
 	.sp-table-caption,
 	.sp-template-player-gallery .gallery-caption,
+	.sp-template-event-logos .sp-team-result,
 	.opta-widget-container h2 {
 		background: <?php echo $colors['primary']; ?>; }
 	pre,
@@ -458,6 +459,7 @@ function rookie_custom_colors() {
 	.sp-heading:hover,
 	.sp-heading a:hover,
 	.sp-table-caption,
+	.sp-template-event-logos .sp-team-result,
 	.sp-template-tournament-bracket .sp-result,
 	.single-sp_player .entry-header .entry-title strong {
 		color: <?php echo $colors['heading']; ?>; }
