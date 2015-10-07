@@ -54,7 +54,7 @@ function rookie_header_area() {
 				<nav id="site-navigation" class="main-navigation" role="navigation">
 					<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><?php _e( 'Primary Menu', 'rookie' ); ?></button>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-					<?php if ( array_key_exists( 'nav_menu_search', $options ) && $options['nav_menu_search'] ) get_search_form(); ?>
+					<?php if ( ! array_key_exists( 'nav_menu_search', $options ) || $options['nav_menu_search'] ) get_search_form(); ?>
 				</nav><!-- #site-navigation -->
 			<?php } else { ?>
 				<?php do_action( 'rookie_header_area_section_' . $section ); ?>
