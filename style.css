@@ -687,6 +687,11 @@ a:hover .page-title:hover {
 	text-transform: none;
 }
 
+.sp-template-event-blocks .sp-event-date a,
+.sp-template-event-blocks .sp-event-results a {
+	color: inherit;
+}
+
 .sp-template-details dl {
 	background: #f4f4f4;
 	border: 1px solid #e0e0e0;
@@ -754,6 +759,10 @@ a:hover .page-title:hover {
 }
 
 /* MegaSlider */
+.megaslider {
+	margin: 0;
+}
+
 .megaslider__row--active,
 .megaslider__row--active:hover {
 	background: #00a69c;
