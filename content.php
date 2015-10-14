@@ -13,8 +13,6 @@
 
 	<div class="single-article">
 		<header class="article-header">
-			<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
-
 			<?php if ( 'post' == get_post_type() ) : ?>
 				<div class="article-details">
 					<?php do_action( 'rookie_before_article_details' ); ?>
@@ -22,6 +20,8 @@
 					<?php do_action( 'rookie_article_details' ); ?>
 				</div>
 			<?php endif; ?>
+			
+			<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 		</header><!-- .article-header -->
 
 		<div class="entry-content article-content">

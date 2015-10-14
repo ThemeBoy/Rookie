@@ -408,6 +408,7 @@ function rookie_custom_colors() {
 	.entry-footer-links,
 	.comment-content,
 	.sp-data-table,
+	.site-footer .sp-data-table,
 	.sp-table-wrapper .dataTables_paginate,
 	.sp-template,
 	.sp-template-countdown .event-venue,

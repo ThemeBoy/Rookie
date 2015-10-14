@@ -1,14 +1,13 @@
 <?php
 /**
- * The template for displaying all SportsPress event pages.
+ * The template for displaying SportsPress team pages.
  *
  * @package Rookie
  */
 
-if ( isset( $full_content_width ) ) $content_width = $full_content_width;
 get_header(); ?>
 
-	<div id="primary" class="content-area content-area-full-width">
+	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
 			<?php if ( is_archive() && have_posts() ) : ?>
@@ -34,4 +33,5 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

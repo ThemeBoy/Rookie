@@ -591,6 +591,10 @@ a {
 	border-radius: 0;
 }
 
+.main-navigation .menu-toggle .dashicons {
+	font-size: 20px;
+}
+
 .main-navigation ul {
 	list-style: none;
 	margin: 0;

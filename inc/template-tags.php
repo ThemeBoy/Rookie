@@ -52,7 +52,7 @@ function rookie_header_area() {
 				</div><!-- .site-branding -->
 			<?php } elseif ( 'menu' == $section ) { ?>
 				<nav id="site-navigation" class="main-navigation" role="navigation">
-					<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><?php _e( 'Primary Menu', 'rookie' ); ?></button>
+					<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><span class="dashicons dashicons-menu"></span> <?php _e( 'Primary Menu', 'rookie' ); ?></button>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 					<?php if ( ! array_key_exists( 'nav_menu_search', $options ) || $options['nav_menu_search'] ) get_search_form(); ?>
 				</nav><!-- #site-navigation -->
@@ -157,20 +157,17 @@ function rookie_entry_meta() {
 	// Hide category and tag text for pages.
 	if ( 'post' == get_post_type() ) {
 		$categories_list = get_the_category_list( ' ' );
-
-		if ( $categories_list && rookie_categorized_blog() ) {
-			?>
-			<div class="entry-meta">
-				<div class="entry-category-links">
-					<?php
-					if ( $categories_list && rookie_categorized_blog() ) {
-						echo $categories_list;
-					}
-					?>
-				</div><!-- .entry-category-links -->
-			</div><!-- .entry-meta -->
-			<?php
-		}
+		?>
+		<div class="entry-meta">
+			<div class="entry-category-links">
+				<?php
+				if ( $categories_list && rookie_categorized_blog() ) {
+					echo $categories_list;
+				}
+				?>
+			</div><!-- .entry-category-links -->
+		</div><!-- .entry-meta -->
+		<?php
 	}
 }
 endif;
