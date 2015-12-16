@@ -17,6 +17,12 @@ function rookie_header_area() {
 		$logo = $options['logo_url'];
 		$logo = esc_url( $logo );
 	}
+	
+	if ( ! array_key_exists( 'nav_menu_search', $options ) || $options['nav_menu_search'] ) {
+		$has_search = true;
+	} else {
+		$has_search = false;
+	}
 
 	$sections = apply_filters( 'rookie_header_area_sections', array(
 		'widgets',
@@ -25,9 +31,9 @@ function rookie_header_area() {
 	) );
 	?>
 	<?php if ( get_header_image() ) { ?>
-	<div class="header-area header-area-custom<?php if ( isset( $logo ) ) { ?> header-area-has-logo<?php } ?>" style="background-image: url(<?php header_image(); ?>);">
+	<div class="header-area header-area-custom<?php if ( isset( $logo ) ) { ?> header-area-has-logo<?php } ?><?php if ( $has_search ) { ?> header-area-has-search<?php } ?>" style="background-image: url(<?php header_image(); ?>);">
 	<?php } else { ?>
-	<div class="header-area<?php if ( isset( $logo ) ) { ?> header-area-has-logo<?php } ?>">
+	<div class="header-area<?php if ( isset( $logo ) ) { ?> header-area-has-logo<?php } ?><?php if ( $has_search ) { ?> header-area-has-search<?php } ?>">
 	<?php } ?>
 		<?php foreach ( $sections as $section ) { ?>
 			<?php if ( 'widgets' == $section ) { ?>
@@ -54,7 +60,7 @@ function rookie_header_area() {
 				<nav id="site-navigation" class="main-navigation" role="navigation">
 					<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><span class="dashicons dashicons-menu"></span> <?php _e( 'Primary Menu', 'rookie' ); ?></button>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-					<?php if ( ! array_key_exists( 'nav_menu_search', $options ) || $options['nav_menu_search'] ) get_search_form(); ?>
+					<?php if ( $has_search ) get_search_form(); ?>
 				</nav><!-- #site-navigation -->
 			<?php } else { ?>
 				<?php do_action( 'rookie_header_area_section_' . $section ); ?>
@@ -155,19 +161,17 @@ if ( ! function_exists( 'rookie_entry_meta' ) ) :
  */
 function rookie_entry_meta() {
 	// Hide category and tag text for pages.
-	if ( 'post' == get_post_type() ) {
+	if ( 'post' == get_post_type() && rookie_categorized_blog() ) {
 		$categories_list = get_the_category_list( ' ' );
-		?>
-		<div class="entry-meta">
-			<div class="entry-category-links">
-				<?php
-				if ( $categories_list && rookie_categorized_blog() ) {
-					echo $categories_list;
-				}
-				?>
-			</div><!-- .entry-category-links -->
-		</div><!-- .entry-meta -->
-		<?php
+		if ( $categories_list ) {
+			?>
+			<div class="entry-meta">
+				<div class="entry-category-links">
+					<?php echo $categories_list; ?>
+				</div><!-- .entry-category-links -->
+			</div><!-- .entry-meta -->
+			<?php
+		}
 	}
 }
 endif;
