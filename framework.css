@@ -1089,14 +1089,14 @@ a {
 }
 
 .comment-author .avatar {
-	width: 35%;
+	width: 30%;
 	float: left;
 	position: absolute;
 }
 
 .comment-author .fn {
 	float: right;
-	width: 70%;
+	width: 65%;
 	margin-bottom: 0.25em;
 }
 
@@ -1125,7 +1125,7 @@ a {
 .comment-content {
 	position: relative;
 	float: right;
-	width: 70%;
+	width: 65%;
 	padding: 0.625em 15px 0.625em;
 	background: #f4f4f4;
 	border: 1px solid #e0e0e0;
@@ -1176,8 +1176,18 @@ a {
 	display: block;
 }
 
-
 @media screen and (min-width: 401px) {
+	.comment-author .avatar {
+		width: 25%;
+	}
+
+	.comment-author .fn,	
+	.comment-content {
+		width: 71.25%;
+	}
+}
+
+@media screen and (min-width: 601px) {
 	.comment-author .avatar {
 		width: 16.1%;
 	}
@@ -1185,6 +1195,17 @@ a {
 	.comment-author .fn,	
 	.comment-content {
 		width: 80%;
+	}
+}
+
+@media screen and (min-width: 801px) {
+	.comment-author .avatar {
+		width: 12.5%;
+	}
+
+	.comment-author .fn,	
+	.comment-content {
+		width: 85%;
 	}
 }
 
@@ -1626,7 +1647,7 @@ object {
 }
 
 .sp-header-sponsors .sp-sponsors .sponsor {
-	margin: 0 5px 10px;
+	margin: 10px;
 }
 
 .sp-footer-sponsors {
