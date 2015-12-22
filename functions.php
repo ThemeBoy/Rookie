@@ -179,7 +179,7 @@ function rookie_megaslider() {
 	if ( class_exists( 'MegaSlider' ) && ( is_page() || is_single() ) ) {
 		$slider = get_post_meta( get_the_ID(), '_megaslider', true );
 		if ( $slider ) {
-			echo do_shortcode( '[megaslider ' . $slider . ']' );
+			echo '<div class="before-content-slider">' . do_shortcode( '[megaslider ' . $slider . ']' ) . '</div>';
 		}
 	}
 }
@@ -606,6 +606,9 @@ function rookie_custom_colors() {
 		.rtl .widget-area {
 			box-shadow: inset -1px 0 0 <?php echo $colors['content_border']; ?>; }
 	}
+	@media screen and (max-width: 1199px) {
+		.wp-social-sidebar {
+			box-shadow: inset 0 1px 0 <?php echo $colors['content_border']; ?>; }
 
 	<?php do_action( 'sportspress_frontend_css', $colors ); ?>
 
@@ -685,11 +688,6 @@ if ( is_super_admin() ) {
 				'slug'      => 'sportspress',
 				'required'  => true,
 				'is_callable' => array( 'SportsPress', 'instance' ),
-			),
-			array(
-				'name'      => 'SportsPress TV',
-				'slug'      => 'sportspress-tv',
-				'required'  => false,
 			),
 		);
 

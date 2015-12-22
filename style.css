@@ -862,3 +862,9 @@ a:hover .page-title:hover {
 		padding: 1.75em;
 	}
 }
+
+@media screen and (max-width: 1199px) {
+	.wp-social-sidebar {
+		box-shadow: inset 0 1px 0 #e0e0e0;
+	}
+}
