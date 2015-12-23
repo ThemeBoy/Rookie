@@ -1807,6 +1807,10 @@ object {
 		width: 20%;
 		margin-top: 0;
 	}
+	
+	.sp-template-event-calendar tbody td {
+		padding: 2.375em 0.675em;
+	}
 
 	.sp-template-photo {
 		width: auto;
