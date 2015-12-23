@@ -111,9 +111,12 @@ cite:before {
 
 /* Quote Icon Color */
 blockquote:before,
-q:before,
-cite:before {
+q:before {
 	color: #00a69c;
+}
+
+cite:before {
+	background: #00a69c;
 }
 
 /* Code Color */
