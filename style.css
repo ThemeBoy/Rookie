@@ -447,8 +447,7 @@ a:hover {
 	color: #00a69c;
 }
 
-.entry-details,
-.article-details {
+.entry-details {
 	margin-bottom: 1.25em;
 }
 
@@ -527,6 +526,10 @@ a:hover .page-title:hover {
 
 .sticky .entry-title:before {
 	color: #00a69c;
+}
+
+.single-article .entry-title {
+	margin-bottom: 0;
 }
 
 /* Entry Thumbnail */
