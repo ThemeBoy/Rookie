@@ -1609,6 +1609,10 @@ object {
 	font-size: 24px;
 }
 
+.sp-template-league-gallery dl {
+	padding: 0.75em;
+}
+
 .gallery dl {
 	max-width: 100%;
 }

@@ -711,6 +711,10 @@ a:hover .page-title:hover {
 	background: #00a69c;
 }
 
+.sp-template-league-gallery .gallery-item {
+	padding: 15px;
+}
+
 .sp-template-post-content th,
 .sp-template-post-content td {
 	font-size: inherit;
