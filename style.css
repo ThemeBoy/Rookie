@@ -838,6 +838,12 @@ a:hover .page-title:hover {
 	.entry-header img {
 		margin-bottom: 0;
 	}
+}
+
+@media screen and (min-width: 801px) {
+	.sp-has-venue.sp-has-results .sp-template-event-venue .sp-google-map {
+		height: 164px;
+	}
 
 	.site-footer .footer-widget-region {
 		padding-left: 10px;
@@ -851,12 +857,6 @@ a:hover .page-title:hover {
 	.site-footer .footer-widget-region:last-child {
 		padding-left: 0;
 		padding-right: 20px;
-	}
-}
-
-@media screen and (min-width: 801px) {
-	.sp-has-venue.sp-has-results .sp-template-event-venue .sp-google-map {
-		height: 164px;
 	}
 }
 
