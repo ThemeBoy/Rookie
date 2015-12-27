@@ -461,10 +461,12 @@ a:hover {
 
 .entry-meta {
 	float: right;
+	margin-bottom: 5px;
 }
 
 .posted-on {
 	float: left;
+	margin-bottom: 5px;
 }
 
 .entry-meta a,
@@ -472,14 +474,6 @@ a:hover {
 .entry-meta a:hover,
 .posted-on a:hover {
 	color: inherit;
-}
-
-.has-post-thumbnail .entry-meta {
-	right: 0;
-}
-
-.has-post-thumbnail .posted-on {
-	left: 0;
 }
 
 .entry-footer a {
@@ -709,10 +703,6 @@ a:hover .page-title:hover {
 
 .sp-template-gallery .gallery-item strong {
 	background: #00a69c;
-}
-
-.sp-template-league-gallery .gallery-item {
-	padding: 15px;
 }
 
 .sp-template-post-content th,
