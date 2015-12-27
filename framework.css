@@ -1385,7 +1385,7 @@ object {
 .sp-table-caption h5,
 .sp-table-caption h6 {
 	margin: 0;
-	font-size: 16px;
+	font-size: inherit;
 }
 
 .sp-data-table tbody tr.odd {
