@@ -176,12 +176,7 @@ add_action( 'widgets_init', 'rookie_widgets_init' );
  * Display MegaSlider before content.
  */
 function rookie_megaslider() {
-	if ( class_exists( 'MegaSlider' ) && ( is_page() || is_single() ) ) {
-		$slider = get_post_meta( get_the_ID(), '_megaslider', true );
-		if ( $slider ) {
-			echo '<div class="before-content-slider">' . do_shortcode( '[megaslider ' . $slider . ']' ) . '</div>';
-		}
-	}
+	do_action( 'megaslider' );
 }
 add_action( 'rookie_before_template', 'rookie_megaslider' );
 
