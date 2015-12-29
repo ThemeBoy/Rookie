@@ -1600,11 +1600,13 @@ object {
 	margin-right: 0.25em;
 }
 
-.sp-template .player-group-name {
+.sp-template .player-group-name,
+.sp-staff-name {
 	margin-top: 1.25em;
 }
 
-.sp-template .player-gallery-group-name {
+.sp-template .player-gallery-group-name,
+.sp-staff-name {
 	clear: both;
 	font-size: 24px;
 }
