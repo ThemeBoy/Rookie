@@ -176,6 +176,7 @@ add_action( 'widgets_init', 'rookie_widgets_init' );
  * Display MegaSlider before content.
  */
 function rookie_megaslider() {
+	if ( ! is_front_page() ) return;
 	do_action( 'megaslider' );
 }
 add_action( 'rookie_before_template', 'rookie_megaslider' );
