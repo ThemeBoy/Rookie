@@ -36,8 +36,8 @@ function rookie_setup() {
 	// Declare SportsPress support.
 	add_theme_support( 'sportspress' );
 
-	// Declare MegaSlider support.
-	add_theme_support( 'megaslider' );
+	// Declare Mega Slider support.
+	add_theme_support( 'mega-slider' );
 
 	// Declare WooCommerce support.
 	add_theme_support( 'woocommerce' );
@@ -173,13 +173,13 @@ function rookie_widgets_init() {
 add_action( 'widgets_init', 'rookie_widgets_init' );
 
 /**
- * Display MegaSlider before content.
+ * Call Mega Slider action before content.
  */
-function rookie_megaslider() {
+function rookie_mega_slider() {
 	if ( ! is_front_page() ) return;
-	do_action( 'megaslider' );
+	do_action( 'mega_slider' );
 }
-add_action( 'rookie_before_template', 'rookie_megaslider' );
+add_action( 'rookie_before_template', 'rookie_mega_slider' );
 
 /**
  * Enqueue scripts and styles.
@@ -203,8 +203,7 @@ function rookie_scripts() {
 	wp_enqueue_style( 'rookie-style', get_stylesheet_uri() );
 
 	// Custom colors
-	if ( ! class_exists( 'SportsPress' ) || 'yes' == get_option( 'sportspress_enable_frontend_css', 'yes' ) )
-		add_action( 'wp_print_scripts', 'rookie_custom_colors', 30 );
+	add_action( 'wp_print_scripts', 'rookie_custom_colors', 30 );
 
 	wp_enqueue_script( 'rookie-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
@@ -219,6 +218,16 @@ function rookie_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'rookie_scripts' );
+
+/**
+ * Enqueue customize scripts.
+ */
+function rookie_customize_scripts() {
+	$screen = get_current_screen();
+	if ( 'customize' !== $screen->id ) return;
+	wp_enqueue_script( 'rookie-customize-panel', get_template_directory_uri() . '/js/customize-panel.js', array( 'jquery' ), '1.3.2', true );
+}
+add_action( 'admin_enqueue_scripts', 'rookie_customize_scripts' );
 
 /**
  * Enqueue jQuery timeago if locale available.
@@ -256,6 +265,15 @@ function rookie_custom_colors() {
 	 * @see rookie_customize_register()
 	 */
 	$colors = (array) get_option( 'themeboy', array() );
+
+	// Return if not customized
+	if ( ! isset( $colors['customize'] ) ) {
+		$enabled = get_option( 'sportspress_enable_frontend_css', 'no' );
+		if ( 'yes' !== $enabled ) return;
+	} elseif ( ! $colors['customize'] ) {
+		return;
+	}
+	
 	$colors = array_map( 'esc_attr', $colors );
 	$colors['sponsors_background'] = get_option( 'sportspress_footer_sponsors_css_background', '#f4f4f4' );
 
@@ -301,7 +319,7 @@ function rookie_custom_colors() {
 	.sp-template-countdown .event-league,
 	.sp-template-countdown time span,
 	.sp-template-details dl,
-	.megaslider__row,
+	.mega-slider__row,
 	.woocommerce .woocommerce-breadcrumb,
 	.woocommerce-page .woocommerce-breadcrumb,
 	.opta-widget-container form {
@@ -312,7 +330,7 @@ function rookie_custom_colors() {
 	.sp-highlight,
 	.sp-template-event-calendar #today,
 	.sp-template-event-blocks .event-title,
-	.megaslider__row:hover {
+	.mega-slider__row:hover {
 		background: <?php echo $colors['highlight']; ?>; }
 	.sp-tournament-bracket .sp-team .sp-team-name:before {
 		border-left-color: <?php echo $colors['highlight']; ?>;
@@ -359,7 +377,7 @@ function rookie_custom_colors() {
 	.sp-template-details dl,
 	.sp-template-tournament-bracket table,
 	.sp-template-tournament-bracket thead th,
-	.megaslider_row,
+	.mega-slider_row,
 	.woocommerce .woocommerce-breadcrumb,
 	.woocommerce-page .woocommerce-breadcrumb,
 	.opta-widget-container form {
@@ -415,7 +433,7 @@ function rookie_custom_colors() {
 	.sp-template-event-blocks .event-title,
 	.sp-template-event-blocks .event-title a,
 	.sp-tournament-bracket .sp-event .sp-event-date,
-	.megaslider,
+	.mega-slider,
 	.woocommerce .woocommerce-breadcrumb,
 	.woocommerce-page .woocommerce-breadcrumb {
 		color: <?php echo $colors['text']; ?>; }
@@ -509,8 +527,8 @@ function rookie_custom_colors() {
 	.sp-template-player-gallery .gallery-item strong,
 	.sp-template-tournament-bracket .sp-result,
 	.single-sp_player .entry-header .entry-title strong,
-	.megaslider__row--active,
-	.megaslider__row--active:hover {
+	.mega-slider__row--active,
+	.mega-slider__row--active:hover {
 		background: <?php echo $colors['link']; ?>; }
 	caption,
 	.sp-table-caption,
@@ -603,7 +621,7 @@ function rookie_custom_colors() {
 			box-shadow: inset -1px 0 0 <?php echo $colors['content_border']; ?>; }
 	}
 	@media screen and (max-width: 1199px) {
-		.wp-social-sidebar {
+		.social-sidebar {
 			box-shadow: inset 0 1px 0 <?php echo $colors['content_border']; ?>; }
 
 	<?php do_action( 'sportspress_frontend_css', $colors ); ?>
@@ -631,7 +649,7 @@ require get_template_directory() . '/inc/jetpack.php';
  * Move SportsPress header sponsors selector.
  */
 function rookie_header_sponsors() {
-	return '.site-branding';
+	return '.site-branding hgroup';
 }
 add_filter( 'sportspress_header_sponsors_selector', 'rookie_header_sponsors' );
 

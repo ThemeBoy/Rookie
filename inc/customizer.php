@@ -11,9 +11,9 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function rookie_customize_register( $wp_customize ) {
-	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+	$wp_customize->get_setting( 'blogname' )->transport            = 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport     = 'postMessage';
+    $wp_customize->get_setting( 'header_textcolor' )->transport    = 'postMessage';
 
     /**
      * Logo Image
@@ -22,65 +22,16 @@ function rookie_customize_register( $wp_customize ) {
         'sanitize_callback' => 'esc_url',
         'capability'    => 'edit_theme_options',
         'type'          => 'option',
- 
     ));
  
-    $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'logo_url', array(
+    $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'themeboy_logo_url', array(
         'label'     => __('Logo', 'rookie'),
         'section'   => 'title_tagline',
         'settings' => 'themeboy[logo_url]',
     )));
 
     /**
-     * Primary Color
-     */
-    $wp_customize->add_setting( 'themeboy[primary]', array(
-        'default'           => apply_filters( 'rookie_default_primary_color', '#2b353e' ),
-        'sanitize_callback' => 'rookie_sanitize_hex_color',
-        'capability'        => 'edit_theme_options',
-        'type'              => 'option',
-    ) );
- 
-    $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'primary', array(
-        'label'    => __('Primary Color', 'rookie'),
-        'section'  => 'colors',
-        'settings' => 'themeboy[primary]',
-    ) ) );
-
-    /**
-     * Link Color
-     */
-    $wp_customize->add_setting( 'themeboy[link]', array(
-        'default'           => apply_filters( 'rookie_default_link_color', '#00a69c' ),
-        'sanitize_callback' => 'rookie_sanitize_hex_color',
-        'capability'        => 'edit_theme_options',
-        'type'              => 'option',
-    ) );
- 
-    $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'link', array(
-        'label'    => __('Link Color', 'rookie'),
-        'section'  => 'colors',
-        'settings' => 'themeboy[link]',
-    ) ) );
-
-    /**
-     * Text Color
-     */
-    $wp_customize->add_setting( 'themeboy[text]', array(
-        'default'           => apply_filters( 'rookie_default_text_color', '#222222' ),
-        'sanitize_callback' => 'rookie_sanitize_hex_color',
-        'capability'        => 'edit_theme_options',
-        'type'              => 'option',
-    ) );
- 
-    $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'text', array(
-        'label'    => __('Text Color', 'rookie'),
-        'section'  => 'colors',
-        'settings' => 'themeboy[text]',
-    ) ) );
-
-    /**
-     * Context Text Color
+     * Content Text Color
      */
     $wp_customize->add_setting( 'themeboy[content]', array(
         'default'           => apply_filters( 'rookie_default_content_color', '#222222' ),
@@ -89,7 +40,7 @@ function rookie_customize_register( $wp_customize ) {
         'type'              => 'option',
     ) );
  
-    $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'content', array(
+    $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'themeboy_content', array(
         'label'    => __('Content Text Color', 'rookie'),
         'section'  => 'colors',
         'settings' => 'themeboy[content]',
@@ -105,10 +56,77 @@ function rookie_customize_register( $wp_customize ) {
         'type'              => 'option',
     ) );
  
-    $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'content_background', array(
+    $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'themeboy_content_background', array(
         'label'    => __('Content Background Color', 'rookie'),
         'section'  => 'colors',
         'settings' => 'themeboy[content_background]',
+    ) ) );
+
+    /**
+     * Customize colors
+     */
+    $wp_customize->add_setting( 'themeboy[customize]', array(
+        'default'       => ( 'yes' == get_option( 'sportspress_enable_frontend_css', 'no' ) ),
+        'sanitize_callback' => 'rookie_sanitize_checkbox',
+        'capability'    => 'edit_theme_options',
+        'type'          => 'option',
+        'transport'   => 'refresh',
+    ) );
+
+    $wp_customize->add_control( 'themeboy_customize', array(
+        'label'     => __( 'Customize', 'rookie' ),
+        'section'   => 'colors',
+        'settings'  => 'themeboy[customize]',
+        'type'      => 'checkbox',
+        'std'       => 'no'
+    ) );
+
+    /**
+     * Primary Color
+     */
+    $wp_customize->add_setting( 'themeboy[primary]', array(
+        'default'           => apply_filters( 'rookie_default_primary_color', '#2b353e' ),
+        'sanitize_callback' => 'rookie_sanitize_hex_color',
+        'capability'        => 'edit_theme_options',
+        'type'              => 'option',
+    ) );
+ 
+    $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'themeboy_primary', array(
+        'label'    => __('Primary Color', 'rookie'),
+        'section'  => 'colors',
+        'settings' => 'themeboy[primary]',
+    ) ) );
+
+    /**
+     * Link Color
+     */
+    $wp_customize->add_setting( 'themeboy[link]', array(
+        'default'           => apply_filters( 'rookie_default_link_color', '#00a69c' ),
+        'sanitize_callback' => 'rookie_sanitize_hex_color',
+        'capability'        => 'edit_theme_options',
+        'type'              => 'option',
+    ) );
+ 
+    $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'themeboy_link', array(
+        'label'    => __('Link Color', 'rookie'),
+        'section'  => 'colors',
+        'settings' => 'themeboy[link]',
+    ) ) );
+
+    /**
+     * Text Color
+     */
+    $wp_customize->add_setting( 'themeboy[text]', array(
+        'default'           => apply_filters( 'rookie_default_text_color', '#222222' ),
+        'sanitize_callback' => 'rookie_sanitize_hex_color',
+        'capability'        => 'edit_theme_options',
+        'type'              => 'option',
+    ) );
+ 
+    $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'themeboy_text', array(
+        'label'    => __('Text Color', 'rookie'),
+        'section'  => 'colors',
+        'settings' => 'themeboy[text]',
     ) ) );
 
 	/**
@@ -121,7 +139,7 @@ function rookie_customize_register( $wp_customize ) {
         'type'              => 'option',
     ) );
  
-    $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'background', array(
+    $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'themeboy_background', array(
         'label'    => __('Widget Background Color', 'rookie'),
         'section'  => 'colors',
         'settings' => 'themeboy[background]',
@@ -137,7 +155,7 @@ function rookie_customize_register( $wp_customize ) {
         'type'              => 'option',
     ) );
  
-    $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'heading', array(
+    $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'themeboy_heading', array(
         'label'    => __('Widget Heading Color', 'rookie'),
         'section'  => 'colors',
         'settings' => 'themeboy[heading]',
@@ -153,7 +171,7 @@ function rookie_customize_register( $wp_customize ) {
         'type'          => 'option',
     ) );
 
-    $wp_customize->add_control( 'nav_menu_search', array(
+    $wp_customize->add_control( 'themeboy_nav_menu_search', array(
         'label'     => __('Display Search Form', 'rookie'),
         'section'   => 'title_tagline',
         'settings'  => 'themeboy[nav_menu_search]',
@@ -167,6 +185,6 @@ add_action( 'customize_register', 'rookie_customize_register' );
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function rookie_customize_preview_js() {
-	wp_enqueue_script( 'rookie_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20141204', true );
+	wp_enqueue_script( 'rookie_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'jquery', 'customize-preview' ), '1.3.2', true );
 }
 add_action( 'customize_preview_init', 'rookie_customize_preview_js' );
