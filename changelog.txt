@@ -39,7 +39,7 @@
 * Fix - RTL styling for lists and table cells.
 * Fix - Inconsisten header styling.
 * Localization - Update Armenian, Czech, Dutch, Finnish, German, Korean, Polish, Russian, and Spanish translations.
-* Compatibility - Add MegaSlider support.
+* Compatibility - Add Mega Slider support.
 * Documentation - Add Theme URI to stylesheet.
 * Documentation - Add credits.txt for translation credits.
 
