@@ -1,6 +1,6 @@
 Rookie
 
-Copyright 2015 by ThemeBoy & the contributors
+Copyright 2016 by ThemeBoy & the contributors
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@ permission notices:
 
   Rookie is based on Underscores copyright 2012-2015 Automattic, Inc.
 
-  Rookie is released under the GPL copyright 2015 the contributors.
+  Rookie is released under the GPL copyright 2016 the contributors.
 
   Wherever third party code has been used, credit has been given in the code's
   comments.

@@ -2,8 +2,8 @@
 Contributors: ThemeBoy, brianmiyaji, aylaview
 Tags: black, blue, brown, gray, green, orange, pink, purple, red, silver, tan, white, yellow, dark, light, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, full-width-template, rtl-language-support, sticky-post, threaded-comments, translation-ready
 Requires at least: 3.8
-Tested up to: 4.3
-Stable tag: 4.3
+Tested up to: 4.4
+Stable tag: 4.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -56,4 +56,4 @@ TGM Plugin Activation: Copyright (c) 2012, Thomas Griffin (thomasgriffinmedia.co
 Timeago jQuery plugin: Copyright (c) 2008-2013, Ryan McGeary (ryan@mcgeary.org) - MIT License
 Lato font: Copyright (c) 2010-2011, tyPoland Lukasz Dziedzic (team@latofonts.com) - SIL Open Font License v1.1
 Oswald font: Copyright (c) 2011-2012, Vernon Adams (vern@newtypography.co.uk) - SIL Open Font License v1.1
-All images: Copyright (c) 2011-2015, ThemeBoy (support@themeboy.com) - GPL v2.0
+All images: Copyright (c) 2011-2016, ThemeBoy (support@themeboy.com) - GPL v2.0

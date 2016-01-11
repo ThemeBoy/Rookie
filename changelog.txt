@@ -1,5 +1,33 @@
 == Changelog ==
 
+= 1.3.2 =
+* Feature - Add checkbox to toggle advanced color selectors in customizer.
+* Tweak - Event blocks link color.
+* Tweak - Apply link color to team results.
+* Tweak - Team name inherits font weight in events.
+* Tweak - Update template structure for SportsPress.
+* Tweak - Adjust comment author widths in framework.
+* Tweak - Make entry meta link styling more uniform.
+* Tweak - Add class to header area indicating presence of search form.
+* Tweak - Increase calendar cell height on larger displays.
+* Tweak - Remove margins on archive and search result titles.
+* Tweak - Allow logos to float in templates.
+* Tweak - Adjust post meta margins.
+* Tweak - Headings within table captions to inherit font size.
+* Tweak - Style staff names to match player names.
+* Tweak - Float venue only in full width template.
+* Tweak - Declare support for Social Sidebar and News Widget.
+* Fix - Menu hover styling.
+* Fix - Quote citing color not applying correctly.
+* Fix - Search bar visibility not reflecting default option.
+* Fix - Responsive footer padding to match main content padding.
+* Fix - Allow single-column galleries.
+* Fix - Custom header text color not applying in some cases.
+* Refactor - Remove single event template in favor of custom template selection.
+* Localization - Update source strings.
+* Localization - Update Polish, French, Spanish, Turkish, Italian, Czech, Tamil, Persian, Dutch, Portuguese, and Norwegian translations.
+* License - Update license dates to 2016.
+
 = 1.3.1 =
 * Tweak - Move menu search option to site identity section in customizer.
 * Tweak - Use entity code in search form.

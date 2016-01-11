@@ -39,6 +39,12 @@ function rookie_setup() {
 	// Declare Mega Slider support.
 	add_theme_support( 'mega-slider' );
 
+	// Declare Social Sidebar support.
+	add_theme_support( 'social-sidebar' );
+
+	// Declare News Widget support.
+	add_theme_support( 'news-widget' );
+
 	// Declare WooCommerce support.
 	add_theme_support( 'woocommerce' );
 
