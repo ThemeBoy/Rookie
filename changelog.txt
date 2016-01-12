@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.3.3 =
+* Feature - Add options to display post date and author.
+* Fix - Header text color not applying.
+
 = 1.3.2 =
 * Feature - Add checkbox to toggle advanced color selectors in customizer.
 * Tweak - Event blocks link color.
