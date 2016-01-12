@@ -161,22 +161,44 @@ function rookie_customize_register( $wp_customize ) {
         'settings' => 'themeboy[heading]',
     ) ) );
 
+    $wp_customize->add_section( 'rookie_posts' , array(
+        'title'      => __( 'Posts', 'rookie' ),
+    ) );
+
     /**
-     * Navigation Menu Search
+     * Display Post Date
      */
-    $wp_customize->add_setting( 'themeboy[nav_menu_search]', array(
-        'default'       => 'yes',
+    $wp_customize->add_setting( 'themeboy[show_post_date]', array(
+        'default'       => true,
         'sanitize_callback' => 'rookie_sanitize_checkbox',
         'capability'    => 'edit_theme_options',
         'type'          => 'option',
     ) );
 
-    $wp_customize->add_control( 'themeboy_nav_menu_search', array(
-        'label'     => __('Display Search Form', 'rookie'),
-        'section'   => 'title_tagline',
-        'settings'  => 'themeboy[nav_menu_search]',
+    $wp_customize->add_control( 'themeboy_show_post_date', array(
+        'label'     => __('Display post date?', 'rookie'),
+        'section'   => 'rookie_posts',
+        'settings'  => 'themeboy[show_post_date]',
         'type'      => 'checkbox',
-        'std'       => 'yes'
+        'std'       => 'yes',
+    ) );
+
+    /**
+     * Display Post Author
+     */
+    $wp_customize->add_setting( 'themeboy[show_post_author]', array(
+        'default'       => false,
+        'sanitize_callback' => 'rookie_sanitize_checkbox',
+        'capability'    => 'edit_theme_options',
+        'type'          => 'option',
+    ) );
+
+    $wp_customize->add_control( 'themeboy_show_post_author', array(
+        'label'     => __('Display post author?', 'rookie'),
+        'section'   => 'rookie_posts',
+        'settings'  => 'themeboy[show_post_author]',
+        'type'      => 'checkbox',
+        'std'       => 'no',
     ) );
 }
 add_action( 'customize_register', 'rookie_customize_register' );

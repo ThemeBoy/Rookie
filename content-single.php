@@ -15,7 +15,7 @@
 
 	<div class="single-entry">
 		<header class="entry-header">
-			<?php the_title( '<h1 class="entry-title single-entry-title">', '</h1>' ); ?>
+			<?php rookie_entry_title(); ?>
 
 			<div class="entry-details">
 				<?php do_action( 'rookie_before_entry_details' ); ?>
