@@ -629,6 +629,7 @@ function rookie_custom_colors() {
 	@media screen and (max-width: 1199px) {
 		.social-sidebar {
 			box-shadow: inset 0 1px 0 <?php echo $colors['content_border']; ?>; }
+	}
 
 	<?php do_action( 'sportspress_frontend_css', $colors ); ?>
 
