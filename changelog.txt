@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.3.4 =
+* Fix - Missing bracket in custom CSS generator.
+* Localization - Update Polish translation.
+
 = 1.3.3 =
 * Feature - Add options to display post date and author.
 * Fix - Header text color not applying.
