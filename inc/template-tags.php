@@ -58,7 +58,7 @@ function rookie_header_area() {
 				</div><!-- .site-branding -->
 			<?php } elseif ( 'menu' == $section ) { ?>
 				<nav id="site-navigation" class="main-navigation" role="navigation">
-					<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><span class="dashicons dashicons-menu"></span> <?php _e( 'Primary Menu', 'rookie' ); ?></button>
+					<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><span class="dashicons dashicons-menu"></span></button>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 					<?php if ( $has_search ) get_search_form(); ?>
 				</nav><!-- #site-navigation -->
