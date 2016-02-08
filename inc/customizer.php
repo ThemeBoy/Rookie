@@ -160,7 +160,10 @@ function rookie_customize_register( $wp_customize ) {
         'section'  => 'colors',
         'settings' => 'themeboy[heading]',
     ) ) );
-
+    
+    /*
+     * Posts Section
+     */
     $wp_customize->add_section( 'rookie_posts' , array(
         'title'      => __( 'Posts', 'rookie' ),
     ) );
@@ -200,6 +203,8 @@ function rookie_customize_register( $wp_customize ) {
         'type'      => 'checkbox',
         'std'       => 'no',
     ) );
+    
+    do_action( 'rookie_customize_register', $wp_customize );
 }
 add_action( 'customize_register', 'rookie_customize_register' );
 

@@ -674,7 +674,7 @@ function rookie_footer() {
 function rookie_footer_copyright() {
 	?>
 	<div class="site-copyright">
-		<?php printf( _x( '&copy; %1$s %2$s', 'copyright info', 'rookie' ), date( 'Y' ), get_bloginfo( 'name' ) ); ?>
+		<?php echo apply_filters( 'rookie_footer_copyright', sprintf( _x( '&copy; %1$s %2$s', 'copyright info', 'rookie' ), date( 'Y' ), get_bloginfo( 'name' ) ) ); ?>
 	</div><!-- .site-copyright -->
 	<?php
 }
@@ -685,7 +685,7 @@ function rookie_footer_copyright() {
 function rookie_footer_credit() {
 	?>
 	<div class="site-credit">
-		<a href="http://themeboy.com/"><?php printf( __( 'Designed by %s', 'rookie' ), 'ThemeBoy' ); ?></a>
+		<?php echo apply_filters( 'rookie_footer_credit', '<a href="http://themeboy.com/">' . sprintf( __( 'Designed by %s', 'rookie' ), 'ThemeBoy' ) . '</a>' ); ?>
 	</div><!-- .site-info -->
 	<?php
 }
