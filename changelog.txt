@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.3.5 =
+* Tweak - Simplify mobile menu label.
+* Tweak - Add filters to footer section and customizer.
+
 = 1.3.4 =
 * Fix - Missing bracket in custom CSS generator.
 * Localization - Update Polish translation.
