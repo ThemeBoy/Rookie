@@ -207,7 +207,7 @@ body {
 
 /* Site Logo */
 .site-logo {
-	margin: -1.75em 0 0.875em;
+	margin: -1.75em 0 0;
 }
 
 /* Site Widgets */
@@ -216,6 +216,16 @@ body {
 }
 
 /* Custom Header */
+.header-area-custom {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.header-area-custom .site-logo {
+	margin-top: -1em;
+}
+
 .header-area-custom .site-branding {
 	padding: 1.75em;
 	min-height: 150px;
