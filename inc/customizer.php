@@ -31,6 +31,23 @@ function rookie_customize_register( $wp_customize ) {
     )));
 
     /**
+     * Navigation Menu Search
+     */
+    $wp_customize->add_setting( 'themeboy[nav_menu_search]', array(
+        'default'       => 'yes',
+        'sanitize_callback' => 'rookie_sanitize_checkbox',
+        'capability'    => 'edit_theme_options',
+        'type'          => 'option',
+    ) );
+    $wp_customize->add_control( 'nav_menu_search', array(
+        'label'     => __('Display Search Form', 'rookie'),
+        'section'   => 'title_tagline',
+        'settings'  => 'themeboy[nav_menu_search]',
+        'type'      => 'checkbox',
+        'std'       => 'yes'
+    ) );
+
+    /**
      * Content Text Color
      */
     $wp_customize->add_setting( 'themeboy[content]', array(
