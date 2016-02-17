@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 1.3.6 =
+* Tweak - Add light shade styling to substitute players in SportsPress.
+* Tweak - Adjust custom header background styling to cover header area in mobile.
+* Fix - Recover search form option in customizer.
+
 = 1.3.5 =
 * Tweak - Simplify mobile menu label.
 * Tweak - Add filters to footer section and customizer.
