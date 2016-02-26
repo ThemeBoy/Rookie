@@ -308,6 +308,7 @@ function the_archive_description( $before = '', $after = '' ) {
 }
 endif;
 
+if ( ! function_exists( 'rookie_categorized_blog' ) ) :
 /**
  * Returns true if a blog has more than 1 category.
  *
@@ -338,7 +339,9 @@ function rookie_categorized_blog() {
 		return false;
 	}
 }
+endif;
 
+if ( ! function_exists( 'rookie_category_transient_flusher' ) ) :
 /**
  * Flush out the transients used in rookie_categorized_blog.
  */
@@ -351,3 +354,4 @@ function rookie_category_transient_flusher() {
 }
 add_action( 'edit_category', 'rookie_category_transient_flusher' );
 add_action( 'save_post',     'rookie_category_transient_flusher' );
+endif;

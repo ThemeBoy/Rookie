@@ -5,6 +5,7 @@
  * @package Rookie
  */
 
+if ( ! function_exists( 'rookie_customize_register' ) ) :
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
  *
@@ -224,7 +225,9 @@ function rookie_customize_register( $wp_customize ) {
     do_action( 'rookie_customize_register', $wp_customize );
 }
 add_action( 'customize_register', 'rookie_customize_register' );
+endif;
 
+if ( ! function_exists( 'rookie_customize_preview_js' ) ) :
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
@@ -232,3 +235,4 @@ function rookie_customize_preview_js() {
 	wp_enqueue_script( 'rookie_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'jquery', 'customize-preview' ), '1.3.2', true );
 }
 add_action( 'customize_preview_init', 'rookie_customize_preview_js' );
+endif;

@@ -109,12 +109,14 @@ function rookie_setup() {
 endif; // rookie_setup
 add_action( 'after_setup_theme', 'rookie_setup' );
 
+if ( ! function_exists( 'rookie_get_search_form' ) ):
 function rookie_get_search_form( $form ) {
 	//return $untranslated_text;
 	$form = str_replace( 'value="' . esc_attr_x( 'Search', 'submit button' ) . '"', 'value="&#61817;" title="' . esc_attr_x( 'Search', 'submit button' ) . '"', $form );
 	return $form;
 }
 add_filter( 'get_search_form', 'rookie_get_search_form' );
+endif;
 
 /**
  * Render title in head for backwards compatibility.
@@ -133,6 +135,7 @@ endif;
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
+if ( ! function_exists( 'rookie_widgets_init' ) ):
 function rookie_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', 'rookie' ),
@@ -177,19 +180,23 @@ function rookie_widgets_init() {
 	}
 }
 add_action( 'widgets_init', 'rookie_widgets_init' );
+endif;
 
 /**
  * Call Mega Slider action before content.
  */
+if ( ! function_exists( 'rookie_mega_slider' ) ):
 function rookie_mega_slider() {
 	if ( ! is_front_page() ) return;
 	do_action( 'mega_slider' );
 }
 add_action( 'rookie_before_template', 'rookie_mega_slider' );
+endif;
 
 /**
  * Enqueue scripts and styles.
  */
+if ( ! function_exists( 'rookie_scripts' ) ):
 function rookie_scripts() {
 	// Load icon font.
 	wp_enqueue_style( 'dashicons' );
@@ -224,20 +231,24 @@ function rookie_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'rookie_scripts' );
+endif;
 
 /**
  * Enqueue customize scripts.
  */
+if ( ! function_exists( 'rookie_customize_scripts' ) ):
 function rookie_customize_scripts() {
 	$screen = get_current_screen();
 	if ( 'customize' !== $screen->id ) return;
 	wp_enqueue_script( 'rookie-customize-panel', get_template_directory_uri() . '/js/customize-panel.js', array( 'jquery' ), '1.3.2', true );
 }
 add_action( 'admin_enqueue_scripts', 'rookie_customize_scripts' );
+endif;
 
 /**
  * Enqueue jQuery timeago if locale available.
  */
+if ( ! function_exists( 'rookie_enqueue_timeago' ) ):
 function rookie_enqueue_timeago() {
 	$locale = get_locale();
 	$locale = str_replace( '_', '-', $locale );
@@ -260,10 +271,12 @@ function rookie_enqueue_timeago() {
 	// Enqueue locale
 	wp_enqueue_script( 'jquery-timeago-' . $locale, get_template_directory_uri() . $file, array( 'jquery', 'jquery-timeago' ), '1.4.1', true );
 }
+endif;
 
 /**
  * Enqueue scripts and styles.
  */
+if ( ! function_exists( 'rookie_custom_colors' ) ):
 function rookie_custom_colors() {
 
 	/*
@@ -636,6 +649,7 @@ function rookie_custom_colors() {
 	</style>
 	<?php
 }
+endif;
 
 /**
  * Custom template tags for this theme.
@@ -655,22 +669,27 @@ require get_template_directory() . '/inc/jetpack.php';
 /**
  * Move SportsPress header sponsors selector.
  */
+if ( ! function_exists( 'rookie_header_sponsors' ) ):
 function rookie_header_sponsors() {
 	return '.site-branding hgroup';
 }
 add_filter( 'sportspress_header_sponsors_selector', 'rookie_header_sponsors' );
+endif;
 
 /**
  * Display footer elements
  */
+if ( ! function_exists( 'rookie_footer' ) ):
 function rookie_footer() {
 	rookie_footer_copyright();
 	rookie_footer_credit();
 }
+endif;
 
 /**
  * Display footer copyright notice
  */
+if ( ! function_exists( 'rookie_footer_copyright' ) ):
 function rookie_footer_copyright() {
 	?>
 	<div class="site-copyright">
@@ -678,10 +697,12 @@ function rookie_footer_copyright() {
 	</div><!-- .site-copyright -->
 	<?php
 }
+endif;
 
 /**
  * Display footer credit
  */
+if ( ! function_exists( 'rookie_footer_credit' ) ):
 function rookie_footer_credit() {
 	?>
 	<div class="site-credit">
@@ -689,6 +710,7 @@ function rookie_footer_credit() {
 	</div><!-- .site-info -->
 	<?php
 }
+endif;
 
 /**
  * Display TGMPA to network admins.
@@ -702,6 +724,7 @@ if ( is_super_admin() ) {
 	/**
 	 * Register the required plugins for this theme.
 	 */
+	if ( ! function_exists( 'rookie_register_required_plugins' ) ):
 	function rookie_register_required_plugins() {
 		$plugins = array(
 			array(
@@ -729,6 +752,7 @@ if ( is_super_admin() ) {
 		tgmpa( $plugins, $config );
 	}
 	add_action( 'tgmpa_register', 'rookie_register_required_plugins' );
+	endif;
 }
 
 /**
