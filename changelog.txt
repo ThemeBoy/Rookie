@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 1.3.8 =
+* Fix - RTL styles in navigation submenu and footer.
+* Localization - Update Polish, Dutch, French, Portuguese, and Russian translations.
+* Localization - Update source strings.
+
 = 1.3.7 =
 * Tweak - Remove unused styles.
 * Fix - Check for existing functions for better child theme compatibility.
