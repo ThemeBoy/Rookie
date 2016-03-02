@@ -89,7 +89,7 @@ textarea {
 		float: right;
 	}
 
-	.site-info {
+	.site-copyright {
 		float: right;
 	}
 
@@ -129,6 +129,7 @@ textarea {
 }
 
 .main-navigation ul ul li:hover > ul {
+	left: auto;
 	right: 100%;
 }
 
