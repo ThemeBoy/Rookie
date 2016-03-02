@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Rookie\n"
-"POT-Creation-Date: 2016-01-13 00:52+1100\n"
-"PO-Revision-Date: 2016-01-13 00:52+1100\n"
+"POT-Creation-Date: 2016-03-02 22:50+1100\n"
+"PO-Revision-Date: 2016-03-02 22:50+1100\n"
 "Last-Translator: Brian Miyaji <brian@themeboy.com>\n"
 "Language-Team: ThemeBoy <support@themeboy.com>\n"
 "Language: en_US\n"
@@ -92,44 +92,44 @@ msgstr ""
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: functions.php:84 inc/template-tags.php:61
+#: functions.php:84
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:114
+#: functions.php:115
 msgctxt "submit button"
 msgid "Search"
 msgstr ""
 
-#: functions.php:138
+#: functions.php:141
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:148
+#: functions.php:151
 msgid "Header"
 msgstr ""
 
-#: functions.php:158
+#: functions.php:161
 msgid "Homepage"
 msgstr ""
 
-#: functions.php:169
+#: functions.php:172
 #, php-format
 msgid "Footer %d"
 msgstr ""
 
-#: functions.php:171
+#: functions.php:174
 #, php-format
 msgid "Widgetized Footer Region %d."
 msgstr ""
 
-#: functions.php:676
+#: functions.php:696
 #, php-format
 msgctxt "copyright info"
 msgid "&copy; %1$s %2$s"
 msgstr ""
 
-#: functions.php:687
+#: functions.php:709
 #, php-format
 msgid "Designed by %s"
 msgstr ""
@@ -594,51 +594,55 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: inc/customizer.php:28
+#: inc/customizer.php:29
 msgid "Logo"
 msgstr ""
 
 #: inc/customizer.php:44
+msgid "Display Search Form"
+msgstr ""
+
+#: inc/customizer.php:62
 msgid "Content Text Color"
 msgstr ""
 
-#: inc/customizer.php:60
+#: inc/customizer.php:78
 msgid "Content Background Color"
 msgstr ""
 
-#: inc/customizer.php:77
+#: inc/customizer.php:95
 msgid "Customize"
 msgstr ""
 
-#: inc/customizer.php:95
+#: inc/customizer.php:113
 msgid "Primary Color"
 msgstr ""
 
-#: inc/customizer.php:111
+#: inc/customizer.php:129
 msgid "Link Color"
 msgstr ""
 
-#: inc/customizer.php:127
+#: inc/customizer.php:145
 msgid "Text Color"
 msgstr ""
 
-#: inc/customizer.php:143
+#: inc/customizer.php:161
 msgid "Widget Background Color"
 msgstr ""
 
-#: inc/customizer.php:159
+#: inc/customizer.php:177
 msgid "Widget Heading Color"
 msgstr ""
 
-#: inc/customizer.php:165
+#: inc/customizer.php:186
 msgid "Posts"
 msgstr ""
 
-#: inc/customizer.php:179
+#: inc/customizer.php:200
 msgid "Display post date?"
 msgstr ""
 
-#: inc/customizer.php:197
+#: inc/customizer.php:218
 msgid "Display post author?"
 msgstr ""
 
