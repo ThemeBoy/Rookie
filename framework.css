@@ -847,6 +847,10 @@ a {
 	text-align: center;
 }
 
+.widget_calendar tbody td {
+	padding: 0.625em;
+}
+
 .widget_calendar #today {
 	font-weight: bold;
 }
