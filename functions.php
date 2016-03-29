@@ -230,7 +230,7 @@ function rookie_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'rookie_scripts' );
+add_action( 'wp_enqueue_scripts', 'rookie_scripts', 9 );
 endif;
 
 /**
