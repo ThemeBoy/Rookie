@@ -15,7 +15,13 @@ get_header(); ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'content', 'page' ); ?>
+				<?php
+				if ( in_array( get_post_type(), array( 'sp_player', 'sp_staff', 'sp_team' ) ) ) {
+					get_template_part( 'content', 'nothumb' );
+				} else {
+					get_template_part( 'content', 'page' );
+				}
+				?>
 
 			<?php endwhile; // end of the loop. ?>
 
