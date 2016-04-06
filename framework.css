@@ -410,11 +410,20 @@ textarea {
 
 .site-widgets {
 	padding: 0 10px;
+	margin-top: 20px;
 	width: 100%;
 }
 
 .site-widgets .widget {
 	margin: 0 auto 10px;
+}
+
+.site-widgets .widget:last-child {
+	margin-bottom: 0;
+}
+
+.site-banner-image {
+	display: block;
 }
 
 .site-branding {
@@ -1854,6 +1863,10 @@ object {
 		max-width: none;
 		margin: 0;
 		float: none;
+	}
+
+	.site-widgets .sp-scoreboard-wrapper {
+		margin: 0 -35px;
 	}
 }
 

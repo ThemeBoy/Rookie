@@ -12,8 +12,8 @@ if ( ! function_exists( 'rookie_customize_register' ) ) :
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function rookie_customize_register( $wp_customize ) {
-	$wp_customize->get_setting( 'blogname' )->transport            = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport     = 'postMessage';
+    $wp_customize->get_setting( 'blogname' )->transport            = 'postMessage';
+    $wp_customize->get_setting( 'blogdescription' )->transport     = 'postMessage';
     $wp_customize->get_setting( 'header_textcolor' )->transport    = 'postMessage';
 
     /**
@@ -147,9 +147,9 @@ function rookie_customize_register( $wp_customize ) {
         'settings' => 'themeboy[text]',
     ) ) );
 
-	/**
-	 * Widget Background Color
-	 */
+    /**
+     * Widget Background Color
+     */
     $wp_customize->add_setting( 'themeboy[background]', array(
         'default'           => apply_filters( 'rookie_default_background_color', '#f4f4f4' ),
         'sanitize_callback' => 'rookie_sanitize_hex_color',
@@ -163,9 +163,9 @@ function rookie_customize_register( $wp_customize ) {
         'settings' => 'themeboy[background]',
     ) ) );
 
-	/**
-	 * Widget Heading Color
-	 */
+    /**
+     * Widget Heading Color
+     */
     $wp_customize->add_setting( 'themeboy[heading]', array(
         'default'           => apply_filters( 'rookie_default_heading_color', '#ffffff' ),
         'sanitize_callback' => 'rookie_sanitize_hex_color',
@@ -178,6 +178,26 @@ function rookie_customize_register( $wp_customize ) {
         'section'  => 'colors',
         'settings' => 'themeboy[heading]',
     ) ) );
+
+    /*
+     * Header Image Style
+     */
+    $wp_customize->add_setting( 'themeboy[header_image_style]', array(
+        'default'       => 'background',
+        'capability'    => 'edit_theme_options',
+        'type'          => 'option',
+    ) );
+
+    $wp_customize->add_control( 'themeboy_header_image_style', array(
+        'label'     => __( 'Style', 'rookie' ),
+        'section'   => 'header_image',
+        'settings'  => 'themeboy[header_image_style]',
+        'type'      => 'select',
+        'choices'   => array(
+            'background' => __( 'Background', 'rookie' ),
+            'image' => __( 'Image', 'rookie' ),
+        ),
+    ) );
     
     /*
      * Posts Section
@@ -232,7 +252,7 @@ if ( ! function_exists( 'rookie_customize_preview_js' ) ) :
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function rookie_customize_preview_js() {
-	wp_enqueue_script( 'rookie_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'jquery', 'customize-preview' ), '1.3.2', true );
+    wp_enqueue_script( 'rookie_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'jquery', 'customize-preview' ), '1.3.2', true );
 }
 add_action( 'customize_preview_init', 'rookie_customize_preview_js' );
 endif;

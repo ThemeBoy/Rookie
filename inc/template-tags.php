@@ -23,14 +23,23 @@ function rookie_header_area() {
 	} else {
 		$has_search = false;
 	}
+	
+	if ( ! array_key_exists( 'header_image_style', $options ) ) {
+		$style = 'image';
+	} else {
+		$style = $options['header_image_style'];
+	}
+	
+	$header = get_header_image();
 
 	$sections = apply_filters( 'rookie_header_area_sections', array(
 		'widgets',
 		'branding',
+		'banner',
 		'menu',
 	) );
 	?>
-	<?php if ( get_header_image() ) { ?>
+	<?php if ( $header && 'background' == $style ) { ?>
 	<div class="header-area header-area-custom<?php if ( isset( $logo ) ) { ?> header-area-has-logo<?php } ?><?php if ( $has_search ) { ?> header-area-has-search<?php } ?>" style="background-image: url(<?php header_image(); ?>);">
 	<?php } else { ?>
 	<div class="header-area<?php if ( isset( $logo ) ) { ?> header-area-has-logo<?php } ?><?php if ( $has_search ) { ?> header-area-has-search<?php } ?>">
@@ -44,6 +53,10 @@ function rookie_header_area() {
 					</div>
 				</div>
 				<?php } ?>
+			<?php } elseif ( 'banner' == $section && $header && 'image' == $style ) { ?>
+				<div class="site-banner">
+					<img class="site-banner-image" src="<?php header_image(); ?>" alt="<?php bloginfo( 'description' ); ?>">
+				</div><!-- .site-banner -->
 			<?php } elseif ( 'branding' == $section ) { ?>
 				<div class="site-branding">
 					<?php if ( isset( $logo ) ) { ?>
