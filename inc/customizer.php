@@ -182,22 +182,26 @@ function rookie_customize_register( $wp_customize ) {
     /*
      * Header Image Style
      */
-    $wp_customize->add_setting( 'themeboy[header_image_style]', array(
-        'default'       => 'background',
-        'capability'    => 'edit_theme_options',
-        'type'          => 'option',
+    $options = apply_filters( 'rookie_header_image_style_options', array(
+        'background' => __( 'Background', 'rookie' ),
+        'image' => __( 'Image', 'rookie' ),
     ) );
+    
+    if ( sizeof( $options ) > 1 ) {
+        $wp_customize->add_setting( 'themeboy[header_image_style]', array(
+            'default'       => 'background',
+            'capability'    => 'edit_theme_options',
+            'type'          => 'option',
+        ) );
 
-    $wp_customize->add_control( 'themeboy_header_image_style', array(
-        'label'     => __( 'Style', 'rookie' ),
-        'section'   => 'header_image',
-        'settings'  => 'themeboy[header_image_style]',
-        'type'      => 'select',
-        'choices'   => array(
-            'background' => __( 'Background', 'rookie' ),
-            'image' => __( 'Image', 'rookie' ),
-        ),
-    ) );
+        $wp_customize->add_control( 'themeboy_header_image_style', array(
+            'label'     => __( 'Style', 'rookie' ),
+            'section'   => 'header_image',
+            'settings'  => 'themeboy[header_image_style]',
+            'type'      => 'select',
+            'choices'   => $options,
+        ) );
+    }
     
     /*
      * Posts Section

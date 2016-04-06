@@ -24,9 +24,15 @@ function rookie_header_area() {
 		$has_search = false;
 	}
 	
-	if ( ! array_key_exists( 'header_image_style', $options ) ) {
-		$style = 'image';
-	} else {
+	$style_options = apply_filters( 'rookie_header_image_style_options', array(
+        'background' => __( 'Background', 'rookie' ),
+        'image' => __( 'Image', 'rookie' ),
+    ) );
+
+	reset( $style_options );
+	$style = key( $style_options );
+	
+	if ( array_key_exists( 'header_image_style', $options ) && array_key_exists( $options['header_image_style'], $style_options ) ) {
 		$style = $options['header_image_style'];
 	}
 	
