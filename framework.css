@@ -424,6 +424,8 @@ textarea {
 
 .site-banner-image {
 	display: block;
+	width: 100%;
+	height: auto;
 }
 
 .site-branding {
