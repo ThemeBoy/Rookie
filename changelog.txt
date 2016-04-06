@@ -1,5 +1,13 @@
 == Changelog ==
 
+= 1.3.9 =
+* Feature - Add header style options for displaying custom header as image instead of background.
+* Tweak - Prevent widgets from overflowing horizontally.
+* Tweak - Split calendar column widths evenly.
+* Tweak - Match calendar widget padding with event calendar.
+* Tweak - Use default cursor on site description.
+* Tweak - Prevent double thumbnails in full width template.
+
 = 1.3.8 =
 * Fix - RTL styles in navigation submenu and footer.
 * Localization - Update Polish, Dutch, French, Portuguese, and Russian translations.
