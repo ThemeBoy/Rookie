@@ -792,6 +792,28 @@ if ( ! function_exists( 'rookie_sanitize_checkbox' ) ) {
     }
 }
 
+/**
+ * Sanitizes a header image style option. Defaults to first element in options array.
+ */
+if ( ! function_exists( 'rookie_sanitize_header_image_style' ) ) {
+    function rookie_sanitize_header_image_style( $value ) {
+		$style_options = apply_filters( 'rookie_header_image_style_options', array(
+	        'background' => __( 'Background', 'rookie' ),
+	        'image' => __( 'Image', 'rookie' ),
+	    ) );
+		
+		// Return given value if it's a valid option
+		if ( array_key_exists( $value, $style_options ) ) {
+			return $value;
+		}
+	
+		// Otherwise, return the first valid option
+		reset( $style_options );
+		$value = key( $style_options );
+		return $value;
+    }
+}
+
 if ( ! function_exists( 'rookie_rgb_from_hex' ) ) {
 	function rookie_rgb_from_hex( $color ) {
 		$color = str_replace( '#', '', $color );

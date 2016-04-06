@@ -189,9 +189,10 @@ function rookie_customize_register( $wp_customize ) {
     
     if ( sizeof( $options ) > 1 ) {
         $wp_customize->add_setting( 'themeboy[header_image_style]', array(
-            'default'       => 'background',
-            'capability'    => 'edit_theme_options',
-            'type'          => 'option',
+            'default'           => 'background',
+            'sanitize_callback' => 'rookie_sanitize_header_image_style',
+            'capability'        => 'edit_theme_options',
+            'type'              => 'option',
         ) );
 
         $wp_customize->add_control( 'themeboy_header_image_style', array(
