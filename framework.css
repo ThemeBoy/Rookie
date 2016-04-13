@@ -1381,10 +1381,6 @@ object {
 	display: block;
 }
 
-.sp-post-content {
-	clear: both;
-}
-
 .sp-view-all-link {
 	text-align: right;
 	font-size: 14px;
