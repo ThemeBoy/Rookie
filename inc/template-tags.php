@@ -64,7 +64,7 @@ function rookie_header_area() {
 					<img class="site-banner-image" src="<?php header_image(); ?>" alt="<?php bloginfo( 'description' ); ?>">
 				</div><!-- .site-banner -->
 			<?php } elseif ( 'branding' == $section ) { ?>
-				<div class="site-branding">
+				<div class="site-branding<?php if ( ! isset( $logo ) && ! display_header_text() ) { ?> site-branding-empty<?php } ?>">
 					<?php if ( isset( $logo ) ) { ?>
 					<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>"></a>
 					<?php } ?>
