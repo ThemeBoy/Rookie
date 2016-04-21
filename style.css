@@ -738,6 +738,10 @@ a:hover .page-title:hover {
 	color: #a3a3a3;
 }
 
+.sp-header-scoreboard .sp-template-scoreboard {
+	margin: 0;
+}
+
 .single-sp_team .has-post-thumbnail .entry-header .entry-title {
 	float: left;
 }
