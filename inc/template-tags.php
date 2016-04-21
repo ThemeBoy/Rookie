@@ -15,7 +15,7 @@ function rookie_header_area() {
 	$options = get_option( 'themeboy', array() );
 	if ( array_key_exists( 'logo_url', $options ) && ! empty( $options['logo_url'] ) ) {
 		$logo = $options['logo_url'];
-		$logo = esc_url( $logo );
+		$logo = esc_url( set_url_scheme( $logo ) );
 	}
 	
 	if ( ! array_key_exists( 'nav_menu_search', $options ) || $options['nav_menu_search'] ) {
