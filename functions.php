@@ -48,9 +48,6 @@ function rookie_setup() {
 	// Declare WooCommerce support.
 	add_theme_support( 'woocommerce' );
 
-	// Declare BuddyPress support.
-	add_theme_support( 'buddypress' );
-
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
