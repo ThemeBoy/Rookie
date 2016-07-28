@@ -4,6 +4,14 @@ Theme Name: Rookie
 
 /* Header */
 
+#buddypress #item-header-cover-image {
+    padding: 0 20px;
+}
+
+#buddypress div#item-header img.avatar {
+    margin: 0 20px 20px 0;
+}
+
 #buddypress #item-header-cover-image #item-header-avatar img.avatar {
     border: none;
     background: transparent;
@@ -70,9 +78,9 @@ Theme Name: Rookie
 
 @media screen and (min-width: 601px) {
     #buddypress #item-nav {
-        width: 25%;
+        width: 190px;
         float: left;
-        padding-right: 10px;
+        padding: 0 20px;
     }
 
     #buddypress #item-nav li {
@@ -81,9 +89,7 @@ Theme Name: Rookie
     }
 
     #buddypress #item-body {
-        width: 75%;
-        float: right;
-        padding-left: 10px;
+        overflow: hidden;
     }
 
     #buddypress div.item-list-tabs#object-nav {
