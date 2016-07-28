@@ -721,6 +721,11 @@ a:hover .page-title:hover {
 	text-align: inherit;
 }
 
+.sp-tweets {
+	border: 1px solid #e0e0e0;
+	border-top: none;
+}
+
 .sp-footer-sponsors .sp-sponsors {
 	border-top: 1px solid #e0e0e0;
 }
