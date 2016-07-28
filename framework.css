@@ -435,11 +435,6 @@ textarea {
 	clear: both;
 }
 
-.site-branding.site-branding-empty {
-	padding-top: 0;
-	padding-bottom: 0;
-}
-
 .site-logo {
 	display: inline-block;
 }
