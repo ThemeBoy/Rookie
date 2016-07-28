@@ -32,8 +32,19 @@ Theme Name: Rookie
 #buddypress div.item-list-tabs ul li a {
     color: #a3a3a3;
     border: 1px solid #fff;
-    float: left;
-    clear: both;
+}
+
+#buddypress div.item-list-tabs ul li a span {
+    float: right;
+    padding: 4px 8px;
+    margin-left: 5px;
+    background: #00a69c;
+    border: none;
+    color: #fff;
+}
+
+#buddypress div.item-list-tabs ul li a span.no-count {
+    display: none;
 }
 
 #buddypress div.item-list-tabs ul li a:hover {
@@ -43,6 +54,7 @@ Theme Name: Rookie
 #buddypress div.item-list-tabs ul li a:focus {
     outline: none;
 }
+
 
 #buddypress div.item-list-tabs ul li.current a, #buddypress div.item-list-tabs ul li.selected a {
     color: #222;
