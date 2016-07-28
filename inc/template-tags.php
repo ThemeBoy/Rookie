@@ -76,11 +76,13 @@ function rookie_header_area() {
 					<?php } ?>
 				</div><!-- .site-branding -->
 			<?php } elseif ( 'menu' == $section ) { ?>
-				<nav id="site-navigation" class="main-navigation" role="navigation">
-					<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><span class="dashicons dashicons-menu"></span></button>
-					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-					<?php if ( $has_search ) get_search_form(); ?>
-				</nav><!-- #site-navigation -->
+				<div class="site-menu">
+					<nav id="site-navigation" class="main-navigation" role="navigation">
+						<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><span class="dashicons dashicons-menu"></span></button>
+						<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+						<?php if ( $has_search ) get_search_form(); ?>
+					</nav><!-- #site-navigation -->
+				</div>
 			<?php } else { ?>
 				<?php do_action( 'rookie_header_area_section_' . $section ); ?>
 			<?php } ?>
