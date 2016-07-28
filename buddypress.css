@@ -1,0 +1,99 @@
+/*
+Theme Name: Rookie
+*/
+
+/* Header */
+
+#buddypress #item-header-cover-image #item-header-avatar img.avatar {
+    border: none;
+    background: transparent;
+}
+
+#buddypress #item-header-cover-image #item-buttons {
+    padding: 0;
+}
+
+/* Tabs */
+
+#buddypress div.item-list-tabs {
+    margin: 0 0 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+#buddypress div.item-list-tabs ul li {
+    margin-bottom: -1px;
+}
+
+#buddypress div.item-list-tabs#subnav ul li.last {
+    margin: 0 0 -1px;
+    height: 34px;
+}
+
+#buddypress div.item-list-tabs ul li a {
+    color: #a3a3a3;
+    border: 1px solid #fff;
+    float: left;
+    clear: both;
+}
+
+#buddypress div.item-list-tabs ul li a:hover {
+    color: #00a69c;
+}
+
+#buddypress div.item-list-tabs ul li a:focus {
+    outline: none;
+}
+
+#buddypress div.item-list-tabs ul li.current a, #buddypress div.item-list-tabs ul li.selected a {
+    color: #222;
+    background: #f4f4f4;
+    border-color: #e0e0e0;
+}
+
+/* Search */
+
+#messages_search {
+    padding: 3px 6px;
+}
+
+@media screen and (min-width: 601px) {
+    #buddypress #item-nav {
+        width: 25%;
+        float: left;
+        padding-right: 10px;
+    }
+
+    #buddypress #item-nav li {
+        float: none;
+        display: block;
+    }
+
+    #buddypress #item-body {
+        width: 75%;
+        float: right;
+        padding-left: 10px;
+    }
+
+    #buddypress div.item-list-tabs#object-nav {
+        margin: 0;
+        border-bottom: none;
+    }
+
+    #buddypress div.item-list-tabs#object-nav ul li {
+        margin-bottom: 0;
+    }
+
+    #buddypress div.item-list-tabs#object-nav ul li a {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    #buddypress div.item-list-tabs#object-nav ul li a {
+        background: transparent;
+        border: none;
+    }
+
+    #buddypress div.item-list-tabs#subnav {
+        margin: 0 0 20px;
+    }
+}

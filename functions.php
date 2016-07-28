@@ -48,6 +48,9 @@ function rookie_setup() {
 	// Declare WooCommerce support.
 	add_theme_support( 'woocommerce' );
 
+	// Declare BuddyPress support.
+	add_theme_support( 'buddypress' );
+
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
@@ -214,6 +217,10 @@ function rookie_scripts() {
 
 	// Load our main stylesheet.
 	wp_enqueue_style( 'rookie-style', get_stylesheet_uri() );
+	
+	// Load our BuddyPress stylesheet if needed.
+	if ( class_exists( 'BuddyPress' ) )
+		wp_enqueue_style( 'rookie-buddypress-style', get_template_directory_uri() . '/buddypress.css' );
 
 	// Custom colors
 	add_action( 'wp_print_scripts', 'rookie_custom_colors', 30 );
