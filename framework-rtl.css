@@ -441,3 +441,26 @@ textarea {
 		clear: right;
 	}
 }
+
+/*--------------------------------------------------------------
+13.3 BuddyPress
+--------------------------------------------------------------*/
+#buddypress div#item-header img.avatar {
+    margin: 0 0 20px 20px;
+}
+
+#buddypress div.item-list-tabs ul li a span {
+    float: left;
+    margin-left: 0;
+    margin-right 5px;
+}
+
+@media screen and (min-width: 601px) {
+    #buddypress #item-nav {
+        float: right;
+    }
+
+    #buddypress div.item-list-tabs#subnav ul li {
+        float: right;
+    }
+}
