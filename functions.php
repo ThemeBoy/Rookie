@@ -209,15 +209,21 @@ function rookie_scripts() {
 	wp_enqueue_style( 'rookie-framework-style', get_template_directory_uri() . '/framework.css' );
 
 	// Load RTL framework stylesheet if needed.
-	if ( is_rtl() )
+	if ( is_rtl() ) {
 		wp_enqueue_style( 'rookie-framework-rtl-style', get_template_directory_uri() . '/framework-rtl.css' );
+	}
 
 	// Load our main stylesheet.
 	wp_enqueue_style( 'rookie-style', get_stylesheet_uri() );
 	
-	// Load our BuddyPress stylesheet if needed.
-	if ( class_exists( 'BuddyPress' ) )
+	// Load our BuddyPress stylesheets if needed.
+	if ( class_exists( 'BuddyPress' ) ) {
 		wp_enqueue_style( 'rookie-buddypress-style', get_template_directory_uri() . '/buddypress.css' );
+
+		if ( is_rtl() ) {
+			wp_enqueue_style( 'rookie-buddypress-rtl-style', get_template_directory_uri() . '/buddypress-rtl.css' );
+		}
+	}
 
 	// Custom colors
 	add_action( 'wp_print_scripts', 'rookie_custom_colors', 30 );
