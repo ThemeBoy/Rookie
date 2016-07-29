@@ -20,4 +20,8 @@ Theme Name: Rookie
     #buddypress #item-nav {
         float: right;
     }
+
+    #buddypress div.item-list-tabs#subnav ul li {
+        float: right;
+    }
 }

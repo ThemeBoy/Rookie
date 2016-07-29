@@ -25,16 +25,10 @@ Theme Name: Rookie
 
 #buddypress div.item-list-tabs {
     margin: 0 0 20px;
-    border-bottom: 1px solid #e0e0e0;
 }
 
 #buddypress div.item-list-tabs ul li {
     margin-bottom: -1px;
-}
-
-#buddypress div.item-list-tabs#subnav ul li.last {
-    margin: 0 0 -1px;
-    height: 34px;
 }
 
 #buddypress div.item-list-tabs ul li a {
@@ -70,6 +64,21 @@ Theme Name: Rookie
     border-color: #e0e0e0;
 }
 
+#buddypress div.item-list-tabs#object-nav ul li {
+    float: none;
+}
+
+#buddypress div.item-list-tabs#subnav {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+#buddypress div.item-list-tabs#subnav ul li.last {
+    float: right;
+    margin: 0 0 -1px;
+    height: 34px;
+    line-height: 34px;
+}
+
 /* Search */
 
 #messages_search {
@@ -97,7 +106,7 @@ Theme Name: Rookie
         border-bottom: none;
     }
 
-    #buddypress div.item-list-tabs#object-nav ul li {
+    #buddypress div.item-list-tabs#object-nav ul li {;
         margin-bottom: 0;
     }
 
@@ -113,5 +122,9 @@ Theme Name: Rookie
 
     #buddypress div.item-list-tabs#subnav {
         margin: 0 0 20px;
+    }
+
+    #buddypress div.item-list-tabs#subnav ul li {
+        float: left;
     }
 }
