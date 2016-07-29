@@ -2043,6 +2043,7 @@ object {
     color: #222;
     background: #f4f4f4;
     border-color: #e0e0e0;
+    opacity: 1;
 }
 
 #buddypress div.item-list-tabs#object-nav ul li {
@@ -2061,7 +2062,12 @@ object {
 }
 
 #buddypress #messages_search {
-    padding: 3px 6px;
+	padding: 3px 6px;
+	margin: 0;
+	line-height: inherit;
+	height: auto;
+	display: inline;
+	width: auto;
 }
 
 @media screen and (min-width: 601px) {
