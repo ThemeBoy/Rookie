@@ -793,12 +793,12 @@ a:hover .page-title:hover {
     border-color: #e0e0e0;
 }
 
-#buddypress div.item-list-tabs ul li a span {
-    background: #00a69c;
-    color: #fff;
+#buddypress div.item-list-tabs ul li.current a span,
+#buddypress div.item-list-tabs ul li.selected a span {
+	background: #e0e0e0;
 }
 
-#buddypress div.item-list-tabs#subnav {
+#buddypress div.item-list-tabs {
     border-bottom: 1px solid #e0e0e0;
 }
 
