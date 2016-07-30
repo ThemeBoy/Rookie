@@ -2061,6 +2061,10 @@ object {
 	width: auto;
 }
 
+#buddypress div.dir-search {
+	margin: 0;
+}
+
 @media screen and (min-width: 601px) {
     #buddypress #item-nav {
         width: 190px;
