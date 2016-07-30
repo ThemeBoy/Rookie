@@ -776,6 +776,32 @@ a:hover .page-title:hover {
 	color: #222;
 }
 
+/* BuddyPress */
+#buddypress div.item-list-tabs ul li a {
+    color: #a3a3a3;
+    border: 1px solid transparent;
+}
+
+#buddypress div.item-list-tabs ul li a:hover {
+    color: #00a69c;
+}
+
+#buddypress div.item-list-tabs ul li.current a,
+#buddypress div.item-list-tabs ul li.selected a {
+    color: #222;
+    background: #f4f4f4;
+    border-color: #e0e0e0;
+}
+
+#buddypress div.item-list-tabs ul li a span {
+    background: #00a69c;
+    color: #fff;
+}
+
+#buddypress div.item-list-tabs#subnav {
+    border-bottom: 1px solid #e0e0e0;
+}
+
 /* Mega Slider */
 .mega-slider {
 	margin: 0;
