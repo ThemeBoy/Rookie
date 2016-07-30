@@ -1,5 +1,15 @@
 == Changelog ==
 
+= 1.3.10 =
+* Feature - Improved styling for BuddyPress.
+* Feature - Allow SportsPress to display logos in event archive pages.
+* Tweak - Wrap main navigation with div for easier customization.
+* Tweak - Add border to tweets.
+* Tweak - Remove margin around scoreboard.
+* Tweak - Remove padding when branding section is empty.
+* Tweak - Remove unnecessary content clearing.
+* Fix - Set URL scheme on logo props @perren.
+
 = 1.3.9 =
 * Feature - Add header style options for displaying custom header as image instead of background.
 * Tweak - Prevent widgets from overflowing horizontally.

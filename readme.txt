@@ -2,8 +2,8 @@
 Contributors: ThemeBoy, brianmiyaji, aylaview
 Tags: black, blue, brown, gray, green, orange, pink, purple, red, silver, tan, white, yellow, dark, light, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, full-width-template, rtl-language-support, sticky-post, threaded-comments, translation-ready
 Requires at least: 3.8
-Tested up to: 4.4
-Stable tag: 4.4
+Tested up to: 4.5
+Stable tag: 4.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
