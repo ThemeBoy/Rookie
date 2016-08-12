@@ -39,14 +39,6 @@ Theme Name: Rookie
 		box-shadow: -1px 0 0 #e0e0e0;
 	}
 
-	.content-area-full-width {
-		border-left: 0;
-	}
-
-	.widget-area {
-		box-shadow: inset -1px 0 0 #e0e0e0;
-	}
-
 	.site-footer .footer-widget-region {
 		padding-right: 0;
 		padding-left: 20px;

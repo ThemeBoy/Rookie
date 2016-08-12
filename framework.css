@@ -523,20 +523,48 @@ textarea {
 	.widget-area {
 		clear: none;
 		padding: 0;
+		position: relative;
 	}
 
 	.content-area {
 		width: 62%;
 	}
+	
+	.content-area-left-sidebar {
+		left: 34%;
+	}
+	
+	.content-area-double-sidebar {
+		width: 52%;
+		left: 24%;
+	}
 
 	.content-area-full-width,
+	.content-area-no-sidebar,
 	.widecolumn {
 		width: 100%;
+		left: auto;
 	}
 
 	.widget-area {
 		width: 30%;
+	}
+	
+	.widget-area-narrow {
+		width: 20%;
+	}
+
+	.widget-area-left {
+		float: left;
+		right: 62%;
+	}
+
+	.widget-area-right {
 		float: right;
+	}
+
+	.widget-area-left.widget-area-narrow {
+		right: 52%;
 	}
 
 	.site-copyright {

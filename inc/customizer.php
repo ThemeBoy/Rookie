@@ -40,7 +40,7 @@ function rookie_customize_register( $wp_customize ) {
         'capability'    => 'edit_theme_options',
         'type'          => 'option',
     ) );
-    $wp_customize->add_control( 'nav_menu_search', array(
+    $wp_customize->add_control( 'themeboy_nav_menu_search', array(
         'label'     => __('Display Search Form', 'rookie'),
         'section'   => 'title_tagline',
         'settings'  => 'themeboy[nav_menu_search]',
@@ -245,6 +245,59 @@ function rookie_customize_register( $wp_customize ) {
         'settings'  => 'themeboy[show_post_author]',
         'type'      => 'checkbox',
         'std'       => 'no',
+    ) );
+    
+    /*
+     * Layout Section
+     */
+    $wp_customize->add_section( 'rookie_layout' , array(
+        'title'      => __( 'Layout', 'rookie' ),
+    ) );
+
+    /**
+     * Content width
+     */
+    $wp_customize->add_setting( 'themeboy[content_width]', array(
+        'default'       => 1000,
+        'sanitize_callback' => 'rookie_sanitize_content_width',
+        'capability'    => 'edit_theme_options',
+        'type'          => 'option',
+    ) );
+
+    $wp_customize->add_control( 'themeboy_content_width', array(
+        'label'       => __('Content Width', 'rookie'),
+        'description' => '<a class="button button-small" href="#minus">-</a> <span>px</span> <a class="button button-small" href="#plus">+</a>',
+        'section'     => 'rookie_layout',
+        'settings'    => 'themeboy[content_width]',
+        'type'        => 'range',
+        'input_attrs' => array(
+            'min'  => 1000,
+            'max'  => 2000,
+            'step' => 10,
+        ),
+    ) );
+
+    /**
+     * Sidebar
+     */
+    $wp_customize->add_setting( 'themeboy[sidebar]', array(
+        'default'       => is_rtl() ? 'left' : 'right',
+        'sanitize_callback' => 'rookie_sanitize_choices',
+        'capability'    => 'edit_theme_options',
+        'type'          => 'option',
+    ) );
+
+    $wp_customize->add_control( 'themeboy_sidebar', array(
+        'label'     => __('Sidebar', 'rookie'),
+        'section'   => 'rookie_layout',
+        'settings'  => 'themeboy[sidebar]',
+        'type'      => 'radio',
+        'choices'   => array(
+            'left' => __( 'Left', 'rookie' ),
+            'right' => __( 'Right', 'rookie' ),
+            'double' => __( 'Both', 'rookie' ),
+            'no' => __( 'None', 'rookie' ),
+        ),
     ) );
     
     do_action( 'rookie_customize_register', $wp_customize );

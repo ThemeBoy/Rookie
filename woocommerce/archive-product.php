@@ -17,7 +17,7 @@ get_header( 'shop' ); ?>
 	do_action( 'woocommerce_before_main_content' );
 ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area content-area-<?php echo rookie_get_sidebar_setting(); ?>-sidebar">
 		<main id="main" class="site-main" role="main">
 
 				<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>

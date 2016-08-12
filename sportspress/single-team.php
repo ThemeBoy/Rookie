@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area content-area-<?php echo rookie_get_sidebar_setting(); ?>-sidebar">
 		<main id="main" class="site-main" role="main">
 
 			<?php if ( is_archive() && have_posts() ) : ?>

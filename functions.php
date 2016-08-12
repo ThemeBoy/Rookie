@@ -137,15 +137,39 @@ endif;
  */
 if ( ! function_exists( 'rookie_widgets_init' ) ):
 function rookie_widgets_init() {
-	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'rookie' ),
-		'id'            => 'sidebar-1',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
-	) );
+	$sidebar = rookie_get_sidebar_setting();
+	
+	if ( in_array( $sidebar, array( 'left', 'right' ) ) ) {
+		register_sidebar( array(
+			'name'          => __( 'Sidebar', 'rookie' ),
+			'id'            => 'sidebar-1',
+			'description'   => '',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h1 class="widget-title">',
+			'after_title'   => '</h1>',
+		) );
+	} else if ( 'double' === $sidebar ) {
+		register_sidebar( array(
+			'name'          => sprintf( __( 'Sidebar %d', 'rookie' ), 1 ),
+			'id'            => 'sidebar-1',
+			'description'   => '',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h1 class="widget-title">',
+			'after_title'   => '</h1>',
+		) );
+
+		register_sidebar( array(
+			'name'          => sprintf( __( 'Sidebar %d', 'rookie' ), 2 ),
+			'id'            => 'sidebar-2',
+			'description'   => '',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h1 class="widget-title">',
+			'after_title'   => '</h1>',
+		) );
+	}
 
 	register_sidebar( array(
 		'name'          => __( 'Header', 'rookie' ),
@@ -285,16 +309,32 @@ function rookie_custom_colors() {
 	 * @see rookie_customize_register()
 	 */
 	$colors = (array) get_option( 'themeboy', array() );
+	$colors = array_map( 'esc_attr', $colors );
+	
+	// Get layout options
+	if ( empty( $colors['content_width'] ) ) {
+		$width = 1000;
+	} else {
+		$width = rookie_sanitize_content_width( $colors['content_width'] );
+	}
 
-	// Return if not customized
+	?>
+	<style type="text/css"> /* Rookie Custom Layout */
+	@media screen and (min-width: 1025px) {
+		.site-header, .site-content, .site-footer, .site-info {
+			width: <?php echo $width; ?>px; }
+	}
+	</style>
+	<?php
+
+	// Return if colors not customized
 	if ( ! isset( $colors['customize'] ) ) {
 		$enabled = get_option( 'sportspress_enable_frontend_css', 'no' );
 		if ( 'yes' !== $enabled ) return;
 	} elseif ( ! $colors['customize'] ) {
 		return;
 	}
-	
-	$colors = array_map( 'esc_attr', $colors );
+
 	$colors['sponsors_background'] = get_option( 'sportspress_footer_sponsors_css_background', '#f4f4f4' );
 
 	// Defaults
@@ -317,7 +357,7 @@ function rookie_custom_colors() {
 	$colors['content_border'] = rookie_hex_darker( $colors['content_background'], 31, true );
 
 	?>
-	<style type="text/css"> /* Frontend CSS */
+	<style type="text/css"> /* Rookie Custom Colors */
 	.site-content,
 	.main-navigation .nav-menu > .menu-item-has-children:hover > a,
 	.main-navigation li.menu-item-has-children:hover a,
@@ -794,6 +834,38 @@ if ( ! function_exists( 'rookie_sanitize_checkbox' ) ) {
 }
 
 /**
+ * Sanitizes a radio option. Defaults to setting default from customize API.
+ */
+if ( ! function_exists( 'rookie_sanitize_choices' ) ) {
+    function rookie_sanitize_choices( $value, $setting ) {
+    	global $wp_customize;
+    	
+    	$control = $wp_customize->get_control( $setting->id );
+    	
+    	return $value;
+
+    	if ( array_key_exists( $value, $control->choices ) ) {
+	        return $value;
+	    } else {
+        	return $setting->default;
+    	}
+    }
+}
+
+/**
+ * Sanitizes content width option. Defaults to 1000.
+ */
+if ( ! function_exists( 'rookie_sanitize_content_width' ) ) {
+    function rookie_sanitize_content_width( $value ) {
+    	$value = absint( $value );
+    	if ( 500 > $value ) {
+    		$value = 1000;
+    	}
+    	return round( $value, -1 );
+    }
+}
+
+/**
  * Sanitizes a header image style option. Defaults to first element in options array.
  */
 if ( ! function_exists( 'rookie_sanitize_header_image_style' ) ) {
@@ -813,6 +885,22 @@ if ( ! function_exists( 'rookie_sanitize_header_image_style' ) ) {
 		$value = key( $style_options );
 		return $value;
     }
+}
+
+
+if ( ! function_exists( 'rookie_get_sidebar_setting' ) ) {
+    function rookie_get_sidebar_setting() {
+		// Get theme options
+		$options = (array) get_option( 'themeboy', array() );
+		$options = array_map( 'esc_attr', $options );
+
+		// Apply default setting
+		if ( empty( $options['sidebar'] ) ) {
+		    $options['sidebar'] = is_rtl() ? 'left' : 'right';
+		}
+		
+		return $options['sidebar'];
+	}
 }
 
 if ( ! function_exists( 'rookie_rgb_from_hex' ) ) {
