@@ -444,6 +444,8 @@ function rookie_custom_colors() {
 		border-color: <?php echo $colors['border']; ?>; }
 	.comment-content:before {
 		border-right-color: <?php echo $colors['border']; ?>; }
+	.sp-tab-menu {
+		border-bottom-color: <?php echo $colors['content_border']; ?>; }
 	body,
 	button,
 	input,
@@ -594,6 +596,8 @@ function rookie_custom_colors() {
 	.sp-table-caption,
 	.opta-widget-container h2 {
 		border-top-color: <?php echo $colors['link']; ?>; }
+	.sp-tab-menu-item-active a {
+		border-bottom-color: <?php echo $colors['link']; ?>; }
 	button:hover,
 	input[type="button"]:hover,
 	input[type="reset"]:hover,

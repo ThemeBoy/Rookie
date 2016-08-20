@@ -619,6 +619,20 @@ a:hover .page-title:hover {
     border: 1px solid #e0e0e0;
 }
 
+.sp-tab-menu {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.sp-tab-menu-item a {
+    border-bottom: 4px solid transparent;
+    margin: 0 5px -1px;
+    padding: 10px;
+}
+
+.sp-tab-menu-item-active a {
+    border-bottom-color: #00a69c;
+}
+
 .sp-template-countdown .event-name {
     font-weight: bold;
     text-align: left;
@@ -915,7 +929,7 @@ a:hover .page-title:hover {
 }
 
 @media screen and (min-width: 801px) {
-    .sp-has-venue.sp-has-results .sp-template-event-venue .sp-google-map {
+    .sp-has-venue.sp-has-results .sp-section-content .sp-template-event-venue .sp-google-map {
         height: 164px;
     }
 
