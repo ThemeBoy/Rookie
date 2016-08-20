@@ -1808,20 +1808,20 @@ object {
 }
 
 @media screen and (min-width: 801px) {
-	.sp-has-venue.sp-has-results .content-area-full-width .sp-template-event-details,
-	.sp-has-venue.sp-has-results .content-area-full-width .sp-template-event-results {
+	.sp-has-venue.sp-has-results .content-area-full-width .sp-section-content .sp-template-event-details,
+	.sp-has-venue.sp-has-results .content-area-full-width .sp-section-content .sp-template-event-results {
 		float: left;
 		width: 70%;
 		padding-right: 10px;
 	}
 
-	.sp-has-venue.sp-has-results .content-area-full-width .sp-template-event-venue {
+	.sp-has-venue.sp-has-results .content-area-full-width .sp-section-content .sp-template-event-venue {
 		float: right;
 		width: 30%;
 		padding-left: 10px;
 	}
 
-	.sp-has-venue.sp-has-results .content-area-full-width .sp-template-event-venue .sp-google-map {
+	.sp-has-venue.sp-has-results .content-area-full-width .sp-section-content .sp-template-event-venue .sp-google-map {
 		height: 200px;
 	}
 
