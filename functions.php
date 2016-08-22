@@ -762,54 +762,6 @@ function rookie_footer_credit() {
 }
 endif;
 
-/**
- * Display TGMPA to network admins.
- */
-if ( ! function_exists( 'rookie_plugin_activation' ) ) {
-    function rookie_plugin_activation() {
-		if ( is_super_admin() ) {
-			/**
-			 * Include the TGM_Plugin_Activation class.
-			 */
-			require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
-
-			/**
-			 * Register the required plugins for this theme.
-			 */
-			if ( ! function_exists( 'rookie_register_required_plugins' ) ):
-			function rookie_register_required_plugins() {
-				$plugins = array(
-					array(
-						'name'      => 'SportsPress',
-						'slug'      => 'sportspress',
-						'required'  => true,
-						'is_callable' => array( 'SportsPress', 'instance' ),
-					),
-				);
-
-				$config = array(
-					'default_path' => '',
-					'menu'         => 'tgmpa-install-plugins',
-					'has_notices'  => true,
-					'dismissable'  => true,
-					'is_automatic' => true,
-					'message'      => '',
-					'strings'      => array(
-						'nag_type' => 'updated'
-					)
-				);
-
-				$plugins = apply_filters( 'rookie_required_plugins', $plugins );
-
-				tgmpa( $plugins, $config );
-			}
-			add_action( 'tgmpa_register', 'rookie_register_required_plugins' );
-			endif;
-		}
-	}
-}
-
-
 function rookie_register_required_plugins() {
 	$plugins = array(
 		array(
