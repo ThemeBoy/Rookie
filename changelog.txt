@@ -1,5 +1,13 @@
 == Changelog ==
 
+= 1.4 =
+* Feature - New layout option to define custom content width.
+* Feature - New layout option to choose left, right, or double sidebar.
+* Feature - Add styling for SportsPress tabs.
+* Tweak - BuddyPress tab count style.
+* Fix - BuddyPress group search style.
+* Compatibility - Update TGM Plugin Activation.
+
 = 1.3.10 =
 * Feature - Improved styling for BuddyPress.
 * Feature - Allow SportsPress to display logos in event archive pages.
