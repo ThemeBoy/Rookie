@@ -626,7 +626,7 @@ a:hover .page-title:hover {
 .sp-tab-menu-item a {
     border-bottom: 4px solid transparent;
     margin: 0 5px -1px;
-    padding: 10px;
+    padding: 5px;
 }
 
 .sp-tab-menu-item-active a {
