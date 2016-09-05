@@ -2,8 +2,8 @@
 Contributors: ThemeBoy, brianmiyaji, aylaview
 Tags: black, blue, brown, gray, green, orange, pink, purple, red, silver, tan, white, yellow, dark, light, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, full-width-template, rtl-language-support, sticky-post, threaded-comments, translation-ready
 Requires at least: 3.8
-Tested up to: 4.5
-Stable tag: 4.5
+Tested up to: 4.6
+Stable tag: 4.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -44,10 +44,11 @@ You can change the colors of your site easily using Rookie.
 
 = Quick Specs =
 
-1. The main content width is 620px.
-2. The sidebar width is 300px.
-3. Featured Images are 620px wide by 413px high.
-4. Header Images are 1000px wide by 150px high.
+1. The main content width is 620px or 66% of the content width minus 40px.
+2. The left or right sidebar width is 300px or 34% of the content width minus 40px.
+3. The double sidebar width is 200px on each side or 24% of the content width minus 40px.
+4. Featured Images default to 620px wide by 413px high.
+5. Header Images default to 1000px wide by 150px high.
 
 = Additional Licenses =
 
