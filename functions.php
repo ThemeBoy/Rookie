@@ -317,6 +317,14 @@ function rookie_custom_colors() {
 	} else {
 		$width = rookie_sanitize_content_width( $colors['content_width'] );
 	}
+	
+	global $content_width;
+
+	if ( is_page_template( 'template-fullwidth.php' ) ) {
+		$content_width = $width - 40;
+	} else {
+		$content_width = $width * .66 - 40;
+	}
 
 	?>
 	<style type="text/css"> /* Rookie Custom Layout */
