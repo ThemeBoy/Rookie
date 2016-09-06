@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.4.1 =
+* Feature - Add live update script to content width customization.
+* Tweak - Add default option to sidebar setting.
+
 = 1.4 =
 * Feature - New layout option to define custom content width.
 * Feature - New layout option to choose left, right, or double sidebar.
