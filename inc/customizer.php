@@ -295,6 +295,7 @@ function rookie_customize_register( $wp_customize ) {
         'settings'  => 'themeboy[sidebar]',
         'type'      => 'radio',
         'choices'   => array(
+            '' => __( 'Default', 'rookie' ) . ' (' . ( is_rtl() ? __( 'Left', 'rookie' ) : __( 'Right', 'rookie' ) ) . ')',
             'left' => __( 'Left', 'rookie' ),
             'right' => __( 'Right', 'rookie' ),
             'double' => __( 'Both', 'rookie' ),

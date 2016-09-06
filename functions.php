@@ -320,9 +320,15 @@ function rookie_custom_colors() {
 	
 	global $content_width;
 
-	if ( is_page_template( 'template-fullwidth.php' ) ) {
+	if ( empty( $colors['sidebar'] ) ) {
+		$sidebar = '';
+	} else {
+		$sidebar = $colors['sidebar'];
+	}
+
+	if ( 'no' == $sidebar || is_page_template( 'template-fullwidth.php' ) ) {
 		$content_width = $width - 40;
-	} elseif ( isset( $colors['sidebar'] ) && 'double' === $colors['sidebar'] )  {
+	} elseif ( 'double' === $sidebar )  {
 		$content_width = $width * .52 - 40;
 	} else {
 		$content_width = $width * .66 - 40;
