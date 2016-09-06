@@ -33,4 +33,10 @@
 			}
 		} );
 	} );
+	// Content width.
+	wp.customize( 'themeboy[content_width]', function( value ) {
+		value.bind( function( to ) {
+			$( vars.content_width_selector ).width( parseInt( to ) + parseInt( vars.content_width_adjustment ) );
+		} );
+	} );
 } )( jQuery );

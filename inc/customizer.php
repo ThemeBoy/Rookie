@@ -277,6 +277,8 @@ function rookie_customize_register( $wp_customize ) {
         ),
     ) );
 
+    $wp_customize->get_setting( 'themeboy[content_width]' )->transport = 'postMessage';
+
     /**
      * Sidebar
      */
@@ -310,7 +312,15 @@ if ( ! function_exists( 'rookie_customize_preview_js' ) ) :
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function rookie_customize_preview_js() {
-    wp_enqueue_script( 'rookie_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'jquery', 'customize-preview' ), '1.3.2', true );
+    wp_register_script( 'rookie_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'jquery', 'customize-preview' ), '1.4', true );
+
+    $vars = apply_filters( 'rookie_customizer_vars', array(
+        'content_width_selector' => '.site-header, .site-content, .site-footer, .site-info',
+        'content_width_adjustment' => 0,
+    ) );
+    wp_localize_script( 'rookie_customizer', 'vars', $vars );
+    
+    wp_enqueue_script( 'rookie_customizer' );
 }
 add_action( 'customize_preview_init', 'rookie_customize_preview_js' );
 endif;
