@@ -418,7 +418,7 @@ function rookie_custom_colors() {
 	.site-footer,
 	.sp-heading,
 	.sp-table-caption,
-	.sp-template-player-gallery .gallery-caption,
+	.sp-template-gallery .gallery-caption,
 	.sp-template-event-logos .sp-team-result,
 	.sp-statistic-bar,
 	.opta-widget-container h2 {
