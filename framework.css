@@ -1619,8 +1619,11 @@ object {
 }
 
 .sp-template-logo {
-	margin: 0 0 1.25em 20px;
-	float: right;
+	margin: 0 auto 1.25em;
+	text-align: center;
+	clear: both;
+	float: none;
+	max-width: auto;
 }
 
 .sp-template-photo {
@@ -1785,6 +1788,12 @@ object {
 		float: left;
 	}
 
+	.sp-template-logo {
+		margin: 0 0 1.25em 20px;
+		float: right;
+		clear: right;
+	}
+
 	.sp-template-event-blocks .event-results,
 	.sp-template-event-blocks .event-time {
 		font-size: 36px;
@@ -1805,6 +1814,10 @@ object {
 	.sp-header-sponsors {
 		margin-bottom: 0;
 	}
+
+    .single-sp_team .sp-post-content {
+        clear: left;
+    }
 }
 
 @media screen and (min-width: 801px) {

@@ -341,11 +341,6 @@ textarea {
 	text-align: right;
 }
 
-.sp-template-logo {
-	margin: -10px 10px 1.25em 0;
-	float: left;
-}
-
 .sp-template-details dt {
 	float: right;
 	clear: right;
@@ -373,6 +368,18 @@ textarea {
 .single-sp_player .entry-header .entry-title strong {
 	margin-right: 0;
 	margin-left: 0.25em;
+}
+
+@media screen and (min-width: 601px) {
+	.sp-template-logo {
+		margin: 0 20px 1.25em 0;
+		float: left;
+		clear: left;
+	}
+
+	.single-sp_team .sp-post-content {
+	    clear: right;
+	}
 }
 
 @media screen and (min-width: 801px) {
