@@ -694,13 +694,18 @@ function rookie_custom_colors() {
 		}
 		.widget-area {
 			box-shadow: inset 1px 0 0 <?php echo $colors['content_border']; ?>; }
+		.widget-area-left {
+			box-shadow: inset -1px 0 0 <?php echo $colors['content_border']; ?>; }
 		.rtl .content-area,
 		.rtl .widecolumn {
 			box-shadow: -1px 0 0 <?php echo $colors['content_border']; ?>;
 		}
 
-		.rtl .widget-area {
+		.rtl .widget-area,
+		.rtl .widget-area-left {
 			box-shadow: inset -1px 0 0 <?php echo $colors['content_border']; ?>; }
+		.rtl .widget-area-right {
+			box-shadow: inset 1px 0 0 <?php echo $colors['content_border']; ?>; }
 	}
 	@media screen and (max-width: 1199px) {
 		.social-sidebar {
