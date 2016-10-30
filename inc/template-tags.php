@@ -24,6 +24,8 @@ function rookie_header_area() {
 		$has_search = false;
 	}
 	
+	$display_header_text = display_header_text();
+	
 	$style_options = apply_filters( 'rookie_header_image_style_options', array(
         'background' => __( 'Background', 'rookie' ),
         'image' => __( 'Image', 'rookie' ),
@@ -37,6 +39,9 @@ function rookie_header_area() {
 	}
 	
 	$header = get_header_image();
+	
+	$header_textcolor = get_header_textcolor();
+	$header_textcolor = str_replace( '#', '', $header_textcolor );
 
 	$sections = apply_filters( 'rookie_header_area_sections', array(
 		'widgets',
@@ -46,7 +51,7 @@ function rookie_header_area() {
 	) );
 	?>
 	<?php if ( $header && 'background' == $style ) { ?>
-	<div class="header-area header-area-custom<?php if ( isset( $logo ) ) { ?> header-area-has-logo<?php } ?><?php if ( $has_search ) { ?> header-area-has-search<?php } ?>" style="background-image: url(<?php header_image(); ?>);">
+	<div class="header-area header-area-custom<?php if ( isset( $logo ) ) { ?> header-area-has-logo<?php } ?><?php if ( $has_search ) { ?> header-area-has-search<?php } ?><?php if ( $display_header_text ) { ?> header-area-has-text<?php } ?>" style="background-image: url(<?php header_image(); ?>);">
 	<?php } else { ?>
 	<div class="header-area<?php if ( isset( $logo ) ) { ?> header-area-has-logo<?php } ?><?php if ( $has_search ) { ?> header-area-has-search<?php } ?>">
 	<?php } ?>
@@ -64,12 +69,12 @@ function rookie_header_area() {
 					<img class="site-banner-image" src="<?php header_image(); ?>" alt="<?php bloginfo( 'description' ); ?>">
 				</div><!-- .site-banner -->
 			<?php } elseif ( 'branding' == $section ) { ?>
-				<div class="site-branding<?php if ( ! isset( $logo ) && ! display_header_text() ) { ?> site-branding-empty<?php } ?>">
+				<div class="site-branding<?php if ( ! isset( $logo ) && ! $display_header_text ) { ?> site-branding-empty<?php } ?>">
 					<?php if ( isset( $logo ) ) { ?>
 					<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>"></a>
 					<?php } ?>
-					<?php if ( display_header_text() ) { ?>
-					<hgroup style="color: #<?php header_textcolor(); ?>">
+					<?php if ( $display_header_text ) { ?>
+					<hgroup style="color: #<?php echo $header_textcolor; ?>">
 						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 						<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 					</hgroup>
