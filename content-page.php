@@ -7,8 +7,6 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php if ( ! is_single() ) { ?><a href="<?php echo esc_url( get_permalink() ); ?>"><?php } ?>
-
 	<header class="entry-header">
 		<?php if ( has_post_thumbnail() ) { ?>
 			<div class="entry-thumbnail">
@@ -18,8 +16,6 @@
 		
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
-
-	<?php if ( ! is_single() ) { ?></a><?php } ?>
 
 	<div class="entry-content">
 		<?php the_content(); ?>
