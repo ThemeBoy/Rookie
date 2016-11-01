@@ -1415,6 +1415,7 @@ object {
 
 .sp-template iframe {
 	display: block;
+	margin: 0 auto;
 }
 
 .sp-view-all-link {
@@ -1524,6 +1525,10 @@ object {
 	text-align: center;
 	line-height: 1.5em;
 	font-weight: normal;
+}
+
+.sp-template-event-video {
+    background: #000;
 }
 
 .sp-template-event-video .sp-table-caption {
