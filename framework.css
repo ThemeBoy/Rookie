@@ -747,7 +747,6 @@ a {
 	}
 
 	.main-navigation ul ul {
-		display: block;
 		position: static;
 		width: 100%;
 	}
@@ -1808,6 +1807,7 @@ object {
 		padding: 1.25em 0.675em;
 	}
 
+	.widget .sp-template-event-calendar thead th,
 	.widget .sp-template-event-calendar tbody td {
 		padding: 0.625em;
 	}
