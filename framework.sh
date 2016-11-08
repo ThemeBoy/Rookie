@@ -1,6 +1,6 @@
 source=./
 
-themes=( "emblem" "football-club" "marquee" "premier" )
+themes=( "emblem" "football-club" "marquee" "courtside" "premier" )
 
 for theme in "${themes[@]}"
 do
