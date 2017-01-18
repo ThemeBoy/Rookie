@@ -226,8 +226,8 @@ function rookie_scripts() {
 	wp_enqueue_style( 'dashicons' );
 
 	// Load web fonts.
-	wp_enqueue_style( 'rookie-lato', add_query_arg( 'family', 'Lato:400,700,400italic,700italic', "//fonts.googleapis.com/css", array(), null ) );
-	wp_enqueue_style( 'rookie-oswald', add_query_arg( 'family', 'Oswald:400,700', "//fonts.googleapis.com/css", array(), null ) );
+	wp_enqueue_style( 'rookie-lato', add_query_arg( array( 'family' => 'Lato:400,700,400italic,700italic', 'subset' => 'latin-ext' ), "//fonts.googleapis.com/css", array(), null ) );
+	wp_enqueue_style( 'rookie-oswald', add_query_arg( array( 'family' => 'Oswald:400,700', 'subset' => 'latin-ext' ), "//fonts.googleapis.com/css", array(), null ) );
 
 	// Load our framework stylesheet.
 	wp_enqueue_style( 'rookie-framework-style', get_template_directory_uri() . '/framework.css' );
