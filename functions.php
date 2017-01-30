@@ -123,11 +123,10 @@ function rookie_setup() {
 
 		'nav_menus' => array(
 			'primary' => array(
-				'name' => __( 'Top Menu', 'twentyseventeen' ),
+				'name' => __( 'Primary Menu', 'rookie' ),
 				'items' => array(
 					'page_home',
 					'page_blog',
-					'page_contact',
 				),
 			),
 		),
@@ -153,14 +152,14 @@ function rookie_theme_starter_content( $content = array(), $config = array() ) {
 	// Sidebar Widgets
 	$content['widgets']['sidebar-1'] = array(
 		array( 'sportspress-countdown', array(
-			'caption' => __( 'Countdown', 'sportspress' ),
+			'caption' => __( 'Countdown', 'rookie' ),
 		) ),
 		array( 'sportspress-event-calendar', array(
 			'id' => reset( $calendars ),
 			'show_all_events_link' => true,
 		) ),
 		array( 'sportspress-player-list', array(
-			'caption' => __( 'Player List', 'sportspress' ),
+			'caption' => __( 'Player List', 'rookie' ),
 			'id' => reset( $lists ),
 			'number' => 8,
 			'columns' => array_merge( array( 'number' ), wp_list_pluck( $performance, 'post_name' ) ),
@@ -173,7 +172,7 @@ function rookie_theme_starter_content( $content = array(), $config = array() ) {
 	$content['widgets']['homepage-1'] = array(
 		array( 'sportspress-event-blocks', array(
 			'align' => 'left',
-			'caption' => __( 'Fixtures', 'sportspress' ),
+			'caption' => __( 'Fixtures', 'rookie' ),
 			'status' => 'future',
 			'number' => 3,
 			'order' => 'ASC',
@@ -181,21 +180,21 @@ function rookie_theme_starter_content( $content = array(), $config = array() ) {
 		) ),
 		array( 'sportspress-event-blocks', array(
 			'align' => 'right',
-			'caption' => __( 'Results', 'sportspress' ),
+			'caption' => __( 'Results', 'rookie' ),
 			'status' => 'publish',
 			'number' => 3,
 			'order' => 'DESC',
 			'show_all_events_link' => false,
 		) ),
 		array( 'sportspress-league-table', array(
-			'caption' => __( 'League Table', 'sportspress' ),
+			'caption' => __( 'League Table', 'rookie' ),
 			'id' => reset( $tables ),
 			'number' => 10,
 			'columns' => wp_list_pluck( $columns, 'post_name' ),
 			'show_full_table_link' => true,
 		) ),
 		array( 'sportspress-player-gallery', array(
-			'caption' => __( 'Player Gallery', 'sportspress' ),
+			'caption' => __( 'Player Gallery', 'rookie' ),
 			'id' => reset( $lists ),
 			'number' => 8,
 			'columns' => 4,
@@ -227,7 +226,7 @@ function rookie_theme_starter_content( $content = array(), $config = array() ) {
 	);
 	array_splice( $content['nav_menus']['primary']['items'], 1, 0, $items );
 
-	return $content;
+	return apply_filters( 'rookie_theme_starter_content', $content );
 }
 endif;
 add_filter( 'get_theme_starter_content', 'rookie_theme_starter_content', 10, 2 );
@@ -1035,19 +1034,7 @@ if ( ! function_exists( 'rookie_starter_content_posts' ) ) {
 	function rookie_starter_content_posts() {
 		$posts = array(
 			'home',
-			'contact' => array(
-				'post_type' => 'page',
-				'post_title' => _x( 'Contact', 'Theme starter content' ),
-				'post_content' => _x( 'This is a page with some basic contact information, such as an address and phone number. You might also try a plugin to add a contact form.', 'Theme starter content' ),
-			),
-			'blog' => array(
-				'post_type' => 'page',
-				'post_title' => _x( 'Blog', 'Theme starter content' ),
-			),
-			'news' => array(
-				'post_type' => 'page',
-				'post_title' => _x( 'News', 'Theme starter content' ),
-			),
+			'blog',
 		);
 
 		if ( class_exists( 'SportsPress' ) ) {
@@ -1057,22 +1044,22 @@ if ( ! function_exists( 'rookie_starter_content_posts' ) ) {
 
 			$posts['fixtures-results'] = array(
 				'post_type' => 'page',
-				'post_title' => _x( 'Fixtures & Results', 'example', 'sportspress' ),
+				'post_title' => __( 'Fixtures & Results', 'rookie' ),
 				'post_content' => wp_strip_all_tags( get_post_field( 'post_content', reset( $calendars ) ) ) .
-					'[event_blocks title="' . __( 'Fixtures', 'sportspress' ) . '" status="future" date="" order="ASC" number="3" show_all_events_link="0" align="left"]' .
-					'[event_blocks title="' . __( 'Results', 'sportspress' ) . '" status="publish" date="" order="DESC" number="3" show_all_events_link="0" align="right"]' .
+					'[event_blocks title="' . __( 'Fixtures', 'rookie' ) . '" status="future" date="" order="ASC" number="3" show_all_events_link="0" align="left"]' .
+					'[event_blocks title="' . __( 'Results', 'rookie' ) . '" status="publish" date="" order="DESC" number="3" show_all_events_link="0" align="right"]' .
 					'[event_calendar show_all_events_link="0"]' .
 					'[event_list ' . reset( $calendars ) . ' title="Event List" columns="event,teams,time" number="5" show_all_events_link="1"]',
 			);
 			$posts['league-table'] = array(
 				'post_type' => 'page',
-				'post_title' => __( 'League Table', 'sportspress' ),
+				'post_title' => __( 'League Table', 'rookie' ),
 				'post_content' => wp_strip_all_tags( get_post_field( 'post_content', reset( $tables ) ) ) .
 					'[league_table ' . reset( $tables ) . ']',
 			);
 			$posts['roster'] = array(
 				'post_type' => 'page',
-				'post_title' => _x( 'Roster', 'example', 'sportspress' ),
+				'post_title' => __( 'Roster', 'rookie' ),
 				'post_content' => wp_strip_all_tags( get_post_field( 'post_content', reset( $lists ) ) ) .
 					'[player_gallery ' . reset( $lists ) . ' orderby="number" show_all_players_link="0"]',
 			);
