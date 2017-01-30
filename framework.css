@@ -474,6 +474,10 @@ textarea {
 	cursor: default;
 }
 
+.content-area {
+	min-height: 500px;
+}
+
 .content-area,
 .widecolumn,
 .widget-area {
