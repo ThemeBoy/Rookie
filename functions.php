@@ -159,11 +159,6 @@ function rookie_theme_starter_content( $content = array(), $config = array() ) {
 			'id' => reset( $calendars ),
 			'show_all_events_link' => true,
 		) ),
-		array( 'sportspress-countdown', array(
-			'caption' => __( 'Countdown', 'sportspress' ),
-			'show_venue' => false,
-			'show_league' => false,
-		) ),
 		array( 'sportspress-player-list', array(
 			'caption' => __( 'Player List', 'sportspress' ),
 			'id' => reset( $lists ),
