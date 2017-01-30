@@ -70,15 +70,17 @@ function rookie_header_area() {
 				</div><!-- .site-banner -->
 			<?php } elseif ( 'branding' == $section ) { ?>
 				<div class="site-branding<?php if ( ! isset( $logo ) && ! $display_header_text ) { ?> site-branding-empty<?php } ?>">
-					<?php if ( isset( $logo ) ) { ?>
-					<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>"></a>
-					<?php } ?>
-					<?php if ( $display_header_text ) { ?>
-					<hgroup style="color: #<?php echo $header_textcolor; ?>">
-						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-						<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-					</hgroup>
-					<?php } ?>
+					<div class="site-identity">
+						<?php if ( isset( $logo ) ) { ?>
+						<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>"></a>
+						<?php } ?>
+						<?php if ( $display_header_text ) { ?>
+						<hgroup style="color: #<?php echo $header_textcolor; ?>">
+							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+							<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+						</hgroup>
+						<?php } ?>
+					</div>
 				</div><!-- .site-branding -->
 			<?php } elseif ( 'menu' == $section ) { ?>
 				<div class="site-menu">
