@@ -1,5 +1,19 @@
 == Changelog ==
 
+= 1.5 =
+* Feature - Add starter content for WordPress 4.7.
+* Tweak - Apply custom color scheme to Match Stats module.
+* Tweak - Apply caption colors to all gallery types.
+* Tweak - Adjust content area and widget area border color.
+* Tweak - Center-align team logos on smaller devices.
+* Tweak - Remove link from page title text.
+* Tweak - Remove redundant event name from template.
+* Tweak - Add solid background to event video template.
+* Tweak - Add minimum content height.
+* Fix - Header text color not being applied in customizer.
+* Fix - Customizer panel scripts not applying in WordPress 4.7.
+* Localization - Load fonts with extended Latin characters.
+
 = 1.4.1 =
 * Feature - Add live update script to content width customization.
 * Tweak - Add default option to sidebar setting.
