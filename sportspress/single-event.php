@@ -21,7 +21,7 @@ get_header(); ?>
 
         <?php
           // If team names are being displayed, don't output the event title
-          if ( 'yes' === get_option( 'sportspress_event_logos_show_team_names', 'yes' ) ) {
+          if ( 'yes' === get_option( 'sportspress_event_show_logos', 'yes' ) && 'yes' === get_option( 'sportspress_event_logos_show_team_names', 'yes' ) ) {
             get_template_part( 'content', 'notitle' );
           } else {
             get_template_part( 'content', 'page' );
