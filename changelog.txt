@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.5.1 =
+* Tweak - Hide event name only if team names are being displayed already.
+* Tweak - Remove margin from team name block in events.
+
 = 1.5 =
 * Feature - Add starter content for WordPress 4.7.
 * Tweak - Apply custom color scheme to Match Stats module.
