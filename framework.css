@@ -1507,6 +1507,10 @@ object {
 	font-weight: bold;
 }
 
+.archive .sp-template-event-logos {
+	margin-bottom: 2.5em;
+}
+
 .sp-template-event-logos-inline {
 	margin-top: 0.5em;
 	font-size: 36px;
