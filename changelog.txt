@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.5.2 =
+* Tweak - Add bottom margin to event logos in archive.
+* Fix - Allow linking of events in archives.
+
 = 1.5.1 =
 * Tweak - Hide event name only if team names are being displayed already.
 * Tweak - Remove margin from team name block in events.
