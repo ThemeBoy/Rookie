@@ -714,7 +714,8 @@ function rookie_custom_colors() {
 	.sp-view-all-link:hover,
 	.sp-template-event-calendar #prev a:hover,
 	.sp-template-event-calendar #next a:hover,
-	.single-sp_staff .entry-header .entry-title strong {
+	.single-sp_staff .entry-header .entry-title strong,
+	.sp-message {
 		color: <?php echo $colors['link']; ?>; }
 	cite:before,
 	button,
@@ -732,6 +733,8 @@ function rookie_custom_colors() {
 	.mega-slider__row--active,
 	.mega-slider__row--active:hover {
 		background: <?php echo $colors['link']; ?>; }
+	.sp-message {
+		border-color: <?php echo $colors['link']; ?>; }
 	caption,
 	.sp-table-caption,
 	.opta-widget-container h2 {

@@ -633,6 +633,12 @@ a:hover .page-title:hover {
     border-bottom-color: #00a69c;
 }
 
+.sp-message {
+    color: #00a69c;
+    border-color: #00a69c;
+    border-radius: 3px;
+}
+
 .sp-template-countdown .event-name {
     font-weight: bold;
     text-align: left;
