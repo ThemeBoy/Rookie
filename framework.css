@@ -24,6 +24,7 @@
 	13.1 SportsPress
 	13.2 WooCommerce
 	13.3 BuddyPress
+	13.4 WordPay
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -407,6 +408,10 @@ textarea {
 	padding-left: 3px;
 	vertical-align: top; /* Improves readability and alignment in all browsers */
 	width: 100%;
+}
+
+select {
+	height: 40px;
 }
 
 /*--------------------------------------------------------------
@@ -874,8 +879,12 @@ a {
 }
 
 /* Make sure input and select elements fit in widgets */
-.widget input,
-.widget select {
+
+.widget input[type="text"],
+.widget input[type="email"],
+.widget input[type="url"],
+.widget input[type="password"],
+.widget textarea {
 	width: 100%;
 	box-sizing: border-box;
 }
@@ -2164,4 +2173,13 @@ object {
     #buddypress div.item-list-tabs#subnav ul li {
         float: left;
     }
+}
+
+
+/*--------------------------------------------------------------
+13.4 WordPay
+--------------------------------------------------------------*/
+.widget .wpay-form-fields-wrapper {
+	margin-left: 0;
+	margin-right: 0;
 }
