@@ -55,46 +55,48 @@ function rookie_header_area() {
 	<?php } else { ?>
 	<div class="header-area<?php if ( isset( $logo ) ) { ?> header-area-has-logo<?php } ?><?php if ( $has_search ) { ?> header-area-has-search<?php } ?>">
 	<?php } ?>
-		<?php foreach ( $sections as $section ) { ?>
-			<?php if ( 'widgets' == $section ) { ?>
-				<?php if ( is_active_sidebar( 'header-1' ) ) { ?>
-				<div id="tertiary" class="site-widgets" role="complementary">
-					<div class="site-widget-region">
-						<?php dynamic_sidebar( 'header-1' ); ?>
+		<div class="header-inner">
+			<?php foreach ( $sections as $section ) { ?>
+				<?php if ( 'widgets' == $section ) { ?>
+					<?php if ( is_active_sidebar( 'header-1' ) ) { ?>
+					<div id="tertiary" class="site-widgets" role="complementary">
+						<div class="site-widget-region">
+							<?php dynamic_sidebar( 'header-1' ); ?>
+						</div>
 					</div>
-				</div>
+					<?php } ?>
+				<?php } elseif ( 'banner' == $section && $header && 'image' == $style ) { ?>
+					<div class="site-banner">
+						<img class="site-banner-image" src="<?php header_image(); ?>" alt="<?php bloginfo( 'description' ); ?>">
+					</div><!-- .site-banner -->
+				<?php } elseif ( 'branding' == $section ) { ?>
+					<div class="site-branding<?php if ( ! isset( $logo ) && ! $display_header_text ) { ?> site-branding-empty<?php } ?>">
+						<div class="site-identity">
+							<?php if ( isset( $logo ) ) { ?>
+							<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>"></a>
+							<?php } ?>
+							<?php if ( $display_header_text ) { ?>
+							<hgroup style="color: #<?php echo $header_textcolor; ?>">
+								<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+								<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+							</hgroup>
+							<?php } ?>
+						</div>
+					</div><!-- .site-branding -->
+				<?php } elseif ( 'menu' == $section ) { ?>
+					<div class="site-menu">
+						<nav id="site-navigation" class="main-navigation" role="navigation">
+							<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><span class="dashicons dashicons-menu"></span></button>
+							<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+							<?php if ( $has_search ) get_search_form(); ?>
+						</nav><!-- #site-navigation -->
+					</div>
+				<?php } else { ?>
+					<?php do_action( 'rookie_header_area_section_' . $section ); ?>
 				<?php } ?>
-			<?php } elseif ( 'banner' == $section && $header && 'image' == $style ) { ?>
-				<div class="site-banner">
-					<img class="site-banner-image" src="<?php header_image(); ?>" alt="<?php bloginfo( 'description' ); ?>">
-				</div><!-- .site-banner -->
-			<?php } elseif ( 'branding' == $section ) { ?>
-				<div class="site-branding<?php if ( ! isset( $logo ) && ! $display_header_text ) { ?> site-branding-empty<?php } ?>">
-					<div class="site-identity">
-						<?php if ( isset( $logo ) ) { ?>
-						<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>"></a>
-						<?php } ?>
-						<?php if ( $display_header_text ) { ?>
-						<hgroup style="color: #<?php echo $header_textcolor; ?>">
-							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-							<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-						</hgroup>
-						<?php } ?>
-					</div>
-				</div><!-- .site-branding -->
-			<?php } elseif ( 'menu' == $section ) { ?>
-				<div class="site-menu">
-					<nav id="site-navigation" class="main-navigation" role="navigation">
-						<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><span class="dashicons dashicons-menu"></span></button>
-						<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-						<?php if ( $has_search ) get_search_form(); ?>
-					</nav><!-- #site-navigation -->
-				</div>
-			<?php } else { ?>
-				<?php do_action( 'rookie_header_area_section_' . $section ); ?>
 			<?php } ?>
-		<?php } ?>
-	</div>
+		</div><!-- .header-inner -->
+	</div><!-- .header-area -->
 	<?php
 }
 endif;
