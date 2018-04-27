@@ -378,6 +378,8 @@ input[type="email"],
 input[type="url"],
 input[type="password"],
 input[type="search"],
+input[type="tel"],
+input[type="date"],
 textarea {
 	border-radius: 3px;
 	color: #666;
@@ -389,7 +391,9 @@ input[type="text"],
 input[type="email"],
 input[type="url"],
 input[type="password"],
-input[type="search"] {
+input[type="search"],
+input[type="tel"],
+input[type="date"]{
 	padding: 0.575em;
 	font-size: 14px;
 }
@@ -399,6 +403,8 @@ input[type="email"]:focus,
 input[type="url"]:focus,
 input[type="password"]:focus,
 input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
 textarea:focus {
 	color: #111;
 }
@@ -884,6 +890,8 @@ a {
 .widget input[type="email"],
 .widget input[type="url"],
 .widget input[type="password"],
+.widget input[type="tel"],
+.widget input[type="date"],
 .widget textarea {
 	width: 100%;
 	box-sizing: border-box;
