@@ -1,0 +1,232 @@
+.social-sidebar {
+	clear: both;
+	padding: 50px 0;
+	text-align: center;
+}
+
+.social-sidebar a {
+	display: inline-block;
+}
+
+.social-sidebar a:hover {
+	text-decoration: none;
+}
+
+.social-sidebar a:focus {
+	outline: 0;
+}
+
+.social-sidebar-icon {
+	color: #fff;
+	padding: 10px;
+	display: block;
+	transition: all 0.2s ease-in-out;
+}
+
+/* Icons */
+
+.social-sidebar-icon-facebook,
+.social-sidebar-icon-facebook:hover {
+	color: #3b5998;
+	background: #3b5998;
+}
+.social-sidebar-icon-google,
+.social-sidebar-icon-google:hover {
+	color: #db4437;
+	background: #db4437;
+}
+.social-sidebar-icon-500px,
+.social-sidebar-icon-500px:hover {
+	color: #23282d;
+	background: #23282d;
+}
+.social-sidebar-icon-behance,
+.social-sidebar-icon-behance:hover {
+	color: #016bdc;
+	background: #016bdc;
+}
+.social-sidebar-icon-dropbox,
+.social-sidebar-icon-dropbox:hover {
+	color: #2895F1;
+	background: #2895F1;
+}
+.social-sidebar-icon-evernote,
+.social-sidebar-icon-evernote:hover {
+	color: #20c05c;
+	background: #20c05c;
+}
+.social-sidebar-icon-foursquare,
+.social-sidebar-icon-foursquare:hover {
+	color: #ef4b78;
+	background: #ef4b78;
+}
+.social-sidebar-icon-grooveshark,
+.social-sidebar-icon-grooveshark:hover {
+	color: #ff8901;
+	background: #ff8901;
+}
+.social-sidebar-icon-mixi,
+.social-sidebar-icon-mixi:hover {
+	color: #e0c074;
+	background: #e0c074;
+}
+.social-sidebar-icon-paypal,
+.social-sidebar-icon-paypal:hover {
+	color: #002f86;
+	background: #002f86;
+}
+.social-sidebar-icon-scribd,
+.social-sidebar-icon-scribd:hover {
+	color: #1a7bba;
+	background: #1a7bba;
+}
+.social-sidebar-icon-skype,
+.social-sidebar-icon-skype:hover {
+	color: #00aff0;
+	background: #00aff0;
+}
+.social-sidebar-icon-slideshare,
+.social-sidebar-icon-slideshare:hover {
+	color: #0ca8aa;
+	background: #0ca8aa;
+}
+.social-sidebar-icon-smashing,
+.social-sidebar-icon-smashing:hover {
+	color: #e95c33;
+	background: #e95c33;
+}
+.social-sidebar-icon-soundcloud,
+.social-sidebar-icon-soundcloud:hover {
+	color: #f50;
+	background: #f50;
+}
+.social-sidebar-icon-spotify,
+.social-sidebar-icon-spotify:hover {
+	color: #1ed760;
+	background: #1ed760;
+}
+.social-sidebar-icon-swarm,
+.social-sidebar-icon-swarm:hover {
+	color: #ffa633;
+	background: #ffa633;
+}
+.social-sidebar-icon-vine,
+.social-sidebar-icon-vine:hover {
+	color: #00b489;
+	background: #00b489;
+}
+.social-sidebar-icon-vk,
+.social-sidebar-icon-vk:hover {
+	color: #4c75a3;
+	background: #4c75a3;
+}
+.social-sidebar-icon-xing,
+.social-sidebar-icon-xing:hover {
+	color: #00605e;
+	background: #00605e;
+}
+.social-sidebar-icon-yelp,
+.social-sidebar-icon-yelp:hover {
+	color: #c41200;
+	background: #c41200;
+}
+.social-sidebar-icon-dribbble,
+.social-sidebar-icon-dribbble:hover {
+	color: #ed558e;
+	background: #ed558e;
+}
+.social-sidebar-icon-flickr,
+.social-sidebar-icon-flickr:hover {
+	color: #ff0084;
+	background: #ff0084;
+}
+.social-sidebar-icon-github,
+.social-sidebar-icon-github:hover {
+	color: #000;
+	background: #000;
+}
+.social-sidebar-icon-instagram,
+.social-sidebar-icon-instagram:hover {
+	color: #5380a2;
+	background: #5380a2;
+}
+.social-sidebar-icon-lastfm,
+.social-sidebar-icon-lastfm:hover {
+	color: #b90000;
+	background: #b90000;
+}
+.social-sidebar-icon-line,
+.social-sidebar-icon-line:hover {
+	color: #00c300;
+	background: #00c300;
+}
+.social-sidebar-icon-linkedin,
+.social-sidebar-icon-linkedin:hover {
+	color: #0077b5;
+	background: #0077b5;
+}
+.social-sidebar-icon-pinterest,
+.social-sidebar-icon-pinterest:hover {
+	color: #bd081c;
+	background: #bd081c;
+}
+.social-sidebar-icon-snapchat,
+.social-sidebar-icon-snapchat:hover {
+	color: #262626;
+	background: #262626;
+}
+.social-sidebar-icon-stumbleupon,
+.social-sidebar-icon-stumbleupon:hover {
+	color: #eb4924;
+	background: #eb4924;
+}
+.social-sidebar-icon-tumblr,
+.social-sidebar-icon-tumblr:hover {
+	color: #35465c;
+	background: #35465c;
+}
+.social-sidebar-icon-twitch,
+.social-sidebar-icon-twitch:hover {
+	color: #6441A5;
+	background: #6441A5;
+}
+.social-sidebar-icon-twitter,
+.social-sidebar-icon-twitter:hover {
+	color: #55acee;
+	background: #55acee;
+}
+.social-sidebar-icon-vimeo,
+.social-sidebar-icon-vimeo:hover {
+	color: #1ab7ea;
+	background: #1ab7ea;
+}
+.social-sidebar-icon-whatsapp,
+.social-sidebar-icon-whatsapp:hover {
+	color: #25d366;
+	background: #25d366;
+}
+.social-sidebar-icon-wordpress,
+.social-sidebar-icon-wordpress:hover {
+	color: #1e8cbe;
+	background: #1e8cbe;
+}
+.social-sidebar-icon-youtube,
+.social-sidebar-icon-youtube:hover {
+	color: #cc181e;
+	background: #cc181e;
+}
+
+@media screen and (min-width: 1200px) {
+	.social-sidebar {
+		padding: 0;
+		position: fixed;
+		top: 50px;
+		left: 0;
+		z-index: 2147483647;
+	}
+
+	.social-sidebar a {
+		float: left;
+		clear: both;
+	}
+}

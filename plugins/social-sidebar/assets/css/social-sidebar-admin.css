@@ -1,0 +1,130 @@
+.social-sidebar-settings .social-sidebar-network label {
+	cursor: move;
+}
+
+.social-sidebar-settings .social-sidebar-network-inactive label {
+	color: #777;
+}
+
+.social-sidebar-settings .social-sidebar-network-inactive label .social-sidebar-icon:before {
+	color: #ddd;
+}
+
+.social-sidebar-icon {
+	margin-right: 4px;
+}
+
+.social-sidebar-icon-facebook:before {
+	color: #3b5998;
+}
+.social-sidebar-icon-google:before {
+	color: #db4437;
+}
+.social-sidebar-icon-500px:before {
+	color: #23282d;
+}
+.social-sidebar-icon-behance:before {
+	color: #016bdc;
+}
+.social-sidebar-icon-dropbox:before {
+	color: #2895F1;
+}
+.social-sidebar-icon-evernote:before {
+	color: #20c05c;
+}
+.social-sidebar-icon-foursquare:before {
+	color: #ef4b78;
+}
+.social-sidebar-icon-grooveshark:before {
+	color: #ff8901;
+}
+.social-sidebar-icon-mixi:before {
+	color: #e0c074;
+}
+.social-sidebar-icon-paypal:before {
+	color: #002f86;
+}
+.social-sidebar-icon-scribd:before {
+	color: #1a7bba;
+}
+.social-sidebar-icon-skype:before {
+	color: #00aff0;
+}
+.social-sidebar-icon-slideshare:before {
+	color: #0ca8aa;
+}
+.social-sidebar-icon-smashing:before {
+	color: #e95c33;
+}
+.social-sidebar-icon-soundcloud:before {
+	color: #f50;
+}
+.social-sidebar-icon-spotify:before {
+	color: #1ed760;
+}
+.social-sidebar-icon-swarm:before {
+	color: #ffa633;
+}
+.social-sidebar-icon-vine:before {
+	color: #00b489;
+}
+.social-sidebar-icon-vk:before {
+	color: #4c75a3;
+}
+.social-sidebar-icon-xing:before {
+	color: #00605e;
+}
+.social-sidebar-icon-yelp:before {
+	color: #c41200;
+}
+.social-sidebar-icon-dribbble:before {
+	color: #ed558e;
+}
+.social-sidebar-icon-flickr:before {
+	color: #ff0084;
+}
+.social-sidebar-icon-github:before {
+	color: #000;
+}
+.social-sidebar-icon-instagram:before {
+	color: #5380a2;
+}
+.social-sidebar-icon-lastfm:before {
+	color: #b90000;
+}
+.social-sidebar-icon-line:before {
+	color: #00c300;
+}
+.social-sidebar-icon-linkedin:before {
+	color: #0077b5;
+}
+.social-sidebar-icon-pinterest:before {
+	color: #bd081c;
+}
+.social-sidebar-icon-snapchat:before {
+	color: #262626;
+}
+.social-sidebar-icon-stumbleupon:before {
+	color: #eb4924;
+}
+.social-sidebar-icon-tumblr:before {
+	color: #35465c;
+}
+.social-sidebar-icon-twitch:before {
+	color: #6441A5;
+}
+.social-sidebar-icon-twitter:before {
+	color: #55acee;
+}
+.social-sidebar-icon-vimeo:before {
+	color: #1ab7ea;
+}
+.social-sidebar-icon-whatsapp:before {
+	color: #25d366;
+}
+.social-sidebar-icon-wordpress:before {
+	color: #1e8cbe;
+}
+.social-sidebar-icon-youtube:before {
+	color: #cc181e;
+}

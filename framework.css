@@ -24,7 +24,6 @@
 	13.1 SportsPress
 	13.2 WooCommerce
 	13.3 BuddyPress
-	13.4 WordPay
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -408,10 +407,6 @@ textarea {
 	padding-left: 3px;
 	vertical-align: top; /* Improves readability and alignment in all browsers */
 	width: 100%;
-}
-
-select {
-	height: 40px;
 }
 
 /*--------------------------------------------------------------
@@ -879,12 +874,8 @@ a {
 }
 
 /* Make sure input and select elements fit in widgets */
-
-.widget input[type="text"],
-.widget input[type="email"],
-.widget input[type="url"],
-.widget input[type="password"],
-.widget textarea {
+.widget input,
+.widget select {
 	width: 100%;
 	box-sizing: border-box;
 }
@@ -1656,12 +1647,6 @@ object {
 	float: none;
 }
 
-.widget .sp-template-photo {
-	max-width: none;
-	margin: 0;
-	float: none;
-}
-
 .sp-template-photo img {
 	width: 100%;
 	display: block;
@@ -1806,15 +1791,6 @@ object {
 	display: block;
 }
 
-@media screen and (min-width: 481px) {
-	.sp-template-photo {
-		width: auto;
-		max-width: 50%;
-		margin: 0 20px 20px 0;
-		float: left;
-	}
-}
-
 @media screen and (min-width: 601px) {
 	.main-navigation ul {
 		margin: 0 0.625em;
@@ -1847,13 +1823,6 @@ object {
 
 	.single-sp_event .has-post-thumbnail .entry-header .entry-title {
 		margin: 0.5em 0;
-	}
-
-	.sp-template-photo {
-		max-width: none;
-		width: 100%;
-		margin: 0 0 1.25em 0;
-		float: none;
 	}
 
 	.sp-header-sponsors {
@@ -1902,13 +1871,6 @@ object {
 	.sp-template-event-calendar tbody td {
 		padding: 1.75em 0.675em;
 	}
-
-	.sp-template-photo {
-		width: auto;
-		max-width: 50%;
-		margin: 0 20px 20px 0;
-		float: left;
-	}
 }
 
 @media screen and (min-width: 1025px) {
@@ -1951,6 +1913,19 @@ object {
 	
 	.sp-template-event-calendar tbody td {
 		padding: 2.375em 0.675em;
+	}
+
+	.sp-template-photo {
+		width: auto;
+		max-width: 50%;
+		margin: 0 20px 20px 0;
+		float: left;
+	}
+
+	.widget .sp-template-photo {
+		max-width: none;
+		margin: 0;
+		float: none;
 	}
 
 	.site-widgets .sp-scoreboard-wrapper {
@@ -2189,13 +2164,4 @@ object {
     #buddypress div.item-list-tabs#subnav ul li {
         float: left;
     }
-}
-
-
-/*--------------------------------------------------------------
-13.4 WordPay
---------------------------------------------------------------*/
-.widget .wpay-form-fields-wrapper {
-	margin-left: 0;
-	margin-right: 0;
 }

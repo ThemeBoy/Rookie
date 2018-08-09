@@ -19,14 +19,11 @@
 <body <?php body_class(); ?>>
 <div class="sp-header"><?php do_action( 'sportspress_header' ); ?></div>
 <div id="page" class="hfeed site">
-  <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'rookie' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'rookie' ); ?></a>
 
-  <header id="masthead" class="site-header" role="banner">
-    <div class="header-wrapper">
-      <?php rookie_header_area(); ?>
-    </div><!-- .header-wrapper -->
-  </header><!-- #masthead -->
+	<header id="masthead" class="site-header" role="banner">
+		<?php rookie_header_area(); ?>
+	</header><!-- #masthead -->
 
-  <div id="content" class="site-content">
-    <div class="content-wrapper">
-      <?php do_action( 'rookie_before_template' ); ?>
+	<div id="content" class="site-content">
+		<?php do_action( 'rookie_before_template' ); ?>

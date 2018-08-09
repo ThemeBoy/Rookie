@@ -1,0 +1,26 @@
+.mega-slider__slide__date {
+	float: left;
+	margin-left: 0;
+	margin-right: 10px;
+}
+
+.mega-slider__row__thumbnail {
+	float: right;
+	margin-right: 0;
+	margin-left: 10px;
+}
+
+.mega-slider__row__link {
+	float: left;
+	margin-left: 0;
+	margin-right: 10px;
+}
+
+@media screen and (min-width: 783px) {
+	.mega-slider__stage {
+		float: right;
+	}
+	.mega-slider__sidebar {
+		float: left;
+	}
+}

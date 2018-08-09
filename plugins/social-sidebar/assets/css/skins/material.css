@@ -1,0 +1,27 @@
+/* Material style */
+
+.social-sidebar a {
+	border-radius: 50%;
+	margin: 0 5px;
+}
+
+.social-sidebar-icon {
+	color: #fff;
+	border-radius: 50%;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.social-sidebar-icon:hover {
+	color: #fff;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+@media screen and (min-width: 1200px) {
+	.social-sidebar {
+		padding: 0 25px;
+	}
+
+	.social-sidebar a {
+		margin: 0 0 10px;
+	}
+}

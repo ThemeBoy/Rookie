@@ -1,0 +1,11 @@
+/* Flat style */
+
+.social-sidebar-icon {
+	color: #fff;
+	padding: 15px;
+}
+
+.social-sidebar-icon:hover {
+	color: #fff;
+	background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15));
+}

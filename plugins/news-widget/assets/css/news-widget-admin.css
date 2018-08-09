@@ -1,0 +1,55 @@
+@font-face {
+	font-family: 'news-widget';
+	src:url('../fonts/news-widget.eot?36ubqn');
+	src:url('../fonts/news-widget.eot?#iefix36ubqn') format('embedded-opentype'),
+		url('../fonts/news-widget.woff2?36ubqn') format('woff2'),
+		url('../fonts/news-widget.ttf?36ubqn') format('truetype'),
+		url('../fonts/news-widget.woff?36ubqn') format('woff'),
+		url('../fonts/news-widget.svg?36ubqn#news-widget') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Widgets */
+[id*="news-widget-"] .widget-title h3:before,
+[id*="news-widget-"] .widget-title h4:before {
+	font-family: 'news-widget';
+	color: #aaa;
+	font-size: 20px;
+	content: '\f478';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 0;
+	position: relative;
+	top: 4px;
+	margin-right: 4px;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* TinyMCE */
+.mce-i-news-widget:before {
+	font-family: 'news-widget';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	font-size: 20px;
+	content: "\f478";
+}
+
+.news-widget-ajax-submit {
+	text-align: right;
+}

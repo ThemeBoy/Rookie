@@ -1,0 +1,16 @@
+/* Minimal style */
+
+.social-sidebar a {
+	border-radius: 50%;
+	margin: 15px;
+}
+
+.social-sidebar-icon {
+	color: #a3a3a3;
+	background: transparent;
+	padding: 0;
+}
+
+.social-sidebar-icon:hover {
+	background: transparent;
+}
