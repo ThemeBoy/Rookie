@@ -1,10 +1,10 @@
 /*
-Theme Name: Rookie Plus
-Theme URI: https://www.themeboy.com/rookie-plus/
+Theme Name: Rookie
+Theme URI: https://www.themeboy.com/rookie/
 Author: ThemeBoy
 Author URI: https://www.themeboy.com
-Description: Rookie Plus is a fully responsive theme made for sports organisations looking to use the SportsPress plugin. Once you’ve installed the theme and SportsPress, you'll be able to select a preset for your sport and demo content to help you get started on building your sports website.
-Version: 1.5.2
+Description: Rookie is a fully responsive theme made for sports organisations looking to use the SportsPress plugin. Once you’ve installed the theme and SportsPress, you'll be able to select a preset for your sport and demo content to help you get started on building your sports website.
+Version: 1.5.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: rookie
@@ -13,7 +13,7 @@ Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, flexi
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-Rookie Plus is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+Rookie is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
 
 Resetting and rebuilding styles have been helped along thanks to the fine work of
 Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
@@ -633,6 +633,12 @@ a:hover .page-title:hover {
     border-bottom-color: #00a69c;
 }
 
+.sp-message {
+    color: #00a69c;
+    border-color: #00a69c;
+    border-radius: 3px;
+}
+
 .sp-template-countdown .event-name {
     font-weight: bold;
     text-align: left;
@@ -957,5 +963,11 @@ a:hover .page-title:hover {
 @media screen and (max-width: 1199px) {
     .social-sidebar {
         box-shadow: inset 0 1px 0 #e0e0e0;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .social-sidebar {
+        top: 178px;
     }
 }

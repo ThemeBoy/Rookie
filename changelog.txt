@@ -1,0 +1,229 @@
+== Changelog ==
+
+= 1.5.3 =
+* Feature - Display match day indicators in event calendars.
+* Feature - Add welcome screen with theme overview and upgrade path.
+
+= 1.5.2 =
+* Tweak - Add bottom margin to event logos in archive.
+* Fix - Allow linking of events in archives.
+
+= 1.5.1 =
+* Tweak - Hide event name only if team names are being displayed already.
+* Tweak - Remove margin from team name block in events.
+
+= 1.5 =
+* Feature - Add starter content for WordPress 4.7.
+* Tweak - Apply custom color scheme to Match Stats module.
+* Tweak - Apply caption colors to all gallery types.
+* Tweak - Adjust content area and widget area border color.
+* Tweak - Center-align team logos on smaller devices.
+* Tweak - Remove link from page title text.
+* Tweak - Remove redundant event name from template.
+* Tweak - Add solid background to event video template.
+* Tweak - Add minimum content height.
+* Fix - Header text color not being applied in customizer.
+* Fix - Customizer panel scripts not applying in WordPress 4.7.
+* Localization - Load fonts with extended Latin characters.
+
+= 1.4.1 =
+* Feature - Add live update script to content width customization.
+* Tweak - Add default option to sidebar setting.
+
+= 1.4 =
+* Feature - New layout option to define custom content width.
+* Feature - New layout option to choose left, right, or double sidebar.
+* Feature - Add styling for SportsPress tabs.
+* Tweak - BuddyPress tab count style.
+* Fix - BuddyPress group search style.
+* Compatibility - Update TGM Plugin Activation.
+
+= 1.3.10 =
+* Feature - Improved styling for BuddyPress.
+* Feature - Allow SportsPress to display logos in event archive pages.
+* Tweak - Wrap main navigation with div for easier customization.
+* Tweak - Add border to tweets.
+* Tweak - Remove margin around scoreboard.
+* Tweak - Remove padding when branding section is empty.
+* Tweak - Remove unnecessary content clearing.
+* Fix - Set URL scheme on logo props @perren.
+
+= 1.3.9 =
+* Feature - Add header style options for displaying custom header as image instead of background.
+* Tweak - Prevent widgets from overflowing horizontally.
+* Tweak - Split calendar column widths evenly.
+* Tweak - Match calendar widget padding with event calendar.
+* Tweak - Use default cursor on site description.
+* Tweak - Prevent double thumbnails in full width template.
+
+= 1.3.8 =
+* Fix - RTL styles in navigation submenu and footer.
+* Localization - Update Polish, Dutch, French, Portuguese, and Russian translations.
+* Localization - Update source strings.
+
+= 1.3.7 =
+* Tweak - Remove unused styles.
+* Fix - Check for existing functions for better child theme compatibility.
+
+= 1.3.6 =
+* Tweak - Add light shade styling to substitute players in SportsPress.
+* Tweak - Adjust custom header background styling to cover header area in mobile.
+* Fix - Recover search form option in customizer.
+
+= 1.3.5 =
+* Tweak - Simplify mobile menu label.
+* Tweak - Add filters to footer section and customizer.
+
+= 1.3.4 =
+* Fix - Missing bracket in custom CSS generator.
+* Localization - Update Polish translation.
+
+= 1.3.3 =
+* Feature - Add options to display post date and author.
+* Fix - Header text color not applying.
+
+= 1.3.2 =
+* Feature - Add checkbox to toggle advanced color selectors in customizer.
+* Tweak - Event blocks link color.
+* Tweak - Apply link color to team results.
+* Tweak - Team name inherits font weight in events.
+* Tweak - Update template structure for SportsPress.
+* Tweak - Adjust comment author widths in framework.
+* Tweak - Make entry meta link styling more uniform.
+* Tweak - Add class to header area indicating presence of search form.
+* Tweak - Increase calendar cell height on larger displays.
+* Tweak - Remove margins on archive and search result titles.
+* Tweak - Allow logos to float in templates.
+* Tweak - Adjust post meta margins.
+* Tweak - Headings within table captions to inherit font size.
+* Tweak - Style staff names to match player names.
+* Tweak - Float venue only in full width template.
+* Tweak - Declare support for Social Sidebar and News Widget.
+* Fix - Menu hover styling.
+* Fix - Quote citing color not applying correctly.
+* Fix - Search bar visibility not reflecting default option.
+* Fix - Responsive footer padding to match main content padding.
+* Fix - Allow single-column galleries.
+* Fix - Custom header text color not applying in some cases.
+* Refactor - Remove single event template in favor of custom template selection.
+* Localization - Update source strings.
+* Localization - Update Polish, French, Spanish, Turkish, Italian, Czech, Tamil, Persian, Dutch, Portuguese, and Norwegian translations.
+* License - Update license dates to 2016.
+
+= 1.3.1 =
+* Tweak - Move menu search option to site identity section in customizer.
+* Tweak - Use entity code in search form.
+* Tweak - Apply widget text color to footer region.
+* Tweak - Remove unused bash file.
+* Fix - Sidebar getting pushed down on some iOS devices.
+* Security - Sanitize header search checkbox.
+* Localization - Adjust search bar design in RTL stylesheet.
+* Localization - Update source strings.
+* Localization - Update Spanish and French translations.
+
+= 1.3 =
+* Feature - Add option to display search form in navigation menu.
+* Tweak - Remove footer logo and style 3 widget regions to match main content area.
+* Tweak - Display magnifying glass icon in search widget.
+* Tweak - Wrap header area with functions to enable rearranging via child themes.
+* Tweak - Add support for SportsPress Pro templates.
+* Tweak - Style entry meta to match archive pages.
+* Fix - Footer and sidebar syntax on 404 page.
+* Localization - Make color labels more specific.
+* Localization - Update Czech, Italian, and Polish translations.
+
+= 1.2.1 =
+* Tweak - Add classes to header area indicating presence of a logo.
+* Tweak - Select gallery items by element in stylesheet.
+* Tweak - Simplify 404 page.
+* Fix - White space in event template.
+* Compatibility - Update TGM Plugin Activation.
+* Localization - Update Armenian, Finnish, and Czech translations.
+
+= 1.2 =
+* Feature - New footer widget area.
+* Feature - Display layered submenu items in responsive menu.
+* Tweak - Add wrapper to header widgets and post thumbnails.
+* Refactor - Use a single template for standard SportsPress post types.
+* Refactor - Use full-width template for SportsPress events and tournaments.
+* Fix - RTL styling for lists and table cells.
+* Fix - Inconsisten header styling.
+* Localization - Update Armenian, Czech, Dutch, Finnish, German, Korean, Polish, Russian, and Spanish translations.
+* Compatibility - Add Mega Slider support.
+* Documentation - Add Theme URI to stylesheet.
+* Documentation - Add credits.txt for translation credits.
+
+= 1.1.1 =
+* Fix - Full width template styling.
+* Localization - Add language files.
+
+= 1.1 =
+* Feature - New widgetized homepage template.
+* Feature - Enable multilevel navigation on mobile.
+* Tweak - Add full-width selector to content.
+* Tweak - Add minimum height and box shadow to custom header image.
+* Tweak - Nudge sticky post icon.
+* Refactor - Load framework separately before main stylesheet.
+* Fix - Post thumbnail appearing twice in generic content template.
+* Fix - Date and category elements overlapping title on archive pages.
+
+= 1.0.1 =
+* Feature - Add TGM plugin activation for SportsPress functionality.
+* Fix - Full width template styling.
+* Localization - Add jQuery Timeago locales and only load when localized.
+
+= 1.0 =
+* Tweak - Default to dark grey header text color.
+* Fix - RTL stylesheet not loading.
+
+= 0.9.8 =
+* Feature - Add custom header support.
+* Tweak - Update screenshot to show theme without SportsPress plugin installed.
+* Refactor - Change name of serialized option to themeboy.
+* Refactor - Enqueue theme skin separately to simplify child theme development.
+
+= 0.9.7 =
+* Fix - Check if logo url is empty before adding to header.
+* Fix - Text domain not set to rookie.
+* Tweak - Adjust margins below tables.
+* Security - Sanitize checkbox and default to false.
+
+= 0.9.6 =
+* Feature - Option to add logo in header, defaulting to none.
+* Feature - Option to show or hide site name and tagline, defaulting to show.
+* Tweak - Footer styling to be below content box.
+* Tweak - Remove link from single page title.
+* Fix - Inconsistent content width in functions.
+* Compatibility - Add styling to support tournament brackets extension.
+* Security - Sanitize logo option as url.
+
+= 0.9.5 =
+* Feature - Add ability to insert logo into header.
+* Feature - Add single team and staff templates.
+* Refactor - Merge customizer settings into single option.
+* Fix - Comment author avatar pushing down other elements.
+* Localization - Add RTL stylesheet.
+
+= 0.9.4 =
+* Tweak - Separate content and widget areas with thin line.
+
+= 0.9.3 =
+* Feature - Stylize sticky posts with icon.
+* Fix - Long words overflowing in menu.
+* License - Add Google Fonts license information in readme file.
+* Documentation - Add explanation of sportspress.php template in readme file.
+* Documentation - Add theme URI line in stylesheet.
+
+= 0.9.2 =
+* License - Add license.txt file and license information in readme file.
+* Security - Put blank index.php files in assets and other directories.
+* Security - Sanitize values from option tables prior to output.
+
+= 0.9.1 =
+* Feature - Add editor style.
+* Tweak - Style main links as tabs above submenus in navigation.
+* Compatibility - Support WordPress 4.1 title tag with fallback for earlier versions.
+* Localization - Update source language file.
+
+= 0.9 =
+* Initial beta release.

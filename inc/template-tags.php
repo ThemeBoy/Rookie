@@ -7,6 +7,76 @@
  * @package Rookie
  */
 
+if ( ! function_exists( 'rookie_header_widgets' ) ) :
+/**
+ * Display header widgets section.
+ */
+function rookie_header_widgets() {
+	if ( is_active_sidebar( 'header-1' ) ) {
+		?>
+		<div id="tertiary" class="site-widgets" role="complementary">
+			<div class="site-widget-region">
+				<?php dynamic_sidebar( 'header-1' ); ?>
+			</div>
+		</div><!-- .site-widgets -->
+		<?php
+	}
+}
+endif;
+
+if ( ! function_exists( 'rookie_header_branding' ) ) :
+/**
+ * Display header branding section.
+ */
+function rookie_header_branding( $options = array() ) {
+	?>
+	<div class="site-branding<?php if ( ! isset( $options['logo_url'] ) && ! $options['display_header_text'] ) { ?> site-branding-empty<?php } ?>">
+		<div class="site-identity">
+			<?php if ( isset( $options['logo_url'] ) ) { ?>
+			<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo $options['logo_url']; ?>" alt="<?php bloginfo( 'name' ); ?>"></a>
+			<?php } ?>
+			<?php if ( $options['display_header_text'] ) { ?>
+			<hgroup class="site-hgroup" style="color: #<?php echo $options['header_textcolor']; ?>">
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+			</hgroup>
+			<?php } ?>
+		</div>
+	</div><!-- .site-branding -->
+	<?php
+}
+endif;
+
+if ( ! function_exists( 'rookie_header_banner' ) ) :
+/**
+ * Display header banner section.
+ */
+function rookie_header_banner() {
+	?>
+	<div class="site-banner">
+		<img class="site-banner-image" src="<?php header_image(); ?>" alt="<?php bloginfo( 'description' ); ?>">
+	</div><!-- .site-banner -->
+	<?php
+}
+endif;
+
+if ( ! function_exists( 'rookie_header_menu' ) ) :
+/**
+ * Display header menu section.
+ */
+function rookie_header_menu( $options = array() ) {
+	?>
+	<div class="site-menu">
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><span class="dashicons dashicons-menu"></span></button>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+			<?php if ( $options['has_search'] ) get_search_form(); ?>
+		</nav><!-- #site-navigation -->
+	</div><!-- .site-menu -->
+	<?php
+}
+endif;
+
 if ( ! function_exists( 'rookie_header_area' ) ) :
 /**
  * Display header area sections.
@@ -14,17 +84,16 @@ if ( ! function_exists( 'rookie_header_area' ) ) :
 function rookie_header_area() {
 	$options = get_option( 'themeboy', array() );
 	if ( array_key_exists( 'logo_url', $options ) && ! empty( $options['logo_url'] ) ) {
-		$logo = $options['logo_url'];
-		$logo = esc_url( set_url_scheme( $logo ) );
+		$options['logo_url'] = esc_url( set_url_scheme( $options['logo_url'] ) );
 	}
 	
 	if ( ! array_key_exists( 'nav_menu_search', $options ) || $options['nav_menu_search'] ) {
-		$has_search = true;
+		$options['has_search'] = true;
 	} else {
-		$has_search = false;
+		$options['has_search'] = false;
 	}
 	
-	$display_header_text = display_header_text();
+	$options['display_header_text'] = display_header_text();
 	
 	$style_options = apply_filters( 'rookie_header_image_style_options', array(
         'background' => __( 'Background', 'rookie' ),
@@ -32,16 +101,16 @@ function rookie_header_area() {
     ) );
 
 	reset( $style_options );
-	$style = key( $style_options );
+	$options['style'] = key( $style_options );
 	
 	if ( array_key_exists( 'header_image_style', $options ) && array_key_exists( $options['header_image_style'], $style_options ) ) {
-		$style = $options['header_image_style'];
+		$options['style'] = $options['header_image_style'];
 	}
 	
-	$header = get_header_image();
+	$options['header'] = get_header_image();
 	
-	$header_textcolor = get_header_textcolor();
-	$header_textcolor = str_replace( '#', '', $header_textcolor );
+	$options['header_textcolor'] = get_header_textcolor();
+	$options['header_textcolor'] = str_replace( '#', '', $options['header_textcolor'] );
 
 	$sections = apply_filters( 'rookie_header_area_sections', array(
 		'widgets',
@@ -50,51 +119,31 @@ function rookie_header_area() {
 		'menu',
 	) );
 	?>
-	<?php if ( $header && 'background' == $style ) { ?>
-	<div class="header-area header-area-custom<?php if ( isset( $logo ) ) { ?> header-area-has-logo<?php } ?><?php if ( $has_search ) { ?> header-area-has-search<?php } ?><?php if ( $display_header_text ) { ?> header-area-has-text<?php } ?>" style="background-image: url(<?php header_image(); ?>);">
+	<?php if ( $options['header'] && 'background' == $options['style'] ) { ?>
+	<div class="header-area header-area-custom<?php if ( isset( $options['logo_url'] ) ) { ?> header-area-has-logo<?php } ?><?php if ( $options['has_search'] ) { ?> header-area-has-search<?php } ?><?php if ( $options['display_header_text'] ) { ?> header-area-has-text<?php } ?>" style="background-image: url(<?php header_image(); ?>);">
 	<?php } else { ?>
-	<div class="header-area<?php if ( isset( $logo ) ) { ?> header-area-has-logo<?php } ?><?php if ( $has_search ) { ?> header-area-has-search<?php } ?>">
+	<div class="header-area<?php if ( isset( $options['logo_url'] ) ) { ?> header-area-has-logo<?php } ?><?php if ( $options['has_search'] ) { ?> header-area-has-search<?php } ?>">
 	<?php } ?>
-		<?php foreach ( $sections as $section ) { ?>
-			<?php if ( 'widgets' == $section ) { ?>
-				<?php if ( is_active_sidebar( 'header-1' ) ) { ?>
-				<div id="tertiary" class="site-widgets" role="complementary">
-					<div class="site-widget-region">
-						<?php dynamic_sidebar( 'header-1' ); ?>
-					</div>
-				</div>
-				<?php } ?>
-			<?php } elseif ( 'banner' == $section && $header && 'image' == $style ) { ?>
-				<div class="site-banner">
-					<img class="site-banner-image" src="<?php header_image(); ?>" alt="<?php bloginfo( 'description' ); ?>">
-				</div><!-- .site-banner -->
-			<?php } elseif ( 'branding' == $section ) { ?>
-				<div class="site-branding<?php if ( ! isset( $logo ) && ! $display_header_text ) { ?> site-branding-empty<?php } ?>">
-					<div class="site-identity">
-						<?php if ( isset( $logo ) ) { ?>
-						<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>"></a>
-						<?php } ?>
-						<?php if ( $display_header_text ) { ?>
-						<hgroup style="color: #<?php echo $header_textcolor; ?>">
-							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-							<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-						</hgroup>
-						<?php } ?>
-					</div>
-				</div><!-- .site-branding -->
-			<?php } elseif ( 'menu' == $section ) { ?>
-				<div class="site-menu">
-					<nav id="site-navigation" class="main-navigation" role="navigation">
-						<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><span class="dashicons dashicons-menu"></span></button>
-						<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-						<?php if ( $has_search ) get_search_form(); ?>
-					</nav><!-- #site-navigation -->
-				</div>
-			<?php } else { ?>
-				<?php do_action( 'rookie_header_area_section_' . $section ); ?>
-			<?php } ?>
-		<?php } ?>
-	</div>
+		<?php do_action( 'rookie_before_header_area', $options, $sections ); ?>
+		<div class="header-inner">
+			<?php
+			foreach ( $sections as $section ) {
+				if ( 'widgets' == $section ) {
+					rookie_header_widgets();
+				} elseif ( 'banner' == $section && $options['header'] && 'image' == $options['style'] ) {
+					rookie_header_banner();
+				} elseif ( 'branding' == $section ) {
+					rookie_header_branding( $options );
+				} elseif ( 'menu' == $section ) {
+					rookie_header_menu( $options );
+				} else {
+					do_action( 'rookie_header_area_section_' . $section, $options );
+				}
+			}
+			?>
+		</div><!-- .header-inner -->
+		<?php do_action( 'rookie_after_header_area', $options, $sections ); ?>
+	</div><!-- .header-area -->
 	<?php
 }
 endif;

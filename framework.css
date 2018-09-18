@@ -24,6 +24,7 @@
 	13.1 SportsPress
 	13.2 WooCommerce
 	13.3 BuddyPress
+	13.4 WordPay
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -52,7 +53,7 @@ html {
 	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
 	overflow-y: scroll; /* Keeps page centered in all browsers regardless of content height */
 	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
-	-ms-text-size-adjust:     100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+	-ms-text-size-adjust:		 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 	box-sizing: border-box; /* Apply a natural box layout model to the document; see http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
 }
 *,
@@ -409,6 +410,10 @@ textarea {
 	width: 100%;
 }
 
+select {
+	height: 40px;
+}
+
 /*--------------------------------------------------------------
 5.0 General layout
 --------------------------------------------------------------*/
@@ -718,7 +723,7 @@ a {
 .site-main .post-navigation {
 	margin: 0 0 1.25em;
 	overflow: hidden;
-    clear: both;
+		clear: both;
 }
 
 .comment-navigation .nav-previous,
@@ -874,8 +879,12 @@ a {
 }
 
 /* Make sure input and select elements fit in widgets */
-.widget input,
-.widget select {
+
+.widget input[type="text"],
+.widget input[type="email"],
+.widget input[type="url"],
+.widget input[type="password"],
+.widget textarea {
 	width: 100%;
 	box-sizing: border-box;
 }
@@ -1475,7 +1484,7 @@ object {
 .sp-template-countdown {
 	width: 100%;
 	overflow: auto;
-    zoom: 1;
+		zoom: 1;
 }
 
 .sp-template-countdown .sp-countdown {
@@ -1503,8 +1512,30 @@ object {
 	table-layout: fixed;
 }
 
+.sp-template-event-calendar tbody td {
+		position: relative;
+}
+
+.sp-template-event-calendar tbody td a:before {
+		content: '•';
+		position: absolute;
+		line-height: 1;
+		width: 1em;
+		top: 0;
+		right: 0;
+}
+
 .sp-template-event-calendar #today {
 	font-weight: bold;
+}
+
+.widget .sp-template-event-calendar thead th,
+.widget .sp-template-event-calendar tbody td {
+	padding: 0.625em;
+}
+
+.widget .sp-template-event-calendar tbody td a:before {
+	font-size: 1em;
 }
 
 .archive .sp-template-event-logos {
@@ -1536,7 +1567,7 @@ object {
 }
 
 .sp-template-event-video {
-    background: #000;
+		background: #000;
 }
 
 .sp-template-event-video .sp-table-caption {
@@ -1644,6 +1675,12 @@ object {
 	width: 100%;
 	text-align: center;
 	margin: 0 0 1.25em 0;
+	float: none;
+}
+
+.widget .sp-template-photo {
+	max-width: none;
+	margin: 0;
 	float: none;
 }
 
@@ -1791,6 +1828,15 @@ object {
 	display: block;
 }
 
+@media screen and (min-width: 481px) {
+	.sp-template-photo {
+		width: auto;
+		max-width: 50%;
+		margin: 0 20px 20px 0;
+		float: left;
+	}
+}
+
 @media screen and (min-width: 601px) {
 	.main-navigation ul {
 		margin: 0 0.625em;
@@ -1816,22 +1862,28 @@ object {
 		padding: 1.25em 0.675em;
 	}
 
-	.widget .sp-template-event-calendar thead th,
-	.widget .sp-template-event-calendar tbody td {
-		padding: 0.625em;
+	.sp-template-event-calendar tbody td a:before {
+			font-size: 1.25em;
 	}
 
 	.single-sp_event .has-post-thumbnail .entry-header .entry-title {
 		margin: 0.5em 0;
 	}
 
+	.sp-template-photo {
+		max-width: none;
+		width: 100%;
+		margin: 0 0 1.25em 0;
+		float: none;
+	}
+
 	.sp-header-sponsors {
 		margin-bottom: 0;
 	}
 
-    .single-sp_team .sp-post-content {
-        clear: left;
-    }
+	.single-sp_team .sp-post-content {
+			clear: left;
+	}
 }
 
 @media screen and (min-width: 801px) {
@@ -1870,6 +1922,17 @@ object {
 
 	.sp-template-event-calendar tbody td {
 		padding: 1.75em 0.675em;
+	}
+
+	.sp-template-event-calendar tbody td a:before {
+		font-size: 1.5em;
+	}
+
+	.sp-template-photo {
+		width: auto;
+		max-width: 50%;
+		margin: 0 20px 20px 0;
+		float: left;
 	}
 }
 
@@ -1915,17 +1978,8 @@ object {
 		padding: 2.375em 0.675em;
 	}
 
-	.sp-template-photo {
-		width: auto;
-		max-width: 50%;
-		margin: 0 20px 20px 0;
-		float: left;
-	}
-
-	.widget .sp-template-photo {
-		max-width: none;
-		margin: 0;
-		float: none;
+	.sp-template-event-calendar tbody td a:before {
+			font-size: 2em;
 	}
 
 	.site-widgets .sp-scoreboard-wrapper {
@@ -2046,58 +2100,58 @@ object {
 13.3 BuddyPress
 --------------------------------------------------------------*/
 #buddypress #item-header-cover-image {
-    padding: 0 20px;
+		padding: 0 20px;
 }
 
 #buddypress div#item-header img.avatar {
-    margin: 0 20px 20px 0;
+		margin: 0 20px 20px 0;
 }
 
 #buddypress #item-header-cover-image #item-header-avatar img.avatar {
-    border: none;
-    background: transparent;
+		border: none;
+		background: transparent;
 }
 
 #buddypress #item-header-cover-image #item-buttons {
-    padding: 0;
+		padding: 0;
 }
 
 #buddypress div.item-list-tabs {
-    margin: 0 0 20px;
+		margin: 0 0 20px;
 }
 
 #buddypress div.item-list-tabs ul li {
-    margin-bottom: -1px;
+		margin-bottom: -1px;
 }
 
 #buddypress div.item-list-tabs ul li a:focus {
-    outline: none;
+		outline: none;
 }
 
 #buddypress div.item-list-tabs ul li.current a,
 #buddypress div.item-list-tabs ul li.selected a {
-    opacity: 1;
+		opacity: 1;
 }
 
 #buddypress div.item-list-tabs ul li a span {
-    float: right;
-    padding: 4px 8px;
-    margin-left: 5px;
-    border: none;
+		float: right;
+		padding: 4px 8px;
+		margin-left: 5px;
+		border: none;
 }
 
 #buddypress div.item-list-tabs ul li a span.no-count {
-    display: none;
+		display: none;
 }
 
 #buddypress div.item-list-tabs#object-nav ul li {
-    float: none;
+		float: none;
 }
 
 #buddypress div.item-list-tabs#subnav ul li.last {
-    float: right;
-    margin: 0 0 -1px;
-    padding: 5px 0;
+		float: right;
+		margin: 0 0 -1px;
+		padding: 5px 0;
 }
 
 #buddypress table.forum tr td.label,
@@ -2123,45 +2177,54 @@ object {
 }
 
 @media screen and (min-width: 601px) {
-    #buddypress #item-nav {
-        width: 190px;
-        float: left;
-        padding: 0 20px;
-    }
+		#buddypress #item-nav {
+				width: 190px;
+				float: left;
+				padding: 0 20px;
+		}
 
-    #buddypress #item-nav li {
-        float: none;
-        display: block;
-    }
+		#buddypress #item-nav li {
+				float: none;
+				display: block;
+		}
 
-    #buddypress #item-body {
-        overflow: hidden;
-    }
+		#buddypress #item-body {
+				overflow: hidden;
+		}
 
-    #buddypress div.item-list-tabs#object-nav {
-        margin: 0;
-        border-bottom: none;
-    }
+		#buddypress div.item-list-tabs#object-nav {
+				margin: 0;
+				border-bottom: none;
+		}
 
-    #buddypress div.item-list-tabs#object-nav ul li {;
-        margin-bottom: 0;
-    }
+		#buddypress div.item-list-tabs#object-nav ul li {;
+				margin-bottom: 0;
+		}
 
-    #buddypress div.item-list-tabs#object-nav ul li a {
-        padding-left: 0;
-        padding-right: 0;
-    }
-    
-    #buddypress div.item-list-tabs#object-nav ul li a {
-        background: transparent;
-        border: none;
-    }
+		#buddypress div.item-list-tabs#object-nav ul li a {
+				padding-left: 0;
+				padding-right: 0;
+		}
+		
+		#buddypress div.item-list-tabs#object-nav ul li a {
+				background: transparent;
+				border: none;
+		}
 
-    #buddypress div.item-list-tabs#subnav {
-        margin: 0 0 20px;
-    }
+		#buddypress div.item-list-tabs#subnav {
+				margin: 0 0 20px;
+		}
 
-    #buddypress div.item-list-tabs#subnav ul li {
-        float: left;
-    }
+		#buddypress div.item-list-tabs#subnav ul li {
+				float: left;
+		}
+}
+
+
+/*--------------------------------------------------------------
+13.4 WordPay
+--------------------------------------------------------------*/
+.widget .wpay-form-fields-wrapper {
+	margin-left: 0;
+	margin-right: 0;
 }
