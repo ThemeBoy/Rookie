@@ -30,9 +30,9 @@ if ( ! function_exists( 'rookie_header_branding' ) ) :
  */
 function rookie_header_branding( $options = array() ) {
 	?>
-	<div class="site-branding<?php if ( ! isset( $options['logo_url'] ) && ! $options['display_header_text'] ) { ?> site-branding-empty<?php } ?>">
+	<div class="site-branding<?php if ( empty( $options['logo_url'] ) && ! $options['display_header_text'] ) { ?> site-branding-empty<?php } ?>">
 		<div class="site-identity">
-			<?php if ( isset( $options['logo_url'] ) ) { ?>
+			<?php if ( ! empty( $options['logo_url'] ) ) { ?>
 			<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo $options['logo_url']; ?>" alt="<?php bloginfo( 'name' ); ?>"></a>
 			<?php } ?>
 			<?php if ( $options['display_header_text'] ) { ?>
