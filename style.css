@@ -653,18 +653,21 @@ a:hover .page-title:hover {
 
 .sp-template-countdown .event-name,
 .sp-template-countdown .event-venue,
-.sp-template-countdown .event-league {
+.sp-template-countdown .event-league,
+.sp-template-countdown .event-date {
     background: #f4f4f4;
     border: 1px solid #e0e0e0;
 }
 
 .sp-template-countdown .event-venue,
-.sp-template-countdown .event-league {
+.sp-template-countdown .event-league,
+.sp-template-countdown .event-date {
     border-top: none;
 }
 
 .sp-template-countdown .event-venue,
-.sp-template-countdown .event-league {
+.sp-template-countdown .event-league,
+.sp-template-countdown .event-date {
     font-weight: normal;
 }
 
