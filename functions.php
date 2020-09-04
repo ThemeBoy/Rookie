@@ -1107,9 +1107,9 @@ if ( ! function_exists( 'rookie_rgb_from_hex' ) ) {
 		// Convert shorthand colors to full format, e.g. "FFF" -> "FFFFFF"
 		$color = preg_replace( '~^(.)(.)(.)$~', '$1$1$2$2$3$3', $color );
 
-		$rgb['r'] = hexdec( $color{0}.$color{1} );
-		$rgb['g'] = hexdec( $color{2}.$color{3} );
-		$rgb['b'] = hexdec( $color{4}.$color{5} );
+		$rgb['r'] = hexdec( $color[0].$color[1] );
+		$rgb['g'] = hexdec( $color[2].$color[3] );
+		$rgb['b'] = hexdec( $color[4].$color[5] );
 		return $rgb;
 	}
 }
