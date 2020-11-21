@@ -564,6 +564,8 @@ function rookie_custom_colors() {
 	input[type="url"],
 	input[type="password"],
 	input[type="search"],
+    input[type="tel"],
+    input[type="date"],
 	textarea,
 	.entry-footer-links,
 	.comment-metadata .edit-link,
