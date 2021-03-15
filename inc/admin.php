@@ -37,7 +37,7 @@ if (!function_exists('rookie_display_theme_page')) {
       </h1>
       <div class="rookie-row theme-intro rookie-clearfix">
         <div class="rookie-col-1-4">
-          <img class="theme-screenshot" src="<?php echo get_template_directory_uri(); ?>/screenshot.png" alt="<?php esc_html_e('Theme Screenshot', 'rookie'); ?>" />
+          <img class="theme-screenshot" src="<?php echo esc_url(get_template_directory_uri()); ?>/screenshot.png" alt="<?php esc_html_e('Theme Screenshot', 'rookie'); ?>" />
         </div>
         <div class="rookie-col-3-4 theme-description">
           <?php echo esc_html($rookie_data['Description']); ?>
