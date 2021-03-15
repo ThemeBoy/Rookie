@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 1.5.4 =
+* Tweak - Improve formatting for event date in countdown widget.
+* Tweak - Add styling for date and tel input fields.
+* Fix - Deprecated code for generating color scheme.
+
 = 1.5.3 =
 * Feature - Display match day indicators in event calendars.
 * Feature - Add welcome screen with theme overview and upgrade path.
